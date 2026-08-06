@@ -1,0 +1,53 @@
+name: Publish
+
+# Rebuilds the site every morning. Posts appear on their scheduled date without
+# anyone touching anything — build.py --live only includes posts whose date has
+# arrived. Also runs on every push, so edits go out immediately.
+
+on:
+  schedule:
+    - cron: "5 9 * * *"     # 09:05 UTC daily
+  push:
+    branches: [main]
+  workflow_dispatch:         # manual "publish now" button in the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build published posts
+        run: python build.py --live
+
+      - name: Validate links and SEO tags
+        run: python check.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

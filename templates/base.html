@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#0b0a0d">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:site_name" content="{{site_name}}">
+<meta property="og:locale" content="{{locale}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{twitter}}">
+<meta name="twitter:title" content="{{og_title}}">
+<meta name="twitter:description" content="{{description}}">
+
+<link rel="alternate" type="application/rss+xml" title="{{site_name}}" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="/static/mark.svg" type="image/svg+xml">
+
+<script type="application/ld+json">
+{{jsonld}}
+</script>
+</head>
+<body class="{{body_class}}">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="brand" href="/">
+    <span class="brand-mark" aria-hidden="true">&#10022;</span>
+    <span class="brand-text">
+      <span class="brand-name">Veiled Antiquity</span>
+      <span class="brand-tag">{{tagline}}</span>
+    </span>
+  </a>
+  <nav class="nav" aria-label="Primary">{{nav}}</nav>
+</header>
+
+<main id="main">
+{{content}}
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-brand">Veiled Antiquity</p>
+    <p class="footer-note">New pieces Monday, Wednesday and Friday. Sources named, uncertainty kept intact.</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a>
+    </nav>
+    <p class="footer-legal">&copy; {{year}} {{site_url}}</p>
+  </div>
+</footer>
+</body>
+</html>
