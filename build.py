@@ -41,6 +41,9 @@ SITE = {
     "twitter": "@veiledantiquity",
 }
 
+IMAGES_FILE = ROOT / "content" / "images.json"
+IMAGES = json.loads(IMAGES_FILE.read_text(encoding="utf-8")) if IMAGES_FILE.exists() else {}
+
 CATEGORIES = {
     "mystery-cults": "Mystery Cults",
     "magic-and-ritual": "Magic & Ritual",
@@ -96,6 +99,7 @@ def load_posts() -> list:
 
         meta["body"] = body
         meta["source_file"] = path.name
+        meta["image"] = IMAGES.get(meta.get("slug", ""))
         meta["dt"] = datetime.strptime(meta["date"], "%Y-%m-%d %H:%M:%S")
         meta["url"] = f"{SITE['url']}/posts/{meta['slug']}/"
         meta["path"] = f"/posts/{meta['slug']}/"
@@ -135,11 +139,36 @@ def nav_html(active: str = "") -> str:
     return "".join(out)
 
 
+def og_image(p: dict = None) -> str:
+    """Absolute URL for social preview cards; falls back to any available image."""
+    img = (p or {}).get("image")
+    if not img and IMAGES:
+        img = next(iter(IMAGES.values()))
+    return SITE["url"] + img["file"] if img else SITE["url"] + "/static/mark.svg"
+
+
+def hero_html(p: dict) -> str:
+    """Lead image for a post, with the attribution its licence requires."""
+    img = p.get("image")
+    if not img:
+        return ""
+    credit = f'{esc(img["credit"])}, {esc(img["licence"])}' if img["credit"] else esc(img["licence"])
+    link = f' &middot; <a href="{img["source"]}" rel="noopener nofollow">Wikimedia Commons</a>' if img["source"] else ""
+    return f"""<figure class="hero-figure">
+  <img src="{img['file']}" alt="{esc(img['alt'])}" width="{img['width']}" height="{img['height']}" fetchpriority="high" decoding="async">
+  <figcaption>{img['caption']} <span class="credit">{credit}{link}</span></figcaption>
+</figure>"""
+
+
 def card_html(p: dict) -> str:
     cat = CATEGORIES[p["category"]]
     date_h = p["dt"].strftime("%d %B %Y")
+    img = p.get("image")
+    thumb = (f'<img class="card-img" src="{img["card"]}" alt="" width="520" height="300" '
+             f'loading="lazy" decoding="async">') if img and img.get("card") else ""
     return f"""<article class="card">
   <a class="card-link" href="{p['path']}">
+    {thumb}
     <p class="card-meta"><span class="cat">{esc(cat)}</span><time datetime="{p['dt'].date()}">{date_h}</time></p>
     <h3 class="card-title">{esc(p['title'])}</h3>
     <p class="card-dek">{esc(p['dek'])}</p>
@@ -195,6 +224,13 @@ def jsonld_post(p: dict) -> str:
                 "author": {"@type": "Organization", "name": SITE["author"], "url": SITE["url"]},
                 "publisher": {"@id": SITE["url"] + "#org"},
                 "isPartOf": {"@id": SITE["url"] + "#website"},
+                **({"image": {
+                    "@type": "ImageObject",
+                    "url": SITE["url"] + p["image"]["file"],
+                    "width": p["image"]["width"],
+                    "height": p["image"]["height"],
+                    "caption": re.sub(r"<[^>]+>", "", p["image"]["caption"]),
+                }} if p.get("image") else {}),
             },
             {
                 "@type": "Organization",
@@ -286,6 +322,7 @@ def build_site(posts: list):
             "date_human": p["dt"].strftime("%d %B %Y"),
             "read_minutes": p["read_minutes"],
             "word_count": f"{p['word_count']:,}",
+            "hero": hero_html(p),
             "toc": toc,
             "body": body,
             "faq": faq_html(p),
@@ -300,6 +337,7 @@ def build_site(posts: list):
             "description": esc(p["description"]),
             "canonical": p["url"],
             "og_type": "article",
+            "og_image": og_image(p),
             "og_title": esc(p["title"]),
             "site_name": esc(SITE["title"]),
             "twitter": SITE["twitter"],
@@ -346,7 +384,7 @@ def build_site(posts: list):
     (DIST / "index.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"{SITE['title']} — {SITE['tagline']}",
         "description": esc(SITE["description"]), "canonical": SITE["url"] + "/",
-        "og_type": "website", "og_title": esc(SITE["title"]), "site_name": esc(SITE["title"]),
+        "og_type": "website", "og_image": og_image(), "og_title": esc(SITE["title"]), "site_name": esc(SITE["title"]),
         "twitter": SITE["twitter"], "locale": SITE["locale"],
         "jsonld": json.dumps({
             "@context": "https://schema.org", "@type": "Blog",
@@ -375,7 +413,7 @@ def build_site(posts: list):
     (DIST / "archive" / "index.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"Archive | {SITE['title']}",
         "description": "Every piece published on Veiled Antiquity, grouped by theme: mystery cults, magic and ritual, suppressed knowledge, and oracles.",
-        "canonical": SITE["url"] + "/archive/", "og_type": "website",
+        "canonical": SITE["url"] + "/archive/", "og_type": "website", "og_image": og_image(),
         "og_title": "Archive", "site_name": esc(SITE["title"]), "twitter": SITE["twitter"],
         "locale": SITE["locale"], "jsonld": "{}", "nav": nav_html("/archive/"),
         "body_class": "is-page",
@@ -395,7 +433,8 @@ def build_site(posts: list):
     (DIST / "about" / "index.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"About | {SITE['title']}",
         "description": "Veiled Antiquity covers the deliberately hidden parts of ancient history — mystery cults, sealed books, buried curses — with sources named and uncertainty kept intact.",
-        "canonical": SITE["url"] + "/about/", "og_type": "website", "og_title": "About",
+        "canonical": SITE["url"] + "/about/", "og_type": "website", "og_image": og_image(),
+        "og_title": "About",
         "site_name": esc(SITE["title"]), "twitter": SITE["twitter"], "locale": SITE["locale"],
         "jsonld": "{}", "nav": nav_html("/about/"), "body_class": "is-page",
         "content": about_body, "year": datetime.now().year, "site_url": SITE["url"],
@@ -406,7 +445,7 @@ def build_site(posts: list):
     (DIST / "404.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"Not found | {SITE['title']}",
         "description": "That page could not be found.", "canonical": SITE["url"] + "/404.html",
-        "og_type": "website", "og_title": "Not found", "site_name": esc(SITE["title"]),
+        "og_type": "website", "og_image": og_image(), "og_title": "Not found", "site_name": esc(SITE["title"]),
         "twitter": SITE["twitter"], "locale": SITE["locale"], "jsonld": "{}",
         "nav": nav_html(), "body_class": "is-page",
         "content": '<header class="page-head"><h1>Nothing here</h1><p class="hero-dek">Some things were meant to stay lost. This one probably wasn\'t. <a href="/">Return to the entrance</a>.</p></header>',

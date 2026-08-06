@@ -197,6 +197,35 @@ main { max-width: var(--shell); margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.
   padding-left: 1.15rem; border-left: 2px solid var(--gold-dim);
 }
 
+/* hero image */
+
+.hero-figure { margin: 0 0 3rem; }
+.hero-figure img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--ink-400); border-radius: 3px;
+  background: var(--ink-100);
+}
+.hero-figure figcaption {
+  margin-top: 0.8rem; font-size: 0.88rem; line-height: 1.55; color: var(--text-dim);
+  padding-left: 0.9rem; border-left: 1px solid var(--gold-dim);
+}
+.hero-figure .credit {
+  display: block; margin-top: 0.35rem; font-family: var(--sans);
+  font-size: 0.68rem; letter-spacing: 0.06em; color: var(--text-faint);
+}
+.hero-figure .credit a { color: var(--text-faint); text-decoration-color: var(--ink-400); }
+.hero-figure .credit a:hover { color: var(--gold-soft); }
+
+/* card thumbnails */
+
+.card-img {
+  display: block; width: 100%; height: auto; aspect-ratio: 520 / 300;
+  object-fit: cover; margin: -1.7rem -1.6rem 1.3rem; width: calc(100% + 3.2rem);
+  border-bottom: 1px solid var(--ink-300);
+  filter: saturate(0.82) brightness(0.88); transition: filter 0.3s ease;
+}
+.card-link:hover .card-img { filter: saturate(1) brightness(1); }
+
 .toc {
   background: var(--ink-100); border: 1px solid var(--ink-300);
   border-radius: 3px; padding: 1.4rem 1.6rem; margin: 0 0 3rem;

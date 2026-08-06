@@ -45,7 +45,33 @@ for page in pages:
         except json.JSONDecodeError as e:
             errors.append(f"{rel}: invalid JSON-LD ({e})")
 
-    # 3. internal links resolve
+    # 3. every image resolves, has alt, and is dimensioned (no layout shift)
+    for tag in re.findall(r"<img\b[^>]*>", html):
+        checked += 1
+        src = re.search(r'src="([^"]+)"', tag)
+        if not src:
+            errors.append(f"{rel}: <img> with no src")
+            continue
+        if src.group(1).startswith("/"):
+            if not (DIST / src.group(1).lstrip("/")).exists():
+                errors.append(f"{rel}: missing image {src.group(1)}")
+        if 'alt="' not in tag:
+            errors.append(f"{rel}: <img> missing alt ({src.group(1)})")
+        if 'width="' not in tag or 'height="' not in tag:
+            errors.append(f"{rel}: <img> missing width/height ({src.group(1)})")
+
+    # 4. social preview image is an absolute URL that exists locally
+    og = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+    if og:
+        checked += 1
+        if not og.group(1).startswith("https://"):
+            errors.append(f"{rel}: og:image is not absolute")
+        else:
+            local = og.group(1).split("/", 3)[-1]
+            if not (DIST / local).exists():
+                errors.append(f"{rel}: og:image target missing ({local})")
+
+    # 5. internal links resolve
     for href in re.findall(r'href="(/[^"#?]*)', html):
         checked += 1
         if href.startswith("/static/"):
@@ -61,7 +87,7 @@ for page in pages:
         else:
             errors.append(f"{rel}: unrecognised internal link {href}")
 
-# 4. every post is linked from the homepage
+# 6. every post is linked from the homepage
 home = (DIST / "index.html").read_text(encoding="utf-8")
 for slug in slugs:
     if f'href="/posts/{slug}/"' not in home:

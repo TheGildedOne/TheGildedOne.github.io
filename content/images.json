@@ -1,0 +1,145 @@
+{
+  "ancient-mystery-cults-guide": {
+    "file": "/static/img/ancient-mystery-cults-guide.jpg",
+    "alt": "Marble relief showing Demeter handing grain to the boy Triptolemos, with Persephone standing behind him holding a torch.",
+    "caption": "The Great Eleusinian Relief: Demeter, Triptolemos and Persephone. Around 440&ndash;430 BCE.",
+    "credit": "Gleb Simonov",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Great_Eleusinian_Relief.jpg",
+    "width": 1400,
+    "height": 1821,
+    "card": "/static/img/ancient-mystery-cults-guide-card.jpg"
+  },
+  "eleusinian-mysteries-telesterion": {
+    "file": "/static/img/eleusinian-mysteries-telesterion.jpg",
+    "alt": "The excavated foundations of the Telesterion at Eleusis, a large square hall cut into a rocky hillside.",
+    "caption": "What remains of the Telesterion &mdash; the hall that held several thousand initiates at once.",
+    "credit": "TimeTravelRome",
+    "licence": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Archaeological_Site_of_Eleusis_-_Telesterion_03.jpg",
+    "width": 1400,
+    "height": 933,
+    "card": "/static/img/eleusinian-mysteries-telesterion-card.jpg"
+  },
+  "eleusinian-kykeon-psychedelic": {
+    "file": "/static/img/eleusinian-kykeon-psychedelic.jpg",
+    "alt": "A votive marble relief from Eleusis depicting Demeter, Persephone and Triptolemos with sheaves of grain.",
+    "caption": "Grain, and the goddesses who controlled it. Votive relief from Eleusis, fourth century BCE.",
+    "credit": "Furius",
+    "licence": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Votive_relief_showing_Demeter,_Persephone_and_Triptolemos,_Eleusis,_4th_c_BC.jpg",
+    "width": 1400,
+    "height": 937,
+    "card": "/static/img/eleusinian-kykeon-psychedelic-card.jpg"
+  },
+  "orphic-gold-tablets": {
+    "file": "/static/img/orphic-gold-tablets.jpg",
+    "alt": "A small rectangular sheet of gold leaf covered in tiny incised Greek letters, displayed in a museum case.",
+    "caption": "The Petelia tablet. Instructions for the dead, small enough to fold into a palm.",
+    "credit": "Jononmac46",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Orphic_Gold_Tablet_(Petelia_-_British_Museum,_London).jpg",
+    "width": 1400,
+    "height": 1050,
+    "card": "/static/img/orphic-gold-tablets-card.jpg"
+  },
+  "mithras-tauroctony-decoded": {
+    "file": "/static/img/mithras-tauroctony-decoded.jpg",
+    "alt": "A carved marble relief of Mithras in a Phrygian cap kneeling on a bull and stabbing its neck, with a dog, snake and scorpion.",
+    "caption": "The tauroctony. The same scene appears in almost every mithraeum ever excavated.",
+    "credit": "Jastrow",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Mithras_tauroctony_Louvre_Ma3441.jpg",
+    "width": 1400,
+    "height": 1237,
+    "card": "/static/img/mithras-tauroctony-decoded-card.jpg"
+  },
+  "villa-of-the-mysteries-frescoes": {
+    "file": "/static/img/villa-of-the-mysteries-frescoes.jpg",
+    "alt": "A wide section of Roman wall painting on a deep red ground, showing near-life-size robed figures standing in a row.",
+    "caption": "Part of the frieze in Room 5. Twenty-nine figures, and no agreement about what they are doing.",
+    "credit": "original files by WolfgangRieger",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Roman_fresco_Villa_dei_Misteri_Pompeii_005.jpg",
+    "width": 1400,
+    "height": 462,
+    "card": "/static/img/villa-of-the-mysteries-frescoes-card.jpg"
+  },
+  "greek-magical-papyri": {
+    "file": "/static/img/greek-magical-papyri.jpg",
+    "alt": "A fragment of ancient papyrus densely written in Greek and Demotic script, with some lines picked out in red ink.",
+    "caption": "A working spellbook from Roman Egypt. The instructions are in black; the formulae in red.",
+    "credit": "Aktiophis",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Graeco-Egyptian_Magical_Papyrus_I;_Louvre;_Roman_Epoch;_30-395_AD;Demotic,_Greek,Coptic;_Various_Recipes;_Magical_Formulars_are_written_Red.jpg",
+    "width": 1400,
+    "height": 1050,
+    "card": "/static/img/greek-magical-papyri-card.jpg"
+  },
+  "ancient-curse-tablets": {
+    "file": "/static/img/ancient-curse-tablets.jpg",
+    "alt": "A small irregular sheet of grey lead covered in scratched Latin lettering.",
+    "caption": "A lead curse tablet from Bath, complaining about a theft. Scratched, folded, and thrown into the spring.",
+    "credit": "-JvL-",
+    "licence": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_metal_curse_tablet_(defixio)_with_a_complaint_about_the_theft_of_a_Vilbia.jpg",
+    "width": 1400,
+    "height": 933,
+    "card": "/static/img/ancient-curse-tablets-card.jpg"
+  },
+  "sibylline-books-rome": {
+    "file": "/static/img/sibylline-books-rome.jpg",
+    "alt": "A long trapezoidal rock-cut corridor at Cumae, lit by openings along one side, receding into darkness.",
+    "caption": "The corridor at Cumae, long identified with the Sibyl's cave.",
+    "credit": "AlexanderVanLoon",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cumae_Cave_of_the_Sibyl_AvL.JPG",
+    "width": 1400,
+    "height": 928,
+    "card": "/static/img/sibylline-books-rome-card.jpg"
+  },
+  "damnatio-memoriae": {
+    "file": "/static/img/damnatio-memoriae.jpg",
+    "alt": "A circular painted panel showing the Roman imperial family, with the face of one of the two sons deliberately scraped away.",
+    "caption": "The Severan Tondo. Geta's face was removed by hand, on his brother's orders.",
+    "credit": "anonymous",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_family_of_Septimius_Severus_-_Altes_Museum_-_Berlin_-_Germany_2017.jpg",
+    "width": 1400,
+    "height": 1399,
+    "card": "/static/img/damnatio-memoriae-card.jpg"
+  },
+  "library-of-alexandria-what-was-lost": {
+    "file": "/static/img/library-of-alexandria-what-was-lost.jpg",
+    "alt": "Ruined stone foundations and a tall standing column at the Serapeum site in Alexandria.",
+    "caption": "The Serapeum of Alexandria. What is left of the daughter library.",
+    "credit": "Institute for the Study of the Ancient World",
+    "licence": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Serapeum_of_Alexandria_(I).jpg",
+    "width": 1400,
+    "height": 1050,
+    "card": "/static/img/library-of-alexandria-what-was-lost-card.jpg"
+  },
+  "oracle-of-the-dead-ephyra": {
+    "file": "/static/img/oracle-of-the-dead-ephyra.jpg",
+    "alt": "Thick polygonal stone walls of a ruined Hellenistic building standing on a low hill.",
+    "caption": "The building at Mesopotamos. Thick walls, a big cellar, and a granary.",
+    "credit": "Michael Nicht",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nekromanteion_of_Acheron.jpg",
+    "width": 1400,
+    "height": 930,
+    "card": "/static/img/oracle-of-the-dead-ephyra-card.jpg"
+  },
+  "piacenza-liver-etruscan": {
+    "file": "/static/img/piacenza-liver-etruscan.jpg",
+    "alt": "A bronze model of a sheep's liver, its flat surface divided into many small compartments each carrying an inscription.",
+    "caption": "The Piacenza Liver. Forty compartments, forty gods, and a map of the sky.",
+    "credit": "Piacenza_Bronzeleber.jpg: Lokilech",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piacenza_liver.jpg",
+    "width": 1400,
+    "height": 926,
+    "card": "/static/img/piacenza-liver-etruscan-card.jpg"
+  }
+}
