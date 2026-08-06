@@ -82,8 +82,12 @@ for page in pages:
             slug = href.strip("/").split("/", 1)[1]
             if slug not in slugs:
                 errors.append(f"{rel}: dead post link {href}")
-        elif href in ("/", "/archive/", "/about/", "/feed.xml", "/sitemap.xml", "/robots.txt"):
+        elif href in ("/", "/archive/", "/about/", "/contact/", "/privacy/", "/disclosure/",
+                      "/feed.xml", "/sitemap.xml", "/robots.txt"):
             pass
+        elif href.startswith("/category/"):
+            if not (DIST / href.strip("/")).exists():
+                errors.append(f"{rel}: dead category link {href}")
         else:
             errors.append(f"{rel}: unrecognised internal link {href}")
 

@@ -21,6 +21,8 @@ create the account. That's it.
 | `check.py` | Checks for broken links and missing SEO tags. |
 | `.github/workflows/` | The daily job that publishes posts on schedule, by itself. |
 | `SEO-STRATEGY.md` | The keyword plan, and what to do in the first week after launch. |
+| `MONETISATION.md` | How to switch on affiliate links, newsletter and ads — one ID each. |
+| `tools/` | Image sourcing from Wikimedia Commons: find, fetch, optimise. |
 | `EDITORIAL-CALENDAR.md` | The schedule, plus 16 post ideas for month two. |
 
 ---

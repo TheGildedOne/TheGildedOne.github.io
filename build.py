@@ -15,6 +15,7 @@ import re
 import shutil
 import sys
 import html
+import urllib.parse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -41,6 +42,21 @@ SITE = {
     "twitter": "@veiledantiquity",
 }
 
+# Revenue plumbing. Everything here is inert until an ID is filled in, so the
+# site ships clean and switches on one line at a time when you're ready.
+MONETISATION = {
+    # Amazon Associates tag, e.g. "veiledantiq-21". Turns book titles in the
+    # Sources list into affiliate links.
+    "amazon_tag": "",
+    # Amazon regional domain your tag belongs to.
+    "amazon_domain": "amazon.co.uk",
+    # Google AdSense publisher ID, e.g. "ca-pub-0000000000000000".
+    "adsense_client": "",
+    # Form POST endpoint from Buttondown / ConvertKit / Kit / Mailchimp.
+    "newsletter_action": "",
+    "contact_email": "hello@veiledantiquity.com",
+}
+
 IMAGES_FILE = ROOT / "content" / "images.json"
 IMAGES = json.loads(IMAGES_FILE.read_text(encoding="utf-8")) if IMAGES_FILE.exists() else {}
 
@@ -51,10 +67,26 @@ CATEGORIES = {
     "oracles-and-divination": "Oracles & Divination",
 }
 
+CATEGORY_BLURBS = {
+    "mystery-cults": "Secret initiations across the Greek and Roman world &mdash; Eleusis, "
+                     "Dionysus, Mithras, Isis &mdash; and how well the secrets held.",
+    "magic-and-ritual": "The working documents of ancient magic: spellbooks from Roman Egypt, "
+                        "curses scratched into lead, and what people actually asked for.",
+    "lost-and-suppressed": "Knowledge that was erased, burned, or simply never copied again "
+                           "&mdash; and how much of it went quietly.",
+    "oracles-and-divination": "Reading the future in books, caves, lightning and livers, and "
+                              "the institutions built around the answers.",
+}
+
 # ---------------------------------------------------------------- templating
+
+TEMPLATE_DEFAULTS = {"head_extra": "", "og_image": ""}
+
 
 def render(template: str, ctx: dict) -> str:
     """Minimal {{key}} substitution. Values are inserted raw."""
+    ctx = {**TEMPLATE_DEFAULTS, **ctx}
+
     def sub(m):
         key = m.group(1).strip()
         if key not in ctx:
@@ -137,6 +169,137 @@ def nav_html(active: str = "") -> str:
         cur = ' aria-current="page"' if href == active else ""
         out.append(f'<a href="{href}"{cur}>{label}</a>')
     return "".join(out)
+
+
+BOOK_RE = re.compile(r"<em>(.*?)</em>")
+
+
+def affiliate_sources(sources: list) -> tuple:
+    """Turn book titles in the Sources list into affiliate links.
+
+    Returns (rendered_items, used_affiliate). Without a configured tag the
+    sources render exactly as written, so nothing changes until you opt in."""
+    tag = MONETISATION["amazon_tag"]
+    if not tag:
+        return sources, False
+
+    domain = MONETISATION["amazon_domain"]
+    out, used = [], False
+    for item in sources:
+        m = BOOK_RE.search(item)
+        # Only link entries that look like books; skip ancient texts, which are
+        # public domain and where an affiliate link is just noise.
+        if not m or any(w in item for w in ("&mdash; the", "Papyrus", "papyrus")) and "(" not in item:
+            out.append(item)
+            continue
+        title = re.sub(r"<[^>]+>", "", m.group(1))
+        q = urllib.parse.quote_plus(title)
+        url = f"https://www.{domain}/s?k={q}&tag={tag}"
+        out.append(f'{item} <a class="aff" href="{url}" rel="sponsored nofollow noopener" '
+                   f'target="_blank">Find a copy</a>')
+        used = True
+    return out, used
+
+
+def disclosure_html() -> str:
+    return ('<p class="disclosure">Some links above are affiliate links. If you buy through '
+            'them this site earns a small commission at no extra cost to you, which pays for '
+            'the hosting. It never affects which books get recommended &mdash; '
+            '<a href="/disclosure/">full disclosure</a>.</p>')
+
+
+def ad_slot(position: str) -> str:
+    """An AdSense unit. Renders nothing at all until a publisher ID is set."""
+    client = MONETISATION["adsense_client"]
+    if not client:
+        return ""
+    return f"""<aside class="ad ad-{position}" aria-label="Advertisement">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{client}"
+       data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
+</aside>"""
+
+
+def adsense_head() -> str:
+    client = MONETISATION["adsense_client"]
+    if not client:
+        return ""
+    return (f'<script async src="https://pagead2.googlesyndication.com/pagead/js/'
+            f'adsbygoogle.js?client={client}" crossorigin="anonymous"></script>')
+
+
+def newsletter_html() -> str:
+    """Email capture. The list is the asset that survives algorithm changes."""
+    action = MONETISATION["newsletter_action"]
+    if not action:
+        return ""
+    return f"""<section class="signup" aria-labelledby="signup-h">
+  <h2 id="signup-h">Three pieces a week, straight to you</h2>
+  <p>Mystery cults, buried curses and the things antiquity deliberately kept quiet. No spam, unsubscribe in one click.</p>
+  <form action="{action}" method="post" target="_blank">
+    <label class="visually-hidden" for="email">Email address</label>
+    <input id="email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+    <button type="submit">Subscribe</button>
+  </form>
+</section>"""
+
+
+def legal_pages() -> list:
+    """Privacy, disclosure and contact pages.
+
+    Ad networks check for these before approving a site, and the affiliate
+    disclosure is an FTC requirement rather than a nicety. These are a sound
+    starting point written for how this site actually works &mdash; they are not
+    legal advice, and should be reviewed before you rely on them."""
+    email = MONETISATION["contact_email"]
+
+    privacy = f"""<header class="page-head"><h1>Privacy</h1></header>
+<p class="lede">The short version: this site collects as little as possible, and sells nothing about you to anyone.</p>
+<h2>What this site collects directly</h2>
+<p>Nothing. There is no account system, no comment form storing your details, and no tracking script written by us. The site is static files served from a CDN.</p>
+<h2>What third parties may collect</h2>
+<p>Some things are outside our control, and honesty is more useful than a blanket denial:</p>
+<ul>
+  <li><strong>Hosting.</strong> The site is served by GitHub Pages, which logs requests including IP addresses for security and abuse prevention.</li>
+  <li><strong>Fonts.</strong> Typefaces load from Google Fonts, which receives a request from your browser.</li>
+  <li><strong>Advertising.</strong> If advertising is running, Google AdSense and its partners may set cookies and use identifiers to serve and measure ads. You can review and change your settings at <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>. Visitors in the EEA and UK are shown a consent prompt before any personalised advertising cookie is set.</li>
+  <li><strong>Affiliate links.</strong> Links to booksellers may carry a referral code identifying this site as the source of the visit. That tells the retailer where you came from; it does not tell us who you are.</li>
+  <li><strong>Email.</strong> If you subscribe, your address is held by our email provider solely to send the newsletter. Unsubscribe at any time using the link in any message.</li>
+</ul>
+<h2>Your rights</h2>
+<p>If you are in the UK, EEA or California you have rights over any personal data held about you, including access, correction and deletion. Since the only personal data this site can hold is an email address you gave voluntarily, the practical answer is usually to unsubscribe &mdash; but write to <a href="mailto:{email}">{email}</a> and we will act on any request.</p>
+<h2>Children</h2>
+<p>This site is not directed at children under 13 and does not knowingly collect their data.</p>
+<h2>Changes</h2>
+<p>Material changes to this page will be noted here with a date. Last updated {datetime.now():%d %B %Y}.</p>"""
+
+    disclosure = f"""<header class="page-head"><h1>Disclosure</h1></header>
+<p class="lede">How this site makes money, stated plainly, because you should not have to guess.</p>
+<h2>Affiliate links</h2>
+<p>The reading list at the end of each article may contain affiliate links to booksellers. If you buy something after following one, this site receives a small commission and you pay exactly the same price.</p>
+<p>The rule here is simple and worth stating: <strong>books are listed because they are the sources the article actually relies on.</strong> The reading lists were written before any affiliate programme existed, and no book has been added, moved up, or praised because it pays better. If a source is the best one available and earns nothing, it still gets listed.</p>
+<h2>Advertising</h2>
+<p>The site may display advertising. Advertisers have no input into what is written, no advance sight of articles, and no ability to have anything changed or removed.</p>
+<h2>Sponsorship and gifts</h2>
+<p>No sponsored posts have been published. If that ever changes, the post will say so in the first paragraph, not in a footnote. The same applies to any review copy or free access received.</p>
+<h2>What this does not affect</h2>
+<p>The editorial position stays what it is: sources named, uncertainty left intact, and no claim made stronger than the evidence supports. Several articles here argue against the popular version of their subject, which is not a commercially optimal strategy, and that is rather the point.</p>
+<p>Questions: <a href="mailto:{email}">{email}</a>.</p>"""
+
+    contact = f"""<header class="page-head"><h1>Contact</h1></header>
+<p class="lede">Corrections especially welcome.</p>
+<p>Email: <a href="mailto:{email}">{email}</a></p>
+<h2>Corrections</h2>
+<p>If something here is wrong, say so and point at the evidence. Errors get fixed and the correction gets noted on the article rather than quietly patched. Given the subject matter &mdash; where the scholarship genuinely disagrees with itself &mdash; this is not a formality.</p>
+<h2>Republishing</h2>
+<p>Text on this site is the author's own. Short quotations with a link are fine without asking. For anything longer, ask first.</p>
+<p>Images are drawn from Wikimedia Commons and are public domain or Creative Commons licensed; each is credited under the image with its licence, and those terms travel with the image rather than with this site.</p>"""
+
+    return [
+        ("privacy", "Privacy", "What Veiled Antiquity collects, what third parties collect, and your rights over it.", privacy),
+        ("disclosure", "Disclosure", "How this site makes money: affiliate links, advertising, and what none of it changes.", disclosure),
+        ("contact", "Contact", "Get in touch with Veiled Antiquity, especially with corrections.", contact),
+    ]
 
 
 def og_image(p: dict = None) -> str:
@@ -284,8 +447,11 @@ def faq_html(p: dict) -> str:
 def sources_html(p: dict) -> str:
     if not p.get("sources"):
         return ""
-    rows = "\n".join(f"<li>{s}</li>" for s in p["sources"])
-    return f'<section class="sources" aria-labelledby="src-h"><h2 id="src-h">Sources &amp; further reading</h2><ul>{rows}</ul></section>'
+    items, used_affiliate = affiliate_sources(p["sources"])
+    rows = "\n".join(f"<li>{s}</li>" for s in items)
+    note = disclosure_html() if used_affiliate else ""
+    return (f'<section class="sources" aria-labelledby="src-h">'
+            f'<h2 id="src-h">Sources &amp; further reading</h2><ul>{rows}</ul>{note}</section>')
 
 
 # ----------------------------------------------------------------- rendering
@@ -327,6 +493,8 @@ def build_site(posts: list):
             "body": body,
             "faq": faq_html(p),
             "sources": sources_html(p),
+            "ad_bottom": ad_slot("bottom"),
+            "newsletter": newsletter_html(),
             "related": related_html(p, posts),
             "tags": " ".join(f'<span class="tag">{esc(t)}</span>' for t in p["tags"]),
         })
@@ -343,6 +511,7 @@ def build_site(posts: list):
             "twitter": SITE["twitter"],
             "locale": SITE["locale"],
             "jsonld": jsonld_post(p),
+            "head_extra": adsense_head(),
             "nav": nav_html(),
             "body_class": "is-post",
             "content": article,
@@ -407,7 +576,8 @@ def build_site(posts: list):
             f'<li><a href="{p["path"]}"><time datetime="{p["dt"].date()}">{p["dt"].strftime("%d %b")}</time>'
             f'<span class="arch-title">{esc(p["title"])}</span></a></li>' for p in group
         )
-        blocks.append(f'<section id="{cslug}"><h2>{esc(cname)}</h2><ul class="arch">{rows}</ul></section>')
+        blocks.append(f'<section id="{cslug}"><h2><a href="/category/{cslug}/">{esc(cname)}</a></h2>'
+                      f'<ul class="arch">{rows}</ul></section>')
 
     (DIST / "archive").mkdir(parents=True, exist_ok=True)
     (DIST / "archive" / "index.html").write_text(render(base, {
@@ -441,6 +611,50 @@ def build_site(posts: list):
         "tagline": esc(SITE["tagline"]),
     }), encoding="utf-8")
 
+    # ---- category pages
+    # Real indexable pages per theme rather than anchors on one archive: more
+    # surface for Google, and a genuine internal-linking hub per topic.
+    for cslug, cname in CATEGORIES.items():
+        group = [p for p in posts if p["category"] == cslug]
+        if not group:
+            continue
+        blurb = CATEGORY_BLURBS[cslug]
+        content = (f'<header class="page-head"><h1>{esc(cname)}</h1>'
+                   f'<p class="hero-dek">{blurb}</p></header>'
+                   f'<div class="grid">{"".join(card_html(p) for p in group)}</div>')
+        out = DIST / "category" / cslug
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(render(base, {
+            "lang": SITE["lang"],
+            "page_title": f"{cname} | {SITE['title']}",
+            "description": esc(blurb),
+            "canonical": f"{SITE['url']}/category/{cslug}/",
+            "og_type": "website", "og_image": og_image(group[0]), "og_title": esc(cname),
+            "site_name": esc(SITE["title"]), "twitter": SITE["twitter"], "locale": SITE["locale"],
+            "jsonld": json.dumps({
+                "@context": "https://schema.org", "@type": "CollectionPage",
+                "name": cname, "description": blurb,
+                "url": f"{SITE['url']}/category/{cslug}/",
+                "isPartOf": {"@id": SITE["url"] + "#website"},
+            }, ensure_ascii=False, indent=2),
+            "nav": nav_html(), "body_class": "is-page", "content": content,
+            "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
+        }), encoding="utf-8")
+
+    # ---- legal pages (AdSense and most ad networks will not accept a site without these)
+    for slug, title, desc, body in legal_pages():
+        out = DIST / slug
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(render(base, {
+            "lang": SITE["lang"], "page_title": f"{title} | {SITE['title']}",
+            "description": esc(desc), "canonical": f"{SITE['url']}/{slug}/",
+            "og_type": "website", "og_image": og_image(), "og_title": esc(title),
+            "site_name": esc(SITE["title"]), "twitter": SITE["twitter"],
+            "locale": SITE["locale"], "jsonld": "{}", "nav": nav_html(),
+            "body_class": "is-page", "content": body,
+            "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
+        }), encoding="utf-8")
+
     # ---- 404
     (DIST / "404.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"Not found | {SITE['title']}",
@@ -456,6 +670,9 @@ def build_site(posts: list):
     urls = [(SITE["url"] + "/", "1.0"), (SITE["url"] + "/archive/", "0.6"),
             (SITE["url"] + "/about/", "0.5")]
     urls += [(p["url"], "0.8") for p in posts]
+    urls += [(f"{SITE['url']}/category/{c}/", "0.7") for c in CATEGORIES
+             if any(p["category"] == c for p in posts)]
+    urls += [(f"{SITE['url']}/{s}/", "0.3") for s, *_ in legal_pages()]
     lastmod = max((p["dt"] for p in posts), default=datetime.now()).date()
     entries = "\n".join(
         f"  <url><loc>{u}</loc><lastmod>{lastmod}</lastmod><priority>{pr}</priority></url>"
