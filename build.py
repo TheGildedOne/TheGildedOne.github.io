@@ -32,7 +32,7 @@ SITE = {
         "Mystery cults, forbidden rites and lost knowledge from the ancient world "
         "— researched carefully, told honestly, and never tidier than the evidence allows."
     ),
-    "url": "https://thegildedone.github.io",
+    "url": "https://veiledantiquity.com",
     "author": "Veiled Antiquity",
     "author_login": "admin",
     "author_email": "hello@veiledantiquity.com",
