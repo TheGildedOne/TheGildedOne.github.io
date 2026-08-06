@@ -22,6 +22,7 @@ ROOT = Path(__file__).parent
 POSTS_DIR = ROOT / "content" / "posts"
 TEMPLATES = ROOT / "templates"
 STATIC = ROOT / "static"
+PUBLIC = ROOT / "public"   # copied to the site root verbatim (verification files, etc.)
 DIST = ROOT / "dist"
 
 SITE = {
@@ -258,6 +259,8 @@ def build_site(posts: list):
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
     shutil.copytree(STATIC, DIST / "static")
+    if PUBLIC.exists():
+        shutil.copytree(PUBLIC, DIST, dirs_exist_ok=True)
 
     base = load_template("base.html")
     post_tpl = load_template("post.html")

@@ -8,7 +8,12 @@ from pathlib import Path
 DIST = Path(__file__).parent / "dist"
 errors, checked = [], 0
 
-pages = sorted(DIST.rglob("*.html"))
+# Files dropped in public/ land at the site root untouched (search-engine
+# verification files and the like). They are not pages and have no SEO tags,
+# so they are not validated as pages.
+GENERATED_AT_ROOT = {"index.html", "404.html"}
+pages = [p for p in sorted(DIST.rglob("*.html"))
+         if p.parent != DIST or p.name in GENERATED_AT_ROOT]
 posts_dir = DIST / "posts"
 slugs = {p.name for p in posts_dir.iterdir() if p.is_dir()} if posts_dir.exists() else set()
 
