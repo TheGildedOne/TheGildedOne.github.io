@@ -9,7 +9,7 @@
   <title>Veiled Antiquity</title>
   <link>https://thegildedone.github.io</link>
   <description>Mystery cults, forbidden rites and lost knowledge from the ancient world — researched carefully, told honestly, and never tidier than the evidence allows.</description>
-  <pubDate>Thu, 06 Aug 2026 15:54:05 +0000</pubDate>
+  <pubDate>Thu, 06 Aug 2026 16:41:51 +0000</pubDate>
   <language>en-US</language>
   <wp:wxr_version>1.2</wp:wxr_version>
   <wp:base_site_url>https://thegildedone.github.io</wp:base_site_url>
@@ -82,120 +82,115 @@
   <wp:tag><wp:term_id>155</wp:term_id><wp:tag_slug>tauroctony</wp:tag_slug><wp:tag_name><![CDATA[Tauroctony]]></wp:tag_name></wp:tag>
   <wp:tag><wp:term_id>156</wp:term_id><wp:tag_slug>villa-of-the-mysteries</wp:tag_slug><wp:tag_name><![CDATA[Villa of the Mysteries]]></wp:tag_name></wp:tag>
   <item>
-    <title>Mystery Cults of the Ancient World: A Guide to the Rites Nobody Wrote Down</title>
+    <title>Mystery Cults of the Ancient World: The Secret Nobody Ever Spilled</title>
     <link>https://thegildedone.github.io/posts/ancient-mystery-cults-guide/</link>
     <pubDate>Thu, 06 Aug 2026 00:01:00 +0000</pubDate>
     <dc:creator><![CDATA[admin]]></dc:creator>
     <guid isPermaLink="false">https://thegildedone.github.io/?p=2</guid>
     <description></description>
-    <content:encoded><![CDATA[<p>There is a particular kind of silence in the historical record, and it is not the silence of things forgotten. It is the silence of things withheld.</p>
+    <content:encoded><![CDATA[<p>In 415 BCE a young Athenian aristocrat named Alcibiades allegedly did an impression of a priest at a dinner party. Within months Athens had recalled its most capable general from the largest military expedition in its history, condemned him to death in absentia, and driven him into the arms of Sparta.</p>
 
-<p>Across roughly a thousand years, from the Greek archaic period into the late Roman Empire, an enormous number of people &mdash; hundreds of thousands at minimum, quite possibly millions &mdash; underwent secret initiation ceremonies at sanctuaries scattered around the Mediterranean. At Eleusis, fourteen miles from Athens, the ceremony ran annually for something close to two millennia. Emperors were initiated. Playwrights were initiated. Slaves were initiated. And in all that time, from all those people, not one surviving text tells us what happened in the central rite.</p>
+<p>The impression was of the Eleusinian Mysteries. Performing them outside the sanctuary, for laughs, in front of the uninitiated, was a capital offence &mdash; and the city took it seriously enough to wreck its own war effort over it.</p>
 
-<p>That is remarkable, and it is worth sitting with before reaching for explanations. Ancient Mediterranean people were prolific gossips and enthusiastic writers. They recorded recipes, laundry lists, insults scratched on walls, and the exact dimensions of their neighbours' property disputes. But on this, the discipline held.</p>
+<p>That is the thing worth understanding about the mystery cults. Not that they were secret. That the secret <em>held</em>, for two thousand years, in a civilisation of enthusiastic gossips who wrote down absolutely everything else, including their laundry and their insults.</p>
 
-<h2 id="what-mystery-cult-means">What a mystery cult actually was</h2>
+<h2 id="what-they-were">What a mystery cult actually was</h2>
 
-<p>The word does a lot of work, and most of the confusion around this subject starts with it.</p>
+<p>The word misleads. <em>Mystēria</em> comes from <em>myein</em> &mdash; to close, as in the eyes or the mouth. An initiate was a <em>mystēs</em>: one who keeps shut. There's no puzzle implied, no riddle to solve. The name just means <em>the things you don't talk about</em>.</p>
 
-<p><strong>Mystēria</strong> comes from the verb <em>myein</em>, meaning to close &mdash; the eyes, or the mouth. An initiate was a <em>mystēs</em>, one who has been closed. There is no implication of a puzzle to be solved, which is what the English word now suggests. The ancient sense is closer to <em>the closed things</em>, or <em>the things one shuts up about</em>. The secrecy is not a feature of the mysteries. It is their definition.</p>
-
-<p>Structurally, a mystery cult had four properties that set it apart from ordinary civic religion:</p>
+<p>Four features set them apart from normal Greek and Roman religion:</p>
 
 <ul>
-  <li><strong>It was chosen, not inherited.</strong> You were born into the cult of Athena Polias as an Athenian. You <em>applied</em> to Eleusis.</li>
-  <li><strong>It had a threshold.</strong> There was a before and an after, marked by a ceremony, and the ceremony changed your status permanently.</li>
-  <li><strong>It was secret in a specific and enforced way.</strong> Not vague, not merely private &mdash; disclosure carried real penalties, up to death.</li>
-  <li><strong>It usually promised something personal.</strong> Not the health of the city or good weather for the crops, but something for <em>you</em>, generally concerning your condition after death.</li>
+  <li><strong>You chose it.</strong> You were born into the cult of Athena. You <em>applied</em> to Eleusis.</li>
+  <li><strong>There was a threshold.</strong> A before and an after, and a ceremony in between that changed your status permanently.</li>
+  <li><strong>Talking was punished.</strong> Sometimes with death, as Alcibiades discovered.</li>
+  <li><strong>It promised you something personally.</strong> Not good harvests for the city &mdash; something for <em>you</em>, usually concerning what happened after you died.</li>
 </ul>
 
-<p>That last point is the one that made these cults matter. Traditional Greek religion offered a bleak afterlife &mdash; Homer's dead are gibbering shades, and Achilles famously says he would rather be a living farmhand than king of the dead. The mysteries offered an alternative. Not immortality exactly, but a better position. A different footing.</p>
+<p>That last one is why anyone bothered. Homer's afterlife is grim: the dead are gibbering shades, and Achilles says outright he'd rather be a living farmhand than king of the corpses. The mysteries offered a different deal.</p>
 
-<div class="aside">
-  <span class="aside-label">A note on what this site will not do</span>
-  <p>Because the central secrets were kept, the topic attracts a great deal of confident invention. You will find books claiming to reveal the Eleusinian rite in detail, usually assembled from late Christian polemic and a great deal of imagination. Where the evidence stops, this piece stops. That happens more than once below, and each time it is marked.</p>
-</div>
+<h2 id="eleusis">Eleusis, where everybody went</h2>
 
-<h2 id="eleusis">Eleusis: the one everybody went to</h2>
+<p>The Eleusinian Mysteries ran annually for something close to two millennia and were about as fringe as a national holiday. Athens administered them. Hadrian was initiated. Marcus Aurelius was initiated.</p>
 
-<p>The Eleusinian Mysteries were the largest and longest-running of them, and they were not a fringe operation. They were a state institution of Athens, administered by two hereditary priestly families &mdash; the Eumolpidae, who supplied the <em>hierophant</em> or revealer of holy things, and the Kerykes, who supplied the torchbearer and the sacred herald.</p>
+<p>And so, remarkably, was almost anyone else who asked. The requirements were that you spoke enough Greek to follow along and hadn't committed an unpurified murder. Women qualified. Enslaved people qualified. Foreigners qualified. In a world built almost entirely on exclusion, Eleusis charged a modest fee and let in nearly everyone.</p>
 
-<p>Admission was startlingly open by ancient standards. Essentially anyone could be initiated who could speak Greek well enough to understand the ritual and who was not polluted by unavenged murder. Women were admitted. Enslaved people were admitted. Foreigners were admitted. In a world organised almost entirely around exclusion &mdash; by birth, by gender, by citizenship &mdash; Eleusis let in nearly everyone, and charged a modest fee.</p>
+<p>The build-up is well documented, because none of it was secret: a nine-day festival, a fast, a bath in the sea clutching a piglet, and a fourteen-mile torchlit procession during which masked strangers stood on a bridge and shouted obscenities at you.</p>
 
-<p>The public parts are well documented. In the month of Boedromion, roughly September, sacred objects were carried from Eleusis to Athens. The candidates purified themselves in the sea at Phaleron, each with a piglet. There was a fast. There was a procession of many thousands back along the Sacred Way, fourteen miles, arriving after dark with torches, with ritual obscenities shouted at a specific bridge. And then the initiates entered the <strong>Telesterion</strong> &mdash; a vast square hall, unlike any other Greek religious building, with tiered steps around the walls and a small structure at the centre called the Anaktoron that only the hierophant could enter.</p>
+<p>Then several thousand exhausted, starving, thoroughly primed people filed into a vast dark hall called the Telesterion.</p>
 
-<p>What happened in that hall is the single most successfully kept secret in European history. <a href="/posts/eleusinian-mysteries-telesterion/">The evidence for what went on inside is worth examining closely</a>, because the honest answer is more interesting than the theories.</p>
+<p>What happened next is the best-kept secret in European history. <a href="/posts/eleusinian-mysteries-telesterion/">The evidence for what went on in that hall</a> is thinner and stranger than most accounts admit.</p>
 
-<h2 id="dionysus">Dionysus and the Bacchanalia: the mystery Rome was afraid of</h2>
+<h2 id="dionysus">Dionysus, and the cult Rome panicked about</h2>
 
-<p>If Eleusis shows the mysteries at their most respectable, the Bacchic cults show what happened when the Roman state decided a mystery had become a threat.</p>
+<p>In 186 BCE the Roman Senate decided that Bacchic worship was a conspiracy against the state and moved against it with startling violence. Livy, writing much later and clearly enjoying himself, describes nocturnal orgies, forged wills, poisonings and murder. Thousands were executed.</p>
 
-<p>Dionysiac worship was ancient, widespread, and internally varied &mdash; less a single institution than a family of local practices centred on wine, ecstatic release, and a god who dissolved boundaries. In 186 BCE the Roman Senate moved against it. According to Livy, writing about a century and a half later and clearly relishing the material, the authorities uncovered a vast conspiracy operating in secret across Italy: nocturnal meetings, mixed sexes, forged wills, poisonings, murder.</p>
+<p>We don't have to take his word for it, which is the interesting part. The Senate's actual decree survives on a bronze tablet &mdash; and it is far more revealing than Livy's scandal-mongering. What it bans is not debauchery. It bans <em>organisation</em>: shared funds, common oaths, officers, and meetings of more than five people.</p>
 
-<p>The repression was severe. Livy reports that more people were executed than imprisoned, and the numbers involved ran into thousands. Crucially, we are not dependent on his account alone. A bronze tablet survives &mdash; the <em>Senatus consultum de Bacchanalibus</em> &mdash; carrying the Senate's actual decree, in archaic Latin, ordering the dismantling of Bacchic shrines and forbidding the cult without express senatorial permission.</p>
+<p>Rome wasn't frightened of ecstasy. Rome was frightened of a membership list it didn't control.</p>
 
-<p>The decree is more revealing than Livy's scandal-mongering. What the Senate legislated against was not debauchery. It was <em>organisation</em>: shared funds, common oaths, officers, and meetings of more than five people. Rome was not frightened of ecstasy. Rome was frightened of a structure it did not control.</p>
+<h2 id="mithras">Mithras, the cult we can see and can't read</h2>
 
-<h2 id="mithras">Mithras: the cult with a ladder</h2>
+<p>Mithraism is the one we have the most of and understand the least.</p>
 
-<p>Mithraism is the mystery cult we can see most clearly and understand least, which is a strange combination.</p>
+<p>Hundreds of its temples have been excavated, from Syria to Hadrian's Wall &mdash; small, deliberately cave-like rooms with benches down each side, seating maybe thirty men. It was male-only, it travelled with the army, and it had seven ranks of membership: Raven, Bridegroom, Soldier, Lion, Persian, Sun-Runner, Father.</p>
 
-<p>We have the archaeology in abundance. Hundreds of <em>mithraea</em> have been excavated from Syria to the Scottish border &mdash; small, deliberately cave-like rooms with benches down each side, seating perhaps twenty to forty men. We know it was male-only, that it spread with the army and the customs service through the second to fourth centuries CE, and that it had seven graded ranks of membership: Raven, Bridegroom, Soldier, Lion, Persian, Sun-Runner, and Father. A mosaic floor at Ostia lays the grades out in sequence, and painted inscriptions at Santa Prisca in Rome confirm them.</p>
+<p>And in essentially every one of them, the same picture: a young man in a Phrygian cap kneeling on a bull, yanking its head back, knifing it in the neck. A dog and a snake drink the blood. A scorpion grips the bull's testicles. A raven watches.</p>
 
-<p>And in essentially every mithraeum, the same image: a young man in a Phrygian cap kneeling on a bull, pulling its head back, driving a knife into its neck. A dog and a snake drink the blood. A scorpion grips the bull's testicles. A raven watches.</p>
+<p>Hundreds of copies. Not one line of explanation from anyone who believed it. <a href="/posts/mithras-tauroctony-decoded/">The attempts to decode it</a> range from ingenious to wishful.</p>
 
-<p>We have hundreds of these. We have no text explaining what it means. Every mithraeum had a shrine, an initiation, and a doctrine, and not one word of that doctrine survives from an insider. <a href="/posts/mithras-tauroctony-decoded/">The leading modern attempts to decode the bull-slaying scene</a> are ingenious, contested, and unresolved.</p>
+<h2 id="isis">Isis, and the man who almost told us</h2>
 
-<h2 id="isis">Isis: the initiation someone almost described</h2>
+<p>Isis travelled better than any other Egyptian deity, and by the imperial period her cult had a full initiation structure and sanctuaries from Alexandria to Britain.</p>
 
-<p>The Egyptian goddess Isis travelled extraordinarily well. By the imperial period her sanctuaries stood from Egypt to Britain, and her cult had acquired a full mystery structure with graded initiations.</p>
+<p>It also produced the one thing missing everywhere else: an eyewitness account. In Book 11 of Apuleius's novel, the narrator Lucius is initiated, and describes everything &mdash; the dream summons, the ten days of abstinence, the ritual bath, the linen robes.</p>
 
-<p>It also produced the one thing missing everywhere else: a first-person account. In Book 11 of Apuleius's novel <em>Metamorphoses</em>, the narrator Lucius is initiated at Cenchreae, and describes the run-up in careful detail &mdash; the summons in a dream, the ten days of abstinence, the ritual bath, the linen robes, the night in the sanctuary.</p>
+<p>Then he stops dead. He tells the reader he'd say more if he could, that it would burn their ears to hear it, and that he won't. All he offers is a handful of images: he reached the edge of death, crossed a threshold, and saw the sun blazing at midnight.</p>
 
-<p>Then he stops. He tells the reader directly that he would say more if it were permitted, that their ears would burn to hear it, and that he must not. What he offers instead is a handful of deliberately opaque images: that he reached the boundary of death, crossed the threshold of Proserpina, was carried through the elements, and saw the sun blazing at midnight.</p>
+<p>It's fiction, so it isn't testimony. But Apuleius was a real initiate of several cults and said so at his own trial. He knew exactly what he was refusing to write &mdash; in a novel, where nothing was forcing him.</p>
 
-<p>It is a novel, and Lucius is a fictional character, so we cannot treat it as testimony. But Apuleius was himself an initiate of several cults and said so publicly at his own trial for magic. He knew what he was refusing to say. The refusal, in a work of fiction where nothing compelled it, is itself a piece of evidence about how seriously the obligation was held.</p>
+<h2 id="orphics">The Orphics, who left the instructions in the grave</h2>
 
-<h2 id="orphics">The Orphics: the ones who left instructions</h2>
+<p>One group did write things down, just not in books.</p>
 
-<p>Then there is the strand that did leave writing &mdash; not in books, but in graves.</p>
+<p>Around forty sheets of gold leaf have been recovered from burials across the Greek world, some no bigger than a thumbnail, folded and placed with the dead. They aren't prayers. They're directions: which spring to avoid, which to drink from, what to say when something stops you and asks who you are.</p>
 
-<p>Around forty thin gold sheets have been recovered from burials across the Greek world, from Thessaly to southern Italy to Crete, dating between roughly the fifth century BCE and the second CE. They are small, some no bigger than a thumbnail, folded and placed with the dead. They carry instructions for what to do in the underworld: which spring to avoid, which to drink from, what to say to the guardians, and what to claim about your own nature when challenged.</p>
+<p><a href="/posts/orphic-gold-tablets/">They are the closest thing we have to a leaked document</a> &mdash; and they only leaked because they were buried.</p>
 
-<p>These are not literature. They are equipment. <a href="/posts/orphic-gold-tablets/">Read closely, they tell us something the other cults keep hidden</a> &mdash; not the content of a rite, but the shape of what an initiate expected to happen next.</p>
+<h2 id="why-it-held">Why nobody talked</h2>
 
-<h2 id="why-secret-held">Why the secret held</h2>
+<p>Fear explains some of it. Athens really would execute you.</p>
 
-<p>The usual explanation is fear of punishment, and the punishment was real. Disclosure of the Eleusinian Mysteries was a capital offence at Athens. In 415 BCE, on the eve of the Sicilian expedition, Alcibiades was accused of performing the rites as entertainment at private parties; the resulting scandal was serious enough to help wreck an Athenian war effort and end in the profaners' condemnation.</p>
+<p>But fear is a thin explanation for two thousand years of compliance across dozens of jurisdictions, every social class, and hundreds of thousands of people, some of whom were emperors and none of whom needed the money.</p>
 
-<p>But fear alone is a weak explanation for two thousand years of compliance across dozens of jurisdictions and every social class. Something else was operating.</p>
+<p>The better answer may be Aristotle's. Initiates, he reportedly said, did not <em>learn</em> anything &mdash; they underwent something, and were put into a state.</p>
 
-<p>The likeliest answer is that the secret was not primarily <em>information</em>. Aristotle is reported to have said that initiates did not learn anything but rather experienced something and were put into a state. If that is right, then the prohibition on disclosure was not a security measure protecting a doctrine. It was a description of the thing itself. What happened in the Telesterion may not have been the sort of thing that survives being put into sentences &mdash; and the initiates, having been through it, would have known that better than anyone.</p>
+<p>If that's right, the ban on disclosure wasn't protecting a doctrine. It was describing the problem. Whatever happened in that hall may simply not have survived being put into sentences &mdash; and the people who went through it would have known that better than anyone.</p>
 
-<p>Which leaves us where the ancient sources leave us: outside the hall, in the dark, with the torches going in without us.</p>
+<p>Which leaves us where it left everyone else: outside, in the dark, watching the torches go in without us.</p>
 
 <h2>Questions people actually ask</h2>
 <h3>What were the ancient mystery cults?</h3>
-<p>Voluntary religious associations across the Greek and Roman world that admitted members through a secret initiation ceremony. Unlike civic religion, which you were born into, mystery cults were something you chose — and the central rite was forbidden to describe to outsiders.</p>
+<p>Voluntary religious societies across the Greek and Roman world that admitted members through a secret initiation. Unlike civic religion, which you were born into, a mystery cult was something you chose — and the central rite was forbidden to describe.</p>
 <h3>Why are they called &#x27;mysteries&#x27;?</h3>
-<p>From the Greek mystēria, related to the verb myein, &#x27;to close&#x27; — as in closing the eyes or the mouth. An initiate was a mystēs: one who has been closed, or one who keeps closed. The secrecy is built into the name itself.</p>
+<p>From the Greek mystēria, related to myein, &#x27;to close&#x27; — as in closing the eyes or the mouth. An initiate was a mystēs: one who keeps closed. The secrecy is baked into the name.</p>
 <h3>Do we know what happened during the initiations?</h3>
-<p>Partially, and unevenly. We know a great deal about the procession, the fasting, the preliminary rites and the physical spaces. The central revelation at Eleusis — the part that mattered most — was never recorded by anyone who saw it, and remains genuinely unknown.</p>
+<p>Partly. We know the processions, the fasting, the buildings, the preliminaries. The central revelation at Eleusis — the part that actually mattered — was never written down by anyone who saw it.</p>
 <h3>Were mystery cults illegal?</h3>
-<p>Mostly no. Eleusis was a state-sponsored institution of Athens. But Rome suppressed the Bacchanalia violently in 186 BCE, and later emperors moved against cults they saw as politically threatening. The mysteries were secret, not usually criminal.</p>
+<p>Usually not. Eleusis was a state institution of Athens. But Rome crushed the Bacchanalia in 186 BCE, and later emperors moved against cults they found politically threatening. Secret, yes. Criminal, mostly not.</p>
 <h3>When did the mystery cults end?</h3>
-<p>They were shut down by Christian emperors in the late fourth century CE. Theodosius I banned pagan cult practice in 391–392, and the sanctuary at Eleusis was sacked during Alaric&#x27;s invasion of Greece in 396, ending roughly two thousand years of continuous ritual.</p>
+<p>Christian emperors shut them down in the late fourth century CE. Theodosius I banned pagan cult practice in 391–392, and Eleusis was sacked during Alaric&#x27;s invasion in 396 — ending roughly two thousand years of continuous ritual.</p>
 
 <h2>Sources &amp; further reading</h2>
 <ul>
-<li>Walter Burkert, <em>Ancient Mystery Cults</em> (Harvard, 1987) &mdash; still the standard scholarly overview, and unusually readable.</li>
-<li>Hugh Bowden, <em>Mystery Cults of the Ancient World</em> (Princeton, 2010) &mdash; heavily illustrated, strong on archaeology over theory.</li>
-<li>Livy, <em>History of Rome</em> 39.8&ndash;19 &mdash; the Bacchanalian affair of 186 BCE, told by a hostile source.</li>
-<li>The <em>Senatus consultum de Bacchanalibus</em>, CIL I&sup2; 581 &mdash; the surviving bronze inscription of the Roman senate's decree, now in Vienna.</li>
-<li>Apuleius, <em>Metamorphoses</em> (<em>The Golden Ass</em>), Book 11 &mdash; the only sustained first-person account of an initiation that survives from antiquity.</li>
-<li>Pausanias, <em>Description of Greece</em> 1.38 &mdash; visits Eleusis, and stops himself from describing it.</li>
+<li>Walter Burkert, <em>Ancient Mystery Cults</em> (Harvard, 1987) &mdash; the standard overview, and unusually readable.</li>
+<li>Hugh Bowden, <em>Mystery Cults of the Ancient World</em> (Princeton, 2010) &mdash; strong on archaeology, heavily illustrated.</li>
+<li>Livy, <em>History of Rome</em> 39.8&ndash;19 &mdash; the Bacchanalian affair, from a thoroughly hostile source.</li>
+<li>The <em>Senatus consultum de Bacchanalibus</em>, CIL I&sup2; 581 &mdash; the Senate's actual decree, on bronze, now in Vienna.</li>
+<li>Apuleius, <em>Metamorphoses</em> Book 11 &mdash; the only first-person initiation account to survive antiquity.</li>
+<li>Thucydides 6.27&ndash;29, 60&ndash;61 &mdash; the Alcibiades scandal, and how far it escalated.</li>
 </ul>]]></content:encoded>
-    <excerpt:encoded><![CDATA[For a thousand years, hundreds of thousands of people were initiated into secret rites across the Mediterranean. Almost none of them talked. Here is what we actually know — and how we know it.]]></excerpt:encoded>
+    <excerpt:encoded><![CDATA[Hundreds of thousands of people were initiated. Emperors, playwrights, slaves. Over two thousand years, not one of them talked.]]></excerpt:encoded>
     <wp:post_id>2</wp:post_id>
     <wp:post_date><![CDATA[2026-08-06 00:01:00]]></wp:post_date>
     <wp:post_date_gmt><![CDATA[2026-08-06 00:01:00]]></wp:post_date_gmt>
@@ -218,10 +213,10 @@
       <category domain="post_tag" nicename="greece"><![CDATA[Greece]]></category>
       <category domain="post_tag" nicename="rome"><![CDATA[Rome]]></category>
       <wp:postmeta><wp:meta_key><![CDATA[_yoast_wpseo_title]]></wp:meta_key><wp:meta_value><![CDATA[Ancient Mystery Cults: The Complete Guide %%sep%% %%sitename%%]]></wp:meta_value></wp:postmeta>
-      <wp:postmeta><wp:meta_key><![CDATA[_yoast_wpseo_metadesc]]></wp:meta_key><wp:meta_value><![CDATA[A complete guide to the ancient mystery cults — Eleusis, Dionysus, Mithras, Isis and the Orphics: who joined, what happened inside, and why the secret held.]]></wp:meta_value></wp:postmeta>
+      <wp:postmeta><wp:meta_key><![CDATA[_yoast_wpseo_metadesc]]></wp:meta_key><wp:meta_value><![CDATA[A guide to the ancient mystery cults — Eleusis, Dionysus, Mithras, Isis and the Orphics. Who joined, what we know, and how the secret held for two millennia.]]></wp:meta_value></wp:postmeta>
       <wp:postmeta><wp:meta_key><![CDATA[_yoast_wpseo_focuskw]]></wp:meta_key><wp:meta_value><![CDATA[ancient mystery cults]]></wp:meta_value></wp:postmeta>
       <wp:postmeta><wp:meta_key><![CDATA[rank_math_title]]></wp:meta_key><wp:meta_value><![CDATA[Ancient Mystery Cults: The Complete Guide %sep% %sitename%]]></wp:meta_value></wp:postmeta>
-      <wp:postmeta><wp:meta_key><![CDATA[rank_math_description]]></wp:meta_key><wp:meta_value><![CDATA[A complete guide to the ancient mystery cults — Eleusis, Dionysus, Mithras, Isis and the Orphics: who joined, what happened inside, and why the secret held.]]></wp:meta_value></wp:postmeta>
+      <wp:postmeta><wp:meta_key><![CDATA[rank_math_description]]></wp:meta_key><wp:meta_value><![CDATA[A guide to the ancient mystery cults — Eleusis, Dionysus, Mithras, Isis and the Orphics. Who joined, what we know, and how the secret held for two millennia.]]></wp:meta_value></wp:postmeta>
       <wp:postmeta><wp:meta_key><![CDATA[rank_math_focus_keyword]]></wp:meta_key><wp:meta_value><![CDATA[ancient mystery cults]]></wp:meta_value></wp:postmeta>
   </item>
   <item>

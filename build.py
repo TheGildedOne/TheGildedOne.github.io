@@ -384,19 +384,12 @@ def build_site(posts: list):
     }), encoding="utf-8")
 
     # ---- about
-    about_body = """<header class="page-head"><h1>About Veiled Antiquity</h1></header>
+    about_body = """<header class="page-head"><h1>About</h1></header>
 <p class="lede">This site is about the parts of the ancient world that were deliberately kept quiet.</p>
-<p>Not the evil parts &mdash; the closed ones. The rites you had to be admitted to. The books that were kept sealed and consulted only by permission of the Senate. The names chiselled off monuments by people who wanted them forgotten. The spells written on lead and buried where no one was meant to dig.</p>
-<p>Ancient people were not naive, and they were not us in costume. They built enormous institutions around secrecy, and they were disciplined enough that some of those secrets have genuinely never been recovered. That is the interesting part, and it is the part most writing on this subject rushes past on the way to a theory.</p>
-<h2>How this is written</h2>
-<p>Three rules, applied to every piece:</p>
-<ol>
-  <li><strong>The evidence comes first, and it is named.</strong> Where a claim rests on a single line of Pausanias, or on one excavation report, the piece says so.</li>
-  <li><strong>&ldquo;We don't know&rdquo; is an acceptable ending.</strong> The Eleusinian secret was kept. No amount of atmosphere changes that, and pretending otherwise would be a worse story than the truth.</li>
-  <li><strong>Speculation is labelled as speculation.</strong> Where a hypothesis is contested &mdash; and in this field many are &mdash; the disagreement is part of the article, not an inconvenience buried in a footnote.</li>
-</ol>
-<h2>Schedule</h2>
-<p>New pieces publish Monday, Wednesday and Friday.</p>"""
+<p>Not the evil parts &mdash; the closed ones. Rites you had to be admitted to. Books kept sealed and opened only by vote of the Senate. Names chiselled off monuments by people who wanted them forgotten. Curses written on lead and buried where nobody was meant to dig.</p>
+<p>Ancient people were not naive, and they were not us in fancy dress. They built enormous institutions around secrecy and were disciplined enough that some of those secrets have never been recovered. That's the good part, and it's the part most writing on this subject sprints past on its way to a theory.</p>
+<p>So: sources get named. Where something is genuinely unknown, it says so and stops. Where scholars are still fighting about it, the fight is in the article rather than buried in a footnote. It turns out &ldquo;nobody knows&rdquo; is usually a better story than whatever gets invented to replace it.</p>
+<p>New pieces on Monday, Wednesday and Friday.</p>"""
 
     (DIST / "about").mkdir(parents=True, exist_ok=True)
     (DIST / "about" / "index.html").write_text(render(base, {
