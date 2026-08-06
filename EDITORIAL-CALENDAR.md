@@ -7,7 +7,7 @@ so WordPress releases them automatically.
 
 | Date | Day | Post | Category | Words |
 |---|---|---|---|---|
-| 7 Aug 2026 | Fri | Mystery Cults of the Ancient World *(pillar)* | Mystery Cults | 1,650 |
+| 6 Aug 2026 | Thu | Mystery Cults of the Ancient World *(pillar)* | Mystery Cults | 1,650 |
 | 10 Aug | Mon | The Eleusinian Mysteries: Inside the Telesterion | Mystery Cults | 1,500 |
 | 12 Aug | Wed | The Kykeon Question: Was It Psychedelic? | Mystery Cults | 1,350 |
 | 14 Aug | Fri | The Orphic Gold Tablets | Mystery Cults | 1,300 |
