@@ -56,7 +56,7 @@ MONETISATION = {
     "newsletter_action": "",
     # Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX". Ad networks
     # expect to see analytics; you also cannot tune what you cannot measure.
-    "ga4_id": "",
+    "ga4_id": "G-XFGE382VWT",
     # Plausible domain, if you prefer a cookie-free alternative to GA4.
     "plausible_domain": "",
     "contact_email": "hello@veiledantiquity.com",
