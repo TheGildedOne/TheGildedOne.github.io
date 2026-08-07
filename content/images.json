@@ -9,7 +9,12 @@
     "width": 1400,
     "height": 1821,
     "card": "/static/img/ancient-mystery-cults-guide-card.jpg",
-    "share": "/static/img/ancient-mystery-cults-guide-share.jpg"
+    "share": "/static/img/ancient-mystery-cults-guide-share.jpg",
+    "avif": "/static/img/ancient-mystery-cults-guide.avif",
+    "webp": "/static/img/ancient-mystery-cults-guide.webp",
+    "card_avif": "/static/img/ancient-mystery-cults-guide-card.avif",
+    "card_webp": "/static/img/ancient-mystery-cults-guide-card.webp",
+    "avif_700": "/static/img/ancient-mystery-cults-guide-700.avif"
   },
   "eleusinian-mysteries-telesterion": {
     "file": "/static/img/eleusinian-mysteries-telesterion.jpg",
@@ -21,7 +26,12 @@
     "width": 1400,
     "height": 933,
     "card": "/static/img/eleusinian-mysteries-telesterion-card.jpg",
-    "share": "/static/img/eleusinian-mysteries-telesterion-share.jpg"
+    "share": "/static/img/eleusinian-mysteries-telesterion-share.jpg",
+    "avif": "/static/img/eleusinian-mysteries-telesterion.avif",
+    "webp": "/static/img/eleusinian-mysteries-telesterion.webp",
+    "card_avif": "/static/img/eleusinian-mysteries-telesterion-card.avif",
+    "card_webp": "/static/img/eleusinian-mysteries-telesterion-card.webp",
+    "avif_700": "/static/img/eleusinian-mysteries-telesterion-700.avif"
   },
   "eleusinian-kykeon-psychedelic": {
     "file": "/static/img/eleusinian-kykeon-psychedelic.jpg",
@@ -33,7 +43,12 @@
     "width": 1400,
     "height": 937,
     "card": "/static/img/eleusinian-kykeon-psychedelic-card.jpg",
-    "share": "/static/img/eleusinian-kykeon-psychedelic-share.jpg"
+    "share": "/static/img/eleusinian-kykeon-psychedelic-share.jpg",
+    "avif": "/static/img/eleusinian-kykeon-psychedelic.avif",
+    "webp": "/static/img/eleusinian-kykeon-psychedelic.webp",
+    "card_avif": "/static/img/eleusinian-kykeon-psychedelic-card.avif",
+    "card_webp": "/static/img/eleusinian-kykeon-psychedelic-card.webp",
+    "avif_700": "/static/img/eleusinian-kykeon-psychedelic-700.avif"
   },
   "orphic-gold-tablets": {
     "file": "/static/img/orphic-gold-tablets.jpg",
@@ -45,7 +60,12 @@
     "width": 1400,
     "height": 1050,
     "card": "/static/img/orphic-gold-tablets-card.jpg",
-    "share": "/static/img/orphic-gold-tablets-share.jpg"
+    "share": "/static/img/orphic-gold-tablets-share.jpg",
+    "avif": "/static/img/orphic-gold-tablets.avif",
+    "webp": "/static/img/orphic-gold-tablets.webp",
+    "card_avif": "/static/img/orphic-gold-tablets-card.avif",
+    "card_webp": "/static/img/orphic-gold-tablets-card.webp",
+    "avif_700": "/static/img/orphic-gold-tablets-700.avif"
   },
   "mithras-tauroctony-decoded": {
     "file": "/static/img/mithras-tauroctony-decoded.jpg",
@@ -57,7 +77,12 @@
     "width": 1400,
     "height": 1237,
     "card": "/static/img/mithras-tauroctony-decoded-card.jpg",
-    "share": "/static/img/mithras-tauroctony-decoded-share.jpg"
+    "share": "/static/img/mithras-tauroctony-decoded-share.jpg",
+    "avif": "/static/img/mithras-tauroctony-decoded.avif",
+    "webp": "/static/img/mithras-tauroctony-decoded.webp",
+    "card_avif": "/static/img/mithras-tauroctony-decoded-card.avif",
+    "card_webp": "/static/img/mithras-tauroctony-decoded-card.webp",
+    "avif_700": "/static/img/mithras-tauroctony-decoded-700.avif"
   },
   "villa-of-the-mysteries-frescoes": {
     "file": "/static/img/villa-of-the-mysteries-frescoes.jpg",
@@ -69,7 +94,12 @@
     "width": 1400,
     "height": 462,
     "card": "/static/img/villa-of-the-mysteries-frescoes-card.jpg",
-    "share": "/static/img/villa-of-the-mysteries-frescoes-share.jpg"
+    "share": "/static/img/villa-of-the-mysteries-frescoes-share.jpg",
+    "avif": "/static/img/villa-of-the-mysteries-frescoes.avif",
+    "webp": "/static/img/villa-of-the-mysteries-frescoes.webp",
+    "card_avif": "/static/img/villa-of-the-mysteries-frescoes-card.avif",
+    "card_webp": "/static/img/villa-of-the-mysteries-frescoes-card.webp",
+    "avif_700": "/static/img/villa-of-the-mysteries-frescoes-700.avif"
   },
   "greek-magical-papyri": {
     "file": "/static/img/greek-magical-papyri.jpg",
@@ -81,7 +111,12 @@
     "width": 1400,
     "height": 1050,
     "card": "/static/img/greek-magical-papyri-card.jpg",
-    "share": "/static/img/greek-magical-papyri-share.jpg"
+    "share": "/static/img/greek-magical-papyri-share.jpg",
+    "avif": "/static/img/greek-magical-papyri.avif",
+    "webp": "/static/img/greek-magical-papyri.webp",
+    "card_avif": "/static/img/greek-magical-papyri-card.avif",
+    "card_webp": "/static/img/greek-magical-papyri-card.webp",
+    "avif_700": "/static/img/greek-magical-papyri-700.avif"
   },
   "ancient-curse-tablets": {
     "file": "/static/img/ancient-curse-tablets.jpg",
@@ -93,7 +128,12 @@
     "width": 1400,
     "height": 933,
     "card": "/static/img/ancient-curse-tablets-card.jpg",
-    "share": "/static/img/ancient-curse-tablets-share.jpg"
+    "share": "/static/img/ancient-curse-tablets-share.jpg",
+    "avif": "/static/img/ancient-curse-tablets.avif",
+    "webp": "/static/img/ancient-curse-tablets.webp",
+    "card_avif": "/static/img/ancient-curse-tablets-card.avif",
+    "card_webp": "/static/img/ancient-curse-tablets-card.webp",
+    "avif_700": "/static/img/ancient-curse-tablets-700.avif"
   },
   "sibylline-books-rome": {
     "file": "/static/img/sibylline-books-rome.jpg",
@@ -105,7 +145,12 @@
     "width": 1400,
     "height": 928,
     "card": "/static/img/sibylline-books-rome-card.jpg",
-    "share": "/static/img/sibylline-books-rome-share.jpg"
+    "share": "/static/img/sibylline-books-rome-share.jpg",
+    "avif": "/static/img/sibylline-books-rome.avif",
+    "webp": "/static/img/sibylline-books-rome.webp",
+    "card_avif": "/static/img/sibylline-books-rome-card.avif",
+    "card_webp": "/static/img/sibylline-books-rome-card.webp",
+    "avif_700": "/static/img/sibylline-books-rome-700.avif"
   },
   "damnatio-memoriae": {
     "file": "/static/img/damnatio-memoriae.jpg",
@@ -117,7 +162,12 @@
     "width": 1400,
     "height": 1399,
     "card": "/static/img/damnatio-memoriae-card.jpg",
-    "share": "/static/img/damnatio-memoriae-share.jpg"
+    "share": "/static/img/damnatio-memoriae-share.jpg",
+    "avif": "/static/img/damnatio-memoriae.avif",
+    "webp": "/static/img/damnatio-memoriae.webp",
+    "card_avif": "/static/img/damnatio-memoriae-card.avif",
+    "card_webp": "/static/img/damnatio-memoriae-card.webp",
+    "avif_700": "/static/img/damnatio-memoriae-700.avif"
   },
   "library-of-alexandria-what-was-lost": {
     "file": "/static/img/library-of-alexandria-what-was-lost.jpg",
@@ -129,7 +179,12 @@
     "width": 1400,
     "height": 1050,
     "card": "/static/img/library-of-alexandria-what-was-lost-card.jpg",
-    "share": "/static/img/library-of-alexandria-what-was-lost-share.jpg"
+    "share": "/static/img/library-of-alexandria-what-was-lost-share.jpg",
+    "avif": "/static/img/library-of-alexandria-what-was-lost.avif",
+    "webp": "/static/img/library-of-alexandria-what-was-lost.webp",
+    "card_avif": "/static/img/library-of-alexandria-what-was-lost-card.avif",
+    "card_webp": "/static/img/library-of-alexandria-what-was-lost-card.webp",
+    "avif_700": "/static/img/library-of-alexandria-what-was-lost-700.avif"
   },
   "oracle-of-the-dead-ephyra": {
     "file": "/static/img/oracle-of-the-dead-ephyra.jpg",
@@ -141,7 +196,12 @@
     "width": 1400,
     "height": 930,
     "card": "/static/img/oracle-of-the-dead-ephyra-card.jpg",
-    "share": "/static/img/oracle-of-the-dead-ephyra-share.jpg"
+    "share": "/static/img/oracle-of-the-dead-ephyra-share.jpg",
+    "avif": "/static/img/oracle-of-the-dead-ephyra.avif",
+    "webp": "/static/img/oracle-of-the-dead-ephyra.webp",
+    "card_avif": "/static/img/oracle-of-the-dead-ephyra-card.avif",
+    "card_webp": "/static/img/oracle-of-the-dead-ephyra-card.webp",
+    "avif_700": "/static/img/oracle-of-the-dead-ephyra-700.avif"
   },
   "piacenza-liver-etruscan": {
     "file": "/static/img/piacenza-liver-etruscan.jpg",
@@ -153,6 +213,11 @@
     "width": 1400,
     "height": 926,
     "card": "/static/img/piacenza-liver-etruscan-card.jpg",
-    "share": "/static/img/piacenza-liver-etruscan-share.jpg"
+    "share": "/static/img/piacenza-liver-etruscan-share.jpg",
+    "avif": "/static/img/piacenza-liver-etruscan.avif",
+    "webp": "/static/img/piacenza-liver-etruscan.webp",
+    "card_avif": "/static/img/piacenza-liver-etruscan-card.avif",
+    "card_webp": "/static/img/piacenza-liver-etruscan-card.webp",
+    "avif_700": "/static/img/piacenza-liver-etruscan-700.avif"
   }
 }

@@ -60,6 +60,14 @@ for page in pages:
         if 'width="' not in tag or 'height="' not in tag:
             errors.append(f"{rel}: <img> missing width/height ({src.group(1)})")
 
+    # 3b. every srcset candidate resolves (a typo here fails silently in the browser)
+    for srcset in re.findall(r'srcset="([^"]+)"', html):
+        for candidate in srcset.split(","):
+            url = candidate.strip().split()[0]
+            checked += 1
+            if url.startswith("/") and not (DIST / url.lstrip("/")).exists():
+                errors.append(f"{rel}: missing srcset image {url}")
+
     # 4. social preview image is an absolute URL that exists locally
     og = re.search(r'<meta property="og:image" content="([^"]+)"', html)
     if og:

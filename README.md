@@ -1,163 +1,97 @@
 # Veiled Antiquity
 
-A complete, ready-to-launch blog about the hidden parts of ancient history — mystery
-cults, forbidden rites, suppressed knowledge.
+A blog about the deliberately hidden parts of ancient history — mystery cults, forbidden
+rites, suppressed knowledge.
 
-**13 posts written. ~16,700 words. Scheduled 3x/week from 7 August to 4 September 2026.**
-
-Everything here is built and tested. You need to do one thing I can't do for you:
-create the account. That's it.
+**Live at [veiledantiquity.com](https://veiledantiquity.com).** It writes and publishes
+itself; the sections below are for when you want to change something.
 
 ---
 
-## What's in this folder
+## How it runs
 
-| Thing | What it is |
+| What | When | Where |
+|---|---|---|
+| **Publishing** | Mon / Wed / Fri, 09:05 UTC | GitHub Actions — rebuilds and deploys; posts appear on their own date |
+| **Writing** | Saturdays, 10:00 local | A scheduled Claude task following `WRITING-LOOP.md` |
+| **Indexing** | every deploy | Sitemap + IndexNow ping to Bing |
+
+Nothing here needs a person. Posts are committed with **future dates** and `build.py --live`
+holds them back until due, so there are always several days between a post being written and
+anyone reading it.
+
+---
+
+## Layout
+
+| Path | What it is |
 |---|---|
-| `dist/` | The complete website. 17 pages. Open `dist/index.html` to look at it right now. |
-| `wordpress-import.xml` | Every post, ready to upload to WordPress. Pre-scheduled. |
-| `content/posts/` | The 13 posts as source files. Edit these, then re-run the build. |
-| `build.py` | Rebuilds the site and the WordPress file from the posts. |
-| `check.py` | Checks for broken links and missing SEO tags. |
-| `.github/workflows/` | The daily job that publishes posts on schedule, by itself. |
-| `SEO-STRATEGY.md` | The keyword plan, and what to do in the first week after launch. |
-| `MONETISATION.md` | How to switch on affiliate links, newsletter and ads — one ID each. |
-| `tools/` | Image sourcing from Wikimedia Commons: find, fetch, optimise. |
-| `EDITORIAL-CALENDAR.md` | The schedule, plus 16 post ideas for month two. |
+| `content/posts/` | The posts. A JSON metadata header, then HTML. This is the source of truth. |
+| `content/queue.json` | What gets written next, in order. The writing loop reads this. |
+| `content/images.json` | Generated image manifest — credits, dimensions, formats. |
+| `build.py` | Builds the site. All configuration lives at the top. |
+| `check.py` | Validates links, images, alt text, SEO tags, structured data. |
+| `tools/` | Image sourcing and encoding, citation verification, slot allocation. |
+| `templates/`, `static/` | Page shells and the stylesheet, fonts, images. |
+| `public/` | Files copied to the site root verbatim (CNAME, verification files). |
+| `docs/` | Strategy notes: SEO, monetisation, editorial calendar. |
+| `WRITING-LOOP.md` | The procedure the Saturday writer follows. Kept at root — the scheduled task points at this path. |
 
----
-
-## Look at it first
-
-Double-click this file:
-
-```
-D:\veiled-antiquity\dist\index.html
-```
-
-It opens in your browser. Nothing is published yet — this is just on your computer.
-
----
-
-# Option A — GitHub Pages (recommended)
-
-Free forever, keeps the custom dark theme, and publishes on schedule by itself. Your part
-is about 10 minutes, once.
-
-### 1. Make the account
-
-Sign up at **github.com**. Free plan. No payment details needed.
-
-I can't do this step — creating accounts and entering passwords is off-limits for me.
-
-### 2. Create the repository — the name matters
-
-Click **New repository**. Name it **exactly** this, with your own username:
-
-```
-yourusername.github.io
-```
-
-> **Don't skip this.** If you name it anything else, GitHub serves the site from a
-> sub-folder and every link and stylesheet on the site breaks. The `.github.io` name is
-> what puts it at the root.
-
-Set it to **Public**. Don't tick "add a README".
-
-### 3. Tell the site its own address
-
-Open `build.py`. Near the top, find the line starting `"url":` and change it to your
-address:
-
-```python
-"url": "https://yourusername.github.io",
-```
-
-### 4. Upload everything
-
-Open a terminal in `D:\veiled-antiquity` and run these, one block at a time:
-
-```bash
-git init && git add . && git commit -m "Veiled Antiquity: month one"
-```
-
-```bash
-git branch -M main && git remote add origin https://github.com/yourusername/yourusername.github.io.git && git push -u origin main
-```
-
-GitHub will pop up a login window on the push. That's you signing in — it's the one bit I
-can't do for you.
-
-### 5. Switch Pages on
-
-In the repository: **Settings → Pages**. Under "Source", choose **GitHub Actions** (not
-"Deploy from a branch" — this one matters).
-
-Done. Within a couple of minutes the site is live, and from then on it publishes itself:
-every morning at 09:05 UTC a scheduled job rebuilds the site and any post whose date has
-arrived goes live. Nothing for you to do, ever.
-
-### 6. Tell Google it exists
-
-Go to **search.google.com/search-console**, add your site, submit
-`https://yourusername.github.io/sitemap.xml`. Then read `SEO-STRATEGY.md` for week one.
-
----
-
-# Option B — WordPress
-
-Still fully supported if you get the signup working and prefer the dashboard.
-
-1. Sign up at **wordpress.com**, pick a free plan.
-2. **Appearance → Themes** — pick any dark theme. (The custom theme in `static/style.css`
-   needs the Business plan, ~$25/month, or self-hosted WordPress.)
-3. **Tools → Import → WordPress → Run Importer**, and upload
-   `D:\veiled-antiquity\wordpress-import.xml`. Assign posts to your account.
-4. All 13 land as **Scheduled** and release themselves on the right dates.
-5. **Plugins → Add New** → install **Yoast SEO** or **Rank Math**. The SEO titles,
-   descriptions and focus keywords for both plugins are already inside the import file.
-
-The WordPress file is regenerated on every build, so you can switch to this later without
-losing anything.
+`dist/` and `wordpress-import.xml` are build output and aren't committed. Both regenerate
+with `python build.py`.
 
 ---
 
 ## Changing things
 
-**To edit a post:** open the matching file in `content/posts/`, edit the text, then run:
+**Edit a post** — open its file in `content/posts/`, edit, then:
 
 ```bash
-cd D:\veiled-antiquity && python build.py && python check.py
+cd D:\veiled-antiquity && python build.py && python check.py && git add -A && git commit -m "..." && git push
 ```
 
-That rebuilds both the website and the WordPress file.
+The push deploys it. `check.py` must pass — it catches dead links, missing alt text and
+over-long meta descriptions before they ship.
 
-**To change the site name, URL or tagline:** they're at the top of `build.py`, in the
-block starting `SITE = {`. Change them and rebuild.
-
-**To change a publish date:** each post file starts with a small settings block. Edit the
-`"date"` line and rebuild.
-
-**To see what the site will look like partway through the month:**
+**Preview a future date** — see the site as it will look partway through the schedule:
 
 ```bash
-cd D:\veiled-antiquity && python build.py --live --now=2026-08-20
+cd D:\veiled-antiquity && python build.py --live --now=2026-09-20
 ```
 
-That builds the site as it will appear on 20 August — only the posts published by then,
-with links to future posts automatically turned into plain text so nothing 404s. They turn
-back into links on the morning each post goes live.
+Links to not-yet-published posts flatten to plain text automatically, so nothing 404s.
+
+**Change the site name, URL, or a publish date** — the `SITE` block at the top of `build.py`,
+or the `"date"` line in a post's metadata header.
+
+**Switch on money** — `MONETISATION` block at the top of `build.py`. Every field is inert
+until filled in. See `docs/MONETISATION.md` for what to enable and when.
 
 ---
 
-## A note on the writing
+## Adding a post by hand
 
-Every post names its sources, and says plainly where the evidence runs out. Several
-actively argue *against* the popular version of their subject — the Library of Alexandria
-was not destroyed by a famous fire, and the celebrated Oracle of the Dead is probably a
-farmhouse.
+The Saturday loop does this automatically, but if you're writing one yourself:
 
-That's deliberate. Google has spent several years demoting confident, thinly-sourced
-content in exactly this niche, and the audience for esoteric history contains a lot of
-people who read seriously and can tell the difference. Being the site that says "we don't
-know" is a durable position. Being the site that makes things up is not.
+1. Copy an existing file in `content/posts/` and rewrite it. Keep the metadata header shape.
+2. Add the slug and Wikimedia search terms to `PICKS` in `tools/fetch_images.py`, then:
+   ```bash
+   python tools/fetch_images.py && python tools/optimise_images.py
+   python tools/modern_images.py && python tools/make_share_images.py
+   ```
+3. `python tools/verify_sources.py` — every modern book is checked against Open Library.
+   **This must pass.** A fabricated citation is the one failure that would sink the site.
+4. `python build.py && python check.py`, then commit and push.
+
+---
+
+## On the writing
+
+Every post names its sources and says plainly where the evidence runs out. Several argue
+against the popular version of their subject — the Library of Alexandria was not destroyed by
+a famous fire, and the celebrated Oracle of the Dead is probably a farmhouse.
+
+That is the point, not a stylistic quirk. Google has spent years demoting confident,
+thinly-sourced content in exactly this niche, and the audience for esoteric history contains a
+lot of people who read seriously and can tell the difference. Being the site that says
+"we don't know" is a durable position.

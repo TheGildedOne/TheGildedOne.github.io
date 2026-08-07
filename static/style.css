@@ -210,6 +210,7 @@ main { max-width: var(--shell); margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.
 /* hero image */
 
 .hero-figure { margin: 0 0 3rem; }
+.hero-figure picture { display: block; }
 .hero-figure img {
   display: block; width: 100%; height: auto;
   border: 1px solid var(--ink-400); border-radius: 3px;

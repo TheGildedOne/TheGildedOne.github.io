@@ -72,8 +72,12 @@ Structural requirements, all enforced by `check.py`:
 # add the slug and search terms to PICKS in tools/fetch_images.py, then:
 python tools/fetch_images.py
 python tools/optimise_images.py
-python tools/make_share_images.py     # social preview cards — do not skip
+python tools/modern_images.py         # responsive AVIF — most of the page weight
+python tools/make_share_images.py     # social preview cards
 ```
+
+All four are required. Skipping `modern_images.py` ships a post whose hero image is roughly
+eight times heavier than it needs to be on a phone.
 
 Ancient material only — the object, the site, or the manuscript. **No Renaissance paintings,
 no modern reconstructions, no artists' impressions.** Public domain or CC only; the credit

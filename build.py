@@ -367,8 +367,22 @@ def hero_html(p: dict) -> str:
         return ""
     credit = f'{esc(img["credit"])}, {esc(img["licence"])}' if img["credit"] else esc(img["licence"])
     link = f' &middot; <a href="{img["source"]}" rel="noopener nofollow">Wikimedia Commons</a>' if img["source"] else ""
+
+    # AVIF at two widths, JPEG as the fallback. The article column is ~700px, so
+    # a 1x display never needs the 1400px file — that alone is most of the saving.
+    sources = ""
+    if img.get("avif") and img.get("avif_700"):
+        sources = (f'<source type="image/avif" '
+                   f'srcset="{img["avif_700"]} 700w, {img["avif"]} 1400w" '
+                   f'sizes="(max-width: 760px) 100vw, 700px">')
+
+    picture = (f'<picture>{sources}'
+               f'<img src="{img["file"]}" alt="{esc(img["alt"])}" '
+               f'width="{img["width"]}" height="{img["height"]}" '
+               f'fetchpriority="high" decoding="async"></picture>')
+
     return f"""<figure class="hero-figure">
-  <img src="{img['file']}" alt="{esc(img['alt'])}" width="{img['width']}" height="{img['height']}" fetchpriority="high" decoding="async">
+  {picture}
   <figcaption>{img['caption']} <span class="credit">{credit}{link}</span></figcaption>
 </figure>"""
 
