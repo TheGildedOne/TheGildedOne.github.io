@@ -79,6 +79,17 @@ Ancient material only — the object, the site, or the manuscript. **No Renaissa
 no modern reconstructions, no artists' impressions.** Public domain or CC only; the credit
 lines render automatically and must not be stripped.
 
+### 4b. Consider the Start Here page
+
+Almost everything about a new post wires itself up — nav, sitemap, RSS, related posts,
+prev/next, schema, analytics, the signup block. **The one exception is `/start-here/`**,
+which is hand-curated in the `START_HERE` list at the top of `build.py`.
+
+If a new post genuinely belongs in one of those sections, add its slug there. If it doesn't
+fit any of them, leave it alone — the page is valuable *because* it's a selection rather
+than a list of everything. Don't add posts just to keep it current, and don't let any one
+section grow past four entries.
+
 ### 5. Verify the citations — this gate is not optional
 
 ```bash
