@@ -9,6 +9,8 @@ MONETISATION = {
     "amazon_domain": "amazon.co.uk",
     "adsense_client": "",      # Google AdSense publisher ID
     "newsletter_action": "",   # email signup form endpoint
+    "ga4_id": "",              # Google Analytics 4 measurement ID
+    "plausible_domain": "",    # or Plausible, if you prefer cookie-free
     "contact_email": "hello@veiledantiquity.com",
 }
 ```
@@ -34,7 +36,34 @@ scripts, no placeholder gaps. The site is clean until you're ready.
 
 ---
 
+- **Social share cards.** Every post has a generated 1200×630 preview image with its
+  headline set over the artwork. A raw photo crop reads as generic in a feed; a card with
+  the headline reads as an article and gets clicked. Regenerate with
+  `python tools/make_share_images.py`.
+- **Start Here page** at `/start-here/` — six curated routes into the archive. Readers
+  arriving from search on a single post have no reason to click a second; this gives them one.
+- **Previous / next links** on every post. Ad revenue is priced per 1,000 pageviews, so a
+  second post read doubles what a visit earns.
+- **IndexNow** — every deploy notifies Bing (and therefore Copilot and a slice of AI
+  search) of new URLs instantly instead of waiting to be crawled. Google ignores the
+  protocol and uses its own schedule; that's expected.
+
+---
+
 ## Turn on in this order
+
+### 0. Analytics — do this before anything else
+
+You cannot tune what you cannot see, and ad networks expect a site to have analytics before
+they'll approve it. **Google Analytics 4** is free and the safest default: create a property
+at analytics.google.com, copy the measurement ID (`G-XXXXXXXXXX`) into `ga4_id`, rebuild.
+
+If you'd rather not run Google's tracker, **Plausible** is cookie-free and needs no consent
+banner — set `plausible_domain` instead. It's about $9/month.
+
+What to watch: which posts pull steady organic clicks, and pages-per-session. The first tells
+you what to write more of; the second tells you what a visitor is worth.
+
 
 ### 1. Affiliate links — do this first
 

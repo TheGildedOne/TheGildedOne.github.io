@@ -72,6 +72,7 @@ Structural requirements, all enforced by `check.py`:
 # add the slug and search terms to PICKS in tools/fetch_images.py, then:
 python tools/fetch_images.py
 python tools/optimise_images.py
+python tools/make_share_images.py     # social preview cards — do not skip
 ```
 
 Ancient material only — the object, the site, or the manuscript. **No Renaissance paintings,

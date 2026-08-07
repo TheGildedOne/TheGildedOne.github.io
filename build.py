@@ -54,6 +54,11 @@ MONETISATION = {
     "adsense_client": "",
     # Form POST endpoint from Buttondown / ConvertKit / Kit / Mailchimp.
     "newsletter_action": "",
+    # Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX". Ad networks
+    # expect to see analytics; you also cannot tune what you cannot measure.
+    "ga4_id": "",
+    # Plausible domain, if you prefer a cookie-free alternative to GA4.
+    "plausible_domain": "",
     "contact_email": "hello@veiledantiquity.com",
 }
 
@@ -66,6 +71,30 @@ CATEGORIES = {
     "lost-and-suppressed": "Lost & Suppressed",
     "oracles-and-divination": "Oracles & Divination",
 }
+
+START_HERE = [
+    ("If you read one thing", ["ancient-mystery-cults-guide"],
+     "Hundreds of thousands of people were initiated into secret rites over two thousand "
+     "years, and essentially none of them talked. This is how that held."),
+    ("The secret that was genuinely kept", ["eleusinian-mysteries-telesterion",
+                                            "eleusinian-kykeon-psychedelic", "orphic-gold-tablets"],
+     "Eleusis ran annually for two millennia and the central rite was never written down. "
+     "What survives is a building, a drink, and instructions folded into graves."),
+    ("Things everyone believes that aren't true", ["library-of-alexandria-what-was-lost",
+                                                   "oracle-of-the-dead-ephyra"],
+     "Nobody burned the Library of Alexandria, and the famous Oracle of the Dead is "
+     "probably a farmhouse. Both stories survive because they are better than the evidence."),
+    ("Objects that outlived their meaning", ["mithras-tauroctony-decoded",
+                                             "piacenza-liver-etruscan", "damnatio-memoriae"],
+     "A picture in four hundred temples that nobody can read. A bronze liver mapping the sky. "
+     "A painted face scraped off by hand."),
+    ("What ordinary people actually did", ["ancient-curse-tablets", "greek-magical-papyri"],
+     "Ancient literature was written by a few thousand wealthy men. Curse tablets and "
+     "spellbooks were written by everybody else."),
+    ("Knowledge the state controlled", ["sibylline-books-rome", "villa-of-the-mysteries-frescoes"],
+     "Sealed books opened only by vote of the Senate, and a dining room painted with an "
+     "initiation a century after Rome tried to stamp it out."),
+]
 
 CATEGORY_BLURBS = {
     "mystery-cults": "Secret initiations across the Greek and Roman world &mdash; Eleusis, "
@@ -80,12 +109,11 @@ CATEGORY_BLURBS = {
 
 # ---------------------------------------------------------------- templating
 
-TEMPLATE_DEFAULTS = {"head_extra": "", "og_image": ""}
-
-
 def render(template: str, ctx: dict) -> str:
     """Minimal {{key}} substitution. Values are inserted raw."""
-    ctx = {**TEMPLATE_DEFAULTS, **ctx}
+    # Analytics and ad scripts belong on every page, so they default in here
+    # rather than being threaded through each call site.
+    ctx = {"head_extra": analytics_head() + adsense_head(), "og_image": "", **ctx}
 
     def sub(m):
         key = m.group(1).strip()
@@ -163,7 +191,8 @@ def load_posts() -> list:
 # --------------------------------------------------------------- site pieces
 
 def nav_html(active: str = "") -> str:
-    items = [("/", "Home"), ("/archive/", "Archive"), ("/about/", "About")]
+    items = [("/", "Home"), ("/start-here/", "Start Here"), ("/archive/", "Archive"),
+             ("/about/", "About")]
     out = []
     for href, label in items:
         cur = ' aria-current="page"' if href == active else ""
@@ -218,6 +247,21 @@ def ad_slot(position: str) -> str:
        data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
 </aside>"""
+
+
+def analytics_head() -> str:
+    """Whichever analytics is configured. Nothing renders until one is set."""
+    out = []
+    if MONETISATION["ga4_id"]:
+        gid = MONETISATION["ga4_id"]
+        out.append(
+            f'<script async src="https://www.googletagmanager.com/gtag/js?id={gid}"></script>\n'
+            f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}"
+            f"gtag('js',new Date());gtag('config','{gid}');</script>")
+    if MONETISATION["plausible_domain"]:
+        out.append(f'<script defer data-domain="{MONETISATION["plausible_domain"]}" '
+                   f'src="https://plausible.io/js/script.js"></script>')
+    return "\n".join(out)
 
 
 def adsense_head() -> str:
@@ -303,11 +347,16 @@ def legal_pages() -> list:
 
 
 def og_image(p: dict = None) -> str:
-    """Absolute URL for social preview cards; falls back to any available image."""
+    """Absolute URL for social preview cards.
+
+    Prefers the generated share card (headline set over the hero image) — a
+    plain photo crop reads as generic in a feed and gets fewer clicks."""
     img = (p or {}).get("image")
     if not img and IMAGES:
         img = next(iter(IMAGES.values()))
-    return SITE["url"] + img["file"] if img else SITE["url"] + "/static/mark.svg"
+    if not img:
+        return SITE["url"] + "/static/mark.svg"
+    return SITE["url"] + (img.get("share") or img["file"])
 
 
 def hero_html(p: dict) -> str:
@@ -366,6 +415,21 @@ def related_html(post: dict, posts: list) -> str:
         for p in chosen[:3]
     )
     return f'<nav class="related" aria-labelledby="rel-h"><h2 id="rel-h">Continue the descent</h2><ul>{cards}</ul></nav>'
+
+
+def prevnext_html(p: dict, posts: list) -> str:
+    """Older/newer links. Cheap, and the single best lever on pages per session —
+    ad revenue is priced per pageview, so a second post read doubles the visit."""
+    i = posts.index(p)
+    prev = posts[i - 1] if i > 0 else None
+    nxt = posts[i + 1] if i < len(posts) - 1 else None
+    if not prev and not nxt:
+        return ""
+    left = (f'<a class="pn-prev" href="{prev["path"]}"><span class="pn-label">Previous</span>'
+            f'<span class="pn-title">{esc(prev["title"])}</span></a>') if prev else "<span></span>"
+    right = (f'<a class="pn-next" href="{nxt["path"]}"><span class="pn-label">Next</span>'
+             f'<span class="pn-title">{esc(nxt["title"])}</span></a>') if nxt else "<span></span>"
+    return f'<nav class="prevnext" aria-label="More posts">{left}{right}</nav>'
 
 
 def jsonld_post(p: dict) -> str:
@@ -495,6 +559,7 @@ def build_site(posts: list):
             "sources": sources_html(p),
             "ad_bottom": ad_slot("bottom"),
             "newsletter": newsletter_html(),
+            "prevnext": prevnext_html(p, posts),
             "related": related_html(p, posts),
             "tags": " ".join(f'<span class="tag">{esc(t)}</span>' for t in p["tags"]),
         })
@@ -511,7 +576,6 @@ def build_site(posts: list):
             "twitter": SITE["twitter"],
             "locale": SITE["locale"],
             "jsonld": jsonld_post(p),
-            "head_extra": adsense_head(),
             "nav": nav_html(),
             "body_class": "is-post",
             "content": article,
@@ -648,6 +712,40 @@ def build_site(posts: list):
             "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
         }), encoding="utf-8")
 
+    # ---- start here
+    # A curated entry point. New readers landing on one post from search have no
+    # reason to click a second; giving them routes with a stated payoff is the
+    # cheapest way to lift pages per session.
+    live = {p["slug"]: p for p in posts}
+    sections = []
+    for heading, slugs, blurb in START_HERE:
+        picks = [live[s] for s in slugs if s in live]
+        if not picks:
+            continue
+        rows = "\n".join(
+            f'<li><a href="{p["path"]}"><span class="sh-title">{esc(p["title"])}</span>'
+            f'<span class="sh-dek">{esc(p["dek"])}</span></a></li>' for p in picks)
+        sections.append(f'<section class="sh-block"><h2>{heading}</h2>'
+                        f'<p class="sh-why">{blurb}</p><ul class="sh-list">{rows}</ul></section>')
+
+    if sections:
+        out = DIST / "start-here"
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(render(base, {
+            "lang": SITE["lang"], "page_title": f"Start Here | {SITE['title']}",
+            "description": "New here? These are the pieces worth reading first — the secret "
+                           "that was genuinely kept, the myths that turn out to be wrong, and "
+                           "what ordinary people actually did.",
+            "canonical": SITE["url"] + "/start-here/", "og_type": "website",
+            "og_image": og_image(posts[0]), "og_title": "Start Here",
+            "site_name": esc(SITE["title"]), "twitter": SITE["twitter"], "locale": SITE["locale"],
+            "jsonld": "{}", "nav": nav_html("/start-here/"), "body_class": "is-page",
+            "content": '<header class="page-head"><h1>Start here</h1><p class="hero-dek">'
+                       'Everything on this site is about something the ancient world kept quiet. '
+                       'These are the ways in.</p></header>' + "".join(sections),
+            "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
+        }), encoding="utf-8")
+
     # ---- legal pages (AdSense and most ad networks will not accept a site without these)
     for slug, title, desc, body in legal_pages():
         out = DIST / slug
@@ -674,8 +772,8 @@ def build_site(posts: list):
     }), encoding="utf-8")
 
     # ---- sitemap
-    urls = [(SITE["url"] + "/", "1.0"), (SITE["url"] + "/archive/", "0.6"),
-            (SITE["url"] + "/about/", "0.5")]
+    urls = [(SITE["url"] + "/", "1.0"), (SITE["url"] + "/start-here/", "0.9"),
+            (SITE["url"] + "/archive/", "0.6"), (SITE["url"] + "/about/", "0.5")]
     urls += [(p["url"], "0.8") for p in posts]
     urls += [(f"{SITE['url']}/category/{c}/", "0.7") for c in CATEGORIES
              if any(p["category"] == c for p in posts)]

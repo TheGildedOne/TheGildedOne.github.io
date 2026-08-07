@@ -8,7 +8,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Great_Eleusinian_Relief.jpg",
     "width": 1400,
     "height": 1821,
-    "card": "/static/img/ancient-mystery-cults-guide-card.jpg"
+    "card": "/static/img/ancient-mystery-cults-guide-card.jpg",
+    "share": "/static/img/ancient-mystery-cults-guide-share.jpg"
   },
   "eleusinian-mysteries-telesterion": {
     "file": "/static/img/eleusinian-mysteries-telesterion.jpg",
@@ -19,7 +20,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Archaeological_Site_of_Eleusis_-_Telesterion_03.jpg",
     "width": 1400,
     "height": 933,
-    "card": "/static/img/eleusinian-mysteries-telesterion-card.jpg"
+    "card": "/static/img/eleusinian-mysteries-telesterion-card.jpg",
+    "share": "/static/img/eleusinian-mysteries-telesterion-share.jpg"
   },
   "eleusinian-kykeon-psychedelic": {
     "file": "/static/img/eleusinian-kykeon-psychedelic.jpg",
@@ -30,7 +32,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Votive_relief_showing_Demeter,_Persephone_and_Triptolemos,_Eleusis,_4th_c_BC.jpg",
     "width": 1400,
     "height": 937,
-    "card": "/static/img/eleusinian-kykeon-psychedelic-card.jpg"
+    "card": "/static/img/eleusinian-kykeon-psychedelic-card.jpg",
+    "share": "/static/img/eleusinian-kykeon-psychedelic-share.jpg"
   },
   "orphic-gold-tablets": {
     "file": "/static/img/orphic-gold-tablets.jpg",
@@ -41,7 +44,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Orphic_Gold_Tablet_(Petelia_-_British_Museum,_London).jpg",
     "width": 1400,
     "height": 1050,
-    "card": "/static/img/orphic-gold-tablets-card.jpg"
+    "card": "/static/img/orphic-gold-tablets-card.jpg",
+    "share": "/static/img/orphic-gold-tablets-share.jpg"
   },
   "mithras-tauroctony-decoded": {
     "file": "/static/img/mithras-tauroctony-decoded.jpg",
@@ -52,7 +56,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Mithras_tauroctony_Louvre_Ma3441.jpg",
     "width": 1400,
     "height": 1237,
-    "card": "/static/img/mithras-tauroctony-decoded-card.jpg"
+    "card": "/static/img/mithras-tauroctony-decoded-card.jpg",
+    "share": "/static/img/mithras-tauroctony-decoded-share.jpg"
   },
   "villa-of-the-mysteries-frescoes": {
     "file": "/static/img/villa-of-the-mysteries-frescoes.jpg",
@@ -63,7 +68,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Roman_fresco_Villa_dei_Misteri_Pompeii_005.jpg",
     "width": 1400,
     "height": 462,
-    "card": "/static/img/villa-of-the-mysteries-frescoes-card.jpg"
+    "card": "/static/img/villa-of-the-mysteries-frescoes-card.jpg",
+    "share": "/static/img/villa-of-the-mysteries-frescoes-share.jpg"
   },
   "greek-magical-papyri": {
     "file": "/static/img/greek-magical-papyri.jpg",
@@ -74,7 +80,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Graeco-Egyptian_Magical_Papyrus_I;_Louvre;_Roman_Epoch;_30-395_AD;Demotic,_Greek,Coptic;_Various_Recipes;_Magical_Formulars_are_written_Red.jpg",
     "width": 1400,
     "height": 1050,
-    "card": "/static/img/greek-magical-papyri-card.jpg"
+    "card": "/static/img/greek-magical-papyri-card.jpg",
+    "share": "/static/img/greek-magical-papyri-share.jpg"
   },
   "ancient-curse-tablets": {
     "file": "/static/img/ancient-curse-tablets.jpg",
@@ -85,7 +92,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:A_metal_curse_tablet_(defixio)_with_a_complaint_about_the_theft_of_a_Vilbia.jpg",
     "width": 1400,
     "height": 933,
-    "card": "/static/img/ancient-curse-tablets-card.jpg"
+    "card": "/static/img/ancient-curse-tablets-card.jpg",
+    "share": "/static/img/ancient-curse-tablets-share.jpg"
   },
   "sibylline-books-rome": {
     "file": "/static/img/sibylline-books-rome.jpg",
@@ -96,7 +104,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Cumae_Cave_of_the_Sibyl_AvL.JPG",
     "width": 1400,
     "height": 928,
-    "card": "/static/img/sibylline-books-rome-card.jpg"
+    "card": "/static/img/sibylline-books-rome-card.jpg",
+    "share": "/static/img/sibylline-books-rome-share.jpg"
   },
   "damnatio-memoriae": {
     "file": "/static/img/damnatio-memoriae.jpg",
@@ -107,7 +116,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_family_of_Septimius_Severus_-_Altes_Museum_-_Berlin_-_Germany_2017.jpg",
     "width": 1400,
     "height": 1399,
-    "card": "/static/img/damnatio-memoriae-card.jpg"
+    "card": "/static/img/damnatio-memoriae-card.jpg",
+    "share": "/static/img/damnatio-memoriae-share.jpg"
   },
   "library-of-alexandria-what-was-lost": {
     "file": "/static/img/library-of-alexandria-what-was-lost.jpg",
@@ -118,7 +128,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:The_Serapeum_of_Alexandria_(I).jpg",
     "width": 1400,
     "height": 1050,
-    "card": "/static/img/library-of-alexandria-what-was-lost-card.jpg"
+    "card": "/static/img/library-of-alexandria-what-was-lost-card.jpg",
+    "share": "/static/img/library-of-alexandria-what-was-lost-share.jpg"
   },
   "oracle-of-the-dead-ephyra": {
     "file": "/static/img/oracle-of-the-dead-ephyra.jpg",
@@ -129,7 +140,8 @@
     "source": "https://commons.wikimedia.org/wiki/File:Nekromanteion_of_Acheron.jpg",
     "width": 1400,
     "height": 930,
-    "card": "/static/img/oracle-of-the-dead-ephyra-card.jpg"
+    "card": "/static/img/oracle-of-the-dead-ephyra-card.jpg",
+    "share": "/static/img/oracle-of-the-dead-ephyra-share.jpg"
   },
   "piacenza-liver-etruscan": {
     "file": "/static/img/piacenza-liver-etruscan.jpg",
@@ -140,6 +152,7 @@
     "source": "https://commons.wikimedia.org/wiki/File:Piacenza_liver.jpg",
     "width": 1400,
     "height": 926,
-    "card": "/static/img/piacenza-liver-etruscan-card.jpg"
+    "card": "/static/img/piacenza-liver-etruscan-card.jpg",
+    "share": "/static/img/piacenza-liver-etruscan-share.jpg"
   }
 }
