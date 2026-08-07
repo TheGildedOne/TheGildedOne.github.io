@@ -1,0 +1,133 @@
+{
+  "_comment": "The writing queue, in publication order. The scheduled writing run takes the first entries with status 'pending', writes them, and flips them to 'written'. Dates are assigned at write time by tools/next_slots.py so the schedule stays correct however far behind or ahead it gets.",
+  "posts": [
+    {
+      "slug": "samothrace-great-gods",
+      "title": "The Great Gods of Samothrace",
+      "keyword": "samothrace mysteries",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "An initiation open to anyone, on a remote island, whose gods we cannot even reliably name. Philip II met Olympias there. The Nike of Samothrace came from the sanctuary."
+    },
+    {
+      "slug": "bacchanalia-186-bce",
+      "title": "The Bacchanalia Affair of 186 BCE",
+      "keyword": "bacchanalia rome",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Livy's lurid account versus the surviving bronze decree. The Senate legislated against organisation, not debauchery. Cross-link to the pillar and to the Villa of the Mysteries."
+    },
+    {
+      "slug": "cult-of-isis-rome",
+      "title": "Isis in Rome: The Goddess Who Travelled",
+      "keyword": "cult of isis rome",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Repeatedly banned by the Republic, embraced by emperors. Apuleius Book 11 as the only initiation narrative. Why an Egyptian goddess out-competed local ones."
+    },
+    {
+      "slug": "mithraism-seven-grades",
+      "title": "The Seven Grades of Mithraism",
+      "keyword": "mithraism grades",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Raven to Father, each tied to a planet. The Ostia mosaic and the Santa Prisca inscriptions. What a promotion ladder implies about a teaching syllabus we have lost entirely."
+    },
+    {
+      "slug": "ancient-binding-spells-law",
+      "title": "Binding Spells and the Ancient Courtroom",
+      "keyword": "ancient binding spells",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "Judicial curse tablets ask for one thing above all: that the opponent be unable to speak. What that reveals about how Greek and Roman trials were actually won."
+    },
+    {
+      "slug": "evil-eye-ancient-world",
+      "title": "The Evil Eye in the Ancient World",
+      "keyword": "evil eye ancient rome",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "Phallic amulets on doorways, the fascinum worn by children, Pliny on spitting. An anxiety so widespread it shaped domestic architecture."
+    },
+    {
+      "slug": "ancient-necromancy",
+      "title": "Necromancy in Greece and Rome",
+      "keyword": "ancient necromancy",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "From Odysseus at the pit to the recipes in the magical papyri. Legal, illegal, and imperial — emperors consulted the dead and then banned others from doing it."
+    },
+    {
+      "slug": "roman-amulets-what-people-feared",
+      "title": "Amulets, and What People Were Actually Afraid Of",
+      "keyword": "roman amulets",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "Catalogue the surviving amulets and you get a map of ordinary fear: fever, childbirth, scorpions, the eye. Reading anxiety from objects rather than literature."
+    },
+    {
+      "slug": "books-augustus-burned",
+      "title": "The Two Thousand Books Augustus Burned",
+      "keyword": "augustus burned books",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "12 BCE: the pontifex maximus collects and destroys every unauthorised prophetic book in Rome, keeps the licensed one, edits it, and moves it next to his own house."
+    },
+    {
+      "slug": "liber-linteus",
+      "title": "The Liber Linteus: A Book That Survived as Bandages",
+      "keyword": "liber linteus",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "The longest surviving Etruscan text reached us wrapped around an Egyptian mummy. A ritual calendar we can read aloud and cannot understand."
+    },
+    {
+      "slug": "etruscan-language-lost",
+      "title": "Why We Still Cannot Read Etruscan",
+      "keyword": "etruscan language",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "Not a script problem — a language problem. No relatives, no bilinguals of length, and a surviving corpus that is almost entirely gravestones."
+    },
+    {
+      "slug": "claudius-etruscan-dictionary",
+      "title": "The Emperor Who Wrote an Etruscan Dictionary",
+      "keyword": "claudius etruscan",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "Claudius had native speakers, a practising priesthood, state resources and twenty books of research. Every word of it is gone, and nobody burned it."
+    },
+    {
+      "slug": "delphi-pythia",
+      "title": "Delphi: What the Pythia Actually Did",
+      "keyword": "oracle of delphi pythia",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Strip the Victorian imagery. A woman on a tripod, answering yes-or-no questions from states about colonies and wars, with a queue and a fee structure."
+    },
+    {
+      "slug": "delphi-gases-hypothesis",
+      "title": "The Gases Under Delphi",
+      "keyword": "delphi ethylene vapour",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Plutarch describes a sweet-smelling vapour; geologists found intersecting faults and traces of ethylene. Companion piece to the kykeon post — same argument, same honest verdict."
+    },
+    {
+      "slug": "dream-incubation-asclepius",
+      "title": "Dream Incubation at Epidaurus",
+      "keyword": "dream incubation asclepius",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Sleep in the sanctuary and the god operates on you in a dream. The inscribed cure testimonies are the strangest medical records to survive antiquity."
+    },
+    {
+      "slug": "etruscan-lightning-doctrine",
+      "title": "Reading Lightning: The Etruscan Fulgural Doctrine",
+      "keyword": "etruscan lightning",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Sixteen regions of sky, each with an owner, and a legal procedure for burying a lightning strike. Direct sequel to the Piacenza Liver."
+    }
+  ]
+}
