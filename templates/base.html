@@ -24,9 +24,12 @@
 <meta name="twitter:image" content="{{og_image}}">
 
 <link rel="alternate" type="application/rss+xml" title="{{site_name}}" href="/feed.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+
+<!-- Self-hosted fonts: no third-party handshake before first paint. The two
+     faces below carry the headline and body text, so they are preloaded. -->
+<link rel="preload" href="/static/fonts/spectral-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/fonts.css">
 <link rel="stylesheet" href="/static/style.css">
 <link rel="icon" href="/static/mark.svg" type="image/svg+xml">
 
