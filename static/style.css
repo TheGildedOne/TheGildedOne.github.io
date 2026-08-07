@@ -134,6 +134,16 @@ main { max-width: var(--shell); margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.
   background: linear-gradient(180deg, var(--gold), transparent);
 }
 .lead-link:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+@media (min-width: 780px) {
+  .lead-link { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.4rem, 3vw, 2.4rem); align-items: center; }
+}
+.lead-img {
+  display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
+  border: 1px solid var(--ink-400); border-radius: 2px; margin-bottom: 1.4rem;
+  filter: saturate(0.85) brightness(0.9); transition: filter 0.3s ease;
+}
+@media (min-width: 780px) { .lead-img { margin-bottom: 0; } }
+.lead-link:hover .lead-img { filter: saturate(1) brightness(1); }
 .lead-link h2 {
   font-family: var(--display); font-weight: 600;
   font-size: clamp(1.85rem, 4.2vw, 2.9rem); line-height: 1.12;

@@ -532,13 +532,20 @@ def build_site(posts: list):
 
     if posts:
         lead, rest = posts[0], posts[1:]
+        lead_img = lead.get("image")
+        lead_thumb = (f'<img class="lead-img" src="{lead_img["file"]}" alt="{esc(lead_img["alt"])}" '
+                      f'width="{lead_img["width"]}" height="{lead_img["height"]}" '
+                      f'fetchpriority="high" decoding="async">') if lead_img else ""
         home += f"""
 <section class="lead" aria-labelledby="lead-h">
   <p class="section-label" id="lead-h">Start here</p>
   <a class="lead-link" href="{lead['path']}">
-    <h2>{esc(lead['title'])}</h2>
-    <p>{esc(lead['dek'])}</p>
-    <p class="card-more">Read the guide<span class="arrow">&rarr;</span><span class="rt">{lead['read_minutes']} min</span></p>
+    {lead_thumb}
+    <div class="lead-text">
+      <h2>{esc(lead['title'])}</h2>
+      <p>{esc(lead['dek'])}</p>
+      <p class="card-more">Read the guide<span class="arrow">&rarr;</span><span class="rt">{lead['read_minutes']} min</span></p>
+    </div>
   </a>
 </section>"""
         if rest:
