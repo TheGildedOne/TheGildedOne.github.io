@@ -377,6 +377,13 @@ hr {
   transition: background 0.2s ease;
 }
 .signup button:hover { background: var(--gold-soft); }
+.signup-credit {
+  margin: 1rem 0 0; font-family: var(--sans); font-size: 0.66rem;
+  letter-spacing: 0.08em; color: var(--ink-400);
+}
+.signup-credit a { color: var(--text-faint); text-decoration-color: var(--ink-400); }
+.signup-credit a:hover { color: var(--gold-soft); }
+.is-home .signup { margin-top: 4.5rem; }
 
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; overflow: hidden;

@@ -53,7 +53,7 @@ MONETISATION = {
     # Google AdSense publisher ID, e.g. "ca-pub-0000000000000000".
     "adsense_client": "",
     # Form POST endpoint from Buttondown / ConvertKit / Kit / Mailchimp.
-    "newsletter_action": "",
+    "newsletter_action": "https://buttondown.com/api/emails/embed-subscribe/veiled",
     # Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX". Ad networks
     # expect to see analytics; you also cannot tune what you cannot measure.
     "ga4_id": "G-XFGE382VWT",
@@ -281,10 +281,11 @@ def newsletter_html() -> str:
   <h2 id="signup-h">Three pieces a week, straight to you</h2>
   <p>Mystery cults, buried curses and the things antiquity deliberately kept quiet. No spam, unsubscribe in one click.</p>
   <form action="{action}" method="post" target="_blank">
-    <label class="visually-hidden" for="email">Email address</label>
-    <input id="email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
+    <label class="visually-hidden" for="bd-email">Email address</label>
+    <input id="bd-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
     <button type="submit">Subscribe</button>
   </form>
+  <p class="signup-credit">Powered by <a href="https://buttondown.com/refer/veiled" target="_blank" rel="noopener">Buttondown</a>.</p>
 </section>"""
 
 
@@ -620,6 +621,8 @@ def build_site(posts: list):
 </section>"""
     else:
         home += '<p class="section-label">The first piece publishes shortly.</p>'
+
+    home += newsletter_html()
 
     (DIST / "index.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"{SITE['title']} — {SITE['tagline']}",
