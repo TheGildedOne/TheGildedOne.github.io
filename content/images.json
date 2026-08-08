@@ -1,4 +1,46 @@
 {
+  "mithraism-seven-grades": {
+    "file": "/static/img/mithraism-seven-grades.jpg",
+    "alt": "A black-and-white Roman mosaic panel showing a raven, a small drinking cup and a herald's staff, set in a plain border.",
+    "caption": "The first rung: Corax, the Raven. A bird, a cup, and Mercury's staff, laid into the floor at Ostia.",
+    "credit": "Kharmacher",
+    "licence": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:36.11-1_Mosaic_1st_degree.tif",
+    "width": 960,
+    "height": 916,
+    "card": "/static/img/mithraism-seven-grades-card.jpg",
+    "avif": "/static/img/mithraism-seven-grades.avif",
+    "avif_700": "/static/img/mithraism-seven-grades-700.avif",
+    "share": "/static/img/mithraism-seven-grades-share.jpg"
+  },
+  "ancient-binding-spells-law": {
+    "file": "/static/img/ancient-binding-spells-law.jpg",
+    "alt": "A thin rectangular sheet of grey lead covered in small scratched Greek letters.",
+    "caption": "A lead binding tablet from Pella, fourth century BCE. Not a judicial curse itself, but the same cheap technology every courtroom curse used.",
+    "credit": "Filos96",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Pella_leaded_tablet_(katadesmos)_4th_Century.JPG",
+    "width": 1400,
+    "height": 1050,
+    "card": "/static/img/ancient-binding-spells-law-card.jpg",
+    "avif": "/static/img/ancient-binding-spells-law.avif",
+    "avif_700": "/static/img/ancient-binding-spells-law-700.avif",
+    "share": "/static/img/ancient-binding-spells-law-share.jpg"
+  },
+  "evil-eye-ancient-world": {
+    "file": "/static/img/evil-eye-ancient-world.jpg",
+    "alt": "A bronze wind chime from Pompeii in the form of a winged phallus, with small bells suspended beneath it on chains.",
+    "caption": "A tintinnabulum from Pompeii. Hung in a doorway or garden, it caught the light, made noise, and was meant to be funny.",
+    "credit": "Marie-Lan Nguyen",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Tintinnabulum_Pompeii_MAN_Napoli_Inv27840.jpg",
+    "width": 1400,
+    "height": 2451,
+    "card": "/static/img/evil-eye-ancient-world-card.jpg",
+    "avif": "/static/img/evil-eye-ancient-world.avif",
+    "avif_700": "/static/img/evil-eye-ancient-world-700.avif",
+    "share": "/static/img/evil-eye-ancient-world-share.jpg"
+  },
   "ancient-mystery-cults-guide": {
     "file": "/static/img/ancient-mystery-cults-guide.jpg",
     "alt": "Marble relief showing Demeter handing grain to the boy Triptolemos, with Persephone standing behind him holding a torch.",

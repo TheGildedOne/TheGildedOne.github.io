@@ -13,6 +13,9 @@ UA = "VeiledAntiquity-ImageResearch/1.0 (https://veiledantiquity.com; blog illus
 
 # One or more search phrases per post. Deliberately ancient material only.
 QUERIES = {
+    "mithraism-seven-grades":             ["Felicissimus mithraeum mosaic Ostia", "mitreo di Felicissimo"],
+    "ancient-binding-spells-law":         ["katadesmos lead curse tablet Greek", "defixio lead tablet museum Greek"],
+    "evil-eye-ancient-world":             ["tintinnabulum bronze Pompeii", "fascinum amulet Roman bronze"],
     "ancient-mystery-cults-guide":        ["Great Eleusinian Relief", "Ninnion Tablet"],
     "eleusinian-mysteries-telesterion":   ["Ninnion Tablet", "Telesterion Eleusis"],
     "eleusinian-kykeon-psychedelic":      ["Demeter Persephone Triptolemos relief", "Eleusis museum Demeter"],

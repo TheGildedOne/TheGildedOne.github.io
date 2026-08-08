@@ -88,9 +88,10 @@ START_HERE = [
                                              "piacenza-liver-etruscan", "damnatio-memoriae"],
      "A picture in four hundred temples that nobody can read. A bronze liver mapping the sky. "
      "A painted face scraped off by hand."),
-    ("What ordinary people actually did", ["ancient-curse-tablets", "greek-magical-papyri"],
-     "Ancient literature was written by a few thousand wealthy men. Curse tablets and "
-     "spellbooks were written by everybody else."),
+    ("What ordinary people actually did", ["ancient-curse-tablets", "greek-magical-papyri",
+                                           "evil-eye-ancient-world"],
+     "Ancient literature was written by a few thousand wealthy men. Curse tablets, spellbooks "
+     "and the things people hung over a cradle were made by everybody else."),
     ("Knowledge the state controlled", ["sibylline-books-rome", "villa-of-the-mysteries-frescoes"],
      "Sealed books opened only by vote of the Senate, and a dining room painted with an "
      "initiation a century after Rome tried to stamp it out."),

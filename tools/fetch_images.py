@@ -22,6 +22,18 @@ MANIFEST = Path(__file__).parent.parent / "content" / "images.json"
 
 # slug -> (Commons file, alt text, caption)
 PICKS = {
+    "mithraism-seven-grades": (
+        "File:36.11-1 Mosaic 1st degree.tif",
+        "A black-and-white Roman mosaic panel showing a raven, a small drinking cup and a herald's staff, set in a plain border.",
+        "The first rung: Corax, the Raven. A bird, a cup, and Mercury's staff, laid into the floor at Ostia."),
+    "ancient-binding-spells-law": (
+        "File:Pella leaded tablet (katadesmos) 4th Century.JPG",
+        "A thin rectangular sheet of grey lead covered in small scratched Greek letters.",
+        "A lead binding tablet from Pella, fourth century BCE. Not a judicial curse itself, but the same cheap technology every courtroom curse used."),
+    "evil-eye-ancient-world": (
+        "File:Tintinnabulum Pompeii MAN Napoli Inv27840.jpg",
+        "A bronze wind chime from Pompeii in the form of a winged phallus, with small bells suspended beneath it on chains.",
+        "A tintinnabulum from Pompeii. Hung in a doorway or garden, it caught the light, made noise, and was meant to be funny."),
     "ancient-mystery-cults-guide": (
         "File:Great Eleusinian Relief.jpg",
         "Marble relief showing Demeter handing grain to the boy Triptolemos, with Persephone standing behind him holding a torch.",
