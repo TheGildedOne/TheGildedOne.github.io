@@ -58,6 +58,22 @@ version is:
 - **~1,000 words.** 1,300 is too long unless it has earned it.
 - Say "we don't know" plainly where that is the answer. It is usually the better story.
 
+**The single-source rule — this is where posts go wrong.** A famous anecdote is famous because
+it is a good story, not because it is well attested. Before you narrate one as events, ask: how
+many ancient writers report this, how long after the fact, and does anyone who *should* have
+mentioned it fail to? If the answer is one source, or one source contradicted by silence
+elsewhere, **say so in the body of the post** — not only in the FAQ, and not by quietly
+attributing it ("Plutarch says…") and moving on. Attribution is not a caveat; a reader skims
+past it.
+
+Two failures caught in review, as the pattern to watch for: Plutarch is the only source for
+Philip II meeting Olympias at Samothrace, and the chronology barely allows it. Josephus is the
+only source for the Paulina scandal, and Tacitus and Suetonius record the same expulsion
+without it. Both were written up as narrative before being corrected.
+
+You may still open with the story — it is a good hook. Follow it immediately with what the
+evidence actually supports.
+
 Structural requirements, all enforced by `check.py`:
 - JSON metadata header matching the existing posts exactly
 - `seo_title` ≤ 62 characters, `description` ≤ 158
