@@ -9,12 +9,9 @@
     "width": 1400,
     "height": 1821,
     "card": "/static/img/ancient-mystery-cults-guide-card.jpg",
-    "share": "/static/img/ancient-mystery-cults-guide-share.jpg",
     "avif": "/static/img/ancient-mystery-cults-guide.avif",
-    "webp": "/static/img/ancient-mystery-cults-guide.webp",
-    "card_avif": "/static/img/ancient-mystery-cults-guide-card.avif",
-    "card_webp": "/static/img/ancient-mystery-cults-guide-card.webp",
-    "avif_700": "/static/img/ancient-mystery-cults-guide-700.avif"
+    "avif_700": "/static/img/ancient-mystery-cults-guide-700.avif",
+    "share": "/static/img/ancient-mystery-cults-guide-share.jpg"
   },
   "eleusinian-mysteries-telesterion": {
     "file": "/static/img/eleusinian-mysteries-telesterion.jpg",
@@ -26,12 +23,9 @@
     "width": 1400,
     "height": 933,
     "card": "/static/img/eleusinian-mysteries-telesterion-card.jpg",
-    "share": "/static/img/eleusinian-mysteries-telesterion-share.jpg",
     "avif": "/static/img/eleusinian-mysteries-telesterion.avif",
-    "webp": "/static/img/eleusinian-mysteries-telesterion.webp",
-    "card_avif": "/static/img/eleusinian-mysteries-telesterion-card.avif",
-    "card_webp": "/static/img/eleusinian-mysteries-telesterion-card.webp",
-    "avif_700": "/static/img/eleusinian-mysteries-telesterion-700.avif"
+    "avif_700": "/static/img/eleusinian-mysteries-telesterion-700.avif",
+    "share": "/static/img/eleusinian-mysteries-telesterion-share.jpg"
   },
   "eleusinian-kykeon-psychedelic": {
     "file": "/static/img/eleusinian-kykeon-psychedelic.jpg",
@@ -43,12 +37,9 @@
     "width": 1400,
     "height": 937,
     "card": "/static/img/eleusinian-kykeon-psychedelic-card.jpg",
-    "share": "/static/img/eleusinian-kykeon-psychedelic-share.jpg",
     "avif": "/static/img/eleusinian-kykeon-psychedelic.avif",
-    "webp": "/static/img/eleusinian-kykeon-psychedelic.webp",
-    "card_avif": "/static/img/eleusinian-kykeon-psychedelic-card.avif",
-    "card_webp": "/static/img/eleusinian-kykeon-psychedelic-card.webp",
-    "avif_700": "/static/img/eleusinian-kykeon-psychedelic-700.avif"
+    "avif_700": "/static/img/eleusinian-kykeon-psychedelic-700.avif",
+    "share": "/static/img/eleusinian-kykeon-psychedelic-share.jpg"
   },
   "orphic-gold-tablets": {
     "file": "/static/img/orphic-gold-tablets.jpg",
@@ -60,12 +51,9 @@
     "width": 1400,
     "height": 1050,
     "card": "/static/img/orphic-gold-tablets-card.jpg",
-    "share": "/static/img/orphic-gold-tablets-share.jpg",
     "avif": "/static/img/orphic-gold-tablets.avif",
-    "webp": "/static/img/orphic-gold-tablets.webp",
-    "card_avif": "/static/img/orphic-gold-tablets-card.avif",
-    "card_webp": "/static/img/orphic-gold-tablets-card.webp",
-    "avif_700": "/static/img/orphic-gold-tablets-700.avif"
+    "avif_700": "/static/img/orphic-gold-tablets-700.avif",
+    "share": "/static/img/orphic-gold-tablets-share.jpg"
   },
   "mithras-tauroctony-decoded": {
     "file": "/static/img/mithras-tauroctony-decoded.jpg",
@@ -77,12 +65,9 @@
     "width": 1400,
     "height": 1237,
     "card": "/static/img/mithras-tauroctony-decoded-card.jpg",
-    "share": "/static/img/mithras-tauroctony-decoded-share.jpg",
     "avif": "/static/img/mithras-tauroctony-decoded.avif",
-    "webp": "/static/img/mithras-tauroctony-decoded.webp",
-    "card_avif": "/static/img/mithras-tauroctony-decoded-card.avif",
-    "card_webp": "/static/img/mithras-tauroctony-decoded-card.webp",
-    "avif_700": "/static/img/mithras-tauroctony-decoded-700.avif"
+    "avif_700": "/static/img/mithras-tauroctony-decoded-700.avif",
+    "share": "/static/img/mithras-tauroctony-decoded-share.jpg"
   },
   "villa-of-the-mysteries-frescoes": {
     "file": "/static/img/villa-of-the-mysteries-frescoes.jpg",
@@ -94,12 +79,9 @@
     "width": 1400,
     "height": 462,
     "card": "/static/img/villa-of-the-mysteries-frescoes-card.jpg",
-    "share": "/static/img/villa-of-the-mysteries-frescoes-share.jpg",
     "avif": "/static/img/villa-of-the-mysteries-frescoes.avif",
-    "webp": "/static/img/villa-of-the-mysteries-frescoes.webp",
-    "card_avif": "/static/img/villa-of-the-mysteries-frescoes-card.avif",
-    "card_webp": "/static/img/villa-of-the-mysteries-frescoes-card.webp",
-    "avif_700": "/static/img/villa-of-the-mysteries-frescoes-700.avif"
+    "avif_700": "/static/img/villa-of-the-mysteries-frescoes-700.avif",
+    "share": "/static/img/villa-of-the-mysteries-frescoes-share.jpg"
   },
   "greek-magical-papyri": {
     "file": "/static/img/greek-magical-papyri.jpg",
@@ -111,12 +93,9 @@
     "width": 1400,
     "height": 1050,
     "card": "/static/img/greek-magical-papyri-card.jpg",
-    "share": "/static/img/greek-magical-papyri-share.jpg",
     "avif": "/static/img/greek-magical-papyri.avif",
-    "webp": "/static/img/greek-magical-papyri.webp",
-    "card_avif": "/static/img/greek-magical-papyri-card.avif",
-    "card_webp": "/static/img/greek-magical-papyri-card.webp",
-    "avif_700": "/static/img/greek-magical-papyri-700.avif"
+    "avif_700": "/static/img/greek-magical-papyri-700.avif",
+    "share": "/static/img/greek-magical-papyri-share.jpg"
   },
   "ancient-curse-tablets": {
     "file": "/static/img/ancient-curse-tablets.jpg",
@@ -128,12 +107,9 @@
     "width": 1400,
     "height": 933,
     "card": "/static/img/ancient-curse-tablets-card.jpg",
-    "share": "/static/img/ancient-curse-tablets-share.jpg",
     "avif": "/static/img/ancient-curse-tablets.avif",
-    "webp": "/static/img/ancient-curse-tablets.webp",
-    "card_avif": "/static/img/ancient-curse-tablets-card.avif",
-    "card_webp": "/static/img/ancient-curse-tablets-card.webp",
-    "avif_700": "/static/img/ancient-curse-tablets-700.avif"
+    "avif_700": "/static/img/ancient-curse-tablets-700.avif",
+    "share": "/static/img/ancient-curse-tablets-share.jpg"
   },
   "sibylline-books-rome": {
     "file": "/static/img/sibylline-books-rome.jpg",
@@ -145,12 +121,9 @@
     "width": 1400,
     "height": 928,
     "card": "/static/img/sibylline-books-rome-card.jpg",
-    "share": "/static/img/sibylline-books-rome-share.jpg",
     "avif": "/static/img/sibylline-books-rome.avif",
-    "webp": "/static/img/sibylline-books-rome.webp",
-    "card_avif": "/static/img/sibylline-books-rome-card.avif",
-    "card_webp": "/static/img/sibylline-books-rome-card.webp",
-    "avif_700": "/static/img/sibylline-books-rome-700.avif"
+    "avif_700": "/static/img/sibylline-books-rome-700.avif",
+    "share": "/static/img/sibylline-books-rome-share.jpg"
   },
   "damnatio-memoriae": {
     "file": "/static/img/damnatio-memoriae.jpg",
@@ -162,12 +135,9 @@
     "width": 1400,
     "height": 1399,
     "card": "/static/img/damnatio-memoriae-card.jpg",
-    "share": "/static/img/damnatio-memoriae-share.jpg",
     "avif": "/static/img/damnatio-memoriae.avif",
-    "webp": "/static/img/damnatio-memoriae.webp",
-    "card_avif": "/static/img/damnatio-memoriae-card.avif",
-    "card_webp": "/static/img/damnatio-memoriae-card.webp",
-    "avif_700": "/static/img/damnatio-memoriae-700.avif"
+    "avif_700": "/static/img/damnatio-memoriae-700.avif",
+    "share": "/static/img/damnatio-memoriae-share.jpg"
   },
   "library-of-alexandria-what-was-lost": {
     "file": "/static/img/library-of-alexandria-what-was-lost.jpg",
@@ -179,12 +149,9 @@
     "width": 1400,
     "height": 1050,
     "card": "/static/img/library-of-alexandria-what-was-lost-card.jpg",
-    "share": "/static/img/library-of-alexandria-what-was-lost-share.jpg",
     "avif": "/static/img/library-of-alexandria-what-was-lost.avif",
-    "webp": "/static/img/library-of-alexandria-what-was-lost.webp",
-    "card_avif": "/static/img/library-of-alexandria-what-was-lost-card.avif",
-    "card_webp": "/static/img/library-of-alexandria-what-was-lost-card.webp",
-    "avif_700": "/static/img/library-of-alexandria-what-was-lost-700.avif"
+    "avif_700": "/static/img/library-of-alexandria-what-was-lost-700.avif",
+    "share": "/static/img/library-of-alexandria-what-was-lost-share.jpg"
   },
   "oracle-of-the-dead-ephyra": {
     "file": "/static/img/oracle-of-the-dead-ephyra.jpg",
@@ -196,12 +163,9 @@
     "width": 1400,
     "height": 930,
     "card": "/static/img/oracle-of-the-dead-ephyra-card.jpg",
-    "share": "/static/img/oracle-of-the-dead-ephyra-share.jpg",
     "avif": "/static/img/oracle-of-the-dead-ephyra.avif",
-    "webp": "/static/img/oracle-of-the-dead-ephyra.webp",
-    "card_avif": "/static/img/oracle-of-the-dead-ephyra-card.avif",
-    "card_webp": "/static/img/oracle-of-the-dead-ephyra-card.webp",
-    "avif_700": "/static/img/oracle-of-the-dead-ephyra-700.avif"
+    "avif_700": "/static/img/oracle-of-the-dead-ephyra-700.avif",
+    "share": "/static/img/oracle-of-the-dead-ephyra-share.jpg"
   },
   "piacenza-liver-etruscan": {
     "file": "/static/img/piacenza-liver-etruscan.jpg",
@@ -213,11 +177,50 @@
     "width": 1400,
     "height": 926,
     "card": "/static/img/piacenza-liver-etruscan-card.jpg",
-    "share": "/static/img/piacenza-liver-etruscan-share.jpg",
     "avif": "/static/img/piacenza-liver-etruscan.avif",
-    "webp": "/static/img/piacenza-liver-etruscan.webp",
-    "card_avif": "/static/img/piacenza-liver-etruscan-card.avif",
-    "card_webp": "/static/img/piacenza-liver-etruscan-card.webp",
-    "avif_700": "/static/img/piacenza-liver-etruscan-700.avif"
+    "avif_700": "/static/img/piacenza-liver-etruscan-700.avif",
+    "share": "/static/img/piacenza-liver-etruscan-share.jpg"
+  },
+  "samothrace-great-gods": {
+    "file": "/static/img/samothrace-great-gods.jpg",
+    "alt": "A headless, armless marble statue of a winged woman in wind-blown drapery, standing on the prow of a ship.",
+    "caption": "The Nike of Samothrace, unearthed in the Sanctuary of the Great Gods in 1863.",
+    "credit": "Unknown",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Nike_of_Samothrake_Louvre_Ma2369.jpg",
+    "width": 1400,
+    "height": 2119,
+    "card": "/static/img/samothrace-great-gods-card.jpg",
+    "avif": "/static/img/samothrace-great-gods.avif",
+    "avif_700": "/static/img/samothrace-great-gods-700.avif",
+    "share": "/static/img/samothrace-great-gods-share.jpg"
+  },
+  "bacchanalia-186-bce": {
+    "file": "/static/img/bacchanalia-186-bce.jpg",
+    "alt": "A rectangular bronze tablet densely inscribed with Latin text, its surface worn and pitted with age.",
+    "caption": "The Senatus consultum de Bacchanalibus. Found at Tiriolo in 1640, still readable.",
+    "credit": "Unknown authorUnknown author",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Senatus_consultum_de_bacchanalibus.jpg",
+    "width": 559,
+    "height": 524,
+    "card": "/static/img/bacchanalia-186-bce-card.jpg",
+    "avif": "/static/img/bacchanalia-186-bce.avif",
+    "avif_700": "/static/img/bacchanalia-186-bce-700.avif",
+    "share": "/static/img/bacchanalia-186-bce-share.jpg"
+  },
+  "cult-of-isis-rome": {
+    "file": "/static/img/cult-of-isis-rome.jpg",
+    "alt": "A marble statue of the goddess Isis draped in a fringed mantle, holding a sistrum, with a solar disc and serpent on her head.",
+    "caption": "Isis, sculpted in Rome under Hadrian. She holds her sistrum; Egypt had left the statue in every way but the stone.",
+    "credit": "Carole Raddato from FRANKFURT, Germany",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Marble_statue_of_Isis,_the_goddess_holds_a_situla_and_sistrum,_ritual_implements_used_in_her_worship,_from_117_until_138_AD,_found_at_Hadrian%27s_Villa_(Pantanello),_Palazzo_Nuovo,_Capitoline_Museums_(12945630725).jpg",
+    "width": 1400,
+    "height": 2360,
+    "card": "/static/img/cult-of-isis-rome-card.jpg",
+    "avif": "/static/img/cult-of-isis-rome.avif",
+    "avif_700": "/static/img/cult-of-isis-rome-700.avif",
+    "share": "/static/img/cult-of-isis-rome-share.jpg"
   }
 }

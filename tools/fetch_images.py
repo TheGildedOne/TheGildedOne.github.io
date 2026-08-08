@@ -74,6 +74,18 @@ PICKS = {
         "File:Piacenza liver.jpg",
         "A bronze model of a sheep's liver, its flat surface divided into many small compartments each carrying an inscription.",
         "The Piacenza Liver. Forty compartments, forty gods, and a map of the sky."),
+    "samothrace-great-gods": (
+        "File:Nike of Samothrake Louvre Ma2369.jpg",
+        "A headless, armless marble statue of a winged woman in wind-blown drapery, standing on the prow of a ship.",
+        "The Nike of Samothrace, unearthed in the Sanctuary of the Great Gods in 1863."),
+    "bacchanalia-186-bce": (
+        "File:Senatus consultum de bacchanalibus.jpg",
+        "A rectangular bronze tablet densely inscribed with Latin text, its surface worn and pitted with age.",
+        "The Senatus consultum de Bacchanalibus. Found at Tiriolo in 1640, still readable."),
+    "cult-of-isis-rome": (
+        "File:Marble statue of Isis, the goddess holds a situla and sistrum, ritual implements used in her worship, from 117 until 138 AD, found at Hadrian's Villa (Pantanello), Palazzo Nuovo, Capitoline Museums (12945630725).jpg",
+        "A marble statue of the goddess Isis draped in a fringed mantle, holding a sistrum, with a solar disc and serpent on her head.",
+        "Isis, sculpted in Rome under Hadrian. She holds her sistrum; Egypt had left the statue in every way but the stone."),
 }
 
 
