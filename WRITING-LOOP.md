@@ -44,6 +44,23 @@ This is the one step that keeps the site self-sustaining, and it is also the eas
 wreck it. A weak topic is worse than a gap: it publishes, it ranks for nothing, and it dilutes
 what the site is about.
 
+**First, ask the data what to write.** Before inventing topics, run:
+
+```bash
+python tools/gsc_pull.py       # refresh Search Console data
+python tools/gsc_topics.py     # what the archive is already ranking for
+```
+
+Both exit cleanly and say so if there are no credentials or no data yet, so this is safe to
+run at any point. When there *is* data, an `ORPHAN` result is the best topic signal available:
+a query the site already earns impressions for through a page that is not about it. That is
+demand you have measured rather than guessed.
+
+Proposals are candidates, not decisions — they still have to clear all five criteria below.
+`gsc_topics.py` also refuses queries matching its blocked-terms list regardless of traffic,
+because the highest-volume queries in this niche are exactly the ones that would wreck the
+site's position.
+
 **Every new topic must clear all five:**
 
 1. **A specific object, site, text, or event** — not a theme. "The Piacenza Liver" works.

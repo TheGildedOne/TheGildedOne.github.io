@@ -6,6 +6,9 @@ dist/
 # `python build.py` and upload the file it produces.
 wordpress-import.xml
 
+# Service-account keys and anything else credential-shaped. Never commit this.
+secrets/
+
 __pycache__/
 *.pyc
 .DS_Store
