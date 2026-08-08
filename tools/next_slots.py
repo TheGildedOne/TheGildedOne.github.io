@@ -20,6 +20,12 @@ QUEUE = Path(__file__).parent.parent / "content" / "queue.json"
 PUBLISH_DAYS = {0, 2, 4}          # Mon, Wed, Fri
 PUBLISH_HOUR = 9
 
+# When fewer than this many topics remain, the writing run tops the queue back
+# up to TOPUP_TARGET. Threshold is deliberately ~2 weeks of runway: enough that
+# a missed run never leaves the site with nothing to publish.
+TOPUP_THRESHOLD = 6
+TOPUP_TARGET = 16
+
 
 def next_slots(after: datetime, n: int):
     out, day = [], after.date()
@@ -41,10 +47,20 @@ def main():
     pending = [q for q in queue if q["status"] == "pending" and q["slug"] not in written]
 
     print(f"  {len(posts)} posts written, latest {latest:%a %d %b %Y}")
-    print(f"  {len(pending)} still pending in the queue\n")
+    print(f"  {len(pending)} still pending in the queue")
+
+    # Roughly how long the queue lasts at three posts a week.
+    weeks = len(pending) / 3
+    print(f"  that is about {weeks:.1f} weeks of publishing\n")
+
+    if len(pending) < TOPUP_THRESHOLD:
+        print(f"  {'!' * 3} QUEUE LOW — top it up this run {'!' * 3}")
+        print(f"  Fewer than {TOPUP_THRESHOLD} entries left. Before writing, add new topics to")
+        print(f"  content/queue.json until there are at least {TOPUP_TARGET}, following the")
+        print("  rules in WRITING-LOOP.md under 'Topping up the queue'.\n")
 
     if not pending:
-        print("  Queue empty — add entries to content/queue.json before the next run.")
+        print("  Queue empty — add entries to content/queue.json before writing anything.")
         return
 
     for slot, item in zip(next_slots(latest, n), pending[:n]):

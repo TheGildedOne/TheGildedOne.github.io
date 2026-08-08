@@ -13,6 +13,8 @@ UA = "VeiledAntiquity-ImageResearch/1.0 (https://veiledantiquity.com; blog illus
 
 # One or more search phrases per post. Deliberately ancient material only.
 QUERIES = {
+    "ancient-necromancy":                 ["Nekyia", "underworld Hades vase painting Charon lekythos"],
+    "greek-magical-gems":                 ["Abraxas gem", "magic gem amulet antique intaglio"],
     "mithraism-seven-grades":             ["Felicissimus mithraeum mosaic Ostia", "mitreo di Felicissimo"],
     "ancient-binding-spells-law":         ["katadesmos lead curse tablet Greek", "defixio lead tablet museum Greek"],
     "evil-eye-ancient-world":             ["tintinnabulum bronze Pompeii", "fascinum amulet Roman bronze"],

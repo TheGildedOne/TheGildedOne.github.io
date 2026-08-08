@@ -32,11 +32,23 @@ UA = "VeiledAntiquity-CitationCheck/1.0 (https://veiledantiquity.com)"
 MATCH = 0.72
 
 ANCIENT = {
+    # Greek and Latin authors cited by book and section rather than by edition.
+    # Open Library is the wrong instrument for these — an entry may or may not
+    # exist for a given translation, so a miss says nothing about the citation.
+    # Add to this list whenever a post cites an ancient author not already here.
     "livy", "pausanias", "herodotus", "homer", "cicero", "pliny", "plato",
     "suetonius", "apuleius", "thucydides", "strabo", "eunapius", "porphyry",
     "clement", "hippolytus", "dionysius", "aulus gellius", "cassius dio",
     "ammianus", "martianus capella", "rutilius namatianus", "seneca", "varro",
     "aristotle", "plutarch", "virgil", "horace", "ovid",
+    "galen", "tertullian", "josephus", "flavius josephus", "valerius maximus",
+    "diodorus", "jerome", "origen", "tacitus", "xenophon", "lucian", "arrian",
+    "polybius", "quintilian", "martial", "juvenal", "lucretius", "celsus",
+    "vitruvius", "macrobius", "festus", "servius", "athenaeus", "philostratus",
+    "euripides", "sophocles", "aeschylus", "aristophanes", "pindar", "hesiod",
+    "propertius", "tibullus", "columella", "cato", "sallust", "curtius",
+    "aelian", "artemidorus", "iamblichus", "proclus", "libanius", "julian",
+    "augustine", "lactantius", "eusebius", "zosimus", "procopius",
 }
 
 # Entries naming a physical object or document rather than a publication.

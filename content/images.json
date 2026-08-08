@@ -1,4 +1,24 @@
 {
+  "ancient-necromancy": {
+    "file": "/static/img/ancient-necromancy.jpg",
+    "alt": "A Greek black-figure vase painting of the underworld, with a bearded figure bent forward pushing a large white boulder.",
+    "caption": "The underworld on an Attic vase. Every ancient account of consulting the dead is working from a picture like this one.",
+    "credit": "Swing Painter",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Nekyia_Staatliche_Antikensammlungen_1494.jpg",
+    "width": 1500,
+    "height": 1249
+  },
+  "greek-magical-gems": {
+    "file": "/static/img/greek-magical-gems.jpg",
+    "alt": "A carved oval gemstone showing a figure with a rooster's head, holding a shield and whip, with serpents in place of legs.",
+    "caption": "A magical gem cut with Abraxas. Not one of the medical types &mdash; but the same craft, the same workshops, and the same unpronounceable words.",
+    "credit": "Jakob Faurvig",
+    "licence": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Abraxas_I1679.jpg",
+    "width": 1500,
+    "height": 1807
+  },
   "mithraism-seven-grades": {
     "file": "/static/img/mithraism-seven-grades.jpg",
     "alt": "A black-and-white Roman mosaic panel showing a raven, a small drinking cup and a herald's staff, set in a plain border.",
@@ -6,12 +26,8 @@
     "credit": "Kharmacher",
     "licence": "CC0",
     "source": "https://commons.wikimedia.org/wiki/File:36.11-1_Mosaic_1st_degree.tif",
-    "width": 960,
-    "height": 916,
-    "card": "/static/img/mithraism-seven-grades-card.jpg",
-    "avif": "/static/img/mithraism-seven-grades.avif",
-    "avif_700": "/static/img/mithraism-seven-grades-700.avif",
-    "share": "/static/img/mithraism-seven-grades-share.jpg"
+    "width": 1500,
+    "height": 1432
   },
   "ancient-binding-spells-law": {
     "file": "/static/img/ancient-binding-spells-law.jpg",
@@ -20,12 +36,8 @@
     "credit": "Filos96",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Pella_leaded_tablet_(katadesmos)_4th_Century.JPG",
-    "width": 1400,
-    "height": 1050,
-    "card": "/static/img/ancient-binding-spells-law-card.jpg",
-    "avif": "/static/img/ancient-binding-spells-law.avif",
-    "avif_700": "/static/img/ancient-binding-spells-law-700.avif",
-    "share": "/static/img/ancient-binding-spells-law-share.jpg"
+    "width": 1500,
+    "height": 1125
   },
   "evil-eye-ancient-world": {
     "file": "/static/img/evil-eye-ancient-world.jpg",
@@ -34,12 +46,8 @@
     "credit": "Marie-Lan Nguyen",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Tintinnabulum_Pompeii_MAN_Napoli_Inv27840.jpg",
-    "width": 1400,
-    "height": 2451,
-    "card": "/static/img/evil-eye-ancient-world-card.jpg",
-    "avif": "/static/img/evil-eye-ancient-world.avif",
-    "avif_700": "/static/img/evil-eye-ancient-world-700.avif",
-    "share": "/static/img/evil-eye-ancient-world-share.jpg"
+    "width": 1500,
+    "height": 2626
   },
   "ancient-mystery-cults-guide": {
     "file": "/static/img/ancient-mystery-cults-guide.jpg",
@@ -48,12 +56,8 @@
     "credit": "Gleb Simonov",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Great_Eleusinian_Relief.jpg",
-    "width": 1400,
-    "height": 1821,
-    "card": "/static/img/ancient-mystery-cults-guide-card.jpg",
-    "avif": "/static/img/ancient-mystery-cults-guide.avif",
-    "avif_700": "/static/img/ancient-mystery-cults-guide-700.avif",
-    "share": "/static/img/ancient-mystery-cults-guide-share.jpg"
+    "width": 1500,
+    "height": 1951
   },
   "eleusinian-mysteries-telesterion": {
     "file": "/static/img/eleusinian-mysteries-telesterion.jpg",
@@ -62,12 +66,8 @@
     "credit": "TimeTravelRome",
     "licence": "CC BY 2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Archaeological_Site_of_Eleusis_-_Telesterion_03.jpg",
-    "width": 1400,
-    "height": 933,
-    "card": "/static/img/eleusinian-mysteries-telesterion-card.jpg",
-    "avif": "/static/img/eleusinian-mysteries-telesterion.avif",
-    "avif_700": "/static/img/eleusinian-mysteries-telesterion-700.avif",
-    "share": "/static/img/eleusinian-mysteries-telesterion-share.jpg"
+    "width": 1500,
+    "height": 1000
   },
   "eleusinian-kykeon-psychedelic": {
     "file": "/static/img/eleusinian-kykeon-psychedelic.jpg",
@@ -76,12 +76,8 @@
     "credit": "Furius",
     "licence": "CC0",
     "source": "https://commons.wikimedia.org/wiki/File:Votive_relief_showing_Demeter,_Persephone_and_Triptolemos,_Eleusis,_4th_c_BC.jpg",
-    "width": 1400,
-    "height": 937,
-    "card": "/static/img/eleusinian-kykeon-psychedelic-card.jpg",
-    "avif": "/static/img/eleusinian-kykeon-psychedelic.avif",
-    "avif_700": "/static/img/eleusinian-kykeon-psychedelic-700.avif",
-    "share": "/static/img/eleusinian-kykeon-psychedelic-share.jpg"
+    "width": 1500,
+    "height": 1004
   },
   "orphic-gold-tablets": {
     "file": "/static/img/orphic-gold-tablets.jpg",
@@ -90,12 +86,8 @@
     "credit": "Jononmac46",
     "licence": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Orphic_Gold_Tablet_(Petelia_-_British_Museum,_London).jpg",
-    "width": 1400,
-    "height": 1050,
-    "card": "/static/img/orphic-gold-tablets-card.jpg",
-    "avif": "/static/img/orphic-gold-tablets.avif",
-    "avif_700": "/static/img/orphic-gold-tablets-700.avif",
-    "share": "/static/img/orphic-gold-tablets-share.jpg"
+    "width": 1500,
+    "height": 1125
   },
   "mithras-tauroctony-decoded": {
     "file": "/static/img/mithras-tauroctony-decoded.jpg",
@@ -104,12 +96,8 @@
     "credit": "Jastrow",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Mithras_tauroctony_Louvre_Ma3441.jpg",
-    "width": 1400,
-    "height": 1237,
-    "card": "/static/img/mithras-tauroctony-decoded-card.jpg",
-    "avif": "/static/img/mithras-tauroctony-decoded.avif",
-    "avif_700": "/static/img/mithras-tauroctony-decoded-700.avif",
-    "share": "/static/img/mithras-tauroctony-decoded-share.jpg"
+    "width": 1500,
+    "height": 1325
   },
   "villa-of-the-mysteries-frescoes": {
     "file": "/static/img/villa-of-the-mysteries-frescoes.jpg",
@@ -118,12 +106,8 @@
     "credit": "original files by WolfgangRieger",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Roman_fresco_Villa_dei_Misteri_Pompeii_005.jpg",
-    "width": 1400,
-    "height": 462,
-    "card": "/static/img/villa-of-the-mysteries-frescoes-card.jpg",
-    "avif": "/static/img/villa-of-the-mysteries-frescoes.avif",
-    "avif_700": "/static/img/villa-of-the-mysteries-frescoes-700.avif",
-    "share": "/static/img/villa-of-the-mysteries-frescoes-share.jpg"
+    "width": 1500,
+    "height": 495
   },
   "greek-magical-papyri": {
     "file": "/static/img/greek-magical-papyri.jpg",
@@ -132,12 +116,8 @@
     "credit": "Aktiophis",
     "licence": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Graeco-Egyptian_Magical_Papyrus_I;_Louvre;_Roman_Epoch;_30-395_AD;Demotic,_Greek,Coptic;_Various_Recipes;_Magical_Formulars_are_written_Red.jpg",
-    "width": 1400,
-    "height": 1050,
-    "card": "/static/img/greek-magical-papyri-card.jpg",
-    "avif": "/static/img/greek-magical-papyri.avif",
-    "avif_700": "/static/img/greek-magical-papyri-700.avif",
-    "share": "/static/img/greek-magical-papyri-share.jpg"
+    "width": 1500,
+    "height": 1125
   },
   "ancient-curse-tablets": {
     "file": "/static/img/ancient-curse-tablets.jpg",
@@ -146,12 +126,8 @@
     "credit": "-JvL-",
     "licence": "CC BY 2.0",
     "source": "https://commons.wikimedia.org/wiki/File:A_metal_curse_tablet_(defixio)_with_a_complaint_about_the_theft_of_a_Vilbia.jpg",
-    "width": 1400,
-    "height": 933,
-    "card": "/static/img/ancient-curse-tablets-card.jpg",
-    "avif": "/static/img/ancient-curse-tablets.avif",
-    "avif_700": "/static/img/ancient-curse-tablets-700.avif",
-    "share": "/static/img/ancient-curse-tablets-share.jpg"
+    "width": 1500,
+    "height": 1000
   },
   "sibylline-books-rome": {
     "file": "/static/img/sibylline-books-rome.jpg",
@@ -160,12 +136,8 @@
     "credit": "AlexanderVanLoon",
     "licence": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Cumae_Cave_of_the_Sibyl_AvL.JPG",
-    "width": 1400,
-    "height": 928,
-    "card": "/static/img/sibylline-books-rome-card.jpg",
-    "avif": "/static/img/sibylline-books-rome.avif",
-    "avif_700": "/static/img/sibylline-books-rome-700.avif",
-    "share": "/static/img/sibylline-books-rome-share.jpg"
+    "width": 1500,
+    "height": 994
   },
   "damnatio-memoriae": {
     "file": "/static/img/damnatio-memoriae.jpg",
@@ -174,12 +146,8 @@
     "credit": "anonymous",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_family_of_Septimius_Severus_-_Altes_Museum_-_Berlin_-_Germany_2017.jpg",
-    "width": 1400,
-    "height": 1399,
-    "card": "/static/img/damnatio-memoriae-card.jpg",
-    "avif": "/static/img/damnatio-memoriae.avif",
-    "avif_700": "/static/img/damnatio-memoriae-700.avif",
-    "share": "/static/img/damnatio-memoriae-share.jpg"
+    "width": 1500,
+    "height": 1500
   },
   "library-of-alexandria-what-was-lost": {
     "file": "/static/img/library-of-alexandria-what-was-lost.jpg",
@@ -188,12 +156,8 @@
     "credit": "Institute for the Study of the Ancient World",
     "licence": "CC BY 2.0",
     "source": "https://commons.wikimedia.org/wiki/File:The_Serapeum_of_Alexandria_(I).jpg",
-    "width": 1400,
-    "height": 1050,
-    "card": "/static/img/library-of-alexandria-what-was-lost-card.jpg",
-    "avif": "/static/img/library-of-alexandria-what-was-lost.avif",
-    "avif_700": "/static/img/library-of-alexandria-what-was-lost-700.avif",
-    "share": "/static/img/library-of-alexandria-what-was-lost-share.jpg"
+    "width": 1500,
+    "height": 1125
   },
   "oracle-of-the-dead-ephyra": {
     "file": "/static/img/oracle-of-the-dead-ephyra.jpg",
@@ -202,12 +166,8 @@
     "credit": "Michael Nicht",
     "licence": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Nekromanteion_of_Acheron.jpg",
-    "width": 1400,
-    "height": 930,
-    "card": "/static/img/oracle-of-the-dead-ephyra-card.jpg",
-    "avif": "/static/img/oracle-of-the-dead-ephyra.avif",
-    "avif_700": "/static/img/oracle-of-the-dead-ephyra-700.avif",
-    "share": "/static/img/oracle-of-the-dead-ephyra-share.jpg"
+    "width": 1500,
+    "height": 997
   },
   "piacenza-liver-etruscan": {
     "file": "/static/img/piacenza-liver-etruscan.jpg",
@@ -216,12 +176,8 @@
     "credit": "Piacenza_Bronzeleber.jpg: Lokilech",
     "licence": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Piacenza_liver.jpg",
-    "width": 1400,
-    "height": 926,
-    "card": "/static/img/piacenza-liver-etruscan-card.jpg",
-    "avif": "/static/img/piacenza-liver-etruscan.avif",
-    "avif_700": "/static/img/piacenza-liver-etruscan-700.avif",
-    "share": "/static/img/piacenza-liver-etruscan-share.jpg"
+    "width": 1500,
+    "height": 992
   },
   "samothrace-great-gods": {
     "file": "/static/img/samothrace-great-gods.jpg",
@@ -230,12 +186,8 @@
     "credit": "Unknown",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Nike_of_Samothrake_Louvre_Ma2369.jpg",
-    "width": 1400,
-    "height": 2119,
-    "card": "/static/img/samothrace-great-gods-card.jpg",
-    "avif": "/static/img/samothrace-great-gods.avif",
-    "avif_700": "/static/img/samothrace-great-gods-700.avif",
-    "share": "/static/img/samothrace-great-gods-share.jpg"
+    "width": 1500,
+    "height": 2271
   },
   "bacchanalia-186-bce": {
     "file": "/static/img/bacchanalia-186-bce.jpg",
@@ -244,12 +196,8 @@
     "credit": "Unknown authorUnknown author",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Senatus_consultum_de_bacchanalibus.jpg",
-    "width": 559,
-    "height": 524,
-    "card": "/static/img/bacchanalia-186-bce-card.jpg",
-    "avif": "/static/img/bacchanalia-186-bce.avif",
-    "avif_700": "/static/img/bacchanalia-186-bce-700.avif",
-    "share": "/static/img/bacchanalia-186-bce-share.jpg"
+    "width": 1500,
+    "height": 1406
   },
   "cult-of-isis-rome": {
     "file": "/static/img/cult-of-isis-rome.jpg",
@@ -258,11 +206,7 @@
     "credit": "Carole Raddato from FRANKFURT, Germany",
     "licence": "Public domain",
     "source": "https://commons.wikimedia.org/wiki/File:Marble_statue_of_Isis,_the_goddess_holds_a_situla_and_sistrum,_ritual_implements_used_in_her_worship,_from_117_until_138_AD,_found_at_Hadrian%27s_Villa_(Pantanello),_Palazzo_Nuovo,_Capitoline_Museums_(12945630725).jpg",
-    "width": 1400,
-    "height": 2360,
-    "card": "/static/img/cult-of-isis-rome-card.jpg",
-    "avif": "/static/img/cult-of-isis-rome.avif",
-    "avif_700": "/static/img/cult-of-isis-rome-700.avif",
-    "share": "/static/img/cult-of-isis-rome-share.jpg"
+    "width": 1500,
+    "height": 2528
   }
 }

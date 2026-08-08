@@ -60,6 +60,15 @@ for page in pages:
         if 'width="' not in tag or 'height="' not in tag:
             errors.append(f"{rel}: <img> missing width/height ({src.group(1)})")
 
+    # 3a. block tags balance. Browsers silently repair an unclosed <p>, so a
+    # malformed post looks fine locally and ships broken structure to crawlers.
+    for tag in ("p", "ul", "ol", "li", "figure", "section", "blockquote", "picture"):
+        opens = len(re.findall(rf"<{tag}[\s>]", html))
+        closes = len(re.findall(rf"</{tag}>", html))
+        checked += 1
+        if opens != closes:
+            errors.append(f"{rel}: unbalanced <{tag}> ({opens} open, {closes} close)")
+
     # 3b. every srcset candidate resolves (a typo here fails silently in the browser)
     for srcset in re.findall(r'srcset="([^"]+)"', html):
         for candidate in srcset.split(","):

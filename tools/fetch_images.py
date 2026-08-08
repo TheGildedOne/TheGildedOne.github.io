@@ -22,6 +22,14 @@ MANIFEST = Path(__file__).parent.parent / "content" / "images.json"
 
 # slug -> (Commons file, alt text, caption)
 PICKS = {
+    "ancient-necromancy": (
+        "File:Nekyia Staatliche Antikensammlungen 1494.jpg",
+        "A Greek black-figure vase painting of the underworld, with a bearded figure bent forward pushing a large white boulder.",
+        "The underworld on an Attic vase. Every ancient account of consulting the dead is working from a picture like this one."),
+    "greek-magical-gems": (
+        "File:Abraxas I1679.jpg",
+        "A carved oval gemstone showing a figure with a rooster's head, holding a shield and whip, with serpents in place of legs.",
+        "A magical gem cut with Abraxas. Not one of the medical types &mdash; but the same craft, the same workshops, and the same unpronounceable words."),
     "mithraism-seven-grades": (
         "File:36.11-1 Mosaic 1st degree.tif",
         "A black-and-white Roman mosaic panel showing a raven, a small drinking cup and a herald's staff, set in a plain border.",

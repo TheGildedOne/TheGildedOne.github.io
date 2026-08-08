@@ -34,6 +34,39 @@ cd D:\veiled-antiquity && python tools/next_slots.py 3
 Gives you what to write, the slots to write into, and the exact `date` value for the first.
 If the queue is empty, stop and tell Imran — do not invent topics to fill a schedule.
 
+### 1b. Top up the queue if it is running low
+
+`next_slots.py` prints a **QUEUE LOW** warning when fewer than six topics remain. When you
+see it, add new entries to `content/queue.json` until there are at least sixteen — about five
+weeks of publishing — *before* you start writing this batch.
+
+This is the one step that keeps the site self-sustaining, and it is also the easiest place to
+wreck it. A weak topic is worse than a gap: it publishes, it ranks for nothing, and it dilutes
+what the site is about.
+
+**Every new topic must clear all five:**
+
+1. **A specific object, site, text, or event** — not a theme. "The Piacenza Liver" works.
+   "Etruscan religion" does not.
+2. **At least three modern scholarly sources you can actually name**, plus a primary source.
+   If you cannot name them before writing, you cannot verify them afterwards — drop it.
+3. **It fits one of the four existing categories.** If it needs a fifth, it does not belong.
+4. **It cross-links to at least two posts that already exist.** A post nothing links to is a
+   post nobody reaches. Name the links in the `angle` field.
+5. **There is something genuinely unresolved in it** — a contested reading, a gap in the
+   evidence, a popular story the sources do not support. That tension is the article. A topic
+   where everything is settled produces an encyclopedia entry, and nobody reads those.
+
+**Hard limits.** No speculative or fringe framing — no lost civilisations, no suppressed
+ancient technology, no ancient aliens, however much traffic it would draw. Nothing that
+duplicates an existing post's subject. Nothing that requires a language or body of scholarship
+you cannot actually check.
+
+Write each entry with `slug`, `title`, `keyword`, `category`, `"status": "pending"` and an
+`angle` of one or two sentences saying what the piece argues and which existing posts it links
+to. **List every topic you added at the top of your report** — new topics are the highest-risk
+thing this loop does unsupervised, and they should be the first thing a human sees.
+
 ### 2. Research before writing
 
 Search for each topic. **Do not write from memory.** The failure mode here is a confident
