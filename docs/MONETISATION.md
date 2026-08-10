@@ -93,6 +93,32 @@ Free tiers worth using: **Buttondown** (cleanest, generous free tier), **Kit** (
 ConvertKit), or **MailerLite**. Create a form, copy its POST endpoint into
 `newsletter_action`, rebuild. A styled signup block appears at the end of every post.
 
+#### New-post emails, without the $9/month
+
+Buttondown's built-in RSS-to-email is a Basic-plan feature. Its **API is free on every
+plan**, so `tools/notify_subscribers.py` does the same job from the publish workflow: after
+each deploy it finds anything published in the last 30 hours and sends a teaser — share
+image, dek, and a link back to the site.
+
+To turn it on, add a repository secret named `BUTTONDOWN_API_KEY` (Buttondown → Settings →
+Programming → API key; GitHub → Settings → Secrets and variables → Actions → New secret).
+Until that secret exists the step prints a note and does nothing.
+
+Three things keep it safe:
+
+* It sends a **teaser, not the post**. Someone who reads the whole piece in their inbox
+  never visits the site, sees an ad, or clicks an affiliate link.
+* It is **duplicate-proof** — before sending it asks Buttondown for every email already in
+  `about_to_send`, `in_flight`, `sent` or `scheduled` state and skips matching subjects.
+  Re-run the workflow as often as you like.
+* It **never fails the deploy**. Any error is printed and the step exits 0.
+
+Preview what would go out, without sending or needing a key:
+
+```
+python tools/notify_subscribers.py --dry-run
+```
+
 ### 3. Advertising — last, and only at scale
 
 Do **not** apply to AdSense now. A near-empty site gets rejected, and reapplying is harder

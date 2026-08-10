@@ -63,3 +63,15 @@ jobs:
         run: |
           python build.py --live
           python tools/indexnow.py
+
+      # Email the newsletter list when a post goes live. Buttondown charges for
+      # its built-in RSS-to-email; its API is free, so we do it ourselves. The
+      # script no-ops when nothing published today, when the secret is absent,
+      # and when Buttondown already has an email with that subject.
+      - name: Email subscribers
+        continue-on-error: true
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          pip install --quiet requests
+          python tools/notify_subscribers.py
