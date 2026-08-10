@@ -173,6 +173,19 @@ with an unverified book in it.
 A fabricated source is the single failure that would destroy this site's position. It is
 also exactly the mistake an LLM makes without noticing.
 
+The script reports two kinds of failure and they mean opposite things:
+
+- **NOT FOUND** — Open Library answered and had nothing close. Treat as a possible
+  fabrication. Confirm the book independently or cut it. This is the one that matters.
+- **UNREACHABLE** — the lookup failed even after three retries. That is a statement about
+  the network, not about the citation. Re-run it. Open Library times out often enough that
+  a single run's failures are close to random; two consecutive runs will usually disagree
+  about which titles failed.
+
+Never resolve an UNREACHABLE by assuming the book is fine because you remember it. Re-run
+until you get an answer, or verify it against another catalogue and say in your report that
+you did.
+
 ### 6. Build and validate
 
 ```bash

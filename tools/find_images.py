@@ -31,6 +31,14 @@ QUERIES = {
     "library-of-alexandria-what-was-lost": ["Serapeum Alexandria ruins", "Oxyrhynchus papyrus fragment"],
     "oracle-of-the-dead-ephyra":          ["Necromanteion Acheron", "Nekromanteion Ephyra ruins"],
     "piacenza-liver-etruscan":            ["Liver of Piacenza", "Fegato di Piacenza bronze"],
+    "books-augustus-burned":              ["Augustus Via Labicana pontifex maximus", "Augustus capite velato statue"],
+    "liber-linteus":                      ["Liber Linteus Zagrabiensis", "Zagreb mummy linen book Etruscan"],
+    "etruscan-language-lost":             ["Pyrgi Tablets", "Cippus Perusinus", "Tabula Cortonensis"],
+    "claudius-etruscan-history":          ["Table claudienne Lyon", "Lyon Tablet Claudius bronze inscription"],
+    "delphi-pythia":                      ["Themis Aegeus kylix Berlin", "Temple of Apollo Delphi ruins"],
+    "delphi-gases-hypothesis":            ["Delphi temple of Apollo adyton", "Castalian spring Delphi"],
+    "dream-incubation-asclepius":         ["Amphiaraos relief Oropos incubation", "Asklepios votive relief healing Piraeus"],
+    "etruscan-lightning-doctrine":        ["Tinia Etruscan bronze thunderbolt", "Etruscan Jupiter statuette thunderbolt"],
 }
 
 FREE = ("public domain", "cc0", "cc-by-sa", "cc by-sa", "cc-by", "cc by")

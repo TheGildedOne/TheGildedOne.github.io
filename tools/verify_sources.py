@@ -49,6 +49,17 @@ ANCIENT = {
     "propertius", "tibullus", "columella", "cato", "sallust", "curtius",
     "aelian", "artemidorus", "iamblichus", "proclus", "libanius", "julian",
     "augustine", "lactantius", "eusebius", "zosimus", "procopius",
+    "aelius aristides", "aristides", "diodorus siculus", "persius",
+}
+
+# Real books that Open Library simply does not hold. Each was confirmed against
+# another catalogue; the note records how, so a later run does not "fix" the
+# citation by deleting it. Only add an entry after checking the book yourself.
+VERIFIED_BY_HAND = {
+    "The Epidaurian Miracle Inscriptions: Text, Translation, and Commentary":
+        "Lynn R. LiDonnici, Scholars Press, Atlanta 1995, ISBN 0-7885-0130-8 "
+        "(Texts and Translations 36). Confirmed via Internet Archive and a 1997 "
+        "review in the Journal for the Study of the New Testament. Checked 2026-08-10.",
 }
 
 # Entries naming a physical object or document rather than a publication.
@@ -94,14 +105,26 @@ def similarity(a, b):
 
 
 def query(params):
+    """One Open Library search, retried through transient network failures.
+
+    Without the retry, Open Library timing out looks exactly like a citation that
+    does not exist. Two runs of this script produced two different sets of
+    'unconfirmed' titles, several of which had resolved cleanly minutes earlier —
+    which is how a real fabrication could hide in the noise.
+    """
     params.update({"limit": "8", "fields": "title,author_name,first_publish_year"})
     req = urllib.request.Request(API + "?" + urllib.parse.urlencode(params),
                                  headers={"User-Agent": UA})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return json.load(r).get("docs", []), None
-    except Exception as e:
-        return [], str(e)
+    err = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r).get("docs", []), None
+        except Exception as e:
+            err = str(e)
+            if attempt < 2:
+                time.sleep(4 * (attempt + 1))
+    return [], err
 
 
 def best_match(title, surname):
@@ -124,7 +147,7 @@ def best_match(title, surname):
 
 def main():
     posts = build.load_posts()
-    unconfirmed = []
+    missing, unreachable = [], []
     counts = {"book": 0, "ancient": 0, "journal": 0, "object": 0}
 
     for p in posts:
@@ -141,24 +164,40 @@ def main():
             author = re.sub(r"\((ed|eds|trans)\.?\)", "", clean(entry).split(",")[0], flags=re.I)
             surname = author.strip().split()[-1] if author.strip() else ""
 
+            if title in VERIFIED_BY_HAND:
+                print(f"  hand  {title[:56]:58} verified offline")
+                continue
+
             score, err = best_match(title, surname)
-            if err and score < MATCH:
-                print(f"  !!    {title[:56]:58} lookup failed")
-                unconfirmed.append((p["slug"], title, f"lookup failed: {err}"))
-            elif score >= MATCH:
+            if score >= MATCH:
                 print(f"  ok    {title[:56]:58} ({score:.2f})")
+            elif err:
+                # Could not ask. Says nothing about the citation either way.
+                print(f"  net   {title[:56]:58} unreachable")
+                unreachable.append((p["slug"], title, err.split(":")[-1].strip()[:60]))
             else:
+                # Open Library answered and had nothing close. This is the one
+                # that might be an invented book.
                 print(f"  ????  {title[:56]:58} ({score:.2f})")
-                unconfirmed.append((p["slug"], title, f"best match {score:.2f}"))
+                missing.append((p["slug"], title, f"best match {score:.2f}"))
 
     print(f"\n  books checked: {counts['book']}   "
           f"skipped — ancient: {counts['ancient']}, journal: {counts['journal']}, "
           f"object: {counts['object']}")
 
-    if unconfirmed:
-        print(f"\n  {len(unconfirmed)} UNCONFIRMED — check by hand before publishing:")
-        for slug, title, why in unconfirmed:
+    if missing:
+        print(f"\n  {len(missing)} NOT FOUND — Open Library answered and had no such book.")
+        print("  Treat each as a possible fabrication. Confirm by hand or remove it.")
+        for slug, title, why in missing:
             print(f"    - [{slug}] {title}  ({why})")
+
+    if unreachable:
+        print(f"\n  {len(unreachable)} UNREACHABLE — the lookup failed after 3 tries.")
+        print("  This is a network result, not a verdict. Re-run before drawing conclusions.")
+        for slug, title, why in unreachable:
+            print(f"    - [{slug}] {title}  ({why})")
+
+    if missing or unreachable:
         sys.exit(1)
     print("  Every book citation resolved.")
 

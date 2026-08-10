@@ -81,20 +81,24 @@ START_HERE = [
      "Eleusis ran annually for two millennia and the central rite was never written down. "
      "What survives is a building, a drink, and instructions folded into graves."),
     ("Things everyone believes that aren't true", ["library-of-alexandria-what-was-lost",
-                                                   "oracle-of-the-dead-ephyra"],
-     "Nobody burned the Library of Alexandria, and the famous Oracle of the Dead is "
-     "probably a farmhouse. Both stories survive because they are better than the evidence."),
+                                                   "oracle-of-the-dead-ephyra", "delphi-pythia"],
+     "Nobody burned the Library of Alexandria, the famous Oracle of the Dead is probably a "
+     "farmhouse, and the Pythia worked nine days a year to a published fee scale. These "
+     "stories survive because they are better than the evidence."),
     ("Objects that outlived their meaning", ["mithras-tauroctony-decoded",
-                                             "piacenza-liver-etruscan", "damnatio-memoriae"],
+                                             "piacenza-liver-etruscan", "liber-linteus",
+                                             "damnatio-memoriae"],
      "A picture in four hundred temples that nobody can read. A bronze liver mapping the sky. "
-     "A painted face scraped off by hand."),
+     "A book that survived because somebody cut it up for bandages."),
     ("What ordinary people actually did", ["ancient-curse-tablets", "greek-magical-papyri",
                                            "evil-eye-ancient-world"],
      "Ancient literature was written by a few thousand wealthy men. Curse tablets, spellbooks "
      "and the things people hung over a cradle were made by everybody else."),
-    ("Knowledge the state controlled", ["sibylline-books-rome", "villa-of-the-mysteries-frescoes"],
-     "Sealed books opened only by vote of the Senate, and a dining room painted with an "
-     "initiation a century after Rome tried to stamp it out."),
+    ("Knowledge the state controlled", ["sibylline-books-rome", "books-augustus-burned",
+                                        "villa-of-the-mysteries-frescoes"],
+     "Sealed books opened only by vote of the Senate, two thousand unlicensed prophecies "
+     "burned in a single year, and a dining room painted with an initiation a century after "
+     "Rome tried to stamp it out."),
 ]
 
 CATEGORY_BLURBS = {

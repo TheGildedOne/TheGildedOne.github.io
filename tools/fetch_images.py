@@ -102,6 +102,38 @@ PICKS = {
         "File:Senatus consultum de bacchanalibus.jpg",
         "A rectangular bronze tablet densely inscribed with Latin text, its surface worn and pitted with age.",
         "The Senatus consultum de Bacchanalibus. Found at Tiriolo in 1640, still readable."),
+    "books-augustus-burned": (
+        "File:Augustus as Pontifex Maximus or Via Labicana Augustus (8591667948).jpg",
+        "A marble statue of a man in a heavy toga with a fold of the cloth drawn up over his head, both forearms broken away, standing against a dark red wall.",
+        "Augustus with his head veiled for sacrifice, in the dress of the priesthood he had waited twenty-three years to hold."),
+    "liber-linteus": (
+        "File:Lanena knjiga (Liber linteus Zagrebiensis).jpg",
+        "Long horizontal strips of ancient linen, stained deep red-brown, each carrying rows of small dark Etruscan letters, mounted against a black backing.",
+        "The Liber Linteus, reassembled. Every strip here was once wound around a body."),
+    "etruscan-language-lost": (
+        "File:The Pyrgi tablets.jpg",
+        "Three thin rectangular sheets of gold displayed side by side, each crumpled slightly and covered in rows of incised ancient lettering, with small nail holes around their edges.",
+        "The Pyrgi Tablets: two in Etruscan, one in Phoenician. The nearest thing to a bilingual, and not near enough."),
+    "claudius-etruscan-history": (
+        "File:La Table claudienne - Après 48.jpg",
+        "A large bronze plaque engraved with two dense columns of Latin capitals, split by a ragged vertical break down the centre and broken away along the top edge.",
+        "The Lyon Tablet. Low in the left-hand column Claudius tells the Senate that the Etruscans called the king Rome knew as Servius Tullius by another name: Mastarna."),
+    "delphi-pythia": (
+        "File:Themis Aigeus Antikensammlung Berlin F2538 n2.jpg",
+        "The interior of a Greek red-figure cup: a woman sits on a tall tripod, head bowed over a shallow bowl held in one hand and a laurel sprig in the other, facing a bearded man in a wreath who stands wrapped in his cloak.",
+        "A consultation, painted around 440 BCE. The seated figure is usually identified as Themis rather than the Pythia &mdash; it is still the closest thing we have to a contemporary picture of the procedure."),
+    "delphi-gases-hypothesis": (
+        "File:Temple of Apollo, floor construction, Delphi, Dlfi412.jpg",
+        "Looking down into the excavated stone foundations of the temple of Apollo at Delphi: courses of large limestone blocks around a sunken rectangular space, with a wooded hillside beyond.",
+        "Under the floor of the temple. This is where the excavators went looking for a chasm, and did not find one."),
+    "dream-incubation-asclepius": (
+        "File:Votive relief depicting Amphiaraus and a patient (4th cent. B.C.) at the National Archaeological Museum of Athens on 22 July 2018.jpg",
+        "A marble votive relief: a bearded god treats the bare shoulder of a standing young man, while to the right the same young man lies asleep on a couch with a large snake stretched over his shoulder.",
+        "Incubation in one panel: the treatment, and the dream. Dedicated by a man named Archinos &mdash; his name is cut along the base &mdash; at the sanctuary of Amphiaraos at Oropos, not Epidaurus. A different healer, the same procedure."),
+    "etruscan-lightning-doctrine": (
+        "File:Statue of Tinia with thunderbolt, Fiesole, Umbrian workshop, 425-400 BC, bronze, Villa Giulia - The Etruscans exhibition - California Palace of the Legion of Honor - San Francisco, CA - DSC09377.jpg",
+        "A slender nude bronze statuette of a standing male figure, one arm extended holding a forked thunderbolt, the other raised holding a small round object.",
+        "Tinia, the Etruscan sky god, with the weapon in his hand. Eight other gods were entitled to throw one, and his worst needed permission."),
     "cult-of-isis-rome": (
         "File:Marble statue of Isis, the goddess holds a situla and sistrum, ritual implements used in her worship, from 117 until 138 AD, found at Hadrian's Villa (Pantanello), Palazzo Nuovo, Capitoline Museums (12945630725).jpg",
         "A marble statue of the goddess Isis draped in a fringed mantle, holding a sistrum, with a solar disc and serpent on her head.",
