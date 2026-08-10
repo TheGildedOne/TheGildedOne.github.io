@@ -30,17 +30,30 @@ def main():
 
         start = path.stat().st_size
         before += start
+        card_path = IMG / f"{slug}-card.jpg"
 
         with Image.open(path) as im:
-            im = im.convert("RGB")
-            if im.width > MAX_W:
-                h = round(im.height * MAX_W / im.width)
-                im = im.resize((MAX_W, h), Image.LANCZOS)
-            im.save(path, "JPEG", quality=QUALITY, optimize=True, progressive=True)
-            data["width"], data["height"] = im.width, im.height
+            # Idempotent: re-saving an already-processed JPEG costs a generation
+            # of quality for nothing. Only encode when there is work to do.
+            done = im.width <= MAX_W and card_path.exists()
+            if done:
+                data["width"], data["height"] = im.width, im.height
+            else:
+                im = im.convert("RGB")
+                if im.width > MAX_W:
+                    h = round(im.height * MAX_W / im.width)
+                    im = im.resize((MAX_W, h), Image.LANCZOS)
+                im.save(path, "JPEG", quality=QUALITY, optimize=True, progressive=True)
+                data["width"], data["height"] = im.width, im.height
 
         # Small crop for the homepage and archive cards, so the grid does not
         # pull several megabytes of hero images.
+        if card_path.exists():
+            data["card"] = f"/static/img/{slug}-card.jpg"
+            after += path.stat().st_size + card_path.stat().st_size
+            print(f"  {slug:38} {start//1024:>5} KB  (already processed)")
+            continue
+
         with Image.open(path) as im:
             im = im.convert("RGB")
             tw, th = 520, 300

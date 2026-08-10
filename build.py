@@ -813,17 +813,41 @@ def build_site(posts: list):
     def rfc822(dt):
         return dt.replace(tzinfo=timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
 
-    items = "\n".join(f"""  <item>
+    def feed_item(p):
+        # The feed drives the subscriber email, so it carries the dek (written
+        # for a reader) rather than the meta description (written for Google),
+        # plus the share image. Deliberately a teaser and a link, not the full
+        # post — a subscriber who reads the whole piece in their inbox never
+        # reaches the site.
+        img = p.get("image") or {}
+        share = SITE["url"] + img["share"] if img.get("share") else ""
+        enclosure = ""
+        picture = ""
+        if share:
+            local = STATIC / "img" / Path(img["share"]).name
+            size = local.stat().st_size if local.exists() else 0
+            enclosure = f'\n    <enclosure url="{share}" type="image/jpeg" length="{size}"/>'
+            picture = (f'<p><a href="{p["url"]}">'
+                       f'<img src="{share}" alt="" style="max-width:100%;height:auto;"></a></p>')
+
+        body = (f'{picture}<p>{p["dek"]}</p>'
+                f'<p><a href="{p["url"]}">Read it on Veiled Antiquity &#8594;</a></p>')
+
+        return f"""  <item>
     <title>{esc(p['title'])}</title>
     <link>{p['url']}</link>
     <guid isPermaLink="true">{p['url']}</guid>
     <pubDate>{rfc822(p['dt'])}</pubDate>
-    <category>{esc(CATEGORIES[p['category']])}</category>
-    <description>{esc(p['description'])}</description>
-  </item>""" for p in reversed(posts))
+    <category>{esc(CATEGORIES[p['category']])}</category>{enclosure}
+    <description>{esc(p['dek'])}</description>
+    <content:encoded><![CDATA[{body}]]></content:encoded>
+  </item>"""
+
+    items = "\n".join(feed_item(p) for p in reversed(posts))
 
     (DIST / "feed.xml").write_text(f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
   <title>{esc(SITE['title'])}</title>
   <link>{SITE['url']}/</link>

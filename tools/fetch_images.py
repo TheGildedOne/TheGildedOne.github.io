@@ -123,7 +123,12 @@ def strip_html(s):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    manifest = {}
+
+    # MERGE, never replace. optimise_images / modern_images / make_share_images
+    # each add derived keys (card, avif, avif_700, share) to this same file.
+    # Starting from an empty dict silently strips them, and nothing downstream
+    # errors — the pages just quietly stop referencing AVIF and share cards.
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
 
     for slug, (title, alt, caption) in PICKS.items():
         d = api({"action": "query", "titles": title, "prop": "imageinfo",
@@ -157,7 +162,7 @@ def main():
                     time.sleep(wait)
             time.sleep(2)
 
-        manifest[slug] = {
+        manifest.setdefault(slug, {}).update({
             "file": f"/static/img/{slug}.jpg",
             "alt": alt,
             "caption": caption,
@@ -166,7 +171,7 @@ def main():
             "source": ii.get("descriptionurl", ""),
             "width": ii.get("thumbwidth") or ii.get("width"),
             "height": ii.get("thumbheight") or ii.get("height"),
-        }
+        })
         print(f"  ok   {slug:38} [{manifest[slug]['licence']}]")
 
     MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")

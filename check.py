@@ -77,6 +77,20 @@ for page in pages:
             if url.startswith("/") and not (DIST / url.lstrip("/")).exists():
                 errors.append(f"{rel}: missing srcset image {url}")
 
+    # 3c. Post pages must actually use the derived image variants. These degrade
+    # silently — if the manifest loses its avif/share keys the templates simply
+    # stop emitting them, every other check still passes, and the site quietly
+    # serves 8x heavier heroes and plain photos as social previews.
+    if rel.startswith("posts/"):
+        checked += 2
+        if "image/avif" not in html:
+            errors.append(f"{rel}: no AVIF <source> — image manifest is probably missing "
+                          f"avif keys (re-run tools/modern_images.py)")
+        og = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+        if og and not og.group(1).endswith("-share.jpg"):
+            errors.append(f"{rel}: og:image is not a share card ({og.group(1).split('/')[-1]}) "
+                          f"— re-run tools/make_share_images.py")
+
     # 4. social preview image is an absolute URL that exists locally
     og = re.search(r'<meta property="og:image" content="([^"]+)"', html)
     if og:
