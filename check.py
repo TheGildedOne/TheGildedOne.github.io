@@ -128,6 +128,49 @@ for slug in slugs:
     if f'href="/posts/{slug}/"' not in home:
         errors.append(f"index.html: post not linked from homepage: {slug}")
 
+# 7. no em dashes in posts written from now on.
+#
+# Imran flagged the em dash as an overused tic on 2026-08-13: 461 of them across
+# the 29 posts written by then. Those are grandfathered deliberately - rewriting
+# live and scheduled posts would churn a lot of prose for a stylistic preference.
+# The rule applies to everything written afterwards.
+#
+# Gated on the post's own date rather than a slug list, so it needs no upkeep:
+# the last post written under the old rule is dated 12 Oct 2026, and any post
+# written from here on necessarily gets a later slot.
+#
+# Catches the &mdash; entity and a literal em dash. En dashes are untouched -
+# they carry number and date ranges ("440-430 BCE"), which is correct typography
+# and not the habit being complained about.
+EM_DASH_FREE_FROM = "2026-10-13"
+META_RE = re.compile(r"^<!--META\s*(\{.*?\})\s*META-->", re.DOTALL)
+CAPTIONS = {}
+_img = Path(__file__).parent / "content" / "images.json"
+if _img.exists():
+    CAPTIONS = {k: (v.get("caption") or "") for k, v in
+                json.loads(_img.read_text(encoding="utf-8")).items()}
+
+for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html")):
+    m = META_RE.match(source.read_text(encoding="utf-8"))
+    if not m:
+        continue
+    meta = json.loads(m.group(1))
+    if meta.get("date", "") < EM_DASH_FREE_FROM:
+        continue
+
+    checked += 1
+    body = source.read_text(encoding="utf-8")
+    hits = body.count("&mdash;") + body.count("—")
+    if hits:
+        errors.append(f"{source.name}: {hits} em dash(es) - not allowed in posts "
+                      f"from {EM_DASH_FREE_FROM}. Recast with a comma, colon, "
+                      f"bracket or full stop; do not swap in a hyphen or en dash.")
+
+    caption = CAPTIONS.get(meta.get("slug"), "")
+    checked += 1
+    if "&mdash;" in caption or "—" in caption:
+        errors.append(f"{meta['slug']}: em dash in image caption (tools/fetch_images.py PICKS)")
+
 print(f"{len(pages)} pages, {checked} assertions.")
 if errors:
     print(f"\n{len(errors)} PROBLEM(S):")

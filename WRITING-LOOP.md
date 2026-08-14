@@ -108,6 +108,26 @@ version is:
 - **~1,000 words.** 1,300 is too long unless it has earned it.
 - Say "we don't know" plainly where that is the answer. It is usually the better story.
 
+**No em dashes.** Imran asked for this on 2026-08-13, after 461 of them piled up across the
+first 29 posts. Enforced by `check.py` for any post dated 2026-10-13 or later; earlier posts
+are grandfathered and must not be retro-edited.
+
+This is a rewrite instruction, not a find-and-replace one. Do **not** substitute a hyphen or
+an en dash: that looks worse and still fails the check. Recast the sentence instead. The em
+dash was doing one of three jobs, and each has a better replacement:
+
+| It was doing this | Use instead |
+| --- | --- |
+| Dropping in an aside | Commas, or brackets if it is a true parenthesis |
+| Pivoting for effect | A full stop. The pause is usually stronger as two sentences |
+| Expanding on a noun | A colon |
+
+En dashes stay. They carry number and date ranges (`440&ndash;430 BCE`, `432d&ndash;438d`),
+which is correct typography and not what was being complained about.
+
+Watch the parts that are easy to forget: the `dek`, the `description`, the FAQ answers, and
+the **image caption in `tools/fetch_images.py`** — `check.py` checks all four.
+
 **The single-source rule — this is where posts go wrong.** A famous anecdote is famous because
 it is a good story, not because it is well attested. Before you narrate one as events, ask: how
 many ancient writers report this, how long after the fact, and does anyone who *should* have
