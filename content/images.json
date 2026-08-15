@@ -404,5 +404,47 @@
     "avif": "/static/img/etruscan-lightning-doctrine.avif",
     "avif_700": "/static/img/etruscan-lightning-doctrine-700.avif",
     "share": "/static/img/etruscan-lightning-doctrine-share.jpg"
+  },
+  "numas-buried-books": {
+    "file": "/static/img/numas-buried-books.jpg",
+    "alt": "A silver Roman denarius; the reverse shows King Numa Pompilius standing before a lit altar, holding a lituus, about to sacrifice a goat held by a youth.",
+    "caption": "Numa sacrificing at an altar, on a denarius minted in 97 BCE, nearly six centuries after his traditional reign. The closest thing left to a portrait of the man whose books nobody kept.",
+    "credit": "Classical Numismatic Group",
+    "licence": "CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Pomponius_Molo_Denarius_97_BC_680844.jpg",
+    "width": 500,
+    "height": 235,
+    "card": "/static/img/numas-buried-books-card.jpg",
+    "avif": "/static/img/numas-buried-books.avif",
+    "avif_700": "/static/img/numas-buried-books-700.avif",
+    "share": "/static/img/numas-buried-books-share.jpg"
+  },
+  "roman-augury-sacred-chickens": {
+    "file": "/static/img/roman-augury-sacred-chickens.jpg",
+    "alt": "The reverse of a Roman silver denarius of Vespasian, showing a set of priestly religious implements including an augur's curved lituus staff.",
+    "caption": "A lituus on a denarius of Vespasian. The augur's badge of office, not a chicken in sight, and still the symbol the whole discipline ran on.",
+    "credit": "West Yorkshire Archaeology Service, Anna Marshall, 2004-05-17 11:35:27",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Denarius_reverse_(FindID_66682).jpg",
+    "width": 855,
+    "height": 543,
+    "card": "/static/img/roman-augury-sacred-chickens-card.jpg",
+    "avif": "/static/img/roman-augury-sacred-chickens.avif",
+    "avif_700": "/static/img/roman-augury-sacred-chickens-700.avif",
+    "share": "/static/img/roman-augury-sacred-chickens-share.jpg"
+  },
+  "cult-of-cybele-taurobolium": {
+    "file": "/static/img/cult-of-cybele-taurobolium.jpg",
+    "alt": "A carved marble altar from the fourth century CE showing Cybele enthroned with her hand on the shoulder of Attis, flanked by pine trees.",
+    "caption": "A taurobolium altar dedicated around 360 CE, showing Cybele and Attis. Set up by a man who had just undergone the very rite Prudentius later wrote up as savage.",
+    "credit": "George E. Koronaios",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Taurobolic_altar_with_Cybele_and_Attis_(4th_cent._A.D.)_at_the_National_Archaeological_Museum_of_Athens_on_2_January_2020.jpg",
+    "width": 1400,
+    "height": 1340,
+    "card": "/static/img/cult-of-cybele-taurobolium-card.jpg",
+    "avif": "/static/img/cult-of-cybele-taurobolium.avif",
+    "avif_700": "/static/img/cult-of-cybele-taurobolium-700.avif",
+    "share": "/static/img/cult-of-cybele-taurobolium-share.jpg"
   }
 }

@@ -128,6 +128,134 @@
       "category": "oracles-and-divination",
       "status": "written",
       "angle": "Sixteen regions of sky, each with an owner, and a legal procedure for burying a lightning strike. Direct sequel to the Piacenza Liver."
+    },
+    {
+      "slug": "numas-buried-books",
+      "title": "The Buried Books of Numa Pompilius",
+      "keyword": "numa pompilius buried books",
+      "category": "lost-and-suppressed",
+      "status": "written",
+      "angle": "181 BCE, the Janiculum: farmers dig up two stone chests, one holding Numa's bones, the other his writings. The Senate lets the bones stay buried and burns the books as a threat to state religion. Direct companion to the Augustus post: two burnings for opposite stated reasons. Links to books-augustus-burned and sibylline-books-rome."
+    },
+    {
+      "slug": "roman-augury-sacred-chickens",
+      "title": "The Chickens That Sank a Roman Fleet",
+      "keyword": "sacred chickens roman augury",
+      "category": "oracles-and-divination",
+      "status": "written",
+      "angle": "249 BCE: a consul asks the sacred chickens for the auspices before Drepana, they refuse to eat, he throws them overboard and loses the fleet. What Roman augury actually was as a technical civic office, distinct from Etruscan haruspicy. Links to etruscan-lightning-doctrine, delphi-pythia and piacenza-liver-etruscan."
+    },
+    {
+      "slug": "cult-of-cybele-taurobolium",
+      "title": "Cybele's Blood Bath: The Roman Taurobolium",
+      "keyword": "cybele taurobolium rome",
+      "category": "mystery-cults",
+      "status": "written",
+      "angle": "204 BCE: Rome ships in a black stone on Sibylline orders and calls it the Mother of the Gods, while self-castrated Galli parade in the streets. The same Senate crushed the Bacchanalia eighteen years later. Links to cult-of-isis-rome, bacchanalia-186-bce and mithraism-seven-grades."
+    },
+    {
+      "slug": "andania-mysteries-inscription",
+      "title": "The Sacred Law of Andania",
+      "keyword": "andania mysteries inscription",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "A 92 BCE inscription of 194 lines regulates the mysteries of Andania in more procedural detail than any Greek mystery cult except Eleusis: seating, dress, fines. Revived by a hierophant named Mnasistratos for reasons the text never explains. Links to eleusinian-mysteries-telesterion and samothrace-great-gods."
+    },
+    {
+      "slug": "cabeirion-thebes",
+      "title": "The Cabeirion: Thebes's Other Mystery Cult",
+      "keyword": "cabeirion thebes kabeiroi",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "A sanctuary near Thebes where initiates left cups painted with grotesque parodies of the Trojan War, mocking the heroic tradition Thebes claimed descent from. Herodotus calls the rites unspeakable and leaves it there. A deliberately different Great Gods cult from Samothrace. Links to samothrace-great-gods and villa-of-the-mysteries-frescoes."
+    },
+    {
+      "slug": "sack-of-eleusis-396",
+      "title": "396 CE: The Night the Mysteries Ended",
+      "keyword": "sack of eleusis alaric",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Alaric's Goths burn the sanctuary at Eleusis months after Theodosius had already outlawed the rites. The best witness, Eunapius, had been initiated by the last legitimate hierophant himself. Direct sequel to the Eleusinian Mysteries post. Links to eleusinian-mysteries-telesterion and eleusinian-kykeon-psychedelic."
+    },
+    {
+      "slug": "apuleius-trial-magic",
+      "title": "The Novelist Who Was Tried for Witchcraft",
+      "keyword": "apuleius trial magic",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "158 CE, Sabratha: Apuleius stands trial for using magic to seduce a rich widow and defends himself by giving the court a seminar on what real magic looks like. The Apologia is the only complete ancient magic-trial defence to survive. Links to greek-magical-papyri and cult-of-isis-rome."
+    },
+    {
+      "slug": "chariot-race-curse-tablets",
+      "title": "Curse the Charioteer: Magic at the Circus",
+      "keyword": "chariot race curse tablets",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "More than fifty lead tablets from Carthage and Hadrumetum name specific horses and drivers by team colour, calling on demons to break their legs before the race starts, some sharing identical magical formulas. Links to ancient-curse-tablets, ancient-binding-spells-law and evil-eye-ancient-world."
+    },
+    {
+      "slug": "love-spell-doll-louvre",
+      "title": "The Doll in the Jar: A Love Spell from Egypt",
+      "keyword": "louvre magical doll love spell",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "A clay figurine of a bound, kneeling woman, pierced with thirteen needles, found with the lead tablet recipe it was built to follow almost exactly. A fourth-century magician working from a cookbook. Links to greek-magical-papyri and ancient-curse-tablets."
+    },
+    {
+      "slug": "palladium-rome",
+      "title": "The Palladium: Rome's Locked-Room Talisman",
+      "keyword": "palladium rome vesta",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "A wooden statue only the Vestals and the pontifex maximus could see, sealed in an inner room, said to have come from Troy with Aeneas. A fire in 241 BCE forced Metellus to go in and grab it anyway, and the sources disagree what it cost him. Links to sibylline-books-rome and damnatio-memoriae."
+    },
+    {
+      "slug": "libri-acherontici",
+      "title": "The Etruscan Books of the Underworld",
+      "keyword": "libri acherontici etruscan",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "The third branch of Etruscan sacred literature: instructions for turning a soul immortal through specific blood sacrifices, quoted only by a hostile Christian polemicist centuries after Etruscan had died as a spoken language. Sequel to the lightning and liver posts. Links to etruscan-lightning-doctrine, piacenza-liver-etruscan and liber-linteus."
+    },
+    {
+      "slug": "library-pergamon",
+      "title": "Pergamon: The Library Built to Beat Alexandria",
+      "keyword": "library of pergamon alexandria rivalry",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "A royal library built to outdo Alexandria, allegedly starved of papyrus by an Egyptian export ban, which is the origin story told for parchment. Plutarch says Antony later gave the whole collection to Cleopatra, a claim every modern historian who repeats it also flags as unverifiable. Links to library-of-alexandria-what-was-lost and claudius-etruscan-history."
+    },
+    {
+      "slug": "sortes-praeneste",
+      "title": "The Well That Answered in Oak",
+      "keyword": "sortes praenestinae fortuna",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "At Praeneste the future came out of a well on strips of oak drawn by a child, and in 241 BCE a consul was legally forbidden to consult it. Cicero says only ordinary people ever trusted it, the same century the state trusted the augurs implicitly. Links to delphi-pythia and piacenza-liver-etruscan."
+    },
+    {
+      "slug": "dodona-oracle-lead-tablets",
+      "title": "Dodona: The Oracle That Answered Everybody",
+      "keyword": "dodona oracle lead tablets",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "More than four thousand lead strips from Zeus's oldest oracle, most asking not about war or colonies but whose baby a wife is carrying, or whether to take up sheep-farming. Delphi answered states; Dodona answered everybody. Links to delphi-pythia and dream-incubation-asclepius."
+    },
+    {
+      "slug": "cumaean-sibyl-cave",
+      "title": "The Cave They Found Under Virgil's Directions",
+      "keyword": "cumaean sibyl cave cumae",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "In 1932 an archaeologist tunnelled into a hillside above Naples and found a 131-metre trapezoidal gallery that matches Virgil's description of the Sibyl's cave closely enough to unnerve people, and still can't be proven to be the actual site. Links to delphi-pythia and sibylline-books-rome."
+    },
+    {
+      "slug": "oracle-trophonius",
+      "title": "The Oracle That Took Your Smile Away",
+      "keyword": "oracle of trophonius lebadeia",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Consultants at Lebadeia climbed feet-first into a hole in the ground and came out, by multiple accounts, unable to laugh for weeks. Pausanias underwent it himself and wrote up the procedure. Links to dream-incubation-asclepius and oracle-of-the-dead-ephyra."
     }
   ]
 }

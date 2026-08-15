@@ -95,10 +95,11 @@ START_HERE = [
      "Ancient literature was written by a few thousand wealthy men. Curse tablets, spellbooks "
      "and the things people hung over a cradle were made by everybody else."),
     ("Knowledge the state controlled", ["sibylline-books-rome", "books-augustus-burned",
+                                        "numas-buried-books",
                                         "villa-of-the-mysteries-frescoes"],
      "Sealed books opened only by vote of the Senate, two thousand unlicensed prophecies "
-     "burned in a single year, and a dining room painted with an initiation a century after "
-     "Rome tried to stamp it out."),
+     "burned in a single year, a king's own writings dug up and destroyed, and a dining room "
+     "painted with an initiation a century after Rome tried to stamp it out."),
 ]
 
 CATEGORY_BLURBS = {

@@ -138,6 +138,18 @@ PICKS = {
         "File:Marble statue of Isis, the goddess holds a situla and sistrum, ritual implements used in her worship, from 117 until 138 AD, found at Hadrian's Villa (Pantanello), Palazzo Nuovo, Capitoline Museums (12945630725).jpg",
         "A marble statue of the goddess Isis draped in a fringed mantle, holding a sistrum, with a solar disc and serpent on her head.",
         "Isis, sculpted in Rome under Hadrian. She holds her sistrum; Egypt had left the statue in every way but the stone."),
+    "numas-buried-books": (
+        "File:Pomponius Molo Denarius 97 BC 680844.jpg",
+        "A silver Roman denarius; the reverse shows King Numa Pompilius standing before a lit altar, holding a lituus, about to sacrifice a goat held by a youth.",
+        "Numa sacrificing at an altar, on a denarius minted in 97 BCE, nearly six centuries after his traditional reign. The closest thing left to a portrait of the man whose books nobody kept."),
+    "roman-augury-sacred-chickens": (
+        "File:Denarius reverse (FindID 66682).jpg",
+        "The reverse of a Roman silver denarius of Vespasian, showing a set of priestly religious implements including an augur's curved lituus staff.",
+        "A lituus on a denarius of Vespasian. The augur's badge of office, not a chicken in sight, and still the symbol the whole discipline ran on."),
+    "cult-of-cybele-taurobolium": (
+        "File:Taurobolic altar with Cybele and Attis (4th cent. A.D.) at the National Archaeological Museum of Athens on 2 January 2020.jpg",
+        "A carved marble altar from the fourth century CE showing Cybele enthroned with her hand on the shoulder of Attis, flanked by pine trees.",
+        "A taurobolium altar dedicated around 360 CE, showing Cybele and Attis. Set up by a man who had just undergone the very rite Prudentius later wrote up as savage."),
 }
 
 
