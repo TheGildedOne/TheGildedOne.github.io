@@ -378,8 +378,15 @@ def hero_html(p: dict) -> str:
     # a 1x display never needs the 1400px file — that alone is most of the saving.
     sources = ""
     if img.get("avif") and img.get("avif_700"):
-        sources = (f'<source type="image/avif" '
-                   f'srcset="{img["avif_700"]} 700w, {img["avif"]} 1400w" '
+        # Descriptors must state the width the file actually has. These were
+        # hardcoded to 700w/1400w, so a 500px source advertised a 1400w
+        # candidate: a retina browser dutifully picked it and upscaled three
+        # times over. Where the source is under 700px the two AVIFs are byte
+        # identical, so offer only one.
+        full_w = int(img.get("width") or 1400)
+        srcset = (f'{img["avif"]} {full_w}w' if full_w <= 700
+                  else f'{img["avif_700"]} 700w, {img["avif"]} {full_w}w')
+        sources = (f'<source type="image/avif" srcset="{srcset}" '
                    f'sizes="(max-width: 760px) 100vw, 700px">')
 
     picture = (f'<picture>{sources}'

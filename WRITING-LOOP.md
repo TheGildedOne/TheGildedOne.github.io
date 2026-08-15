@@ -165,6 +165,11 @@ python tools/make_share_images.py     # social preview cards
 All four are required. Skipping `modern_images.py` ships a post whose hero image is roughly
 eight times heavier than it needs to be on a phone.
 
+**At least 1200px wide.** The hero renders at 700px CSS, so anything smaller is visibly
+soft on a phone. `check.py` enforces this for posts dated 2026-10-20 or later. Commons
+usually has a large version; if the only image of an object is small, pick a different
+object rather than shipping a blurry one.
+
 Ancient material only — the object, the site, or the manuscript. **No Renaissance paintings,
 no modern reconstructions, no artists' impressions.** Public domain or CC only; the credit
 lines render automatically and must not be stripped.
@@ -192,6 +197,17 @@ with an unverified book in it.
 
 A fabricated source is the single failure that would destroy this site's position. It is
 also exactly the mistake an LLM makes without noticing.
+
+It now checks **journal articles as well as books**: modern books go to Open Library,
+quoted article titles go to Crossref and then OpenAlex. Articles used to be skipped, which
+was the larger hole, because a convincing article title, journal and year is trivial to
+invent and impossible to catch by reading. A journal named with no quoted article title is
+still skipped, since there is nothing falsifiable to look up.
+
+Expect book chapters and pre-1990 European journals to come back NOT FOUND even when they
+are perfectly real: Crossref indexes neither well. Confirm those by hand and add them to
+`VERIFIED_BY_HAND` in the script with a note on how you checked, rather than deleting a good
+citation to make the gate go quiet.
 
 The script reports two kinds of failure and they mean opposite things:
 

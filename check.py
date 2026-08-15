@@ -144,11 +144,11 @@ for slug in slugs:
 # and not the habit being complained about.
 EM_DASH_FREE_FROM = "2026-10-13"
 META_RE = re.compile(r"^<!--META\s*(\{.*?\})\s*META-->", re.DOTALL)
-CAPTIONS = {}
+IMAGES_MANIFEST = {}
 _img = Path(__file__).parent / "content" / "images.json"
 if _img.exists():
-    CAPTIONS = {k: (v.get("caption") or "") for k, v in
-                json.loads(_img.read_text(encoding="utf-8")).items()}
+    IMAGES_MANIFEST = json.loads(_img.read_text(encoding="utf-8"))
+CAPTIONS = {k: (v.get("caption") or "") for k, v in IMAGES_MANIFEST.items()}
 
 for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html")):
     m = META_RE.match(source.read_text(encoding="utf-8"))
@@ -170,6 +170,36 @@ for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html"
     checked += 1
     if "&mdash;" in caption or "—" in caption:
         errors.append(f"{meta['slug']}: em dash in image caption (tools/fetch_images.py PICKS)")
+
+# 8. hero images must be big enough for the slot they fill.
+#
+# The article column renders the hero at 700px CSS, so a retina screen wants
+# 1400px of pixels. Nothing checked this, and the Saturday run of 15 Aug picked
+# a 500px coin photo: fine on the Commons page, soft on the site. Two older
+# posts have the same problem.
+#
+# Cutoff is set past the 15 Aug batch on purpose. This is here to stop the
+# problem recurring, not to invalidate posts already written and committed, and
+# re-sourcing those is a judgement call rather than something a gate should force.
+MIN_HERO_W = 1200
+BIG_ENOUGH_FROM = "2026-10-20"
+
+for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html")):
+    m = META_RE.match(source.read_text(encoding="utf-8"))
+    if not m:
+        continue
+    meta = json.loads(m.group(1))
+    if meta.get("date", "") < BIG_ENOUGH_FROM:
+        continue
+    img = IMAGES_MANIFEST.get(meta.get("slug"))
+    if not img:
+        continue
+    checked += 1
+    w = int(img.get("width") or 0)
+    if w < MIN_HERO_W:
+        errors.append(f"{meta['slug']}: hero image is only {w}px wide, needs "
+                      f"{MIN_HERO_W}px+ (it renders at 700px CSS, so half that "
+                      f"is visibly soft on a phone). Pick a larger Commons file.")
 
 print(f"{len(pages)} pages, {checked} assertions.")
 if errors:
