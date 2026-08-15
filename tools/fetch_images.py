@@ -139,9 +139,9 @@ PICKS = {
         "A marble statue of the goddess Isis draped in a fringed mantle, holding a sistrum, with a solar disc and serpent on her head.",
         "Isis, sculpted in Rome under Hadrian. She holds her sistrum; Egypt had left the statue in every way but the stone."),
     "numas-buried-books": (
-        "File:Pomponius Molo Denarius 97 BC 680844.jpg",
-        "A silver Roman denarius; the reverse shows King Numa Pompilius standing before a lit altar, holding a lituus, about to sacrifice a goat held by a youth.",
-        "Numa sacrificing at an altar, on a denarius minted in 97 BCE, nearly six centuries after his traditional reign. The closest thing left to a portrait of the man whose books nobody kept."),
+        "File:Numapisocng6371.jpg",
+        "Both faces of a Roman silver denarius: on the left a bearded head in profile wearing a diadem inscribed NVMA, on the right the prow of a galley with lettering above and below.",
+        "Numa on a denarius struck for Pompey in 49 BCE, his name cut into the diadem. Seven centuries after his supposed reign, a Roman family was still advertising him as an ancestor."),
     "roman-augury-sacred-chickens": (
         "File:Denarius reverse (FindID 66682).jpg",
         "The reverse of a Roman silver denarius of Vespasian, showing a set of priestly religious implements including an augur's curved lituus staff.",
