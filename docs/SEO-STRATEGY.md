@@ -123,6 +123,43 @@ go, with keywords already chosen.
 
 ---
 
+## Search Console emails you can ignore
+
+Google mails you whenever a *new* reason appears in the Page Indexing report. Most of these
+are informational, not faults, and two in particular will recur on this site forever because
+of how it is hosted. Checked against the live site on 2026-08-15 and confirmed benign.
+
+**"Page with redirect"** is the two alternate domains doing their job:
+
+```
+https://www.veiledantiquity.com/   301   https://veiledantiquity.com/
+https://thegildedone.github.io/    301   veiledantiquity.com
+```
+
+One canonical domain with everything else pointing at it is the correct setup. If these ever
+stopped redirecting, *that* would be the problem.
+
+**"Alternate page with proper canonical tag"** is GitHub Pages serving every page at two
+addresses, `/posts/foo/` and `/posts/foo/index.html`. Google occasionally finds the `.html`
+form, reads the canonical, and indexes the clean URL instead. The phrase "proper canonical
+tag" is Google confirming the markup is right. Verified that we do not cause it: no internal
+link anywhere in `dist/` points at an `index.html`, the sitemap contains none, and every page
+self-canonicalises.
+
+**"Discovered / Crawled, currently not indexed"** is ordinary for a young site with little
+authority. Google queues the page and returns. It resolves as the archive grows.
+
+The figure worth watching instead is **indexed count against sitemap count**. On 2026-08-15
+that was 11 of 11, meaning every page we ask Google to index is indexed. Check it with:
+
+```bash
+curl -s https://veiledantiquity.com/sitemap.xml | grep -c "<loc>"
+```
+
+Reasons that *are* worth opening the report for, because each means something is actually
+wrong: **Duplicate without user-selected canonical**, **Soft 404**, **Blocked by robots.txt**,
+**Excluded by noindex**, **Server error (5xx)**, **Redirect error**.
+
 ## Things that would actively hurt
 
 - **AI-generated filler to hit a quota.** This niche's readers notice, and Google's
