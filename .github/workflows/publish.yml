@@ -42,6 +42,20 @@ jobs:
         with:
           path: dist
 
+  # Independent of build/deploy on purpose: publishing must never be blocked by a
+  # warning about the future, but a short runway must still turn the run red so
+  # GitHub emails about it. The writing loop lives on a local machine and has
+  # already failed silently once.
+  runway:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check publishing runway
+        run: python tools/check_runway.py
+
   deploy:
     needs: build
     runs-on: ubuntu-latest

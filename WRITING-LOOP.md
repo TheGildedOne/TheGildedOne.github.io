@@ -249,6 +249,29 @@ glance, and burying them in a tidy summary is how the safety model quietly stops
 
 ---
 
+## If this loop stops running
+
+On 2026-08-22 the task fired and wrote nothing. The cause was not the code: the
+working folder configured on the scheduled task, `D:\proof&Rebook`, had been
+deleted. The task could not start, but the trigger still recorded a completed run
+and the site kept publishing from its backlog, so nothing surfaced for a week.
+
+Two things follow.
+
+**The task's working folder must be `D:eiled-antiquity`.** It is the repo the
+loop actually works in, so it cannot go stale while there is any work to do. If the
+task chat shows *"Working folder no longer exists"*, that is this failure: use
+**Choose folder** and pick the repo. Note that creating a replacement task does not
+help, because a new task inherits the working folder of whatever session creates it.
+
+**`tools/check_runway.py` now guards against the silent version.** It runs as its
+own job in the publish workflow, on GitHub's machines rather than Imran's, and fails
+the run when fewer than 35 days of scheduled posts remain. A failed run emails him.
+It is deliberately independent of the deploy job: a warning about the future must
+never stop today's post going out.
+
+---
+
 ## Stop and ask rather than guessing
 
 - Queue empty, or fewer entries than slots
