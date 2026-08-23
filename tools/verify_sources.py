@@ -85,6 +85,19 @@ VERIFIED_BY_HAND = {
         "scored 1.00 on one run and 0.33 on the next, because a three-word title "
         "is fragile against fuzzy search. Confirmed via Academia.edu and "
         "ResearchGate copies. Checked 2026-08-22.",
+    "Cursing Chariot Horses instead of Drivers in the Hippodromes of the Eastern Roman Empire":
+        "Christopher Faraone, in C. Sanchez-Natalias (ed.), Litterae Magicae: "
+        "Studies in Honor of Roger S.O. Tomlin (Zaragoza, 2019), 165-186. A "
+        "conference-volume chapter published in Spain, which Crossref indexes "
+        "poorly. Confirmed via Faraone's own faculty CV (classics.uchicago.edu) "
+        "listing the chapter with matching title, editor and page range. Checked "
+        "2026-08-22.",
+    "Une nouvelle tablette magique d'Égypte. Musée du Louvre, Inv. E 27145":
+        "Sophie Kambitsis, Bulletin de l'Institut francais d'archeologie "
+        "orientale (BIFAO) 76 (1976), 213-223. A pre-1990 French Egyptology "
+        "journal, absent from Crossref and OpenAlex. Confirmed via its "
+        "Semantic Scholar record and a WorldCat/BnF catalogue entry, both "
+        "giving the same journal, volume and page range. Checked 2026-08-22.",
 }
 
 # Entries naming a physical object or document rather than a publication.

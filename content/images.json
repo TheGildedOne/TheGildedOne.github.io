@@ -488,5 +488,47 @@
     "avif": "/static/img/sack-of-eleusis-396.avif",
     "avif_700": "/static/img/sack-of-eleusis-396-700.avif",
     "share": "/static/img/sack-of-eleusis-396-share.jpg"
+  },
+  "apuleius-trial-magic": {
+    "file": "/static/img/apuleius-trial-magic.jpg",
+    "alt": "The tiered stone seating and reconstructed columned stage building of the Roman theatre at Sabratha, under a blue sky.",
+    "caption": "The Roman theatre at Sabratha, not far from where Apuleius stood trial for his life before the proconsul in 158 CE.",
+    "credit": "duimdog",
+    "licence": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Theatre_of_Sabratha,_Libya.jpg",
+    "width": 1400,
+    "height": 746,
+    "card": "/static/img/apuleius-trial-magic-card.jpg",
+    "avif": "/static/img/apuleius-trial-magic.avif",
+    "avif_700": "/static/img/apuleius-trial-magic-700.avif",
+    "share": "/static/img/apuleius-trial-magic-share.jpg"
+  },
+  "chariot-race-curse-tablets": {
+    "file": "/static/img/chariot-race-curse-tablets.jpg",
+    "alt": "A Roman mosaic showing four-horse chariots racing around a central barrier, with charioteers in coloured tunics driving them.",
+    "caption": "A chariot race in quadrigas, laid in mosaic at Lugdunum in the second century CE. The curse tablets named exactly this: the horses, the drivers, and the colours they raced under.",
+    "credit": "Carole Raddato from FRANKFURT, Germany",
+    "licence": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_restored_Circus_Games_Mosaic_depicting_a_chariot_race_in_quadrigas,_2nd_century_AD,_from_Lugdunum,_Mus%C3%A9e_gallo-romain_de_Fourvi%C3%A8re,_Lyon_(9191588535).jpg",
+    "width": 1400,
+    "height": 1049,
+    "card": "/static/img/chariot-race-curse-tablets-card.jpg",
+    "avif": "/static/img/chariot-race-curse-tablets.avif",
+    "avif_700": "/static/img/chariot-race-curse-tablets-700.avif",
+    "share": "/static/img/chariot-race-curse-tablets-share.jpg"
+  },
+  "love-spell-doll-louvre": {
+    "file": "/static/img/love-spell-doll-louvre.jpg",
+    "alt": "A small kneeling clay figure of a bound woman, pierced through with numerous thin needles, photographed against a plain background.",
+    "caption": "The Louvre doll, third or fourth century CE. Thirteen needles, each one placed where a surviving recipe says to put it.",
+    "credit": "Marie-Lan Nguyen",
+    "licence": "CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Voodoo_doll_Louvre_E27145a.jpg",
+    "width": 1400,
+    "height": 2098,
+    "card": "/static/img/love-spell-doll-louvre-card.jpg",
+    "avif": "/static/img/love-spell-doll-louvre.avif",
+    "avif_700": "/static/img/love-spell-doll-louvre-700.avif",
+    "share": "/static/img/love-spell-doll-louvre-share.jpg"
   }
 }

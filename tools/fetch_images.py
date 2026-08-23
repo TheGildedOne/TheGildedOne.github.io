@@ -162,6 +162,18 @@ PICKS = {
         "File:Taurobolic altar with Cybele and Attis (4th cent. A.D.) at the National Archaeological Museum of Athens on 2 January 2020.jpg",
         "A carved marble altar from the fourth century CE showing Cybele enthroned with her hand on the shoulder of Attis, flanked by pine trees.",
         "A taurobolium altar dedicated around 360 CE, showing Cybele and Attis. Set up by a man who had just undergone the very rite Prudentius later wrote up as savage."),
+    "apuleius-trial-magic": (
+        "File:Theatre of Sabratha, Libya.jpg",
+        "The tiered stone seating and reconstructed columned stage building of the Roman theatre at Sabratha, under a blue sky.",
+        "The Roman theatre at Sabratha, not far from where Apuleius stood trial for his life before the proconsul in 158 CE."),
+    "chariot-race-curse-tablets": (
+        "File:The restored Circus Games Mosaic depicting a chariot race in quadrigas, 2nd century AD, from Lugdunum, Musée gallo-romain de Fourvière, Lyon (9191588535).jpg",
+        "A Roman mosaic showing four-horse chariots racing around a central barrier, with charioteers in coloured tunics driving them.",
+        "A chariot race in quadrigas, laid in mosaic at Lugdunum in the second century CE. The curse tablets named exactly this: the horses, the drivers, and the colours they raced under."),
+    "love-spell-doll-louvre": (
+        "File:Voodoo doll Louvre E27145a.jpg",
+        "A small kneeling clay figure of a bound woman, pierced through with numerous thin needles, photographed against a plain background.",
+        "The Louvre doll, third or fourth century CE. Thirteen needles, each one placed where a surviving recipe says to put it."),
 }
 
 
