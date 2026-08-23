@@ -258,7 +258,7 @@ and the site kept publishing from its backlog, so nothing surfaced for a week.
 
 Two things follow.
 
-**The task's working folder must be `D:eiled-antiquity`.** It is the repo the
+**The task's working folder must be `D:\veiled-antiquity`.** It is the repo the
 loop actually works in, so it cannot go stale while there is any work to do. If the
 task chat shows *"Working folder no longer exists"*, that is this failure: use
 **Choose folder** and pick the repo. Note that creating a replacement task does not
