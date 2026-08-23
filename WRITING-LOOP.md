@@ -260,9 +260,21 @@ Two things follow.
 
 **The task's working folder must be `D:\veiled-antiquity`.** It is the repo the
 loop actually works in, so it cannot go stale while there is any work to do. If the
-task chat shows *"Working folder no longer exists"*, that is this failure: use
-**Choose folder** and pick the repo. Note that creating a replacement task does not
-help, because a new task inherits the working folder of whatever session creates it.
+task chat shows *"Working folder no longer exists"*, or the run history shows
+**Skipped**, that is this failure.
+
+**How to actually fix it (corrected 2026-08-22).** The folder picker did not work:
+clicking it opened forked conversations and left the folder unchanged. The fix that
+*did* work was to delete the task and recreate it **from a session already running in
+`D:\veiled-antiquity`**, because a new task inherits the working folder of whatever
+session creates it. That inheritance is the whole mechanism, so it cuts both ways:
+recreating from a session in the wrong folder just reproduces the bug while looking
+like a repair. Check the session's `pwd` before recreating.
+
+The prompt lives at `~/.claude/scheduled-tasks/veiled-antiquity-writing-loop/SKILL.md`
+and is left on disk when a task is deleted, so it can be copied straight back in.
+`update_scheduled_task` still has no working-folder parameter; the folder is app
+state and cannot be set from a session by any other route.
 
 **`tools/check_runway.py` now guards against the silent version.** It runs as its
 own job in the publish workflow, on GitHub's machines rather than Imran's, and fails
