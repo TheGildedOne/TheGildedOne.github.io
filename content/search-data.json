@@ -1,7 +1,7 @@
 {
-  "pulled": "2026-08-19",
-  "start": "2026-05-19",
-  "end": "2026-08-17",
+  "pulled": "2026-08-22",
+  "start": "2026-05-22",
+  "end": "2026-08-20",
   "queries": [
     {
       "query": "an ear of grain in silence reaped",
@@ -46,11 +46,18 @@
       "position": 58
     },
     {
-      "query": "kykeon",
+      "query": "homeric hymn to demeter kykeon barley water pennyroyal",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 58
+      "position": 9
+    },
+    {
+      "query": "kykeon",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 63.5
     },
     {
       "query": "kykeon psychedelic",
@@ -60,11 +67,39 @@
       "position": 30
     },
     {
+      "query": "orphic gold tablet",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10
+    },
+    {
       "query": "orphic gold tablets",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 9.6
+    },
+    {
+      "query": "tauroctony",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 10.8
+    },
+    {
+      "query": "the orphic gold tablets",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 11
+      "position": 8
+    },
+    {
+      "query": "the veil of history",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 54
     }
   ],
   "query_pages": [
@@ -111,11 +146,18 @@
       "position": 58
     },
     {
-      "query": "kykeon",
+      "query": "homeric hymn to demeter kykeon barley water pennyroyal",
       "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
       "clicks": 0,
       "impressions": 1,
-      "position": 58
+      "position": 9
+    },
+    {
+      "query": "kykeon",
+      "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 63.5
     },
     {
       "query": "kykeon psychedelic",
@@ -125,11 +167,46 @@
       "position": 30
     },
     {
+      "query": "orphic gold tablet",
+      "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10
+    },
+    {
+      "query": "orphic gold tablets",
+      "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 9.2
+    },
+    {
       "query": "orphic gold tablets",
       "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=the-orphic-gold-tablets-cheat-sheets-for-the",
       "clicks": 0,
       "impressions": 1,
       "position": 11
+    },
+    {
+      "query": "tauroctony",
+      "page": "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/?utm_source=veiled&utm_medium=email&utm_campaign=mithras-and-the-bull-the-cult-we-can-see-and-cant",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 10.8
+    },
+    {
+      "query": "the orphic gold tablets",
+      "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "query": "the veil of history",
+      "page": "https://veiledantiquity.com/start-here/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 54
     }
   ]
 }
