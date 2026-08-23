@@ -231,6 +231,10 @@ python build.py && python check.py
 Both must pass clean. `check.py` covers links, images, alt text, SEO tag lengths, JSON-LD
 and heading structure.
 
+It also enforces **2 to 4 in-body internal links per post**. It did not until 2026-08-23,
+despite this file claiming it did, which is how a post shipped with none. If it fails here,
+add a real contextual link rather than deleting the check.
+
 ### 7. Commit, push, and mark the queue
 
 Flip each written entry in `content/queue.json` from `"pending"` to `"written"`.
@@ -238,6 +242,37 @@ Flip each written entry in `content/queue.json` from `"pending"` to `"written"`.
 ```bash
 git add -A && git commit -m "Add posts for w/c <date>" && git push
 ```
+
+### 7b. Backfill internal links across the archive
+
+Links are hand-written at write time, so a post can only ever link to what existed when it
+was written. Without this step the August posts can never link forward to the October ones,
+and the gap widens every week.
+
+**First, make each new post reachable.** Add one entry per new slug to `ALIASES` in
+`tools/backfill_links.py`: the term a later post would actually reach for, not the title.
+"kykeon", not "The Kykeon Question: Was the Eleusinian Sacrament a Drug?".
+
+The one rule that matters is **no ambiguity**. Every phrase must point at exactly one post.
+Bare "Delphi" is deliberately absent because two posts are about Delphi; "the Pythia" and
+"ethylene" separate them cleanly. If you cannot find an unambiguous term, add nothing. A
+missing alias costs a link; a wrong one sends readers somewhere the anchor did not promise.
+
+```bash
+python tools/backfill_links.py            # dry run, read what it proposes
+python tools/backfill_links.py --apply
+python build.py && python check.py
+git add -A && git commit -m "Backfill internal links for w/c <date>" && git push
+```
+
+**Commit this separately from the posts.** It edits posts that are already public, so it is
+the one step with no future-date buffer behind it, and a separate commit is what makes it
+revertable on its own.
+
+Read the dry run before applying. The tool cannot alter your prose (it wraps existing text
+in an anchor and refuses to save if the tag-stripped text changed by so much as a character),
+but it can still link a phrase to a post that is a poor fit for it. That is a judgement call
+and it is yours. If a proposal is wrong, tighten or remove the alias rather than accepting it.
 
 ### 8. Report to Imran
 
