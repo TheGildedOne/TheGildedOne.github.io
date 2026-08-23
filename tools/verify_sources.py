@@ -87,11 +87,14 @@ VERIFIED_BY_HAND = {
         "ResearchGate copies. Checked 2026-08-22.",
     "Cursing Chariot Horses instead of Drivers in the Hippodromes of the Eastern Roman Empire":
         "Christopher Faraone, in C. Sanchez-Natalias (ed.), Litterae Magicae: "
-        "Studies in Honor of Roger S.O. Tomlin (Zaragoza, 2019), 165-186. A "
+        "Studies in Honor of Roger S.O. Tomlin (Zaragoza, 2019), 83-101. A "
         "conference-volume chapter published in Spain, which Crossref indexes "
-        "poorly. Confirmed via Faraone's own faculty CV (classics.uchicago.edu) "
-        "listing the chapter with matching title, editor and page range. Checked "
-        "2026-08-22.",
+        "poorly. Chapter confirmed via Faraone's own posting of it, which gives "
+        "the page range as 83-101; the volume (Supplementa MHNH 2, Libros "
+        "Portico, ISBN 978-84-7956-183-3) runs to 262pp. NOTE: an earlier version "
+        "of this entry said 165-186 and claimed the CV confirmed that range. It "
+        "did not. Corrected 2026-08-22 - check page numbers on anything added "
+        "here, the note is written by the same run that adds the citation.",
     "Une nouvelle tablette magique d'Égypte. Musée du Louvre, Inv. E 27145":
         "Sophie Kambitsis, Bulletin de l'Institut francais d'archeologie "
         "orientale (BIFAO) 76 (1976), 213-223. A pre-1990 French Egyptology "
