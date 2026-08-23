@@ -134,6 +134,18 @@ PICKS = {
         "File:Statue of Tinia with thunderbolt, Fiesole, Umbrian workshop, 425-400 BC, bronze, Villa Giulia - The Etruscans exhibition - California Palace of the Legion of Honor - San Francisco, CA - DSC09377.jpg",
         "A slender nude bronze statuette of a standing male figure, one arm extended holding a forked thunderbolt, the other raised holding a small round object.",
         "Tinia, the Etruscan sky god, with the weapon in his hand. Eight other gods were entitled to throw one, and his worst needed permission."),
+    "andania-mysteries-inscription": (
+        "File:The archaeological site of Ancient Messene on October 29, 2020.jpg",
+        "A wide green valley in Messenia seen from a hillside, with the excavated ruins of ancient Messene laid out among olive groves and mountains beyond.",
+        "The Messenian countryside, with ancient Messene in the middle distance. The festival regulated by the stone was held at Andania, elsewhere in this region."),
+    "cabeirion-thebes": (
+        "File:Mystes Painter - Omphale and Herakles - vine - München AS 3057 - 05.jpg",
+        "Detail of a Greek black-figure vase: a seated figure with an exaggerated grotesque face and a patterned headband holds out a small jug and a leafy sprig towards a standing figure with wild spiky hair.",
+        "Herakles and Omphale, painted for the sanctuary outside Thebes. The style is the point. These are the heroes of Greek myth, drawn deliberately badly."),
+    "sack-of-eleusis-396": (
+        "File:Archaeological Site of Eleusis - Telesterion 10.jpg",
+        "Large fallen marble blocks, their faces carved with rows of projecting knobs, lying on stone paving at Eleusis with a rock-cut terrace rising behind them.",
+        "Fallen blocks at Eleusis. The sanctuary initiated people for roughly two thousand years, and not one of them wrote down what happened in the hall."),
     "cult-of-isis-rome": (
         "File:Marble statue of Isis, the goddess holds a situla and sistrum, ritual implements used in her worship, from 117 until 138 AD, found at Hadrian's Villa (Pantanello), Palazzo Nuovo, Capitoline Museums (12945630725).jpg",
         "A marble statue of the goddess Isis draped in a fringed mantle, holding a sistrum, with a solar disc and serpent on her head.",

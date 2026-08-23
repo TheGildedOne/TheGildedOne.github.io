@@ -78,6 +78,13 @@ VERIFIED_BY_HAND = {
         "26 (1983) 7-37. Pre-digital German journal, absent from Crossref and "
         "OpenAlex. Confirmed via the Doelger-Institut's own JbAC contents index "
         "and the DAI Zenon catalogue. Checked 2026-08-15.",
+    "Mixing the Kykeon":
+        "P. Webster, D. M. Perrine and C. A. P. Ruck, ELEUSIS: Journal of "
+        "Psychoactive Plants and Compounds, New Series 4 (2000). A small "
+        "specialist journal that Crossref indexes erratically: the same title "
+        "scored 1.00 on one run and 0.33 on the next, because a three-word title "
+        "is fragile against fuzzy search. Confirmed via Academia.edu and "
+        "ResearchGate copies. Checked 2026-08-22.",
 }
 
 # Entries naming a physical object or document rather than a publication.

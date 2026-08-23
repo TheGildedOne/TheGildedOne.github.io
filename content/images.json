@@ -446,5 +446,47 @@
     "avif": "/static/img/cult-of-cybele-taurobolium.avif",
     "avif_700": "/static/img/cult-of-cybele-taurobolium-700.avif",
     "share": "/static/img/cult-of-cybele-taurobolium-share.jpg"
+  },
+  "andania-mysteries-inscription": {
+    "file": "/static/img/andania-mysteries-inscription.jpg",
+    "alt": "A wide green valley in Messenia seen from a hillside, with the excavated ruins of ancient Messene laid out among olive groves and mountains beyond.",
+    "caption": "The Messenian countryside, with ancient Messene in the middle distance. The festival regulated by the stone was held at Andania, elsewhere in this region.",
+    "credit": "George E. Koronaios",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_archaeological_site_of_Ancient_Messene_on_October_29,_2020.jpg",
+    "width": 1400,
+    "height": 933,
+    "card": "/static/img/andania-mysteries-inscription-card.jpg",
+    "avif": "/static/img/andania-mysteries-inscription.avif",
+    "avif_700": "/static/img/andania-mysteries-inscription-700.avif",
+    "share": "/static/img/andania-mysteries-inscription-share.jpg"
+  },
+  "cabeirion-thebes": {
+    "file": "/static/img/cabeirion-thebes.jpg",
+    "alt": "Detail of a Greek black-figure vase: a seated figure with an exaggerated grotesque face and a patterned headband holds out a small jug and a leafy sprig towards a standing figure with wild spiky hair.",
+    "caption": "Herakles and Omphale, painted for the sanctuary outside Thebes. The style is the point. These are the heroes of Greek myth, drawn deliberately badly.",
+    "credit": "ArchaiOptix",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mystes_Painter_-_Omphale_and_Herakles_-_vine_-_M%C3%BCnchen_AS_3057_-_05.jpg",
+    "width": 1400,
+    "height": 934,
+    "card": "/static/img/cabeirion-thebes-card.jpg",
+    "avif": "/static/img/cabeirion-thebes.avif",
+    "avif_700": "/static/img/cabeirion-thebes-700.avif",
+    "share": "/static/img/cabeirion-thebes-share.jpg"
+  },
+  "sack-of-eleusis-396": {
+    "file": "/static/img/sack-of-eleusis-396.jpg",
+    "alt": "Large fallen marble blocks, their faces carved with rows of projecting knobs, lying on stone paving at Eleusis with a rock-cut terrace rising behind them.",
+    "caption": "Fallen blocks at Eleusis. The sanctuary initiated people for roughly two thousand years, and not one of them wrote down what happened in the hall.",
+    "credit": "TimeTravelRome",
+    "licence": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Archaeological_Site_of_Eleusis_-_Telesterion_10.jpg",
+    "width": 1400,
+    "height": 933,
+    "card": "/static/img/sack-of-eleusis-396-card.jpg",
+    "avif": "/static/img/sack-of-eleusis-396.avif",
+    "avif_700": "/static/img/sack-of-eleusis-396-700.avif",
+    "share": "/static/img/sack-of-eleusis-396-share.jpg"
   }
 }
