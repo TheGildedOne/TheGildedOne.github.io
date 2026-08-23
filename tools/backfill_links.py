@@ -54,7 +54,15 @@ DEFAULT_MAX_ADD = 2  # per post, per run
 # about Delphi; "the Pythia" and "ethylene" separate them cleanly. Add to this list
 # whenever a post introduces a term that later posts will reach for.
 ALIASES = {
+    # The pillar guide. Everything is allowed to point here; that is what a pillar
+    # page is for, and "mystery cults" is the phrase a reader would click.
+    "ancient-mystery-cults-guide": ["mystery cults"],
     "eleusinian-mysteries-telesterion": ["Telesterion", "Eleusis"],
+    "andania-mysteries-inscription": ["Andania"],
+    "cabeirion-thebes": ["Cabeirion", "Kabeiroi"],
+    # NOT "Eleusis" (that is the Telesterion post) and NOT "Alaric": the lightning
+    # post mentions Alaric at Rome in 408, which is a different event entirely.
+    "sack-of-eleusis-396": ["sack of Eleusis"],
     "eleusinian-kykeon-psychedelic": ["kykeon"],
     "orphic-gold-tablets": ["gold tablets", "Orphic tablets"],
     "mithras-tauroctony-decoded": ["tauroctony"],
@@ -233,6 +241,19 @@ def main():
     print(f"\n  {verb} {total_added} link(s) across {touched} post(s).")
     if refused:
         print(f"  {refused} post(s) refused on the text-unchanged check.")
+
+    # A post with no alias is unreachable: nothing will ever link to it, and
+    # that failure is completely silent. Titles alone match almost nothing, so
+    # "it has a title, it'll be found" is not true. Say so out loud.
+    unreachable = [p["slug"] for p in posts if not ALIASES.get(p["slug"])]
+    if unreachable:
+        print(f"\n  {len(unreachable)} post(s) have no ALIASES entry and so can never be "
+              f"linked to:")
+        for slug in unreachable:
+            print(f"    - {slug}")
+        print("  Add one term each to ALIASES, or accept that nothing will link to them.")
+        print("  Only add a term that points at exactly one post; skip it otherwise.")
+
     if not args.apply and total_added:
         print("  Dry run. Re-run with --apply to write, then build.py && check.py.")
 
