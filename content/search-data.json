@@ -1,7 +1,7 @@
 {
-  "pulled": "2026-08-15",
-  "start": "2026-05-15",
-  "end": "2026-08-13",
+  "pulled": "2026-08-19",
+  "start": "2026-05-19",
+  "end": "2026-08-17",
   "queries": [
     {
       "query": "an ear of grain in silence reaped",
@@ -13,16 +13,58 @@
     {
       "query": "eleusinian",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 89
+      "position": 92
+    },
+    {
+      "query": "eleusinian cult",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 87
+    },
+    {
+      "query": "eleusinian kykeon",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 55
     },
     {
       "query": "eleusinian mysteries",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 66
+      "position": 64.7
+    },
+    {
+      "query": "eleusinian mysteries drink",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "kykeon",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "kykeon psychedelic",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 30
+    },
+    {
+      "query": "orphic gold tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
     }
   ],
   "query_pages": [
@@ -37,15 +79,57 @@
       "query": "eleusinian",
       "page": "https://veiledantiquity.com/posts/eleusinian-mysteries-telesterion/",
       "clicks": 0,
-      "impressions": 2,
-      "position": 89
+      "impressions": 3,
+      "position": 92
+    },
+    {
+      "query": "eleusinian cult",
+      "page": "https://veiledantiquity.com/posts/eleusinian-mysteries-telesterion/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 87
+    },
+    {
+      "query": "eleusinian kykeon",
+      "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 55
     },
     {
       "query": "eleusinian mysteries",
       "page": "https://veiledantiquity.com/posts/eleusinian-mysteries-telesterion/",
       "clicks": 0,
-      "impressions": 2,
-      "position": 66
+      "impressions": 3,
+      "position": 64.7
+    },
+    {
+      "query": "eleusinian mysteries drink",
+      "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 58
+    },
+    {
+      "query": "kykeon",
+      "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 58
+    },
+    {
+      "query": "kykeon psychedelic",
+      "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 30
+    },
+    {
+      "query": "orphic gold tablets",
+      "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=the-orphic-gold-tablets-cheat-sheets-for-the",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
     }
   ]
 }
