@@ -1,0 +1,36 @@
+name: Monitor
+
+# Is the site actually showing what it is supposed to be showing?
+#
+# Deliberately a separate workflow from publish.yml. On 2026-08-28 GitHub dropped
+# the scheduled publish run and a due post never went live, while every check in
+# the repo still reported healthy: they all inspected what was intended rather
+# than what readers could load. A check that lives inside the job that failed
+# cannot report that the job did not run, so this one lives outside it.
+#
+# Runs after both publish windows (09:05 and 15:05 UTC), so a failure here means
+# the post is genuinely late, not in flight. A failed run emails Imran, which is
+# the whole point: the previous detection mechanism was noticing that a newsletter
+# had not arrived.
+
+on:
+  schedule:
+    - cron: "5 18 * * *"     # 18:05 UTC, after both publish attempts
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deployed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Checks the live sitemap against the posts in this repo. Fails if a post
+      # whose date has passed is not on the site, or if the site is unreachable.
+      - name: Check every due post is live
+        run: python tools/check_deployed.py
