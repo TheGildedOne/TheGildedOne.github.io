@@ -6,7 +6,17 @@ name: Publish
 
 on:
   schedule:
-    - cron: "5 9 * * *"     # 09:05 UTC daily
+    # Two runs a day, deliberately. GitHub treats scheduled workflows as
+    # best-effort and deprioritises them under load: the 09:05 run drifted to
+    # 19:47 UTC on 2026-08-27 and was dropped entirely on 2026-08-28, leaving a
+    # due post unpublished with every local check still reporting healthy.
+    #
+    # The second run is a backup, not a second publish. Everything downstream is
+    # idempotent, so it is free: build.py --live emits exactly the posts whose
+    # date has arrived, and notify_subscribers.py matches on subject against
+    # Buttondown before sending, so nobody gets a post twice.
+    - cron: "5 9 * * *"      # 09:05 UTC
+    - cron: "5 15 * * *"     # 15:05 UTC, backup if the morning run is dropped
   push:
     branches: [main]
   workflow_dispatch:         # manual "publish now" button in the Actions tab
