@@ -53,7 +53,7 @@ ANCIENT = {
     "euripides", "sophocles", "aeschylus", "aristophanes", "pindar", "hesiod",
     "propertius", "tibullus", "columella", "cato", "sallust", "curtius",
     "aelian", "artemidorus", "iamblichus", "proclus", "libanius", "julian",
-    "augustine", "lactantius", "eusebius", "zosimus", "procopius",
+    "augustine", "lactantius", "eusebius", "zosimus", "procopius", "arnobius",
     "aelius aristides", "aristides", "diodorus siculus", "persius",
 }
 

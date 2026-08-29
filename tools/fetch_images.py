@@ -174,6 +174,18 @@ PICKS = {
         "File:Voodoo doll Louvre E27145a.jpg",
         "A small kneeling clay figure of a bound woman, pierced through with numerous thin needles, photographed against a plain background.",
         "The Louvre doll, third or fourth century CE. Thirteen needles, each one placed where a surviving recipe says to put it."),
+    "palladium-rome": (
+        "File:Casa del Meandro - Affresco di Cassandra e Aiace (2007).jpg",
+        "A Roman wall painting showing a warrior seizing a woman who clings to a small armed statue standing on a pedestal.",
+        "Ajax dragging Cassandra from the Palladium, on a wall of the House of the Menander at Pompeii. The small armed figure she is holding is the statue the whole story is about."),
+    "libri-acherontici": (
+        "File:Hades Persephone Tomb of Orcus II.jpg",
+        "An Etruscan tomb fresco of a bearded god and a crowned goddess enthroned side by side, the god holding a long staff.",
+        "Aita and Phersipnai, the Etruscan rulers of the dead, painted in the Tomb of Orcus at Tarquinia. This is the court the Books of Acheron were written to petition."),
+    "library-pergamon": (
+        "File:Statue of Athena Parthenos from the Library of Pergamon, Pergamon Museum Berlin (8404207129).jpg",
+        "A marble statue of Athena standing in armour with a shield at her side, her head and much of both arms missing.",
+        "The over-life-size Athena found in the room on the Pergamon acropolis that its excavator identified as the library. The identification still rests partly on her."),
 }
 
 

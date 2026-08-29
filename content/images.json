@@ -493,7 +493,7 @@
     "file": "/static/img/apuleius-trial-magic.jpg",
     "alt": "The tiered stone seating and reconstructed columned stage building of the Roman theatre at Sabratha, under a blue sky.",
     "caption": "The Roman theatre at Sabratha, not far from where Apuleius stood trial for his life before the proconsul in 158 CE.",
-    "credit": "duimdog",
+    "credit": "Unknown",
     "licence": "CC BY-SA 2.0",
     "source": "https://commons.wikimedia.org/wiki/File:Theatre_of_Sabratha,_Libya.jpg",
     "width": 1400,
@@ -530,5 +530,47 @@
     "avif": "/static/img/love-spell-doll-louvre.avif",
     "avif_700": "/static/img/love-spell-doll-louvre-700.avif",
     "share": "/static/img/love-spell-doll-louvre-share.jpg"
+  },
+  "palladium-rome": {
+    "file": "/static/img/palladium-rome.jpg",
+    "alt": "A Roman wall painting showing a warrior seizing a woman who clings to a small armed statue standing on a pedestal.",
+    "caption": "Ajax dragging Cassandra from the Palladium, on a wall of the House of the Menander at Pompeii. The small armed figure she is holding is the statue the whole story is about.",
+    "credit": "Harlock81",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Casa_del_Meandro_-_Affresco_di_Cassandra_e_Aiace_(2007).jpg",
+    "width": 1400,
+    "height": 1050,
+    "card": "/static/img/palladium-rome-card.jpg",
+    "avif": "/static/img/palladium-rome.avif",
+    "avif_700": "/static/img/palladium-rome-700.avif",
+    "share": "/static/img/palladium-rome-share.jpg"
+  },
+  "libri-acherontici": {
+    "file": "/static/img/libri-acherontici.jpg",
+    "alt": "An Etruscan tomb fresco of a bearded god and a crowned goddess enthroned side by side, the god holding a long staff.",
+    "caption": "Aita and Phersipnai, the Etruscan rulers of the dead, painted in the Tomb of Orcus at Tarquinia. This is the court the Books of Acheron were written to petition.",
+    "credit": "Robin Iversen Rönnlund",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hades_Persephone_Tomb_of_Orcus_II.jpg",
+    "width": 1400,
+    "height": 960,
+    "card": "/static/img/libri-acherontici-card.jpg",
+    "avif": "/static/img/libri-acherontici.avif",
+    "avif_700": "/static/img/libri-acherontici-700.avif",
+    "share": "/static/img/libri-acherontici-share.jpg"
+  },
+  "library-pergamon": {
+    "file": "/static/img/library-pergamon.jpg",
+    "alt": "A marble statue of Athena standing in armour with a shield at her side, her head and much of both arms missing.",
+    "caption": "The over-life-size Athena found in the room on the Pergamon acropolis that its excavator identified as the library. The identification still rests partly on her.",
+    "credit": "Carole Raddato from FRANKFURT, Germany",
+    "licence": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Athena_Parthenos_from_the_Library_of_Pergamon,_Pergamon_Museum_Berlin_(8404207129).jpg",
+    "width": 1400,
+    "height": 2302,
+    "card": "/static/img/library-pergamon-card.jpg",
+    "avif": "/static/img/library-pergamon.avif",
+    "avif_700": "/static/img/library-pergamon-700.avif",
+    "share": "/static/img/library-pergamon-share.jpg"
   }
 }

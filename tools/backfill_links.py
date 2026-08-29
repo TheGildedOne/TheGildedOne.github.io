@@ -96,6 +96,9 @@ ALIASES = {
     "apuleius-trial-magic": ["Apologia"],
     "chariot-race-curse-tablets": ["circus curses"],
     "love-spell-doll-louvre": ["Louvre doll"],
+    "palladium-rome": ["Palladium"],
+    "libri-acherontici": ["libri Acherontici", "Books of Acheron"],
+    "library-pergamon": ["Library of Pergamon"],
 }
 
 # Phrases too generic to be a good anchor even when they match a post's keyword.
