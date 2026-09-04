@@ -1,7 +1,13 @@
 {
-  "pulled": "2026-08-28",
-  "start": "2026-05-28",
-  "end": "2026-08-26",
+  "pulled": "2026-09-04",
+  "start": "2026-06-04",
+  "end": "2026-09-02",
+  "totals": {
+    "clicks": 6,
+    "impressions": 275,
+    "ctr": 0.0218,
+    "position": 30.1
+  },
   "queries": [
     {
       "query": "an ear of grain in silence reaped",
@@ -9,6 +15,48 @@
       "impressions": 2,
       "ctr": 0,
       "position": 9.5
+    },
+    {
+      "query": "ancient curses to say",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 34
+    },
+    {
+      "query": "ancient greek curse tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "query": "ancient roman curse tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "curse tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 68
+    },
+    {
+      "query": "damnatio memoriae",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "query": "damnatio memoriae egypt",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 64
     },
     {
       "query": "eleusinian",
@@ -46,6 +94,13 @@
       "position": 58
     },
     {
+      "query": "greek curse tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 68
+    },
+    {
       "query": "homeric hymn to demeter kykeon barley water pennyroyal",
       "clicks": 0,
       "impressions": 1,
@@ -67,11 +122,25 @@
       "position": 30
     },
     {
+      "query": "latin curse tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
       "query": "magical papyri",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 69
+    },
+    {
+      "query": "memoriae",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
     },
     {
       "query": "mithra slaying the bull",
@@ -83,9 +152,9 @@
     {
       "query": "mithras and the bull",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 10
+      "position": 22
     },
     {
       "query": "mithras bull",
@@ -93,6 +162,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 17
+    },
+    {
+      "query": "mithras killing the bull",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 51
     },
     {
       "query": "orphic gold tablet",
@@ -109,11 +185,46 @@
       "position": 12.2
     },
     {
+      "query": "ramuthra",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 41
+    },
+    {
       "query": "roman curse scroll",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 79
+    },
+    {
+      "query": "sybelline books",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "sybiline books",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 71
+    },
+    {
+      "query": "sybilline books",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 59
+    },
+    {
+      "query": "sybylline books",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 66
     },
     {
       "query": "tauroctony",
@@ -137,11 +248,25 @@
       "position": 7.5
     },
     {
+      "query": "the sibylline books",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 56
+    },
+    {
       "query": "the veil of history",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 54
+    },
+    {
+      "query": "the veiled protectorate",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 62
     },
     {
       "query": "veil of history",
@@ -158,6 +283,48 @@
       "clicks": 0,
       "impressions": 2,
       "position": 9.5
+    },
+    {
+      "query": "ancient curses to say",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 34
+    },
+    {
+      "query": "ancient greek curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 67
+    },
+    {
+      "query": "ancient roman curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 65
+    },
+    {
+      "query": "curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 68
+    },
+    {
+      "query": "damnatio memoriae",
+      "page": "https://veiledantiquity.com/posts/damnatio-memoriae/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 67
+    },
+    {
+      "query": "damnatio memoriae egypt",
+      "page": "https://veiledantiquity.com/posts/damnatio-memoriae/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 64
     },
     {
       "query": "eleusinian",
@@ -195,6 +362,13 @@
       "position": 58
     },
     {
+      "query": "greek curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 68
+    },
+    {
       "query": "homeric hymn to demeter kykeon barley water pennyroyal",
       "page": "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/",
       "clicks": 0,
@@ -216,11 +390,25 @@
       "position": 30
     },
     {
+      "query": "latin curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 67
+    },
+    {
       "query": "magical papyri",
       "page": "https://veiledantiquity.com/posts/greek-magical-papyri/?utm_source=veiled&utm_medium=email&utm_campaign=the-greek-magical-papyri-real-spellbooks-from",
       "clicks": 0,
       "impressions": 1,
       "position": 69
+    },
+    {
+      "query": "memoriae",
+      "page": "https://veiledantiquity.com/posts/damnatio-memoriae/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 65
     },
     {
       "query": "mithra slaying the bull",
@@ -233,8 +421,8 @@
       "query": "mithras and the bull",
       "page": "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/?utm_source=veiled&utm_medium=email&utm_campaign=mithras-and-the-bull-the-cult-we-can-see-and-cant",
       "clicks": 0,
-      "impressions": 1,
-      "position": 10
+      "impressions": 2,
+      "position": 22
     },
     {
       "query": "mithras bull",
@@ -242,6 +430,13 @@
       "clicks": 0,
       "impressions": 1,
       "position": 17
+    },
+    {
+      "query": "mithras killing the bull",
+      "page": "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/?utm_source=veiled&utm_medium=email&utm_campaign=mithras-and-the-bull-the-cult-we-can-see-and-cant",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 51
     },
     {
       "query": "orphic gold tablet",
@@ -265,11 +460,46 @@
       "position": 11
     },
     {
+      "query": "ramuthra",
+      "page": "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/?utm_source=veiled&utm_medium=email&utm_campaign=mithras-and-the-bull-the-cult-we-can-see-and-cant",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 41
+    },
+    {
       "query": "roman curse scroll",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
       "impressions": 1,
       "position": 79
+    },
+    {
+      "query": "sybelline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 65
+    },
+    {
+      "query": "sybiline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 71
+    },
+    {
+      "query": "sybilline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 59
+    },
+    {
+      "query": "sybylline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 66
     },
     {
       "query": "tauroctony",
@@ -300,11 +530,25 @@
       "position": 7
     },
     {
+      "query": "the sibylline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 56
+    },
+    {
       "query": "the veil of history",
       "page": "https://veiledantiquity.com/start-here/",
       "clicks": 0,
       "impressions": 1,
       "position": 54
+    },
+    {
+      "query": "the veiled protectorate",
+      "page": "https://veiledantiquity.com/disclosure/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 62
     },
     {
       "query": "veil of history",

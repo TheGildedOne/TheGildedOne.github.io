@@ -95,6 +95,16 @@ def main():
     end = date.today() - timedelta(days=2)      # Search Console lags
     start = end - timedelta(days=DAYS)
 
+    # Fetched with NO dimensions, and this is not redundant with the query rows.
+    #
+    # Google withholds rare queries from any query-dimensioned report, because a
+    # search only a handful of people made could identify them. Those impressions
+    # and clicks still exist; they are simply absent from the breakdown. On a small
+    # site almost everything is rare, so the gap is enormous rather than marginal:
+    # on 2026-09-02 the query rows summed to 64 impressions and 0 clicks while the
+    # true totals were 275 and 6. Summing the rows had been reporting 23% of
+    # impressions and none of the clicks, and it was the only number anyone looked at.
+    totals = fetch(creds, start, end, [])
     queries = fetch(creds, start, end, ["query"])
     pages = fetch(creds, start, end, ["query", "page"])
 
@@ -109,10 +119,19 @@ def main():
             indent=2), encoding="utf-8")
         return
 
+    t = totals[0] if totals else {}
     data = {
         "pulled": date.today().isoformat(),
         "start": start.isoformat(),
         "end": end.isoformat(),
+        # Site-wide truth. Read these for "how is the site doing"; the query rows
+        # below are a filtered subset and always undercount.
+        "totals": {
+            "clicks": t.get("clicks", 0),
+            "impressions": t.get("impressions", 0),
+            "ctr": round(t.get("ctr", 0), 4),
+            "position": round(t.get("position", 0), 1),
+        },
         "queries": [
             {"query": r["keys"][0], "clicks": r.get("clicks", 0),
              "impressions": r.get("impressions", 0),
@@ -129,10 +148,20 @@ def main():
     }
     STORE.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    total_i = sum(q["impressions"] for q in data["queries"])
-    total_c = sum(q["clicks"] for q in data["queries"])
+    shown_i = sum(q["impressions"] for q in data["queries"])
+    shown_c = sum(q["clicks"] for q in data["queries"])
+    tot_i, tot_c = data["totals"]["impressions"], data["totals"]["clicks"]
+    pct = (shown_i / tot_i * 100) if tot_i else 0
+
     print(f"  {start} to {end}")
-    print(f"  {len(data['queries'])} queries, {total_i:,} impressions, {total_c:,} clicks")
+    print(f"  SITE TOTAL   {tot_c:,} clicks, {tot_i:,} impressions, "
+          f"avg position {data['totals']['position']}")
+    print(f"  named queries {len(data['queries'])}: {shown_c:,} clicks, "
+          f"{shown_i:,} impressions ({pct:.0f}% of impressions)")
+    if tot_i and pct < 60:
+        print("  The rest are queries Google withholds as too rare to name. That is")
+        print("  normal for a small site; judge the site by SITE TOTAL, and use the")
+        print("  named queries only to see which topics are landing.")
     print(f"  written to {STORE.relative_to(ROOT)}")
 
 
