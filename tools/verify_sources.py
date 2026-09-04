@@ -85,6 +85,21 @@ VERIFIED_BY_HAND = {
         "scored 1.00 on one run and 0.33 on the next, because a three-word title "
         "is fragile against fuzzy search. Confirmed via Academia.edu and "
         "ResearchGate copies. Checked 2026-08-22.",
+    "Litterae Magicae: Studies in Honor of Roger S.O. Tomlin":
+        "Celia Sanchez-Natalias (ed.), Libros Portico, Zaragoza 2019, 262pp, "
+        "ISBN 978-84-7956-183-3 (Supplementa MHNH 2). A small Spanish academic "
+        "press, absent from Open Library. Confirmed via the Journal of Roman "
+        "Studies review, which gives publisher, year, page count, ISBN and price, "
+        "and via AbeBooks/Amazon listings on the same ISBN. Surfaced 2026-09-02, "
+        "when the classifier was fixed and started checking edited volumes.",
+    "Magic in Apuleius' ‘Apologia’: Understanding the Charges and the "
+    "Forensic Strategies in Apuleius' Speech":
+        "Leonardo Costantini, De Gruyter, Berlin/Boston 2019, ISBN "
+        "978-3-11-061659-0. Confirmed via De Gruyter's own DOI page "
+        "(10.1515/9783110617528), the University of Bristol research portal entry "
+        "for the author, and a published review. Open Library scores it 0.41, "
+        "almost certainly because the title contains quotation marks. Surfaced "
+        "2026-09-02 with the classifier fix.",
     "Cursing Chariot Horses instead of Drivers in the Hippodromes of the Eastern Roman Empire":
         "Christopher Faraone, in C. Sanchez-Natalias (ed.), Litterae Magicae: "
         "Studies in Honor of Roger S.O. Tomlin (Zaragoza, 2019), 83-101. A "
@@ -117,17 +132,41 @@ def clean(s):
 
 
 def classify(entry, title):
-    """book | ancient | journal | object — only 'book' is checkable here."""
+    """book | ancient | journal | object — only 'book' is checkable here.
+
+    Two things here were wrong until 2026-09-02, and both let real books through
+    unverified, which is the exact failure this script exists to prevent.
+
+    1. A quoted title was treated as proof of a journal article wherever it
+       appeared in the entry. But the annotation after the em dash often quotes
+       something too, so Edmonds' *Myths of the Underworld Journey* was skipped
+       because its note mentions the 'Orphic' label, and Gruen's *Studies in Greek
+       Culture and Roman Policy* was skipped because the entry names its chapter.
+       Only a quoted title BEFORE the <em> says anything about the type.
+
+    2. A chapter in an edited volume ("'Chapter', in Ed. (ed.), <em>Volume</em>")
+       was filed as a journal, so the volume was never checked. The italicised
+       part there is a book and is exactly as fabricable as any other.
+    """
     head = clean(entry).split(",")[0].lower()
     if any(a in head for a in ANCIENT):
         return "ancient"
-    if ARTICLE_RE.search(entry) or ABBREV_RE.match(title):
+    if ABBREV_RE.match(title):
         return "journal"
-    if any(h in entry for h in OBJECT_HINTS) and "(" not in entry.split("&mdash;")[0]:
-        return "object"
-    # A journal cited as "<em>Name</em> n.s. 4 (2000)" has no publisher parenthesis.
+    # A journal cited as "<em>Name</em> 12 (1999)" or "<em>Name</em> n.s. 4 (2000)".
     if re.search(r"</em>\s*(n\.s\.\s*)?\d+\s*\(\d{4}\)", entry):
         return "journal"
+
+    em = entry.find("<em>")
+    if em != -1 and ARTICLE_RE.search(entry[:em]):
+        before = entry[:em]
+        # "…, in Cunliffe (ed.), <em>Book</em>" or "…, in <em>Magika Hiera</em>".
+        if "(ed" in before or re.search(r",\s*in\s*$", before):
+            return "book"
+        return "journal"
+
+    if any(h in entry for h in OBJECT_HINTS) and "(" not in entry.split("&mdash;")[0]:
+        return "object"
     return "book"
 
 
