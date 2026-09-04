@@ -155,6 +155,43 @@ for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html"
     if not m:
         continue
     meta = json.loads(m.group(1))
+
+    # 7a. The metadata rules WRITING-LOOP.md has always credited to this file.
+    #
+    # It did not check any of them. build.py prints "! seo_title long" and carries
+    # on, and nobody reads build output, so a post could ship with a truncated
+    # search result and every gate would still be green. Audited 2026-09-02: the
+    # whole archive already complies, so these are enforced for every post rather
+    # than grandfathered from a date.
+    #
+    # Sources: the target in the house rules is 4-6. The hard floor is 4, because
+    # that is the credibility claim the site makes. The ceiling here is 8 rather
+    # than 6 deliberately: delphi-gases-hypothesis cites 7, being the claim, its
+    # defence and two rebuttals plus a book and two ancient sources, and deleting
+    # a real citation to satisfy a style guideline would be the wrong repair.
+    all_slugs = {json.loads(META_RE.match(s.read_text(encoding="utf-8")).group(1))["slug"]
+                 for s in (Path(__file__).parent / "content" / "posts").glob("*.html")
+                 if META_RE.match(s.read_text(encoding="utf-8"))}
+    for label, value, lo, hi in [
+        ("seo_title chars", len(meta.get("seo_title", "")), 1, 62),
+        ("description chars", len(meta.get("description", "")), 1, 158),
+        ("faq entries", len(meta.get("faq", [])), 5, 5),
+        ("sources", len(meta.get("sources", [])), 4, 8),
+        ("related slugs", len(meta.get("related", [])), 2, 3),
+    ]:
+        checked += 1
+        if not lo <= value <= hi:
+            errors.append(f"{source.name}: {label} = {value}, must be "
+                          f"{lo if lo == hi else f'{lo}-{hi}'}")
+    for field in ("dek", "focus_keyword", "category", "tags"):
+        checked += 1
+        if not meta.get(field):
+            errors.append(f"{source.name}: empty or missing '{field}'")
+    for rel in meta.get("related", []):
+        checked += 1
+        if rel not in all_slugs:
+            errors.append(f"{source.name}: related points at unknown slug '{rel}'")
+
     if meta.get("date", "") < EM_DASH_FREE_FROM:
         continue
 
