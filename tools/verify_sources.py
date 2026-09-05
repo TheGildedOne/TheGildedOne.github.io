@@ -55,6 +55,7 @@ ANCIENT = {
     "aelian", "artemidorus", "iamblichus", "proclus", "libanius", "julian",
     "augustine", "lactantius", "eusebius", "zosimus", "procopius", "arnobius",
     "aelius aristides", "aristides", "diodorus siculus", "persius",
+    "petronius",
 }
 
 # Real works the catalogues simply do not hold: Open Library for books, Crossref

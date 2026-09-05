@@ -572,5 +572,47 @@
     "avif": "/static/img/library-pergamon.avif",
     "avif_700": "/static/img/library-pergamon-700.avif",
     "share": "/static/img/library-pergamon-share.jpg"
+  },
+  "sortes-praeneste": {
+    "file": "/static/img/sortes-praeneste.jpg",
+    "alt": "A large ancient Roman floor mosaic showing the Nile in flood, crowded with boats, temples, animals and small figures along the banks.",
+    "caption": "The Nile Mosaic, laid in the lower sanctuary of Fortuna Primigenia at Praeneste in the late second century BCE. The lot oracle operated somewhere in the same complex.",
+    "credit": "Unknown authorUnknown author",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Mosa%C3%AFque_nilotique,_Praeneste,_Italie.jpg",
+    "width": 1400,
+    "height": 1114,
+    "card": "/static/img/sortes-praeneste-card.jpg",
+    "avif": "/static/img/sortes-praeneste.avif",
+    "avif_700": "/static/img/sortes-praeneste-700.avif",
+    "share": "/static/img/sortes-praeneste-share.jpg"
+  },
+  "dodona-oracle-lead-tablets": {
+    "file": "/static/img/dodona-oracle-lead-tablets.jpg",
+    "alt": "A small buckled rectangular sheet of grey lead covered in faint scratched Greek letters, displayed on a stand.",
+    "caption": "A lead strip from Dodona carrying a question for Zeus, late sixth century BCE. More than four thousand like it came out of the sanctuary.",
+    "credit": "Zde",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lead_plate,_Dodona,_inscription_is_request_for_divination,_late_6th_c_BC,_AM_Ioannina,_Ioam19.jpg",
+    "width": 1400,
+    "height": 1053,
+    "card": "/static/img/dodona-oracle-lead-tablets-card.jpg",
+    "avif": "/static/img/dodona-oracle-lead-tablets.avif",
+    "avif_700": "/static/img/dodona-oracle-lead-tablets-700.avif",
+    "share": "/static/img/dodona-oracle-lead-tablets-share.jpg"
+  },
+  "cumaean-sibyl-cave": {
+    "file": "/static/img/cumaean-sibyl-cave.jpg",
+    "alt": "A long rock-cut corridor with a tall trapezoidal cross-section narrowing towards a flat ceiling, lit by openings along the left wall.",
+    "caption": "The gallery on the Cumae acropolis that Amedeo Maiuri named the Cave of the Sibyl in 1932. The keyhole profile is a standard Greek way of cutting a stable tunnel.",
+    "credit": "Mentnafunangann",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antro_della_Sibilla_4.jpg",
+    "width": 1400,
+    "height": 1050,
+    "card": "/static/img/cumaean-sibyl-cave-card.jpg",
+    "avif": "/static/img/cumaean-sibyl-cave.avif",
+    "avif_700": "/static/img/cumaean-sibyl-cave-700.avif",
+    "share": "/static/img/cumaean-sibyl-cave-share.jpg"
   }
 }

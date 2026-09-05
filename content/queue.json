@@ -230,7 +230,7 @@
       "title": "The Well That Answered in Oak",
       "keyword": "sortes praenestinae fortuna",
       "category": "oracles-and-divination",
-      "status": "pending",
+      "status": "written",
       "angle": "At Praeneste the future came out of a well on strips of oak drawn by a child, and in 241 BCE a consul was legally forbidden to consult it. Cicero says only ordinary people ever trusted it, the same century the state trusted the augurs implicitly. Links to delphi-pythia and piacenza-liver-etruscan."
     },
     {
@@ -238,7 +238,7 @@
       "title": "Dodona: The Oracle That Answered Everybody",
       "keyword": "dodona oracle lead tablets",
       "category": "oracles-and-divination",
-      "status": "pending",
+      "status": "written",
       "angle": "More than four thousand lead strips from Zeus's oldest oracle, most asking not about war or colonies but whose baby a wife is carrying, or whether to take up sheep-farming. Delphi answered states; Dodona answered everybody. Links to delphi-pythia and dream-incubation-asclepius."
     },
     {
@@ -246,7 +246,7 @@
       "title": "The Cave They Found Under Virgil's Directions",
       "keyword": "cumaean sibyl cave cumae",
       "category": "oracles-and-divination",
-      "status": "pending",
+      "status": "written",
       "angle": "In 1932 an archaeologist tunnelled into a hillside above Naples and found a 131-metre trapezoidal gallery that matches Virgil's description of the Sibyl's cave closely enough to unnerve people, and still can't be proven to be the actual site. Links to delphi-pythia and sibylline-books-rome."
     },
     {
@@ -256,6 +256,126 @@
       "category": "oracles-and-divination",
       "status": "pending",
       "angle": "Consultants at Lebadeia climbed feet-first into a hole in the ground and came out, by multiple accounts, unable to laugh for weeks. Pausanias underwent it himself and wrote up the procedure. Links to dream-incubation-asclepius and oracle-of-the-dead-ephyra."
+    },
+    {
+      "slug": "iobacchi-athens",
+      "title": "The Rulebook of a Bacchic Club in Athens",
+      "keyword": "iobacchoi inscription athens",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "A 178 CE inscription of 163 lines from a Dionysiac society in Athens sets out its meeting nights, membership fees, entrance rites, wine allowance and fines for starting fights, in the flat prose of club minutes. It is the fullest picture we have of how a private mystery association actually ran day to day, and it reads more like a dining club than a secret cult. Links to bacchanalia-186-bce and villa-of-the-mysteries-frescoes."
+    },
+    {
+      "slug": "lykosoura-despoina",
+      "title": "Despoina: The Goddess Whose Name Was Secret",
+      "keyword": "lykosoura despoina mysteries arcadia",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "At Lykosoura in Arcadia the central figure of the mysteries was called only Despoina, 'the Mistress', because Pausanias says her true name could not be told to the uninitiated. A colossal marble group by Damophon and a stone veil carved with tiny animal-headed dancers are nearly all that survives of the rite. Scholars still argue whether the cult is genuinely archaic Arcadian or a Hellenistic revival dressed as ancient. Links to andania-mysteries-inscription and samothrace-great-gods."
+    },
+    {
+      "slug": "ninnion-tablet",
+      "title": "The Only Picture of the Eleusinian Procession",
+      "keyword": "ninnion tablet eleusis",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "A painted clay plaque dedicated at Eleusis around 370 BCE by a woman named Ninnion is the one surviving image that seems to show the Mysteries in progress: torches, myrtle crowns, a seated Demeter, worshippers filing in. Almost every figure is disputed, including whether the scene shows one visit to the sanctuary or two. Links to eleusinian-mysteries-telesterion and eleusinian-kykeon-psychedelic."
+    },
+    {
+      "slug": "sabazios-hands",
+      "title": "The Bronze Hands of a God Rome Kept Expelling",
+      "keyword": "sabazios bronze votive hand",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Dozens of bronze right hands survive, raised in blessing and covered in symbols: pine cones, snakes, a lizard, a mother nursing a child. They were made for the cult of Sabazios. In 139 BCE a praetor expelled his worshippers from Rome, in a report that also, confusingly, mentions Jews. Whether Sabazios was Phrygian, Thracian, or a hellenised form of Yahweh is still argued. Links to cult-of-cybele-taurobolium and bacchanalia-186-bce."
+    },
+    {
+      "slug": "claros-oracle",
+      "title": "Claros: The Oracle You Consulted at Night",
+      "keyword": "claros oracle apollo klaros",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "At Klaros near Colophon a priest went down at night into a vaulted underground room, drank from a hidden spring, and gave Apollo's answers in verse, reportedly without being told the questions first. Hundreds of inscriptions record city delegations, and one plague oracle of the 160s CE was copied onto walls from Roman Britain to Syria. How the verses were actually produced is unresolved. Links to delphi-pythia and delphi-gases-hypothesis."
+    },
+    {
+      "slug": "didyma-oracle",
+      "title": "Didyma: The Oracle Run by One Family",
+      "keyword": "didyma oracle apollo branchidae",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "The oracle at Didyma near Miletus was staffed for centuries by a single clan, the Branchidae, who handed the temple treasure to Persia and then disappeared, possibly massacred by Alexander in reprisal generations later. A prophetess touched a spring and answered; the enormous temple built to house her was never finished. The sources disagree on nearly every detail of the method and the family's end. Links to delphi-pythia and library-pergamon."
+    },
+    {
+      "slug": "dice-oracles-anatolia",
+      "title": "The Oracles You Worked With Five Knucklebones",
+      "keyword": "astragalos dice oracle anatolia",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Across southern Anatolia stood tall inscribed pillars listing fifty-six numbered replies, each keyed to a single throw of five knucklebones and credited to a named god. You threw, found your verse, and left. It is public divination with the priest removed entirely, and scholars disagree on whether that made it a cheaper cousin of the manned oracles or something people trusted more. Links to delphi-pythia and roman-augury-sacred-chickens."
+    },
+    {
+      "slug": "sortes-astrampsychi",
+      "title": "The Fortune-Telling Book of Roman Egypt",
+      "keyword": "sortes astrampsychi oracle book",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "The Sortes Astrampsychi is a working fortune-teller's manual preserved on papyrus: ninety-two set questions, an arithmetic trick to select your answer, and ten graded replies for each. 'Will I be sold?' 'Will I get my wages?' It was later Christianised by swapping pagan gods for saints and apostles. How the randomisation really worked, and whether a paid specialist operated it, is still argued. Links to greek-magical-papyri and sibylline-books-rome."
+    },
+    {
+      "slug": "anna-perenna-fountain",
+      "title": "The Cursed Spring Under a Roman Garage",
+      "keyword": "anna perenna fountain curse tablets",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "A 1999 rescue dig beneath a car park in northern Rome found the sacred spring of Anna Perenna intact, with sealed lead cylinders holding wax and organic figurines, coins, lamps and inscribed curses spanning the first to the sixth century CE. It is the largest sealed deposit of working magic ever excavated. The identity of the figurines and the date of the latest tablets are contested. Links to ancient-curse-tablets and love-spell-doll-louvre."
+    },
+    {
+      "slug": "getty-hexameters",
+      "title": "The Getty Hexameters: A Spell Written in Verse",
+      "keyword": "getty hexameters selinous lead",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "A folded lead sheet from Selinunte, around 400 BCE, carries protective hexameter verses that also appear on amulets across the Greek world and overlap with Orphic material. It surfaced through the antiquities trade with no recorded findspot, and scholars split on whether it is a magical text, a mystery-cult liturgy, or genuinely both at once. Links to orphic-gold-tablets and greek-magical-papyri."
+    },
+    {
+      "slug": "phrygian-confession-inscriptions",
+      "title": "The Stones That Confessed a Sin in Public",
+      "keyword": "phrygian confession inscriptions lydia",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "About a hundred and fifty carved stelai from rural Lydia and Phrygia, mostly second and third century CE, record people announcing publicly that a god had struck them ill for a named offence and that they have now made amends, sometimes with a relief of the afflicted eye or leg. Scholars argue over whether 'confession' is the right word, or whether these mainly advertise the temple's power to punish. Links to evil-eye-ancient-world and ancient-binding-spells-law."
+    },
+    {
+      "slug": "apollonius-of-tyana",
+      "title": "Apollonius of Tyana: Sage or Sorcerer",
+      "keyword": "apollonius of tyana philostratus",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "A first-century wandering philosopher credited with cures, foreknowledge, talismans that kept plague and vermin out of cities, and an escape from Domitian's court by vanishing in mid-trial. Nearly all of it comes from one admiring biography written more than a century later for an empress. Later pagans set him against Christ; Christian writers filed him under magic. Links to apuleius-trial-magic and ancient-necromancy."
+    },
+    {
+      "slug": "astrologers-expelled-rome",
+      "title": "The Astrologers Rome Kept Throwing Out",
+      "keyword": "astrologers expelled rome tiberius",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "Rome expelled astrologers from the city at least a dozen times between 139 BCE and the third century CE, frequently under the same emperors who kept personal astrologers and quietly asked them when they would die. The 16 CE expulsion followed the show trial of Libo Drusus. Historians disagree on whether the bans were ever enforced or were largely for show. Links to books-augustus-burned and ancient-necromancy."
+    },
+    {
+      "slug": "annales-maximi",
+      "title": "The Yearly Record Rome Kept, Then Lost",
+      "keyword": "annales maximi pontifex records",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "Each year the pontifex maximus posted a whitened board listing grain prices, eclipses, prodigies and magistrates, and the whole run was supposedly collected into eighty books around 120 BCE and then lost. Cato sneered that it recorded how often corn was dear. Bruce Frier argued the eighty-book edition never existed in the form later writers describe. Links to books-augustus-burned and claudius-etruscan-history."
+    },
+    {
+      "slug": "tages-etruscan-revelation",
+      "title": "Tages: The Child Ploughed Out of a Field",
+      "keyword": "tages etruscan revelation haruspicy",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "Etruscan religion had an origin story of its own: a ploughman near Tarquinia turned up a furrow, a child with the face of an old man climbed out, dictated the rules for reading livers and lightning to the crowd that gathered, and died the same day. Cicero reports it with a straight face and then takes it apart. The myth sits awkwardly against the discipline's real, partly Near Eastern roots. Links to piacenza-liver-etruscan and numas-buried-books."
     }
   ]
 }

@@ -186,6 +186,18 @@ PICKS = {
         "File:Statue of Athena Parthenos from the Library of Pergamon, Pergamon Museum Berlin (8404207129).jpg",
         "A marble statue of Athena standing in armour with a shield at her side, her head and much of both arms missing.",
         "The over-life-size Athena found in the room on the Pergamon acropolis that its excavator identified as the library. The identification still rests partly on her."),
+    "sortes-praeneste": (
+        "File:Mosaïque nilotique, Praeneste, Italie.jpg",
+        "A large ancient Roman floor mosaic showing the Nile in flood, crowded with boats, temples, animals and small figures along the banks.",
+        "The Nile Mosaic, laid in the lower sanctuary of Fortuna Primigenia at Praeneste in the late second century BCE. The lot oracle operated somewhere in the same complex."),
+    "dodona-oracle-lead-tablets": (
+        "File:Lead plate, Dodona, inscription is request for divination, late 6th c BC, AM Ioannina, Ioam19.jpg",
+        "A small buckled rectangular sheet of grey lead covered in faint scratched Greek letters, displayed on a stand.",
+        "A lead strip from Dodona carrying a question for Zeus, late sixth century BCE. More than four thousand like it came out of the sanctuary."),
+    "cumaean-sibyl-cave": (
+        "File:Antro della Sibilla 4.jpg",
+        "A long rock-cut corridor with a tall trapezoidal cross-section narrowing towards a flat ceiling, lit by openings along the left wall.",
+        "The gallery on the Cumae acropolis that Amedeo Maiuri named the Cave of the Sibyl in 1932. The keyhole profile is a standard Greek way of cutting a stable tunnel."),
 }
 
 

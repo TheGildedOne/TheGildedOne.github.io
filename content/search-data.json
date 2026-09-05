@@ -1,12 +1,12 @@
 {
-  "pulled": "2026-09-04",
-  "start": "2026-06-04",
-  "end": "2026-09-02",
+  "pulled": "2026-09-05",
+  "start": "2026-06-05",
+  "end": "2026-09-03",
   "totals": {
-    "clicks": 6,
-    "impressions": 275,
-    "ctr": 0.0218,
-    "position": 30.1
+    "clicks": 7,
+    "impressions": 285,
+    "ctr": 0.0246,
+    "position": 29.2
   },
   "queries": [
     {
