@@ -1,12 +1,12 @@
 {
-  "pulled": "2026-09-05",
-  "start": "2026-06-05",
-  "end": "2026-09-03",
+  "pulled": "2026-09-09",
+  "start": "2026-06-09",
+  "end": "2026-09-07",
   "totals": {
-    "clicks": 7,
-    "impressions": 285,
-    "ctr": 0.0246,
-    "position": 29.2
+    "clicks": 8,
+    "impressions": 299,
+    "ctr": 0.0268,
+    "position": 28.5
   },
   "queries": [
     {
@@ -40,9 +40,9 @@
     {
       "query": "curse tablets",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 68
+      "position": 77
     },
     {
       "query": "damnatio memoriae",
@@ -199,6 +199,13 @@
       "position": 79
     },
     {
+      "query": "sibylline books",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 27
+    },
+    {
       "query": "sybelline books",
       "clicks": 0,
       "impressions": 1,
@@ -309,8 +316,8 @@
       "query": "curse tablets",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
-      "impressions": 1,
-      "position": 68
+      "impressions": 2,
+      "position": 77
     },
     {
       "query": "damnatio memoriae",
@@ -472,6 +479,13 @@
       "clicks": 0,
       "impressions": 1,
       "position": 79
+    },
+    {
+      "query": "sibylline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 27
     },
     {
       "query": "sybelline books",
