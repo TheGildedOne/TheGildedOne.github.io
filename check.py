@@ -128,21 +128,28 @@ for slug in slugs:
     if f'href="/posts/{slug}/"' not in home:
         errors.append(f"index.html: post not linked from homepage: {slug}")
 
-# 7. no em dashes in posts written from now on.
+# 7. no em dashes from this date on.
 #
 # Imran flagged the em dash as an overused tic on 2026-08-13: 461 of them across
-# the 29 posts written by then. Those are grandfathered deliberately - rewriting
-# live and scheduled posts would churn a lot of prose for a stylistic preference.
-# The rule applies to everything written afterwards.
+# the 29 posts written by then. The rule originally applied only to posts written
+# afterwards, which meant a gate of 2026-10-13.
 #
-# Gated on the post's own date rather than a slug list, so it needs no upkeep:
-# the last post written under the old rule is dated 12 Oct 2026, and any post
-# written from here on necessarily gets a later slot.
+# That left a trap. Thirteen posts were already written and queued but not yet
+# published, so they sat below the gate and went out with em dashes intact well
+# into October. Imran spotted one in the live Isis post on 2026-09-11 and
+# reasonably asked whether the rule had ever been applied.
+#
+# So on 2026-09-11 those thirteen (14 Sep to 12 Oct, 223 em dashes) were recast
+# by hand, and the gate moved back to cover them. Recast, not substituted: each
+# one became a comma, colon, bracket or full stop as the sentence required.
+#
+# The 16 posts already public keep theirs. Rewriting prose readers have seen buys
+# nothing, and the diff would be large and pointless.
 #
 # Catches the &mdash; entity and a literal em dash. En dashes are untouched -
 # they carry number and date ranges ("440-430 BCE"), which is correct typography
 # and not the habit being complained about.
-EM_DASH_FREE_FROM = "2026-10-13"
+EM_DASH_FREE_FROM = "2026-09-14"
 META_RE = re.compile(r"^<!--META\s*(\{.*?\})\s*META-->", re.DOTALL)
 IMAGES_MANIFEST = {}
 _img = Path(__file__).parent / "content" / "images.json"

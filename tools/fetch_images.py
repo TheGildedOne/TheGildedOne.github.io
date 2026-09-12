@@ -29,7 +29,7 @@ PICKS = {
     "greek-magical-gems": (
         "File:Abraxas I1679.jpg",
         "A carved oval gemstone showing a figure with a rooster's head, holding a shield and whip, with serpents in place of legs.",
-        "A magical gem cut with Abraxas. Not one of the medical types &mdash; but the same craft, the same workshops, and the same unpronounceable words."),
+        "A magical gem cut with Abraxas. Not one of the medical types, but the same craft, the same workshops, and the same unpronounceable words."),
     "mithraism-seven-grades": (
         "File:36.11-1 Mosaic 1st degree.tif",
         "A black-and-white Roman mosaic panel showing a raven, a small drinking cup and a herald's staff, set in a plain border.",
@@ -121,7 +121,7 @@ PICKS = {
     "delphi-pythia": (
         "File:Themis Aigeus Antikensammlung Berlin F2538 n2.jpg",
         "The interior of a Greek red-figure cup: a woman sits on a tall tripod, head bowed over a shallow bowl held in one hand and a laurel sprig in the other, facing a bearded man in a wreath who stands wrapped in his cloak.",
-        "A consultation, painted around 440 BCE. The seated figure is usually identified as Themis rather than the Pythia &mdash; it is still the closest thing we have to a contemporary picture of the procedure."),
+        "A consultation, painted around 440 BCE. The seated figure is usually identified as Themis rather than the Pythia, and it is still the closest thing we have to a contemporary picture of the procedure."),
     "delphi-gases-hypothesis": (
         "File:Temple of Apollo, floor construction, Delphi, Dlfi412.jpg",
         "Looking down into the excavated stone foundations of the temple of Apollo at Delphi: courses of large limestone blocks around a sunken rectangular space, with a wooded hillside beyond.",
@@ -129,7 +129,7 @@ PICKS = {
     "dream-incubation-asclepius": (
         "File:Votive relief depicting Amphiaraus and a patient (4th cent. B.C.) at the National Archaeological Museum of Athens on 22 July 2018.jpg",
         "A marble votive relief: a bearded god treats the bare shoulder of a standing young man, while to the right the same young man lies asleep on a couch with a large snake stretched over his shoulder.",
-        "Incubation in one panel: the treatment, and the dream. Dedicated by a man named Archinos &mdash; his name is cut along the base &mdash; at the sanctuary of Amphiaraos at Oropos, not Epidaurus. A different healer, the same procedure."),
+        "Incubation in one panel: the treatment, and the dream. Dedicated by a man named Archinos, whose name is cut along the base, at the sanctuary of Amphiaraos at Oropos, not Epidaurus. A different healer, the same procedure."),
     "etruscan-lightning-doctrine": (
         "File:Statue of Tinia with thunderbolt, Fiesole, Umbrian workshop, 425-400 BC, bronze, Villa Giulia - The Etruscans exhibition - California Palace of the Legion of Honor - San Francisco, CA - DSC09377.jpg",
         "A slender nude bronze statuette of a standing male figure, one arm extended holding a forked thunderbolt, the other raised holding a small round object.",
