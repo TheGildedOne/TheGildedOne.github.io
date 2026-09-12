@@ -93,6 +93,19 @@ VERIFIED_BY_HAND = {
         "Studies review, which gives publisher, year, page count, ISBN and price, "
         "and via AbeBooks/Amazon listings on the same ISBN. Surfaced 2026-09-02, "
         "when the classifier was fixed and started checking edited volumes.",
+    "Trophonios de Lébadée: Cultes et mythes d'une cité béotienne au miroir de la mentalité antique":
+        "Pierre Bonnechere, Brill, Leiden 2003, ISBN 90-04-13102-7 (Religions in "
+        "the Graeco-Roman World 150), 430pp. A French-language monograph from a "
+        "specialist series, which Open Library's fuzzy match scores at 0.34. "
+        "Confirmed via the BnF catalogue, AbeBooks on the same ISBN, and reviews "
+        "in Kernos and Dialogues d'histoire ancienne. Checked 2026-09-12.",
+    "Greco-Roman Associations: Texts, Translations, and Commentary I: Attica, Central Greece, Macedonia, Thrace":
+        "John S. Kloppenborg and Richard S. Ascough, De Gruyter, Berlin/New York "
+        "2011, ISBN 978-3-11-025345-0 (Beihefte zur Zeitschrift fuer die "
+        "neutestamentliche Wissenschaft 181). A reference-series volume absent "
+        "from Open Library entirely (0.00 match). Confirmed via De Gruyter's own "
+        "catalogue listing and a Bryn Mawr Classical Review notice of the series. "
+        "Checked 2026-09-12.",
     "Magic in Apuleius' ‘Apologia’: Understanding the Charges and the "
     "Forensic Strategies in Apuleius' Speech":
         "Leonardo Costantini, De Gruyter, Berlin/Boston 2019, ISBN "

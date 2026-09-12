@@ -198,6 +198,18 @@ PICKS = {
         "File:Antro della Sibilla 4.jpg",
         "A long rock-cut corridor with a tall trapezoidal cross-section narrowing towards a flat ceiling, lit by openings along the left wall.",
         "The gallery on the Cumae acropolis that Amedeo Maiuri named the Cave of the Sibyl in 1932. The keyhole profile is a standard Greek way of cutting a stable tunnel."),
+    "oracle-trophonius": (
+        "File:Ancient Greece Limestone Votive Relief, 350-325 BC (27880856203).jpg",
+        "A carved limestone votive relief showing a bearded seated figure holding a horn, flanked by two snakes rising from the ground, with smaller worshippers to one side.",
+        "A votive relief to Trophonius, found near the river Hercyna at Lebadeia, fourth century BCE. The snakes mark him as a power of the earth, the same ground consultants climbed down into."),
+    "iobacchi-athens": (
+        "File:Decree of Iobacchioi or worshipers of Dionysus concerning the rules of their Association 178 AD.jpg",
+        "A tall inscribed marble stele densely covered in small Greek lettering across its full height, photographed against a plain museum wall.",
+        "The Iobacchoi inscription, 163 lines on a single marble column. Fines, dues and meeting nights, in the same hand as everything else Greek clubs put on stone."),
+    "lykosoura-despoina": (
+        "File:CULT STATUES IN THE TEMPLE OF DESPOINA AT LYKOSOURA (2nd cent. B.C.) in the National Archaeological Museum of Athens on 27 March 2018.jpg",
+        "Surviving marble heads and drapery fragments from a colossal cult statue group, displayed together in a museum case.",
+        "What is left of Damophon's cult group from Lykosoura: the heads of Demeter, Artemis and Anytos, and a fragment of Despoina's robe. No complete body survives for any of the four figures."),
 }
 
 
