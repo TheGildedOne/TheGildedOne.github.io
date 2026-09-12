@@ -102,6 +102,9 @@ ALIASES = {
     "sortes-praeneste": ["Praeneste", "sortes Praenestinae"],
     "dodona-oracle-lead-tablets": ["Dodona"],
     "cumaean-sibyl-cave": ["Sibyl's cave"],
+    "oracle-trophonius": ["Trophonius"],
+    "iobacchi-athens": ["Iobacchoi"],
+    "lykosoura-despoina": ["Despoina", "Lykosoura"],
 }
 
 # Phrases too generic to be a good anchor even when they match a post's keyword.
