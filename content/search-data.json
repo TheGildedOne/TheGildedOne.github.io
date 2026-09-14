@@ -1,11 +1,11 @@
 {
-  "pulled": "2026-09-09",
-  "start": "2026-06-09",
-  "end": "2026-09-07",
+  "pulled": "2026-09-14",
+  "start": "2026-06-14",
+  "end": "2026-09-12",
   "totals": {
     "clicks": 8,
-    "impressions": 299,
-    "ctr": 0.0268,
+    "impressions": 369,
+    "ctr": 0.0217,
     "position": 28.5
   },
   "queries": [
@@ -38,11 +38,39 @@
       "position": 65
     },
     {
+      "query": "ancient roman curses",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
+      "query": "curse tablet",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 89
+    },
+    {
       "query": "curse tablets",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 77
+      "position": 80
+    },
+    {
+      "query": "curse tablets and binding spells from the ancient world",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 84
+    },
+    {
+      "query": "curse tablets roman",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
     },
     {
       "query": "damnatio memoriae",
@@ -129,6 +157,41 @@
       "position": 67
     },
     {
+      "query": "lead curse tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 81
+    },
+    {
+      "query": "library of alexandria burning set us back",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 51
+    },
+    {
+      "query": "library of alexandria what was lost",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "liver divination",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 38
+    },
+    {
+      "query": "liver of piacenza",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 80
+    },
+    {
       "query": "magical papyri",
       "clicks": 0,
       "impressions": 1,
@@ -171,6 +234,13 @@
       "position": 51
     },
     {
+      "query": "oracle of the dead",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 51
+    },
+    {
       "query": "orphic gold tablet",
       "clicks": 0,
       "impressions": 2,
@@ -183,6 +253,13 @@
       "impressions": 6,
       "ctr": 0,
       "position": 12.2
+    },
+    {
+      "query": "piacenza liver",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 29
     },
     {
       "query": "ramuthra",
@@ -199,11 +276,32 @@
       "position": 79
     },
     {
-      "query": "sibylline books",
+      "query": "roman curse tablets",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 27
+      "position": 87
+    },
+    {
+      "query": "samothracian",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 91
+    },
+    {
+      "query": "sibling oracles",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 68
+    },
+    {
+      "query": "sibylline books",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 50
     },
     {
       "query": "sybelline books",
@@ -281,6 +379,20 @@
       "impressions": 1,
       "ctr": 0,
       "position": 55
+    },
+    {
+      "query": "what was in library of alexandria",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 80
+    },
+    {
+      "query": "what was lost in the library of alexandria",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 58
     }
   ],
   "query_pages": [
@@ -313,11 +425,39 @@
       "position": 65
     },
     {
+      "query": "ancient roman curses",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 85
+    },
+    {
+      "query": "curse tablet",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 89
+    },
+    {
       "query": "curse tablets",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
-      "impressions": 2,
-      "position": 77
+      "impressions": 3,
+      "position": 80
+    },
+    {
+      "query": "curse tablets and binding spells from the ancient world",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 84
+    },
+    {
+      "query": "curse tablets roman",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 83
     },
     {
       "query": "damnatio memoriae",
@@ -404,6 +544,41 @@
       "position": 67
     },
     {
+      "query": "lead curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 81
+    },
+    {
+      "query": "library of alexandria burning set us back",
+      "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 51
+    },
+    {
+      "query": "library of alexandria what was lost",
+      "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 58
+    },
+    {
+      "query": "liver divination",
+      "page": "https://veiledantiquity.com/posts/piacenza-liver-etruscan/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 38
+    },
+    {
+      "query": "liver of piacenza",
+      "page": "https://veiledantiquity.com/posts/piacenza-liver-etruscan/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 80
+    },
+    {
       "query": "magical papyri",
       "page": "https://veiledantiquity.com/posts/greek-magical-papyri/?utm_source=veiled&utm_medium=email&utm_campaign=the-greek-magical-papyri-real-spellbooks-from",
       "clicks": 0,
@@ -446,6 +621,13 @@
       "position": 51
     },
     {
+      "query": "oracle of the dead",
+      "page": "https://veiledantiquity.com/posts/oracle-of-the-dead-ephyra/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 51
+    },
+    {
       "query": "orphic gold tablet",
       "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/",
       "clicks": 0,
@@ -467,6 +649,13 @@
       "position": 11
     },
     {
+      "query": "piacenza liver",
+      "page": "https://veiledantiquity.com/posts/piacenza-liver-etruscan/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 29
+    },
+    {
       "query": "ramuthra",
       "page": "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/?utm_source=veiled&utm_medium=email&utm_campaign=mithras-and-the-bull-the-cult-we-can-see-and-cant",
       "clicks": 0,
@@ -481,11 +670,32 @@
       "position": 79
     },
     {
-      "query": "sibylline books",
+      "query": "roman curse tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 87
+    },
+    {
+      "query": "samothracian",
+      "page": "https://veiledantiquity.com/posts/samothrace-great-gods/?utm_source=veiled&utm_medium=email&utm_campaign=the-great-gods-of-samothrace-whose-names-we-dont",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 91
+    },
+    {
+      "query": "sibling oracles",
       "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
       "clicks": 0,
       "impressions": 1,
-      "position": 27
+      "position": 68
+    },
+    {
+      "query": "sibylline books",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 50
     },
     {
       "query": "sybelline books",
@@ -570,6 +780,20 @@
       "clicks": 0,
       "impressions": 1,
       "position": 55
+    },
+    {
+      "query": "what was in library of alexandria",
+      "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 80
+    },
+    {
+      "query": "what was lost in the library of alexandria",
+      "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 58
     }
   ]
 }
