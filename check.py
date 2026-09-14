@@ -296,6 +296,61 @@ for _heading, _intro, _items, _outro in build.START_HERE:
         if "\u2014" in _t or "&mdash;" in _t:
             errors.append(f"START_HERE '{_label}': em dash in its copy")
 
+# 10. Analytics must go through the consent check.
+#
+# Until 2026-09-14 Google Analytics loaded on every page for everyone and set
+# cookies for UK and EEA visitors without asking. It now loads only from
+# static/consent.js. Each way that could quietly break gets a rule: a page that
+# loads Google's script directly skips the question, a missing banner leaves the
+# script nothing to show, a missing footer button leaves no way to change your
+# mind, and a region dropped from the script stops the backstop for that country.
+GA4_ID = build.MONETISATION["ga4_id"]
+CONSENT_REGIONS = ("AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO "
+                   "SK SI ES SE IS LI NO GB CH").split()
+if GA4_ID:
+    consent_js = DIST / "static" / "consent.js"
+    checked += 1
+    if not consent_js.exists():
+        errors.append("static/consent.js missing: analytics consent cannot run")
+    else:
+        js_src = consent_js.read_text(encoding="utf-8")
+        for code in CONSENT_REGIONS:
+            checked += 1
+            if f'"{code}"' not in js_src:
+                errors.append(f"static/consent.js: region {code} missing from REGIONS")
+    for page in pages:
+        rel = page.relative_to(DIST).as_posix()
+        html = page.read_text(encoding="utf-8")
+        checked += 4
+        if "googletagmanager.com" in html:
+            errors.append(f"{rel}: loads Google Analytics directly, skipping the consent check")
+        if f'<script src="/static/consent.js" data-ga="{GA4_ID}"></script>' not in html:
+            errors.append(f"{rel}: consent script missing, or not given the GA4 id")
+        if not all(s in html for s in ('id="consent"', 'data-consent="granted"',
+                                       'data-consent="denied"')):
+            errors.append(f"{rel}: consent banner missing or missing a button")
+        if "data-consent-open" not in html:
+            errors.append(f"{rel}: no Cookie settings button, so nobody can change their mind")
+    # Only <main> counts: the footer button says "Cookie settings" on every page,
+    # so searching the whole file would pass even if the policy never mentioned it.
+    privacy_page = DIST / "privacy" / "index.html"
+    checked += 1
+    privacy_main = re.search(r"<main\b.*?</main>", privacy_page.read_text(encoding="utf-8"),
+                             re.DOTALL) if privacy_page.exists() else None
+    if not privacy_main or "Cookie settings" not in privacy_main.group(0):
+        errors.append("privacy/index.html: does not tell visitors about Cookie settings")
+
+# 11. No ads until a certified consent platform exists.
+#
+# The banner above covers analytics only. Google requires a certified consent
+# platform before serving ads to UK and EEA visitors, so switching AdSense on is
+# blocked here rather than left to a comment someone might not read. Remove this
+# rule in the same commit that wires the platform in.
+checked += 1
+if build.MONETISATION["adsense_client"]:
+    errors.append("adsense_client is set, but no certified consent platform exists. The "
+                  "cookie banner covers analytics only. Wire in a Google-certified CMP first.")
+
 print(f"{len(pages)} pages, {checked} assertions.")
 if errors:
     print(f"\n{len(errors)} PROBLEM(S):")

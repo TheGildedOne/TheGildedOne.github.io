@@ -138,7 +138,8 @@ def render(template: str, ctx: dict) -> str:
     """Minimal {{key}} substitution. Values are inserted raw."""
     # Analytics and ad scripts belong on every page, so they default in here
     # rather than being threaded through each call site.
-    ctx = {"head_extra": analytics_head() + adsense_head(), "og_image": "", **ctx}
+    ctx = {"head_extra": analytics_head() + adsense_head(), "og_image": "",
+           "consent_banner": consent_banner_html(), "consent_link": consent_link_html(), **ctx}
 
     def sub(m):
         key = m.group(1).strip()
@@ -278,15 +279,38 @@ def analytics_head() -> str:
     """Whichever analytics is configured. Nothing renders until one is set."""
     out = []
     if MONETISATION["ga4_id"]:
-        gid = MONETISATION["ga4_id"]
-        out.append(
-            f'<script async src="https://www.googletagmanager.com/gtag/js?id={gid}"></script>\n'
-            f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}"
-            f"gtag('js',new Date());gtag('config','{gid}');</script>")
+        # Never load Google's script from here. Until 2026-09-14 it was, and GA set
+        # cookies for UK and EEA visitors without asking. static/consent.js now
+        # decides whether it loads; check.py fails any page that bypasses it.
+        out.append(f'<script src="/static/consent.js" data-ga="{MONETISATION["ga4_id"]}"></script>')
     if MONETISATION["plausible_domain"]:
         out.append(f'<script defer data-domain="{MONETISATION["plausible_domain"]}" '
                    f'src="https://plausible.io/js/script.js"></script>')
     return "\n".join(out)
+
+
+def consent_banner_html() -> str:
+    """The analytics question. Hidden until static/consent.js decides to ask.
+
+    Both buttons are styled the same on purpose: UK and EU regulators expect
+    saying no to be as easy as saying yes."""
+    if not MONETISATION["ga4_id"]:
+        return ""
+    return """<div class="consent" id="consent" role="region" aria-label="Cookie choice" hidden>
+  <p>Google Analytics tells us which articles get read. It sets cookies to do that, so you choose whether it runs. <a href="/privacy/">Privacy page</a></p>
+  <div class="consent-actions">
+    <button type="button" data-consent="denied">No thanks</button>
+    <button type="button" data-consent="granted">Allow</button>
+  </div>
+</div>"""
+
+
+def consent_link_html() -> str:
+    """Footer button to reopen the question. Hidden without JavaScript, which is
+    fine: without JavaScript, analytics never runs either."""
+    if not MONETISATION["ga4_id"]:
+        return ""
+    return '<button type="button" class="consent-open" data-consent-open hidden>Cookie settings</button>'
 
 
 def adsense_head() -> str:
@@ -329,9 +353,10 @@ def legal_pages() -> list:
     # said EEA/UK visitors saw a consent prompt (no consent tool exists), and never
     # mentioned Google Analytics, which was live on every page.
     #
-    # Before switching on AdSense: personalised ads to EEA/UK visitors need a
-    # certified consent platform. Do not add a line here claiming one exists
-    # until it actually does.
+    # Since 2026-09-14 analytics asks UK/EEA visitors first (static/consent.js).
+    # That banner covers analytics only. Before switching on AdSense, ads to UK/EEA
+    # visitors need a Google-certified consent platform, and check.py fails the
+    # build until one exists. Do not add a line here claiming one does.
     #
     # The "Last updated" date below is fixed on purpose. It used to be
     # datetime.now(), which stamped the build date, so the page claimed to have
@@ -344,9 +369,12 @@ def legal_pages() -> list:
         third_party.append(
             "<li><strong>Analytics.</strong> Google Analytics counts visits and shows which "
             "pages get read. Google sets cookies to do this and receives technical details "
-            "about your visit, such as your browser and rough location. Most ad blockers stop "
-            "it, or you can use Google&rsquo;s "
-            '<a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out add-on</a>.</li>')
+            "about your visit, such as your browser and rough location. If your device is set "
+            "to a UK or European time zone, it stays off until you say yes. Elsewhere it runs "
+            "unless you turn it off, and Google is still told not to store cookies for anyone "
+            "it places in the UK, EEA or Switzerland. You can change your mind at any time "
+            "with <strong>Cookie settings</strong> at the bottom of every page. None of "
+            "Google&rsquo;s advertising features are switched on.</li>")
     if MONETISATION["adsense_client"]:
         third_party.append(
             "<li><strong>Advertising.</strong> Google AdSense and its partners may set cookies "

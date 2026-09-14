@@ -136,11 +136,14 @@ Thresholds move, so treat these as approximate. Apply to AdSense once you're get
 organic traffic — month three or four is realistic. Paste the publisher ID into
 `adsense_client` and rebuild; the script and slots wire themselves up.
 
-**One thing I have deliberately not built:** an EEA/UK cookie consent banner. Personalised
-advertising to European visitors legally requires one, and Google requires a certified
-consent platform rather than a homemade banner. When you're close to running ads, tell me
-and I'll wire in a proper CMP. Running ads without it in Europe is a real liability, not a
-technicality.
+**Consent, and what is still missing for ads.** Since 2026-09-14 the site has its own cookie
+banner for Google Analytics (`static/consent.js`): visitors on a UK or European time zone are
+asked before anything loads, and everyone can change their mind from "Cookie settings" in the
+footer. That banner covers **analytics only**. Advertising to European visitors needs a
+Google-certified consent platform (CMP), not a homemade banner. `check.py` fails the build
+if `adsense_client` is filled in, so ads cannot go on by accident. When you're close to running
+ads, tell me and I'll wire in a certified CMP (AdSense's own "Privacy & messaging" tool is free
+and certified). Running ads without it in Europe is a real liability, not a technicality.
 
 ---
 

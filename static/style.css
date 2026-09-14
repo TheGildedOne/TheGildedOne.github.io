@@ -397,6 +397,33 @@ hr {
 }
 .footer-legal-nav a { color: var(--ink-400); text-decoration: none; }
 .footer-legal-nav a:hover { color: var(--text-faint); }
+.footer-legal-nav button {
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  color: var(--ink-400); background: none; border: 0; padding: 0; cursor: pointer;
+}
+.footer-legal-nav button:hover { color: var(--text-faint); }
+
+/* Cookie question. Both buttons match: refusing must be as easy as agreeing. */
+.consent {
+  position: fixed; z-index: 50; left: 50%; bottom: clamp(0.6rem, 2vw, 1.2rem);
+  transform: translateX(-50%); width: min(42rem, calc(100% - 1.2rem));
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end;
+  gap: 0.9rem 1.2rem; padding: 1rem 1.2rem;
+  background: var(--ink-200); border: 1px solid var(--ink-400); border-radius: 3px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+.consent[hidden] { display: none; }
+.consent p { flex: 1 1 18rem; margin: 0; color: var(--text-dim); font-size: 0.92rem; line-height: 1.5; }
+.consent p a { color: var(--gold-soft); }
+.consent-actions { display: flex; gap: 0.6rem; }
+.consent button {
+  padding: 0.65rem 1.3rem; font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;
+  color: var(--text); background: transparent;
+  border: 1px solid var(--gold); border-radius: 3px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.consent button:hover, .consent button:focus-visible { background: var(--gold); color: var(--ink-000); }
 
 .is-page main section h2 a { color: inherit; text-decoration: none; }
 .is-page main section h2 a:hover { color: var(--gold-soft); }
@@ -516,7 +543,7 @@ hr {
 
 @media print {
   body { background: #fff; color: #000; }
-  .masthead, .footer, .related, .toc, .tags { display: none; }
+  .masthead, .footer, .related, .toc, .tags, .consent { display: none; }
   .prose, .post { max-width: none; }
   a { color: #000; }
 }
