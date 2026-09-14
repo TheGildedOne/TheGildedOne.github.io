@@ -268,6 +268,34 @@ for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html"
                       f"{MIN_HERO_W}px+ (it renders at 700px CSS, so half that "
                       f"is visibly soft on a phone). Pick a larger Commons file.")
 
+# 9. Start Here curation.
+#
+# START_HERE is hand-edited, including by the Saturday writing loop (step 4b), and
+# every mistake in it used to be silent: a mistyped slug simply never appeared,
+# and a section could grow past the four-article limit WRITING-LOOP.md sets
+# without anything noticing. Checked against content/posts rather than dist, so
+# an article that is written but not yet published still counts as valid.
+sys.path.insert(0, str(Path(__file__).parent))
+import build  # noqa: E402
+
+_post_slugs = {p["slug"] for p in build.load_posts()}
+for _heading, _intro, _items, _outro in build.START_HERE:
+    _label = re.sub(r"<[^>]+>|&\w+;", "", _heading)
+    checked += 1
+    if len(_items) > 4:
+        errors.append(f"START_HERE '{_label}': {len(_items)} articles, the limit is 4")
+    _texts = [_heading, _intro, _outro]
+    for _item in _items:
+        _slug, _hook = (_item, "") if isinstance(_item, str) else _item
+        _texts.append(_hook)
+        checked += 1
+        if _slug not in _post_slugs:
+            errors.append(f"START_HERE '{_label}': no post with slug '{_slug}'")
+    for _t in _texts:
+        checked += 1
+        if "\u2014" in _t or "&mdash;" in _t:
+            errors.append(f"START_HERE '{_label}': em dash in its copy")
+
 print(f"{len(pages)} pages, {checked} assertions.")
 if errors:
     print(f"\n{len(errors)} PROBLEM(S):")

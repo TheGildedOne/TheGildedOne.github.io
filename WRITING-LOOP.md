@@ -180,10 +180,16 @@ Almost everything about a new post wires itself up — nav, sitemap, RSS, relate
 prev/next, schema, analytics, the signup block. **The one exception is `/start-here/`**,
 which is hand-curated in the `START_HERE` list at the top of `build.py`.
 
-If a new post genuinely belongs in one of those sections, add its slug there. If it doesn't
-fit any of them, leave it alone — the page is valuable *because* it's a selection rather
-than a list of everything. Don't add posts just to keep it current, and don't let any one
-section grow past four entries.
+If a new post genuinely belongs in one of those sections, add it to that section's list as a
+`(slug, teaser line)` pair. If it doesn't fit any of them, leave it alone — the page is
+valuable *because* it's a selection rather than a list of everything. Don't add posts just to
+keep it current, and don't let any one section grow past four entries.
+
+**The teaser line must be about that post alone and must read on its own.** Each section's
+blurb is assembled from the lines of whichever of its posts are live, so any line can be
+missing on a given day. Never write a line that depends on another line, or on a post that
+hasn't published. Until 2026-09-14 each section had one blurb written for its full list, and
+the page spent weeks teasing articles readers couldn't click.
 
 ### 5. Verify the citations — this gate is not optional
 

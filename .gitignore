@@ -9,6 +9,11 @@ wordpress-import.xml
 # Service-account keys and anything else credential-shaped. Never commit this.
 secrets/
 
+# Local Claude Code config: permissions, and the preview server used to check
+# site changes before they go live. Machine-specific, and the Saturday writing
+# loop runs `git add -A`, so without this it would commit them.
+.claude/
+
 __pycache__/
 *.pyc
 .DS_Store

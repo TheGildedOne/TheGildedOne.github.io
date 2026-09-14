@@ -30,8 +30,8 @@ SITE = {
     "title": "Veiled Antiquity",
     "tagline": "The initiated history of the ancient world",
     "description": (
-        "Mystery cults, forbidden rites and lost knowledge from the ancient world "
-        "— researched carefully, told honestly, and never tidier than the evidence allows."
+        "Mystery cults, forbidden rites and lost knowledge from the ancient world. "
+        "Where the stories come from, and where the evidence runs out."
     ),
     "url": "https://veiledantiquity.com",
     "author": "Veiled Antiquity",
@@ -73,42 +73,61 @@ CATEGORIES = {
 }
 
 START_HERE = [
-    ("If you read one thing", ["ancient-mystery-cults-guide"],
-     "Hundreds of thousands of people were initiated into secret rites over two thousand "
-     "years, and essentially none of them talked. This is how that held."),
-    ("The secret that was genuinely kept", ["eleusinian-mysteries-telesterion",
-                                            "eleusinian-kykeon-psychedelic", "orphic-gold-tablets"],
-     "Eleusis ran annually for two millennia and the central rite was never written down. "
-     "What survives is a building, a drink, and instructions folded into graves."),
-    ("Things everyone believes that aren't true", ["library-of-alexandria-what-was-lost",
-                                                   "oracle-of-the-dead-ephyra", "delphi-pythia"],
-     "Nobody burned the Library of Alexandria, the famous Oracle of the Dead is probably a "
-     "farmhouse, and the Pythia worked nine days a year to a published fee scale. These "
-     "stories survive because they are better than the evidence."),
-    ("Objects that outlived their meaning", ["mithras-tauroctony-decoded",
-                                             "piacenza-liver-etruscan", "liber-linteus",
-                                             "damnatio-memoriae"],
-     "A picture in four hundred temples that nobody can read. A bronze liver mapping the sky. "
-     "A book that survived because somebody cut it up for bandages."),
-    ("What ordinary people actually did", ["ancient-curse-tablets", "greek-magical-papyri",
-                                           "evil-eye-ancient-world"],
-     "Ancient literature was written by a few thousand wealthy men. Curse tablets, spellbooks "
-     "and the things people hung over a cradle were made by everybody else."),
-    ("Knowledge the state controlled", ["sibylline-books-rome", "books-augustus-burned",
-                                        "numas-buried-books",
-                                        "villa-of-the-mysteries-frescoes"],
-     "Sealed books opened only by vote of the Senate, two thousand unlicensed prophecies "
-     "burned in a single year, a king's own writings dug up and destroyed, and a dining room "
-     "painted with an initiation a century after Rome tried to stamp it out."),
+    # (heading, intro, [(slug, teaser line), ...], outro)
+    #
+    # Each teaser line belongs to exactly one article, and the page only shows the
+    # lines for articles that are already live. Until 2026-09-14 every section had
+    # one blurb written for its whole reading list, so while some of those articles
+    # were still scheduled the page teased pieces readers could not click. Write
+    # each line so it reads on its own, because any of them can be missing on a
+    # given day. Never let a section grow past four articles.
+    ("If you read one thing", "", [
+        ("ancient-mystery-cults-guide",
+         "Hundreds of thousands of people were initiated into secret rites over two "
+         "thousand years, and essentially none of them talked. This is how that held."),
+    ], ""),
+    ("The secret that was genuinely kept",
+     "Eleusis ran every year for close to two millennia, and the central rite was "
+     "never written down.", [
+        ("eleusinian-mysteries-telesterion", "The hall where it happened still stands."),
+        ("eleusinian-kykeon-psychedelic",
+         "Initiates drank something called the kykeon, and people still argue about what was in it."),
+        ("orphic-gold-tablets", "Gold tablets buried with the dead tell them which way to go."),
+    ], ""),
+    ("Things everyone believes that aren&rsquo;t true", "", [
+        ("library-of-alexandria-what-was-lost", "Nobody burned the Library of Alexandria."),
+        ("oracle-of-the-dead-ephyra", "The famous Oracle of the Dead is probably a farmhouse."),
+        ("delphi-pythia", "The Pythia worked nine days a year, to a published fee scale."),
+    ], "These stories survive because they&rsquo;re better than the evidence."),
+    ("Objects that outlived their meaning", "", [
+        ("mithras-tauroctony-decoded", "A picture in four hundred temples that nobody can read."),
+        ("piacenza-liver-etruscan", "A bronze liver mapping the sky."),
+        ("liber-linteus", "A book that survived because somebody cut it up for bandages."),
+        ("damnatio-memoriae", "A face scraped off a family portrait on an emperor&rsquo;s orders."),
+    ], ""),
+    ("What ordinary people actually did",
+     "Ancient literature was written by a few thousand wealthy men. These were made by "
+     "everybody else.", [
+        ("ancient-curse-tablets", "Curses scratched into lead and dropped into graves and wells."),
+        ("greek-magical-papyri", "Working spellbooks from Roman Egypt."),
+        ("evil-eye-ancient-world", "Charms hung over a baby&rsquo;s cradle."),
+    ], ""),
+    ("Knowledge the state controlled", "", [
+        ("sibylline-books-rome", "Books kept sealed and opened only by vote of the Senate."),
+        ("books-augustus-burned", "Two thousand unlicensed prophecies burned in a single year."),
+        ("numas-buried-books", "Books said to be a dead king&rsquo;s, dug up and burned."),
+        ("villa-of-the-mysteries-frescoes",
+         "A dining room painted with an initiation, a century after Rome tried to stamp it out."),
+    ], ""),
 ]
 
 CATEGORY_BLURBS = {
-    "mystery-cults": "Secret initiations across the Greek and Roman world &mdash; Eleusis, "
-                     "Dionysus, Mithras, Isis &mdash; and how well the secrets held.",
+    "mystery-cults": "Secret initiations across the Greek and Roman world, from Eleusis to the "
+                     "cults of Dionysus, Mithras and Isis, and how well the secrets actually held.",
     "magic-and-ritual": "The working documents of ancient magic: spellbooks from Roman Egypt, "
                         "curses scratched into lead, and what people actually asked for.",
-    "lost-and-suppressed": "Knowledge that was erased, burned, or simply never copied again "
-                           "&mdash; and how much of it went quietly.",
+    "lost-and-suppressed": "Books that were burned, names that were erased, and knowledge that "
+                           "simply stopped being copied. What was lost, and how quietly it went.",
     "oracles-and-divination": "Reading the future in books, caves, lightning and livers, and "
                               "the institutions built around the answers.",
 }
@@ -239,8 +258,8 @@ def affiliate_sources(sources: list) -> tuple:
 def disclosure_html() -> str:
     return ('<p class="disclosure">Some links above are affiliate links. If you buy through '
             'them this site earns a small commission at no extra cost to you, which pays for '
-            'the hosting. It never affects which books get recommended &mdash; '
-            '<a href="/disclosure/">full disclosure</a>.</p>')
+            'the hosting. It never affects which books get recommended. '
+            '<a href="/disclosure/">Read the full disclosure</a>.</p>')
 
 
 def ad_slot(position: str) -> str:
@@ -285,7 +304,7 @@ def newsletter_html() -> str:
         return ""
     return f"""<section class="signup" aria-labelledby="signup-h">
   <h2 id="signup-h">Three pieces a week, straight to you</h2>
-  <p>Mystery cults, buried curses and the things antiquity deliberately kept quiet. No spam, unsubscribe in one click.</p>
+  <p>Mystery cults, buried curses and the things antiquity deliberately kept quiet. No spam, and you can unsubscribe in one click.</p>
   <form action="{action}" method="post" target="_blank">
     <label class="visually-hidden" for="bd-email">Email address</label>
     <input id="bd-email" type="email" name="email" required placeholder="you@example.com" autocomplete="email">
@@ -304,47 +323,84 @@ def legal_pages() -> list:
     legal advice, and should be reviewed before you rely on them."""
     email = MONETISATION["contact_email"]
 
+    # The third-party list is built from MONETISATION so this page cannot drift
+    # from what the site actually loads. Until 2026-09-14 it was hand-written and
+    # wrong three ways: it said fonts came from Google Fonts (they are self-hosted),
+    # said EEA/UK visitors saw a consent prompt (no consent tool exists), and never
+    # mentioned Google Analytics, which was live on every page.
+    #
+    # Before switching on AdSense: personalised ads to EEA/UK visitors need a
+    # certified consent platform. Do not add a line here claiming one exists
+    # until it actually does.
+    #
+    # The "Last updated" date below is fixed on purpose. It used to be
+    # datetime.now(), which stamped the build date, so the page claimed to have
+    # been revised every single day. Change it by hand when the policy changes.
+    third_party = [
+        "<li><strong>Hosting.</strong> The site is served by GitHub Pages, which logs "
+        "requests, including IP addresses, for security and abuse prevention.</li>",
+    ]
+    if MONETISATION["ga4_id"]:
+        third_party.append(
+            "<li><strong>Analytics.</strong> Google Analytics counts visits and shows which "
+            "pages get read. Google sets cookies to do this and receives technical details "
+            "about your visit, such as your browser and rough location. Most ad blockers stop "
+            "it, or you can use Google&rsquo;s "
+            '<a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">opt-out add-on</a>.</li>')
+    if MONETISATION["adsense_client"]:
+        third_party.append(
+            "<li><strong>Advertising.</strong> Google AdSense and its partners may set cookies "
+            "and use identifiers to serve and measure ads. You can review your settings at "
+            '<a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>.</li>')
+    if MONETISATION["amazon_tag"]:
+        third_party.append(
+            "<li><strong>Affiliate links.</strong> Links to booksellers carry a referral code "
+            "showing the visit came from this site. That tells the retailer where you came "
+            "from, not who you are.</li>")
+    if MONETISATION["newsletter_action"]:
+        third_party.append(
+            "<li><strong>Email.</strong> If you subscribe, your address is held by our email "
+            "provider, Buttondown, only to send the newsletter. Every email has an unsubscribe "
+            "link.</li>")
+    third_party_html = "\n  ".join(third_party)
+
     privacy = f"""<header class="page-head"><h1>Privacy</h1></header>
-<p class="lede">The short version: this site collects as little as possible, and sells nothing about you to anyone.</p>
-<h2>What this site collects directly</h2>
-<p>Nothing. There is no account system, no comment form storing your details, and no tracking script written by us. The site is static files served from a CDN.</p>
-<h2>What third parties may collect</h2>
-<p>Some things are outside our control, and honesty is more useful than a blanket denial:</p>
+<p class="lede">The short version: this site collects as little as it can, and sells nothing about you to anyone.</p>
+<h2>What we collect ourselves</h2>
+<p>Nothing. There are no accounts and no comment forms, so there&rsquo;s nowhere for us to keep your details. The site is a set of static pages, and its fonts are served from here too, so loading them doesn&rsquo;t tell anyone else you visited.</p>
+<h2>What other companies may collect</h2>
+<p>A few things are out of our hands, and it&rsquo;s more useful to list them than to pretend otherwise:</p>
 <ul>
-  <li><strong>Hosting.</strong> The site is served by GitHub Pages, which logs requests including IP addresses for security and abuse prevention.</li>
-  <li><strong>Fonts.</strong> Typefaces load from Google Fonts, which receives a request from your browser.</li>
-  <li><strong>Advertising.</strong> If advertising is running, Google AdSense and its partners may set cookies and use identifiers to serve and measure ads. You can review and change your settings at <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>. Visitors in the EEA and UK are shown a consent prompt before any personalised advertising cookie is set.</li>
-  <li><strong>Affiliate links.</strong> Links to booksellers may carry a referral code identifying this site as the source of the visit. That tells the retailer where you came from; it does not tell us who you are.</li>
-  <li><strong>Email.</strong> If you subscribe, your address is held by our email provider solely to send the newsletter. Unsubscribe at any time using the link in any message.</li>
+  {third_party_html}
 </ul>
 <h2>Your rights</h2>
-<p>If you are in the UK, EEA or California you have rights over any personal data held about you, including access, correction and deletion. Since the only personal data this site can hold is an email address you gave voluntarily, the practical answer is usually to unsubscribe &mdash; but write to <a href="mailto:{email}">{email}</a> and we will act on any request.</p>
+<p>If you&rsquo;re in the UK, EEA or California you have rights over personal data held about you, including access, correction and deletion. The only personal data this site itself can hold is an email address you chose to give, so the quickest route is usually to unsubscribe. For anything else, write to <a href="mailto:{email}">{email}</a> and we&rsquo;ll act on it.</p>
 <h2>Children</h2>
-<p>This site is not directed at children under 13 and does not knowingly collect their data.</p>
+<p>This site isn&rsquo;t aimed at children under 13 and doesn&rsquo;t knowingly collect their data.</p>
 <h2>Changes</h2>
-<p>Material changes to this page will be noted here with a date. Last updated {datetime.now():%d %B %Y}.</p>"""
+<p>Material changes to this page will be noted here with a date. Last updated 14 September 2026.</p>"""
 
     disclosure = f"""<header class="page-head"><h1>Disclosure</h1></header>
-<p class="lede">How this site makes money, stated plainly, because you should not have to guess.</p>
+<p class="lede">How this site pays for itself, so you don&rsquo;t have to wonder.</p>
 <h2>Affiliate links</h2>
-<p>The reading list at the end of each article may contain affiliate links to booksellers. If you buy something after following one, this site receives a small commission and you pay exactly the same price.</p>
-<p>The rule here is simple and worth stating: <strong>books are listed because they are the sources the article actually relies on.</strong> The reading lists were written before any affiliate programme existed, and no book has been added, moved up, or praised because it pays better. If a source is the best one available and earns nothing, it still gets listed.</p>
+<p>The reading list at the end of an article may include affiliate links to booksellers. If you buy something through one, this site gets a small commission and you pay exactly the same price.</p>
+<p>Books are listed because the article actually relies on them. The reading lists were written before any affiliate programme existed, and nothing has been added, moved up or praised because it pays better. If the best source earns nothing, it still gets listed.</p>
 <h2>Advertising</h2>
-<p>The site may display advertising. Advertisers have no input into what is written, no advance sight of articles, and no ability to have anything changed or removed.</p>
+<p>The site may show ads. Advertisers get no say in what&rsquo;s written, no early look at articles, and no way to have anything changed or taken down.</p>
 <h2>Sponsorship and gifts</h2>
-<p>No sponsored posts have been published. If that ever changes, the post will say so in the first paragraph, not in a footnote. The same applies to any review copy or free access received.</p>
-<h2>What this does not affect</h2>
-<p>The editorial position stays what it is: sources named, uncertainty left intact, and no claim made stronger than the evidence supports. Several articles here argue against the popular version of their subject, which is not a commercially optimal strategy, and that is rather the point.</p>
+<p>Nothing here has been sponsored. If that ever changes, the article will say so in its first paragraph, not in a footnote. The same goes for any free review copy or access.</p>
+<h2>What stays the same</h2>
+<p>None of this changes what gets written. Plenty of articles here argue against the popular version of their subject, which isn&rsquo;t how you&rsquo;d write if you were chasing clicks. That won&rsquo;t change.</p>
 <p>Questions: <a href="mailto:{email}">{email}</a>.</p>"""
 
     contact = f"""<header class="page-head"><h1>Contact</h1></header>
 <p class="lede">Corrections especially welcome.</p>
 <p>Email: <a href="mailto:{email}">{email}</a></p>
 <h2>Corrections</h2>
-<p>If something here is wrong, say so and point at the evidence. Errors get fixed and the correction gets noted on the article rather than quietly patched. Given the subject matter &mdash; where the scholarship genuinely disagrees with itself &mdash; this is not a formality.</p>
+<p>If something here is wrong, say so and point at the evidence. Errors get fixed, and the correction is noted on the article rather than quietly patched. Given how often the scholarship on these subjects disagrees with itself, that isn&rsquo;t a formality.</p>
 <h2>Republishing</h2>
-<p>Text on this site is the author's own. Short quotations with a link are fine without asking. For anything longer, ask first.</p>
-<p>Images are drawn from Wikimedia Commons and are public domain or Creative Commons licensed; each is credited under the image with its licence, and those terms travel with the image rather than with this site.</p>"""
+<p>Text on this site is the author&rsquo;s own. Short quotations with a link are fine without asking. For anything longer, ask first.</p>
+<p>The images come from Wikimedia Commons and are either public domain or Creative Commons licensed. Each one is credited under the image with its licence, and that licence applies to the image, not to this site.</p>"""
 
     return [
         ("privacy", "Privacy", "What Veiled Antiquity collects, what third parties collect, and your rights over it.", privacy),
@@ -623,14 +679,14 @@ def build_site(posts: list):
 </header>"""
 
     if posts:
-        lead, rest = posts[0], posts[1:]
+        lead, rest = posts[0], list(reversed(posts[1:]))  # pillar guide stays first; the rest run newest first
         lead_img = lead.get("image")
         lead_thumb = (f'<img class="lead-img" src="{lead_img["file"]}" alt="{esc(lead_img["alt"])}" '
                       f'width="{lead_img["width"]}" height="{lead_img["height"]}" '
                       f'fetchpriority="high" decoding="async">') if lead_img else ""
         home += f"""
 <section class="lead" aria-labelledby="lead-h">
-  <p class="section-label" id="lead-h">Start here</p>
+  <p class="section-label" id="lead-h">If you read one thing</p>
   <a class="lead-link" href="{lead['path']}">
     {lead_thumb}
     <div class="lead-text">
@@ -643,7 +699,7 @@ def build_site(posts: list):
         if rest:
             home += f"""
 <section aria-labelledby="recent-h">
-  <p class="section-label" id="recent-h">The archive, in order of descent</p>
+  <p class="section-label" id="recent-h">Latest pieces</p>
   <div class="grid">{"".join(card_html(p) for p in rest)}</div>
 </section>"""
     else:
@@ -652,7 +708,7 @@ def build_site(posts: list):
     home += newsletter_html()
 
     (DIST / "index.html").write_text(render(base, {
-        "lang": SITE["lang"], "page_title": f"{SITE['title']} — {SITE['tagline']}",
+        "lang": SITE["lang"], "page_title": f"{SITE['title']}: {SITE['tagline']}",
         "description": esc(SITE["description"]), "canonical": SITE["url"] + "/",
         "og_type": "website", "og_image": og_image(), "og_title": esc(SITE["title"]), "site_name": esc(SITE["title"]),
         "twitter": SITE["twitter"], "locale": SITE["locale"],
@@ -661,7 +717,7 @@ def build_site(posts: list):
             "@id": SITE["url"] + "#website", "name": SITE["title"], "url": SITE["url"],
             "description": SITE["description"], "inLanguage": SITE["lang"],
             "blogPost": [{"@type": "BlogPosting", "headline": p["title"], "url": p["url"],
-                          "datePublished": p["dt"].isoformat()} for p in posts],
+                          "datePublished": p["dt"].isoformat()} for p in reversed(posts)],
         }, ensure_ascii=False, indent=2),
         "nav": nav_html("/"), "body_class": "is-home", "content": home,
         "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
@@ -675,7 +731,7 @@ def build_site(posts: list):
             continue
         rows = "\n".join(
             f'<li><a href="{p["path"]}"><time datetime="{p["dt"].date()}">{p["dt"].strftime("%d %b")}</time>'
-            f'<span class="arch-title">{esc(p["title"])}</span></a></li>' for p in group
+            f'<span class="arch-title">{esc(p["title"])}</span></a></li>' for p in reversed(group)
         )
         blocks.append(f'<section id="{cslug}"><h2><a href="/category/{cslug}/">{esc(cname)}</a></h2>'
                       f'<ul class="arch">{rows}</ul></section>')
@@ -685,29 +741,34 @@ def build_site(posts: list):
         "lang": SITE["lang"], "page_title": f"Archive | {SITE['title']}",
         "description": "Every piece published on Veiled Antiquity, grouped by theme: mystery cults, magic and ritual, suppressed knowledge, and oracles.",
         "canonical": SITE["url"] + "/archive/", "og_type": "website", "og_image": og_image(),
-        "og_title": "Archive", "site_name": esc(SITE["title"]), "twitter": SITE["twitter"],
-        "locale": SITE["locale"], "jsonld": "{}", "nav": nav_html("/archive/"),
+        "og_title": "The Veiled Antiquity Archive", "site_name": esc(SITE["title"]), "twitter": SITE["twitter"],
+        "locale": SITE["locale"], "jsonld": json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": "Archive", "url": SITE["url"] + "/archive/", "isPartOf": {"@id": SITE["url"] + "#website"}}, ensure_ascii=False), "nav": nav_html("/archive/"),
         "body_class": "is-page",
-        "content": f'<header class="page-head"><h1>Archive</h1><p class="hero-dek">Everything published so far, grouped by theme.</p></header>{"".join(blocks)}',
+        "content": f'<header class="page-head"><h1>Archive</h1><p class="hero-dek">Everything published so far, grouped by theme, newest first.</p></header>{"".join(blocks)}',
         "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
     }), encoding="utf-8")
 
     # ---- about
-    about_body = """<header class="page-head"><h1>About</h1></header>
-<p class="lede">This site is about the parts of the ancient world that were deliberately kept quiet.</p>
-<p>Not the evil parts &mdash; the closed ones. Rites you had to be admitted to. Books kept sealed and opened only by vote of the Senate. Names chiselled off monuments by people who wanted them forgotten. Curses written on lead and buried where nobody was meant to dig.</p>
-<p>Ancient people were not naive, and they were not us in fancy dress. They built enormous institutions around secrecy and were disciplined enough that some of those secrets have never been recovered. That's the good part, and it's the part most writing on this subject sprints past on its way to a theory.</p>
-<p>So: sources get named. Where something is genuinely unknown, it says so and stops. Where scholars are still fighting about it, the fight is in the article rather than buried in a footnote. It turns out &ldquo;nobody knows&rdquo; is usually a better story than whatever gets invented to replace it.</p>
-<p>New pieces on Monday, Wednesday and Friday.</p>"""
+    about_body = """<header class="page-head"><h1>About Veiled Antiquity</h1></header>
+<p class="lede">Among the curse tablets pulled out of the sacred spring at Bath is a small sheet of lead inscribed by a man called Docilianus. Someone had stolen his hooded cloak. He asked the goddess Sulis to make the thief suffer, with no sleep and no children, until the cloak was brought back to her temple.</p>
+<p>He never meant for anyone else to read it. That&rsquo;s the kind of thing this site is about.</p>
+<h2>What you&rsquo;ll find here</h2>
+<p>Veiled Antiquity is about the parts of ancient history that were meant to stay private. Mystery cults you had to be initiated into, and then never talk about. Prophecy books kept under lock and key, consulted only when the Roman Senate ordered it. Curses buried with the dead. Names chiselled off monuments by people who wanted someone forgotten.</p>
+<p>A surprising amount of that secrecy held. People went through the Mysteries at Eleusis for centuries, and no initiate ever left a clear account of what happened inside. We still don&rsquo;t know.</p>
+<h2>How the pieces work</h2>
+<p>Each one starts with something real: an object, a place, a person, a line in an old book. From there it follows the evidence as far as it goes and stops where it runs out. When the experts disagree, you get the argument rather than a tidy verdict, and every source is listed at the end.</p>
+<p>Honestly, &ldquo;nobody knows&rdquo; tends to make a better story than whatever gets invented to fill the gap.</p>
+<h2>When new pieces come out</h2>
+<p>Every Monday, Wednesday and Friday. If you&rsquo;d rather not keep checking, <a href="/#signup-h">sign up on the home page</a> and they&rsquo;ll come straight to your inbox, or follow along by <a href="/feed.xml">RSS</a>.</p>"""
 
     (DIST / "about").mkdir(parents=True, exist_ok=True)
     (DIST / "about" / "index.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"About | {SITE['title']}",
-        "description": "Veiled Antiquity covers the deliberately hidden parts of ancient history — mystery cults, sealed books, buried curses — with sources named and uncertainty kept intact.",
+        "description": "Veiled Antiquity is a blog about the hidden side of ancient history: mystery cults, forbidden rites, sealed prophecy books and curses buried with the dead.",
         "canonical": SITE["url"] + "/about/", "og_type": "website", "og_image": og_image(),
-        "og_title": "About",
+        "og_title": "About Veiled Antiquity",
         "site_name": esc(SITE["title"]), "twitter": SITE["twitter"], "locale": SITE["locale"],
-        "jsonld": "{}", "nav": nav_html("/about/"), "body_class": "is-page",
+        "jsonld": json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": "About Veiled Antiquity", "url": SITE["url"] + "/about/", "isPartOf": {"@id": SITE["url"] + "#website"}}, ensure_ascii=False), "nav": nav_html("/about/"), "body_class": "is-page",
         "content": about_body, "year": datetime.now().year, "site_url": SITE["url"],
         "tagline": esc(SITE["tagline"]),
     }), encoding="utf-8")
@@ -722,7 +783,7 @@ def build_site(posts: list):
         blurb = CATEGORY_BLURBS[cslug]
         content = (f'<header class="page-head"><h1>{esc(cname)}</h1>'
                    f'<p class="hero-dek">{blurb}</p></header>'
-                   f'<div class="grid">{"".join(card_html(p) for p in group)}</div>')
+                   f'<div class="grid">{"".join(card_html(p) for p in reversed(group))}</div>')
         out = DIST / "category" / cslug
         out.mkdir(parents=True, exist_ok=True)
         (out / "index.html").write_text(render(base, {
@@ -748,13 +809,18 @@ def build_site(posts: list):
     # cheapest way to lift pages per session.
     live = {p["slug"]: p for p in posts}
     sections = []
-    for heading, slugs, blurb in START_HERE:
-        picks = [live[s] for s in slugs if s in live]
+    for heading, intro, items, outro in START_HERE:
+        # Only live articles, and only their own teaser lines. See START_HERE.
+        # A bare slug is accepted too, so an entry added the old way renders its
+        # article without a teaser line instead of crashing the whole build.
+        items = [(item, "") if isinstance(item, str) else item for item in items]
+        picks = [(live[slug], hook) for slug, hook in items if slug in live]
         if not picks:
             continue
+        blurb = " ".join(part for part in (intro, *(hook for _, hook in picks), outro) if part)
         rows = "\n".join(
             f'<li><a href="{p["path"]}"><span class="sh-title">{esc(p["title"])}</span>'
-            f'<span class="sh-dek">{esc(p["dek"])}</span></a></li>' for p in picks)
+            f'<span class="sh-dek">{esc(p["dek"])}</span></a></li>' for p, _ in picks)
         sections.append(f'<section class="sh-block"><h2>{heading}</h2>'
                         f'<p class="sh-why">{blurb}</p><ul class="sh-list">{rows}</ul></section>')
 
@@ -763,16 +829,16 @@ def build_site(posts: list):
         out.mkdir(parents=True, exist_ok=True)
         (out / "index.html").write_text(render(base, {
             "lang": SITE["lang"], "page_title": f"Start Here | {SITE['title']}",
-            "description": "New here? These are the pieces worth reading first — the secret "
-                           "that was genuinely kept, the myths that turn out to be wrong, and "
-                           "what ordinary people actually did.",
+            "description": "New to Veiled Antiquity? Start with these: the secret that was "
+                           "actually kept, the famous stories that turn out wrong, and "
+                           "what ordinary people really did.",
             "canonical": SITE["url"] + "/start-here/", "og_type": "website",
-            "og_image": og_image(posts[0]), "og_title": "Start Here",
+            "og_image": og_image(posts[0]), "og_title": "Where to Start with Veiled Antiquity",
             "site_name": esc(SITE["title"]), "twitter": SITE["twitter"], "locale": SITE["locale"],
-            "jsonld": "{}", "nav": nav_html("/start-here/"), "body_class": "is-page",
+            "jsonld": json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": "Start Here", "url": SITE["url"] + "/start-here/", "isPartOf": {"@id": SITE["url"] + "#website"}}, ensure_ascii=False), "nav": nav_html("/start-here/"), "body_class": "is-page",
             "content": '<header class="page-head"><h1>Start here</h1><p class="hero-dek">'
-                       'Everything on this site is about something the ancient world kept quiet. '
-                       'These are the ways in.</p></header>' + "".join(sections),
+                       'Not sure where to begin? These are the pieces we&rsquo;d hand a friend '
+                       'first.</p></header>' + "".join(sections),
             "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
         }), encoding="utf-8")
 
