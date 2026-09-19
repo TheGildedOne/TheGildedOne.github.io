@@ -210,6 +210,18 @@ PICKS = {
         "File:CULT STATUES IN THE TEMPLE OF DESPOINA AT LYKOSOURA (2nd cent. B.C.) in the National Archaeological Museum of Athens on 27 March 2018.jpg",
         "Surviving marble heads and drapery fragments from a colossal cult statue group, displayed together in a museum case.",
         "What is left of Damophon's cult group from Lykosoura: the heads of Demeter, Artemis and Anytos, and a fragment of Despoina's robe. No complete body survives for any of the four figures."),
+    "ninnion-tablet": (
+        "File:NAMA Mystères d'Eleusis.jpg",
+        "A painted red clay votive plaque showing a procession of torch-bearing worshippers approaching a seated goddess holding grain.",
+        "The Ninnion Tablet, dedicated at Eleusis around 370 BCE. The only surviving ancient image that claims to show the Mysteries in progress."),
+    "sabazios-hands": (
+        "File:Roman - Hand of Sabazius - Walters 542453.jpg",
+        "A bronze right hand cast in a two-fingered gesture of blessing, covered in small relief figures including a pine cone and a coiled snake.",
+        "A bronze votive hand of Sabazios, Roman period. The pine cone and snake are two of the animals that turn up on almost every surviving example."),
+    "claros-oracle": (
+        "File:Temple of Apollo, Klaros - 52877417119.jpg",
+        "Rows of fallen and standing marble columns from the ruined Temple of Apollo at Claros, photographed at ground level.",
+        "The Temple of Apollo at Claros. The oracle chamber where the prophet worked lies underground, beneath where these columns once stood."),
 }
 
 

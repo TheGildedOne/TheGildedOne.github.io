@@ -656,5 +656,47 @@
     "avif": "/static/img/lykosoura-despoina.avif",
     "avif_700": "/static/img/lykosoura-despoina-700.avif",
     "share": "/static/img/lykosoura-despoina-share.jpg"
+  },
+  "ninnion-tablet": {
+    "file": "/static/img/ninnion-tablet.jpg",
+    "alt": "A painted red clay votive plaque showing a procession of torch-bearing worshippers approaching a seated goddess holding grain.",
+    "caption": "The Ninnion Tablet, dedicated at Eleusis around 370 BCE. The only surviving ancient image that claims to show the Mysteries in progress.",
+    "credit": "No machine-readable author provided. Marsyas assumed (based on copyright claims).",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:NAMA_Myst%C3%A8res_d%27Eleusis.jpg",
+    "width": 1400,
+    "height": 1679,
+    "card": "/static/img/ninnion-tablet-card.jpg",
+    "avif": "/static/img/ninnion-tablet.avif",
+    "avif_700": "/static/img/ninnion-tablet-700.avif",
+    "share": "/static/img/ninnion-tablet-share.jpg"
+  },
+  "sabazios-hands": {
+    "file": "/static/img/sabazios-hands.jpg",
+    "alt": "A bronze right hand cast in a two-fingered gesture of blessing, covered in small relief figures including a pine cone and a coiled snake.",
+    "caption": "A bronze votive hand of Sabazios, Roman period. The pine cone and snake are two of the animals that turn up on almost every surviving example.",
+    "credit": "Anonymous (Category:Roman Empire)Unknown author",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Roman_-_Hand_of_Sabazius_-_Walters_542453.jpg",
+    "width": 1333,
+    "height": 1800,
+    "card": "/static/img/sabazios-hands-card.jpg",
+    "avif": "/static/img/sabazios-hands.avif",
+    "avif_700": "/static/img/sabazios-hands-700.avif",
+    "share": "/static/img/sabazios-hands-share.jpg"
+  },
+  "claros-oracle": {
+    "file": "/static/img/claros-oracle.jpg",
+    "alt": "Rows of fallen and standing marble columns from the ruined Temple of Apollo at Claros, photographed at ground level.",
+    "caption": "The Temple of Apollo at Claros. The oracle chamber where the prophet worked lies underground, beneath where these columns once stood.",
+    "credit": "Carole Raddato",
+    "licence": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Apollo,_Klaros_-_52877417119.jpg",
+    "width": 1400,
+    "height": 928,
+    "card": "/static/img/claros-oracle-card.jpg",
+    "avif": "/static/img/claros-oracle.avif",
+    "avif_700": "/static/img/claros-oracle-700.avif",
+    "share": "/static/img/claros-oracle-share.jpg"
   }
 }

@@ -130,6 +130,23 @@ VERIFIED_BY_HAND = {
         "journal, absent from Crossref and OpenAlex. Confirmed via its "
         "Semantic Scholar record and a WorldCat/BnF catalogue entry, both "
         "giving the same journal, volume and page range. Checked 2026-08-22.",
+    "Corpus Cultus Iovis Sabazii, Volume I: The Hands":
+        "Maarten J. Vermaseren, with Eduard Westra and Margreet B. de Boer, "
+        "Brill, Leiden 1983, ISBN 90-04-06951-8 (Etudes preliminaires aux "
+        "religions orientales dans l'Empire romain 100.1). No page or "
+        "chapter number is cited from this volume, only the book as a whole, "
+        "as the catalogue of the ~80 surviving Sabazios hands. Absent from "
+        "Open Library (0.00 match). Confirmed via the AbeBooks/Amazon listing "
+        "on the same ISBN and the Internet Archive holding of the physical "
+        "book. Checked 2026-11-19.",
+    "Corpus Cultus Iovis Sabazii, Volume III: Conclusions":
+        "Eugene N. Lane, Brill, Leiden 1989, ISBN 90-04-08974-8 (Etudes "
+        "preliminaires aux religions orientales dans l'Empire romain 100.3), "
+        "ix + 68pp. No page number is cited from this volume, only the book "
+        "as a whole. Absent from Open Library (0.00 match). Confirmed via a "
+        "1990s review in the Classical Review (Cambridge Core) giving the "
+        "same publisher, year, page count and price, and the Amazon listing "
+        "on the same ISBN. Checked 2026-11-19.",
 }
 
 # Entries naming a physical object or document rather than a publication.
