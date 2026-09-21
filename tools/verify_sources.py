@@ -138,7 +138,7 @@ VERIFIED_BY_HAND = {
         "as the catalogue of the ~80 surviving Sabazios hands. Absent from "
         "Open Library (0.00 match). Confirmed via the AbeBooks/Amazon listing "
         "on the same ISBN and the Internet Archive holding of the physical "
-        "book. Checked 2026-11-19.",
+        "book. Checked 2026-09-19 (the run wrote 2026-11-19, its post date, by mistake). Re-audited 2026-09-21: both ISBNs resolve at archive.org (corpuscultusiovi0001-0003verm) and Open Library search, so the Open Library title matcher missed them rather than the books being absent.",
     "Corpus Cultus Iovis Sabazii, Volume III: Conclusions":
         "Eugene N. Lane, Brill, Leiden 1989, ISBN 90-04-08974-8 (Etudes "
         "preliminaires aux religions orientales dans l'Empire romain 100.3), "
@@ -146,7 +146,7 @@ VERIFIED_BY_HAND = {
         "as a whole. Absent from Open Library (0.00 match). Confirmed via a "
         "1990s review in the Classical Review (Cambridge Core) giving the "
         "same publisher, year, page count and price, and the Amazon listing "
-        "on the same ISBN. Checked 2026-11-19.",
+        "on the same ISBN. Checked 2026-09-19 (the run wrote 2026-11-19, its post date, by mistake). Re-audited 2026-09-21: both ISBNs resolve at archive.org (corpuscultusiovi0001-0003verm) and Open Library search, so the Open Library title matcher missed them rather than the books being absent.",
 }
 
 # Entries naming a physical object or document rather than a publication.
