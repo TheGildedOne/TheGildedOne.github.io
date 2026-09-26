@@ -222,6 +222,18 @@ PICKS = {
         "File:Temple of Apollo, Klaros - 52877417119.jpg",
         "Rows of fallen and standing marble columns from the ruined Temple of Apollo at Claros, photographed at ground level.",
         "The Temple of Apollo at Claros. The oracle chamber where the prophet worked lies underground, beneath where these columns once stood."),
+    "didyma-oracle": (
+        "File:Temple of Apollo, Didyma - Adyton.jpg",
+        "The roofless inner courtyard of the Temple of Apollo at Didyma, enclosed by high weathered marble walls, with the low foundations of a small shrine in the middle.",
+        "The adyton at Didyma, the inner court where the prophetess worked. It was designed to be open to the sky, and the builders' drawings are still etched faintly into these walls."),
+    "dice-oracles-anatolia": (
+        "File:Lead and bronze astragaloi and dice, Kanellopoulos Museum, 225060.jpg",
+        "Four ancient knucklebones cast in bronze and lead, one decorated with a leaf pattern, beside a many-sided die and a cube-shaped die in a museum case.",
+        "Knucklebones in lead and bronze, with two other kinds of die, in the Kanellopoulos Museum, Athens. The same objects served for games, gambling and questions to the gods."),
+    "sortes-astrampsychi": (
+        "File:Papyrus Oxyrhynchus 4944.jpg",
+        "A ragged fragment of pale brown papyrus covered in several columns of faded Greek handwriting.",
+        "Not the Sortes itself: a third-century fragment of a Trojan War narrative from Oxyrhynchus. Several copies of the Sortes came out of the same rubbish mounds, written in the same century."),
 }
 
 
