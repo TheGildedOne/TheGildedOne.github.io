@@ -66,10 +66,14 @@ Also fixed the same day: the home page's main image loaded as a 596 KB JPEG inst
 75 KB AVIF that already existed; breadcrumbs pointed at an anchor instead of the category
 page; IndexNow resubmitted all 35 URLs on every deploy instead of only the changed ones.
 
-**What on-site work cannot fix** is the thing holding the big terms down: nobody links here
-yet. The list under "Where the audience actually is" below is still the plan, and it is
-still work only a person can do. One good link from a classics blog is worth more than
-everything in this section.
+**What on-site work cannot fix** is the thing holding the big terms down: almost nobody links
+here. Almost, because one site does, and it found us on its own. Rogue Classicism's daily RC
+Bulletin has listed 17 posts under "From the Blogosphere" since 20 August 2026, nearly every
+one published, with clean links. (This section first said "nobody links here yet". That was
+an assumption nobody had checked; it was found by reading their bulletins on 2026-10-01.)
+One site linking often is still one site, and what moves the big terms is more of them.
+The list under "Where the audience actually is" below is still the plan, and it is still
+work only a person can do.
 
 ---
 
