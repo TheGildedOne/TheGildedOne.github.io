@@ -137,6 +137,7 @@ main { max-width: var(--shell); margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2.
 @media (min-width: 780px) {
   .lead-link { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.4rem, 3vw, 2.4rem); align-items: center; }
 }
+.lead-link picture { display: block; }
 .lead-img {
   display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
   border: 1px solid var(--ink-400); border-radius: 2px; margin-bottom: 1.4rem;

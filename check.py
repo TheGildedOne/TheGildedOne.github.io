@@ -91,6 +91,14 @@ for page in pages:
             errors.append(f"{rel}: og:image is not a share card ({og.group(1).split('/')[-1]}) "
                           f"— re-run tools/make_share_images.py")
 
+    # 3d. The home page's lead image is the first thing a phone paints there, and
+    # it shipped as a bare 596 KB JPEG for eight weeks because 3c only looks at posts.
+    if rel == "index.html" and 'class="lead-img"' in html:
+        checked += 1
+        if not re.search(r'<picture><source type="image/avif"[^>]*><img class="lead-img"', html):
+            errors.append("index.html: lead image has no AVIF <source>, so phones "
+                          "download the full-size JPEG")
+
     # 4. social preview image is an absolute URL that exists locally
     og = re.search(r'<meta property="og:image" content="([^"]+)"', html)
     if og:
@@ -150,6 +158,7 @@ for slug in slugs:
 # they carry number and date ranges ("440-430 BCE"), which is correct typography
 # and not the habit being complained about.
 EM_DASH_FREE_FROM = "2026-09-14"
+KEYWORD_IN_TITLE_FROM = "2026-09-30"
 META_RE = re.compile(r"^<!--META\s*(\{.*?\})\s*META-->", re.DOTALL)
 IMAGES_MANIFEST = {}
 _img = Path(__file__).parent / "content" / "images.json"
@@ -198,6 +207,28 @@ for source in sorted((Path(__file__).parent / "content" / "posts").glob("*.html"
         checked += 1
         if rel not in all_slugs:
             errors.append(f"{source.name}: related points at unknown slug '{rel}'")
+
+    # 7b. The search title has to carry the phrase the post is aiming at.
+    #
+    # focus_keyword is not printed anywhere on the site; it only means something
+    # if the words are in the title and description Google shows. From the 25th
+    # post on the keywords had turned into three topics glued together
+    # ("library of pergamon alexandria rivalry") and the titles drifted with
+    # them: that post's title never said "Library of Pergamon". Whether a phrase
+    # is one people type is tools/keyword_demand.py's job and needs the network;
+    # this half is checkable offline, so it is checked.
+    #
+    # Gated from the first post that could still be fixed before Google had
+    # indexed it. Earlier titles were tuned by hand against real search data.
+    if meta.get("date", "") >= KEYWORD_IN_TITLE_FROM:
+        checked += 1
+        shown = (meta.get("seo_title", "") + " " + meta.get("description", "")).lower()
+        absent = [w for w in meta.get("focus_keyword", "").lower().split() if w not in shown]
+        if absent:
+            errors.append(f"{source.name}: focus_keyword '{meta.get('focus_keyword')}' is not in "
+                          f"the seo_title or description (missing: {', '.join(absent)}). Put the "
+                          f"phrase people search for in the title, or pick the phrase they do "
+                          f"use: python tools/keyword_demand.py \"<phrase>\"")
 
     if meta.get("date", "") < EM_DASH_FREE_FROM:
         continue
@@ -350,6 +381,69 @@ checked += 1
 if build.MONETISATION["adsense_client"]:
     errors.append("adsense_client is set, but no certified consent platform exists. The "
                   "cookie banner covers analytics only. Wire in a Google-certified CMP first.")
+
+# 12. The sitemap tells the truth about when each page changed.
+#
+# Until 2026-10-01 every URL carried one shared <lastmod>, the date of the newest
+# post, so the whole site claimed to change three times a week. Google stops
+# trusting lastmod once it catches it being wrong, and the site was not short of
+# crawl problems: ten of twenty-four live posts had never been fetched at their
+# real address. build.py now dates each URL separately; these rules stop it
+# sliding back to a single stamp, and stop a post claiming a change before it
+# was published.
+sitemap_file = DIST / "sitemap.xml"
+checked += 1
+if not sitemap_file.exists():
+    errors.append("sitemap.xml missing")
+else:
+    entries = re.findall(r"<url><loc>([^<]+)</loc><lastmod>(\d{4}-\d{2}-\d{2})</lastmod>",
+                         sitemap_file.read_text(encoding="utf-8"))
+    locs = sitemap_file.read_text(encoding="utf-8").count("<loc>")
+    checked += 2
+    if len(entries) != locs:
+        errors.append(f"sitemap.xml: {locs - len(entries)} URL(s) without a dated <lastmod>")
+    if len(slugs) >= 5 and len({d for _, d in entries}) < 3:
+        errors.append("sitemap.xml: nearly every URL has the same <lastmod>. Each page "
+                      "should carry its own date (build.py git_last_modified).")
+    published = {p["slug"]: p["dt"].date().isoformat() for p in build.load_posts()}
+    for loc, lastmod in entries:
+        m = re.search(r"/posts/([a-z0-9-]+)/$", loc)
+        if not m:
+            continue
+        checked += 1
+        if lastmod < published.get(m.group(1), ""):
+            errors.append(f"sitemap.xml: {m.group(1)} says it last changed {lastmod}, "
+                          f"before it was published")
+    for loc, _ in entries:
+        checked += 1
+        if "?" in loc or not loc.endswith("/"):
+            errors.append(f"sitemap.xml: {loc} is not a clean canonical address")
+
+# 13. Structured data Google reads the site from.
+#
+# The home page must declare the WebSite (that is where Google takes the site
+# name from) and post breadcrumbs must point at real pages. Both were wrong until
+# 2026-10-01 and nothing noticed, because rule 2 only checks that the JSON parses.
+def _graph(page_path):
+    block = re.search(r'<script type="application/ld\+json">(.*?)</script>',
+                      page_path.read_text(encoding="utf-8"), re.DOTALL)
+    data = json.loads(block.group(1)) if block else {}
+    return data.get("@graph", [data])
+
+checked += 1
+if "WebSite" not in {g.get("@type") for g in _graph(DIST / "index.html")}:
+    errors.append("index.html: no WebSite in the structured data")
+for slug in sorted(slugs):
+    graph = {g.get("@type"): g for g in _graph(posts_dir / slug / "index.html")}
+    article = graph.get("BlogPosting", {})
+    checked += 2
+    if not article.get("dateModified", "") >= article.get("datePublished", "x"):
+        errors.append(f"posts/{slug}: dateModified missing or earlier than datePublished")
+    for crumb in graph.get("BreadcrumbList", {}).get("itemListElement", []):
+        target = crumb.get("item", "")
+        local = target.replace(build.SITE["url"], "").strip("/")
+        if "#" in target or not (DIST / local / "index.html").exists():
+            errors.append(f"posts/{slug}: breadcrumb points at {target}, which is not a page")
 
 print(f"{len(pages)} pages, {checked} assertions.")
 if errors:

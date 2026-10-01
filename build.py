@@ -62,6 +62,10 @@ MONETISATION = {
     "contact_email": "hello@veiledantiquity.com",
 }
 
+# When About, Privacy, Disclosure and Contact were last rewritten. It is the
+# <lastmod> the sitemap gives those four pages, so change it when you change them.
+STATIC_PAGES_UPDATED = "2026-09-14"
+
 IMAGES_FILE = ROOT / "content" / "images.json"
 IMAGES = json.loads(IMAGES_FILE.read_text(encoding="utf-8")) if IMAGES_FILE.exists() else {}
 
@@ -172,9 +176,49 @@ def strip_unpublished_links(body: str, live_slugs: set) -> str:
 
 META_RE = re.compile(r"^<!--META\s*(\{.*?\})\s*META-->\s*", re.DOTALL)
 
+# Set by git_last_modified() so main() can say which source the dates came from.
+MODIFIED_SOURCE = "publish dates"
+
+
+def git_last_modified() -> dict:
+    """{post filename: date of the last commit that touched it}, or {}.
+
+    The sitemap's <lastmod> used to be one date for every URL: the date of the
+    newest post. So three times a week all thirty-odd pages claimed to have
+    changed, and none of them had. Google only uses lastmod while it finds it
+    accurate, and on 2026-10-01 ten of twenty-four live posts had still never
+    been crawled at their real address.
+
+    The honest date is the last commit to touch the file. One git call covers
+    every post. A shallow clone would report the newest commit for every file,
+    which is the same lie again, so that case returns nothing and callers fall
+    back to the publish date. publish.yml checks out full history for this."""
+    global MODIFIED_SOURCE
+    import subprocess
+    try:
+        def git(*args):
+            return subprocess.run(["git", *args], cwd=ROOT, capture_output=True,
+                                  text=True, timeout=30, check=True).stdout
+        if git("rev-parse", "--is-shallow-repository").strip() != "false":
+            return {}
+        log = git("log", "--format=%x00%cs", "--name-only", "--", "content/posts")
+    except Exception:
+        return {}
+
+    seen = {}
+    for chunk in log.split("\x00")[1:]:
+        lines = [ln.strip() for ln in chunk.splitlines() if ln.strip()]
+        for name in lines[1:]:
+            # Newest commit first, so the first date seen for a file is the one.
+            seen.setdefault(Path(name).name, datetime.strptime(lines[0], "%Y-%m-%d").date())
+    if seen:
+        MODIFIED_SOURCE = "git history"
+    return seen
+
 
 def load_posts() -> list:
     posts = []
+    touched = git_last_modified()
     for path in sorted(POSTS_DIR.glob("*.html")):
         raw = path.read_text(encoding="utf-8")
         m = META_RE.match(raw)
@@ -187,6 +231,9 @@ def load_posts() -> list:
         meta["source_file"] = path.name
         meta["image"] = IMAGES.get(meta.get("slug", ""))
         meta["dt"] = datetime.strptime(meta["date"], "%Y-%m-%d %H:%M:%S")
+        # Never earlier than the publish date: a post is committed weeks before it
+        # goes live, and "last changed" before "first published" is nonsense.
+        meta["modified"] = max(meta["dt"].date(), touched.get(path.name, meta["dt"].date()))
         meta["url"] = f"{SITE['url']}/posts/{meta['slug']}/"
         meta["path"] = f"/posts/{meta['slug']}/"
 
@@ -450,6 +497,24 @@ def og_image(p: dict = None) -> str:
     return SITE["url"] + (img.get("share") or img["file"])
 
 
+def avif_source(img: dict, sizes: str) -> str:
+    """The AVIF <source> for an image, at two widths, with JPEG left as the fallback.
+
+    The article column is ~700px, so a 1x display never needs the 1400px file —
+    that alone is most of the saving."""
+    if not (img.get("avif") and img.get("avif_700")):
+        return ""
+    # Descriptors must state the width the file actually has. These were
+    # hardcoded to 700w/1400w, so a 500px source advertised a 1400w
+    # candidate: a retina browser dutifully picked it and upscaled three
+    # times over. Where the source is under 700px the two AVIFs are byte
+    # identical, so offer only one.
+    full_w = int(img.get("width") or 1400)
+    srcset = (f'{img["avif"]} {full_w}w' if full_w <= 700
+              else f'{img["avif_700"]} 700w, {img["avif"]} {full_w}w')
+    return f'<source type="image/avif" srcset="{srcset}" sizes="{sizes}">'
+
+
 def hero_html(p: dict) -> str:
     """Lead image for a post, with the attribution its licence requires."""
     img = p.get("image")
@@ -458,20 +523,11 @@ def hero_html(p: dict) -> str:
     credit = f'{esc(img["credit"])}, {esc(img["licence"])}' if img["credit"] else esc(img["licence"])
     link = f' &middot; <a href="{img["source"]}" rel="noopener nofollow">Wikimedia Commons</a>' if img["source"] else ""
 
-    # AVIF at two widths, JPEG as the fallback. The article column is ~700px, so
-    # a 1x display never needs the 1400px file — that alone is most of the saving.
-    sources = ""
-    if img.get("avif") and img.get("avif_700"):
-        # Descriptors must state the width the file actually has. These were
-        # hardcoded to 700w/1400w, so a 500px source advertised a 1400w
-        # candidate: a retina browser dutifully picked it and upscaled three
-        # times over. Where the source is under 700px the two AVIFs are byte
-        # identical, so offer only one.
-        full_w = int(img.get("width") or 1400)
-        srcset = (f'{img["avif"]} {full_w}w' if full_w <= 700
-                  else f'{img["avif_700"]} 700w, {img["avif"]} {full_w}w')
-        sources = (f'<source type="image/avif" srcset="{srcset}" '
-                   f'sizes="(max-width: 760px) 100vw, 700px">')
+    # The image is narrower than the screen on a phone (the page has a gutter), and
+    # saying so matters: told "100vw", a 375px phone at 2x asks for 750 pixels and
+    # takes the 1400px file. Told the truth (340px, so 680) it takes the 700px one,
+    # a quarter of the bytes. Measured in the browser on 2026-10-01.
+    sources = avif_source(img, "(max-width: 760px) calc(100vw - 35px), 700px")
 
     picture = (f'<picture>{sources}'
                f'<img src="{img["file"]}" alt="{esc(img["alt"])}" '
@@ -544,7 +600,39 @@ def prevnext_html(p: dict, posts: list) -> str:
     return f'<nav class="prevnext" aria-label="More posts">{left}{right}</nav>'
 
 
+def iso_utc(dt) -> str:
+    """Post times are written as UTC, so say so. Without an offset Google reads
+    the time in whatever zone the crawler happens to be in."""
+    return dt.strftime("%Y-%m-%dT%H:%M:%S+00:00")
+
+
+def org_jsonld() -> dict:
+    return {
+        "@type": "Organization",
+        "@id": SITE["url"] + "#org",
+        "name": SITE["title"],
+        "url": SITE["url"] + "/",
+        "description": SITE["description"],
+        "logo": {"@type": "ImageObject", "url": SITE["url"] + "/static/icon-512.png",
+                 "width": 512, "height": 512},
+    }
+
+
+def website_jsonld() -> dict:
+    return {
+        "@type": "WebSite",
+        "@id": SITE["url"] + "#website",
+        "url": SITE["url"] + "/",
+        "name": SITE["title"],
+        "description": SITE["description"],
+        "publisher": {"@id": SITE["url"] + "#org"},
+        "inLanguage": SITE["lang"],
+    }
+
+
 def jsonld_post(p: dict) -> str:
+    modified = (iso_utc(p["dt"]) if p["modified"] <= p["dt"].date()
+                else f"{p['modified']}T00:00:00+00:00")
     data = {
         "@context": "https://schema.org",
         "@graph": [
@@ -557,8 +645,8 @@ def jsonld_post(p: dict) -> str:
                 "keywords": ", ".join(p["tags"]),
                 "wordCount": p["word_count"],
                 "inLanguage": SITE["lang"],
-                "datePublished": p["dt"].isoformat(),
-                "dateModified": p["dt"].isoformat(),
+                "datePublished": iso_utc(p["dt"]),
+                "dateModified": modified,
                 "mainEntityOfPage": {"@type": "WebPage", "@id": p["url"]},
                 "author": {"@type": "Organization", "name": SITE["author"], "url": SITE["url"]},
                 "publisher": {"@id": SITE["url"] + "#org"},
@@ -571,27 +659,17 @@ def jsonld_post(p: dict) -> str:
                     "caption": re.sub(r"<[^>]+>", "", p["image"]["caption"]),
                 }} if p.get("image") else {}),
             },
-            {
-                "@type": "Organization",
-                "@id": SITE["url"] + "#org",
-                "name": SITE["title"],
-                "url": SITE["url"],
-                "description": SITE["description"],
-            },
-            {
-                "@type": "WebSite",
-                "@id": SITE["url"] + "#website",
-                "url": SITE["url"],
-                "name": SITE["title"],
-                "publisher": {"@id": SITE["url"] + "#org"},
-                "inLanguage": SITE["lang"],
-            },
+            org_jsonld(),
+            website_jsonld(),
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE["url"] + "/"},
+                    # The category page, not an anchor on the archive: that page
+                    # exists, is in the sitemap, and is what the visible category
+                    # link above the headline points at.
                     {"@type": "ListItem", "position": 2, "name": CATEGORIES[p["category"]],
-                     "item": f"{SITE['url']}/archive/#{p['category']}"},
+                     "item": f"{SITE['url']}/category/{p['category']}/"},
                     {"@type": "ListItem", "position": 3, "name": p["title"], "item": p["url"]},
                 ],
             },
@@ -709,9 +787,13 @@ def build_site(posts: list):
     if posts:
         lead, rest = posts[0], list(reversed(posts[1:]))  # pillar guide stays first; the rest run newest first
         lead_img = lead.get("image")
-        lead_thumb = (f'<img class="lead-img" src="{lead_img["file"]}" alt="{esc(lead_img["alt"])}" '
+        # The first thing a phone paints on the home page. Until 2026-10-01 this
+        # was the bare full-size JPEG (596 KB) while every post page served the
+        # same picture as a 75 KB AVIF; check.py only looked for AVIF on posts.
+        lead_thumb = (f'<picture>{avif_source(lead_img, "(max-width: 780px) calc(100vw - 88px), 485px")}'
+                      f'<img class="lead-img" src="{lead_img["file"]}" alt="{esc(lead_img["alt"])}" '
                       f'width="{lead_img["width"]}" height="{lead_img["height"]}" '
-                      f'fetchpriority="high" decoding="async">') if lead_img else ""
+                      f'fetchpriority="high" decoding="async"></picture>') if lead_img else ""
         home += f"""
 <section class="lead" aria-labelledby="lead-h">
   <p class="section-label" id="lead-h">If you read one thing</p>
@@ -740,12 +822,21 @@ def build_site(posts: list):
         "description": esc(SITE["description"]), "canonical": SITE["url"] + "/",
         "og_type": "website", "og_image": og_image(), "og_title": esc(SITE["title"]), "site_name": esc(SITE["title"]),
         "twitter": SITE["twitter"], "locale": SITE["locale"],
+        # WebSite on the home page is what Google reads the site's name from. This
+        # used to be a lone Blog reusing the #website id, so the home page never
+        # declared a WebSite at all and post pages declared one with a different type.
         "jsonld": json.dumps({
-            "@context": "https://schema.org", "@type": "Blog",
-            "@id": SITE["url"] + "#website", "name": SITE["title"], "url": SITE["url"],
-            "description": SITE["description"], "inLanguage": SITE["lang"],
-            "blogPost": [{"@type": "BlogPosting", "headline": p["title"], "url": p["url"],
-                          "datePublished": p["dt"].isoformat()} for p in reversed(posts)],
+            "@context": "https://schema.org",
+            "@graph": [
+                website_jsonld(),
+                org_jsonld(),
+                {"@type": "Blog", "@id": SITE["url"] + "#blog", "name": SITE["title"],
+                 "url": SITE["url"] + "/", "description": SITE["description"],
+                 "inLanguage": SITE["lang"], "isPartOf": {"@id": SITE["url"] + "#website"},
+                 "publisher": {"@id": SITE["url"] + "#org"},
+                 "blogPost": [{"@type": "BlogPosting", "headline": p["title"], "url": p["url"],
+                               "datePublished": iso_utc(p["dt"])} for p in reversed(posts)]},
+            ],
         }, ensure_ascii=False, indent=2),
         "nav": nav_html("/"), "body_class": "is-home", "content": home,
         "year": datetime.now().year, "site_url": SITE["url"], "tagline": esc(SITE["tagline"]),
@@ -896,16 +987,26 @@ def build_site(posts: list):
     }), encoding="utf-8")
 
     # ---- sitemap
-    urls = [(SITE["url"] + "/", "1.0"), (SITE["url"] + "/start-here/", "0.9"),
-            (SITE["url"] + "/archive/", "0.6"), (SITE["url"] + "/about/", "0.5")]
-    urls += [(p["url"], "0.8") for p in posts]
-    urls += [(f"{SITE['url']}/category/{c}/", "0.7") for c in CATEGORIES
-             if any(p["category"] == c for p in posts)]
-    urls += [(f"{SITE['url']}/{s}/", "0.3") for s, *_ in legal_pages()]
-    lastmod = max((p["dt"] for p in posts), default=datetime.now()).date()
+    # Each URL carries the date that page last really changed. See
+    # git_last_modified() for why one shared date was worse than none. A listing
+    # page changes when the newest thing it lists does; the hand-written pages
+    # change when someone edits STATIC_PAGES_UPDATED.
+    def newest(group):
+        return max((p["dt"].date() for p in group), default=datetime.now().date())
+
+    start_here_slugs = {(i if isinstance(i, str) else i[0]) for _, _, items, _ in START_HERE for i in items}
+    urls = [(SITE["url"] + "/", "1.0", newest(posts)),
+            (SITE["url"] + "/start-here/", "0.9",
+             newest([p for p in posts if p["slug"] in start_here_slugs])),
+            (SITE["url"] + "/archive/", "0.6", newest(posts)),
+            (SITE["url"] + "/about/", "0.5", STATIC_PAGES_UPDATED)]
+    urls += [(p["url"], "0.8", p["modified"]) for p in posts]
+    urls += [(f"{SITE['url']}/category/{c}/", "0.7", newest([p for p in posts if p["category"] == c]))
+             for c in CATEGORIES if any(p["category"] == c for p in posts)]
+    urls += [(f"{SITE['url']}/{s}/", "0.3", STATIC_PAGES_UPDATED) for s, *_ in legal_pages()]
     entries = "\n".join(
-        f"  <url><loc>{u}</loc><lastmod>{lastmod}</lastmod><priority>{pr}</priority></url>"
-        for u, pr in urls
+        f"  <url><loc>{u}</loc><lastmod>{lm}</lastmod><priority>{pr}</priority></url>"
+        for u, pr, lm in urls
     )
     (DIST / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -1094,6 +1195,7 @@ def main():
     print(f"Loaded {len(all_posts)} posts, {sum(p['word_count'] for p in all_posts):,} words total.")
     if live_mode:
         print(f"Live mode: {len(posts)} published, {len(pending)} scheduled.")
+    print(f"Last-modified dates from {MODIFIED_SOURCE}.")
 
     build_site(posts)
     build_wxr(all_posts)  # WordPress schedules its own; give it everything

@@ -34,7 +34,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Full history, not the default single commit. build.py dates each page in
+      # the sitemap by the last commit that touched it, and with one commit every
+      # page would look changed today. It detects a shallow clone and falls back
+      # to publish dates, so forgetting this is safe, just less useful.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -77,8 +83,11 @@ jobs:
         uses: actions/deploy-pages@v4
 
       # Tell Bing (and therefore Copilot / AI search) about new URLs immediately
-      # rather than waiting to be crawled. Never fails the deploy.
+      # rather than waiting to be crawled. Never fails the deploy. Full history
+      # again: indexnow.py picks the changed pages by their sitemap dates.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
