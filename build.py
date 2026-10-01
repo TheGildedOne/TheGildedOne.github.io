@@ -62,9 +62,15 @@ MONETISATION = {
     "contact_email": "hello@veiledantiquity.com",
 }
 
-# When About, Privacy, Disclosure and Contact were last rewritten. It is the
-# <lastmod> the sitemap gives those four pages, so change it when you change them.
+# The name on the About page: the pen name of the person who runs the site.
+# Used there and nowhere else. Posts stay credited to the site, not to a person.
+SITE_OWNER = "Idris Calloway"
+
+# When Privacy, Disclosure and Contact were last rewritten, and separately the
+# About page. These are the <lastmod> dates the sitemap gives those pages, so
+# change one when you change the page.
 STATIC_PAGES_UPDATED = "2026-09-14"
+ABOUT_UPDATED = "2026-10-01"
 
 IMAGES_FILE = ROOT / "content" / "images.json"
 IMAGES = json.loads(IMAGES_FILE.read_text(encoding="utf-8")) if IMAGES_FILE.exists() else {}
@@ -868,26 +874,35 @@ def build_site(posts: list):
     }), encoding="utf-8")
 
     # ---- about
-    about_body = """<header class="page-head"><h1>About Veiled Antiquity</h1></header>
-<p class="lede">Among the curse tablets pulled out of the sacred spring at Bath is a small sheet of lead inscribed by a man called Docilianus. Someone had stolen his hooded cloak. He asked the goddess Sulis to make the thief suffer, with no sleep and no children, until the cloak was brought back to her temple.</p>
-<p>He never meant for anyone else to read it. That&rsquo;s the kind of thing this site is about.</p>
-<h2>What you&rsquo;ll find here</h2>
-<p>Veiled Antiquity is about the parts of ancient history that were meant to stay private. Mystery cults you had to be initiated into, and then never talk about. Prophecy books kept under lock and key, consulted only when the Roman Senate ordered it. Curses buried with the dead. Names chiselled off monuments by people who wanted someone forgotten.</p>
-<p>A surprising amount of that secrecy held. People went through the Mysteries at Eleusis for centuries, and no initiate ever left a clear account of what happened inside. We still don&rsquo;t know.</p>
+    # Rewritten 2026-10-01 in the first person, under the pen name Imran chose for
+    # himself as the person who runs the site. It says who is behind the site and
+    # why. It deliberately does not say who drafts the articles, and it must not
+    # be edited to claim that Idris Calloway writes them: they are drafted by the
+    # writing loop. "Runs", "picks", "shares" are true. "Writes" is not.
+    about_body = f"""<header class="page-head"><h1>About Veiled Antiquity</h1></header>
+<p class="lede">Hi. I&rsquo;m {SITE_OWNER}, and I run this site.</p>
+<p>The short version is that I find this stuff really interesting, and I like that hardly anyone talks about it. Secret initiations. Books kept sealed. Curses buried with the dead. It feels like forbidden knowledge, and technically a lot of it was: people went to real trouble to keep these things quiet. Luckily, I get to share it.</p>
+<h2>The sort of thing I mean</h2>
+<p>Out of the hot spring at Bath came a little sheet of lead with a message scratched into it. A man called Docilianus had had his hooded cloak stolen. He was asking the goddess Sulis to make sure the thief got no sleep and no children until it was brought back to her temple.</p>
+<p>He never meant anyone else to read that. More than fifteen hundred years later, we can.</p>
+<h2>What&rsquo;s on here</h2>
+<p>Mystery cults where you swore never to say what you&rsquo;d seen, and mostly nobody did. Prophecy books the Roman Senate kept locked away. Spellbooks, curse tablets, names chiselled off monuments. Things that were hidden on purpose, and things that just stopped being copied until there were none left.</p>
+<p>The secrecy worked better than you&rsquo;d think. People went through the Mysteries at Eleusis for centuries and not one of them left a clear account of what happened inside. We still don&rsquo;t know.</p>
 <h2>How the pieces work</h2>
-<p>Each one starts with something real: an object, a place, a person, a line in an old book. From there it follows the evidence as far as it goes and stops where it runs out. When the experts disagree, you get the argument rather than a tidy verdict, and every source is listed at the end.</p>
-<p>Honestly, &ldquo;nobody knows&rdquo; tends to make a better story than whatever gets invented to fill the gap.</p>
-<h2>When new pieces come out</h2>
-<p>Every Monday, Wednesday and Friday. If you&rsquo;d rather not keep checking, <a href="/#signup-h">sign up on the home page</a> and they&rsquo;ll come straight to your inbox, or follow along by <a href="/feed.xml">RSS</a>.</p>"""
+<p>Each one starts from something real: an object, a place, a person, a line in an old book. It follows the evidence as far as it goes and stops where it runs out. When the experts disagree you get the disagreement, not a tidy answer, and the sources are listed at the bottom so you can check them.</p>
+<p>A lot of the time the honest answer is &ldquo;nobody knows.&rdquo; I&rsquo;ve come round to thinking that&rsquo;s usually the better story anyway.</p>
+<p>If you spot a mistake, <a href="/contact/">tell me</a>. It gets fixed, and the fix gets noted on the page.</p>
+<h2>When new ones come out</h2>
+<p>Monday, Wednesday and Friday. If you&rsquo;d rather not keep checking, <a href="/#signup-h">sign up on the home page</a> and they&rsquo;ll land in your inbox, or follow along by <a href="/feed.xml">RSS</a>.</p>"""
 
     (DIST / "about").mkdir(parents=True, exist_ok=True)
     (DIST / "about" / "index.html").write_text(render(base, {
         "lang": SITE["lang"], "page_title": f"About | {SITE['title']}",
-        "description": "Veiled Antiquity is a blog about the hidden side of ancient history: mystery cults, forbidden rites, sealed prophecy books and curses buried with the dead.",
+        "description": f"Veiled Antiquity is run by {SITE_OWNER}. It covers the hidden side of ancient history: mystery cults, sealed prophecy books and curses buried with the dead.",
         "canonical": SITE["url"] + "/about/", "og_type": "website", "og_image": og_image(),
         "og_title": "About Veiled Antiquity",
         "site_name": esc(SITE["title"]), "twitter": SITE["twitter"], "locale": SITE["locale"],
-        "jsonld": json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": "About Veiled Antiquity", "url": SITE["url"] + "/about/", "isPartOf": {"@id": SITE["url"] + "#website"}}, ensure_ascii=False), "nav": nav_html("/about/"), "body_class": "is-page",
+        "jsonld": json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": "About Veiled Antiquity", "url": SITE["url"] + "/about/", "isPartOf": {"@id": SITE["url"] + "#website"}, "mainEntity": {**org_jsonld(), "founder": {"@type": "Person", "name": SITE_OWNER}}}, ensure_ascii=False), "nav": nav_html("/about/"), "body_class": "is-page",
         "content": about_body, "year": datetime.now().year, "site_url": SITE["url"],
         "tagline": esc(SITE["tagline"]),
     }), encoding="utf-8")
@@ -990,7 +1005,7 @@ def build_site(posts: list):
     # Each URL carries the date that page last really changed. See
     # git_last_modified() for why one shared date was worse than none. A listing
     # page changes when the newest thing it lists does; the hand-written pages
-    # change when someone edits STATIC_PAGES_UPDATED.
+    # change when someone edits STATIC_PAGES_UPDATED or ABOUT_UPDATED.
     def newest(group):
         return max((p["dt"].date() for p in group), default=datetime.now().date())
 
@@ -999,7 +1014,7 @@ def build_site(posts: list):
             (SITE["url"] + "/start-here/", "0.9",
              newest([p for p in posts if p["slug"] in start_here_slugs])),
             (SITE["url"] + "/archive/", "0.6", newest(posts)),
-            (SITE["url"] + "/about/", "0.5", STATIC_PAGES_UPDATED)]
+            (SITE["url"] + "/about/", "0.5", ABOUT_UPDATED)]
     urls += [(p["url"], "0.8", p["modified"]) for p in posts]
     urls += [(f"{SITE['url']}/category/{c}/", "0.7", newest([p for p in posts if p["category"] == c]))
              for c in CATEGORIES if any(p["category"] == c for p in posts)]
