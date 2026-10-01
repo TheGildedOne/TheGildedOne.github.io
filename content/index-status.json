@@ -1,0 +1,251 @@
+{
+  "checked": "2026-10-01",
+  "counts": {
+    "indexed": 24,
+    "WRONG ADDRESS": 8,
+    "NOT INDEXED": 1,
+    "waiting": 2
+  },
+  "pages": {
+    "https://veiledantiquity.com/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-28",
+      "google_shows": [
+        "http://veiledantiquity.com/"
+      ]
+    },
+    "https://veiledantiquity.com/start-here/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-24",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/archive/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "http://veiledantiquity.com/archive/"
+      ]
+    },
+    "https://veiledantiquity.com/about/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-02",
+      "google_shows": [
+        "http://veiledantiquity.com/about/"
+      ]
+    },
+    "https://veiledantiquity.com/posts/ancient-mystery-cults-guide/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-27",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/eleusinian-mysteries-telesterion/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-11",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/eleusinian-kykeon-psychedelic/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-13",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/orphic-gold-tablets/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-28",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/orphic-gold-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=the-orphic-gold-tablets-cheat-sheets-for-the"
+      ]
+    },
+    "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/mithras-tauroctony-decoded/?utm_source=veiled&utm_medium=email&utm_campaign=mithras-and-the-bull-the-cult-we-can-see-and-cant"
+      ]
+    },
+    "https://veiledantiquity.com/posts/villa-of-the-mysteries-frescoes/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-20",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/greek-magical-papyri/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/greek-magical-papyri/?utm_source=veiled&utm_medium=email&utm_campaign=the-greek-magical-papyri-real-spellbooks-from"
+      ]
+    },
+    "https://veiledantiquity.com/posts/ancient-curse-tablets/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to"
+      ]
+    },
+    "https://veiledantiquity.com/posts/sibylline-books-rome/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-27",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/damnatio-memoriae/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-29",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/damnatio-memoriae/?utm_source=veiled&utm_medium=email&utm_campaign=damnatio-memoriae-how-rome-erased-a-person-and"
+      ]
+    },
+    "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-06",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/oracle-of-the-dead-ephyra/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-06",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/piacenza-liver-etruscan/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-06",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/samothrace-great-gods/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/samothrace-great-gods/?utm_source=veiled&utm_medium=email&utm_campaign=the-great-gods-of-samothrace-whose-names-we-dont"
+      ]
+    },
+    "https://veiledantiquity.com/posts/bacchanalia-186-bce/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/bacchanalia-186-bce/?utm_source=veiled&utm_medium=email&utm_campaign=the-bacchanalia-affair-of-186-bce"
+      ]
+    },
+    "https://veiledantiquity.com/posts/cult-of-isis-rome/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-11",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/mithraism-seven-grades/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-15",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/mithraism-seven-grades/?utm_source=veiled&utm_medium=email&utm_campaign=the-seven-grades-of-mithraism-a-syllabus-with-no"
+      ]
+    },
+    "https://veiledantiquity.com/posts/ancient-binding-spells-law/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/ancient-binding-spells-law/?utm_source=veiled&utm_medium=email&utm_campaign=binding-spells-and-the-ancient-courtroom"
+      ]
+    },
+    "https://veiledantiquity.com/posts/evil-eye-ancient-world/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-18",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/ancient-necromancy/": {
+      "status": "WRONG ADDRESS",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/ancient-necromancy/?utm_source=veiled&utm_medium=email&utm_campaign=necromancy-in-greece-and-rome-a-legal-problem-not"
+      ]
+    },
+    "https://veiledantiquity.com/posts/greek-magical-gems/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-24",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/books-augustus-burned/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-29",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/books-augustus-burned/?utm_source=veiled&utm_medium=email&utm_campaign=the-two-thousand-books-augustus-burned"
+      ]
+    },
+    "https://veiledantiquity.com/posts/liber-linteus/": {
+      "status": "waiting",
+      "coverage": "URL is unknown to Google",
+      "last_crawl": "",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/etruscan-language-lost/": {
+      "status": "waiting",
+      "coverage": "URL is unknown to Google",
+      "last_crawl": "",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/category/mystery-cults/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-08",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/category/magic-and-ritual/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-25",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/category/lost-and-suppressed/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-06",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/category/oracles-and-divination/": {
+      "status": "NOT INDEXED",
+      "coverage": "Discovered - currently not indexed",
+      "last_crawl": "",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/privacy/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-07",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/disclosure/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-09-24",
+      "google_shows": [
+        "http://veiledantiquity.com/disclosure/"
+      ]
+    },
+    "https://veiledantiquity.com/contact/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-08-07",
+      "google_shows": []
+    }
+  }
+}

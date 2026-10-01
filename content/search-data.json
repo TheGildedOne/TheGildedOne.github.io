@@ -1,12 +1,12 @@
 {
-  "pulled": "2026-09-21",
-  "start": "2026-06-21",
-  "end": "2026-09-19",
+  "pulled": "2026-10-01",
+  "start": "2026-07-01",
+  "end": "2026-09-29",
   "totals": {
-    "clicks": 8,
-    "impressions": 431,
-    "ctr": 0.0186,
-    "position": 26.2
+    "clicks": 10,
+    "impressions": 551,
+    "ctr": 0.0181,
+    "position": 23.9
   },
   "queries": [
     {
@@ -31,6 +31,13 @@
       "position": 67
     },
     {
+      "query": "ancient greek tablets",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 93
+    },
+    {
       "query": "ancient roman curse tablets",
       "clicks": 0,
       "impressions": 1,
@@ -45,6 +52,13 @@
       "position": 85
     },
     {
+      "query": "bacchanalia affair",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
       "query": "bacchic gold tablets",
       "clicks": 0,
       "impressions": 1,
@@ -54,23 +68,23 @@
     {
       "query": "curse tablet",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
       "position": 89
     },
     {
       "query": "curse tablets",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 80
+      "position": 81
     },
     {
       "query": "curse tablets and binding spells from the ancient world",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 84
+      "position": 80.5
     },
     {
       "query": "curse tablets roman",
@@ -138,9 +152,9 @@
     {
       "query": "hispala faecenia",
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 7.8
+      "position": 8.2
     },
     {
       "query": "homeric hymn to demeter kykeon barley water pennyroyal",
@@ -148,6 +162,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "query": "how much information was lost in the library of alexandria",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 47
     },
     {
       "query": "kykeon",
@@ -187,9 +208,9 @@
     {
       "query": "library of alexandria what was lost",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 58
+      "position": 53.5
     },
     {
       "query": "liver divination",
@@ -297,6 +318,13 @@
       "position": 87
     },
     {
+      "query": "samothrace mysteries",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 88
+    },
+    {
       "query": "samothracian",
       "clicks": 0,
       "impressions": 1,
@@ -316,6 +344,13 @@
       "impressions": 3,
       "ctr": 0,
       "position": 61.3
+    },
+    {
+      "query": "sibylline prophecies",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 78
     },
     {
       "query": "sybelline books",
@@ -369,9 +404,9 @@
     {
       "query": "the sibylline books",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 56
+      "position": 40.5
     },
     {
       "query": "the veil of history",
@@ -397,9 +432,16 @@
     {
       "query": "what was in library of alexandria",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 79
+      "position": 76.2
+    },
+    {
+      "query": "what was in the library of alexandria",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
     },
     {
       "query": "what was lost in the library of alexandria",
@@ -439,6 +481,13 @@
       "position": 67
     },
     {
+      "query": "ancient greek tablets",
+      "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 93
+    },
+    {
       "query": "ancient roman curse tablets",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
@@ -453,6 +502,13 @@
       "position": 85
     },
     {
+      "query": "bacchanalia affair",
+      "page": "https://veiledantiquity.com/posts/bacchanalia-186-bce/?utm_source=veiled&utm_medium=email&utm_campaign=the-bacchanalia-affair-of-186-bce",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
       "query": "bacchic gold tablets",
       "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/",
       "clicks": 0,
@@ -463,22 +519,22 @@
       "query": "curse tablet",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "position": 89
     },
     {
       "query": "curse tablets",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
-      "impressions": 3,
-      "position": 80
+      "impressions": 4,
+      "position": 81
     },
     {
       "query": "curse tablets and binding spells from the ancient world",
       "page": "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to",
       "clicks": 0,
-      "impressions": 1,
-      "position": 84
+      "impressions": 2,
+      "position": 80.5
     },
     {
       "query": "curse tablets roman",
@@ -547,8 +603,8 @@
       "query": "hispala faecenia",
       "page": "https://veiledantiquity.com/posts/bacchanalia-186-bce/?utm_source=veiled&utm_medium=email&utm_campaign=the-bacchanalia-affair-of-186-bce",
       "clicks": 0,
-      "impressions": 4,
-      "position": 7.8
+      "impressions": 5,
+      "position": 8.2
     },
     {
       "query": "homeric hymn to demeter kykeon barley water pennyroyal",
@@ -556,6 +612,13 @@
       "clicks": 0,
       "impressions": 1,
       "position": 9
+    },
+    {
+      "query": "how much information was lost in the library of alexandria",
+      "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 47
     },
     {
       "query": "kykeon",
@@ -596,8 +659,8 @@
       "query": "library of alexandria what was lost",
       "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
       "clicks": 0,
-      "impressions": 1,
-      "position": 58
+      "impressions": 2,
+      "position": 53.5
     },
     {
       "query": "liver divination",
@@ -712,6 +775,13 @@
       "position": 87
     },
     {
+      "query": "samothrace mysteries",
+      "page": "https://veiledantiquity.com/posts/samothrace-great-gods/?utm_source=veiled&utm_medium=email&utm_campaign=the-great-gods-of-samothrace-whose-names-we-dont",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 88
+    },
+    {
       "query": "samothracian",
       "page": "https://veiledantiquity.com/posts/samothrace-great-gods/?utm_source=veiled&utm_medium=email&utm_campaign=the-great-gods-of-samothrace-whose-names-we-dont",
       "clicks": 0,
@@ -731,6 +801,13 @@
       "clicks": 0,
       "impressions": 3,
       "position": 61.3
+    },
+    {
+      "query": "sibylline prophecies",
+      "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 78
     },
     {
       "query": "sybelline books",
@@ -792,8 +869,8 @@
       "query": "the sibylline books",
       "page": "https://veiledantiquity.com/posts/sibylline-books-rome/",
       "clicks": 0,
-      "impressions": 1,
-      "position": 56
+      "impressions": 2,
+      "position": 40.5
     },
     {
       "query": "the veil of history",
@@ -820,8 +897,15 @@
       "query": "what was in library of alexandria",
       "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
       "clicks": 0,
-      "impressions": 3,
-      "position": 79
+      "impressions": 4,
+      "position": 76.2
+    },
+    {
+      "query": "what was in the library of alexandria",
+      "page": "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 67
     },
     {
       "query": "what was lost in the library of alexandria",

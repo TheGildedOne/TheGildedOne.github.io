@@ -13,16 +13,63 @@ You don't need to do any of this — it's in the pages.
 - **Unique title tag + meta description on every page**, all inside Google's length limits
 - **Canonical URLs** so nothing competes with itself
 - **JSON-LD structured data** — `BlogPosting`, `Organization`, `WebSite`, `BreadcrumbList`,
-  and `FAQPage` on all 13 posts
+  and `FAQPage` on every post, and `WebSite` + `Organization` on the home page (which is where
+  Google reads the site's name from)
 - **FAQ blocks** on every post — 5 real questions each, formatted to be eligible for
   Google's expandable answer boxes
 - **Open Graph + Twitter cards** so links look right when shared
 - **Internal linking** — every post links to 2–4 others by hand, plus an automatic
   "Continue the descent" block
 - **A pillar-and-cluster structure** (explained below)
-- `sitemap.xml`, `robots.txt`, RSS feed
-- **Fast, accessible, mobile-first**: no JavaScript, one stylesheet, semantic headings,
-  skip links, visible focus states, `prefers-reduced-motion` respected
+- `sitemap.xml` with a true last-changed date per page, `robots.txt`, RSS feed
+- **Fast, accessible, mobile-first**: one small script (the analytics consent check), one
+  stylesheet, AVIF images, semantic headings, skip links, visible focus states,
+  `prefers-reduced-motion` respected
+
+---
+
+## Where it stands: 1 October 2026, eight weeks in
+
+**10 clicks and 551 impressions from Google in 90 days.** Average position 23.9. The last 28
+days against the 28 before: impressions 279 vs 272 (flat), clicks 4 vs 6, average position
+17.6 vs 30.3 (much better). So Google is ranking the pages higher and showing them no more
+often. That is what a new site with no links from other sites looks like: it gets tried near
+the top for narrow searches and stays far down for the big ones ("curse tablets" at 85,
+"sibylline books" at 61, "library of alexandria" past 50).
+
+Three things were found that day, none of which any existing check could see.
+
+**1. Google had ten of twenty-four posts at the wrong address, or not at all.** Buttondown
+adds tracking tags to every link in the newsletter (`?utm_source=veiled&utm_medium=email...`),
+and its public archive at buttondown.com/veiled carries the same tagged links. Google found
+seven posts through that archive first, indexed the tagged address, and never fetched the
+real one, despite the canonical tag, the sitemap and every internal link pointing at it. The
+posts still earned impressions, under the tagged address, which is why the totals looked
+normal. `tools/check_indexing.py` now asks Google about every page and reports this; the
+Saturday loop ends its report with that line. The cure has two halves, both Imran's:
+switch off UTM tracking at buttondown.com/settings/tracking, and request indexing of each
+clean address in Search Console.
+
+**2. The sitemap claimed every page changed three times a week.** One shared `<lastmod>`,
+the date of the newest post. Google only uses that field while it finds it accurate. Each
+page now carries the date of the last commit that touched it.
+
+**3. The target keywords had stopped being things people search for.** The first 24 posts
+aimed at real phrases. Of the next 29, 23 aimed at several topics glued together
+("cumaean sibyl cave cumae"), and their search titles followed. The subjects were fine and
+mostly have searchers; the titles just did not use their words. All 29 were retitled before
+publishing, `check.py` now requires the keyword's words in the title or description, and
+`tools/keyword_demand.py` tests a phrase against Google's autocomplete before a topic goes in
+the queue.
+
+Also fixed the same day: the home page's main image loaded as a 596 KB JPEG instead of the
+75 KB AVIF that already existed; breadcrumbs pointed at an anchor instead of the category
+page; IndexNow resubmitted all 35 URLs on every deploy instead of only the changed ones.
+
+**What on-site work cannot fix** is the thing holding the big terms down: nobody links here
+yet. The list under "Where the audience actually is" below is still the plan, and it is
+still work only a person can do. One good link from a classics blog is worth more than
+everything in this section.
 
 ---
 
@@ -149,11 +196,13 @@ self-canonicalises.
 **"Discovered / Crawled, currently not indexed"** is ordinary for a young site with little
 authority. Google queues the page and returns. It resolves as the archive grows.
 
-The figure worth watching instead is **indexed count against sitemap count**. On 2026-08-15
-that was 11 of 11, meaning every page we ask Google to index is indexed. Check it with:
+The figure worth watching instead is **how many sitemap pages Google has indexed at their
+real address**. Do not count by hand, and do not trust the Sitemaps report: on 2026-08-15 this
+section said "11 of 11", and by 1 October ten posts were indexed at the wrong address or not
+at all while every report still looked healthy. Ask Google page by page:
 
 ```bash
-curl -s https://veiledantiquity.com/sitemap.xml | grep -c "<loc>"
+python tools/check_indexing.py
 ```
 
 Reasons that *are* worth opening the report for, because each means something is actually

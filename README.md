@@ -14,7 +14,8 @@ itself; the sections below are for when you want to change something.
 |---|---|---|
 | **Publishing** | Mon / Wed / Fri, 09:05 UTC | GitHub Actions — rebuilds and deploys; posts appear on their own date |
 | **Writing** | Saturdays, 10:00 local | A scheduled Claude task following `WRITING-LOOP.md` |
-| **Indexing** | every deploy | Sitemap + IndexNow ping to Bing |
+| **Indexing** | every deploy | Sitemap + IndexNow ping to Bing for pages that changed |
+| **Watching** | daily, and each Saturday | `monitor.yml` checks due posts are live; `tools/check_indexing.py` asks Google whether each page is indexed |
 
 Nothing here needs a person. Posts are committed with **future dates** and `build.py --live`
 holds them back until due, so there are always several days between a post being written and
@@ -31,7 +32,7 @@ anyone reading it.
 | `content/images.json` | Generated image manifest — credits, dimensions, formats. |
 | `build.py` | Builds the site. All configuration lives at the top. |
 | `check.py` | Validates links, images, alt text, SEO tags, structured data. |
-| `tools/` | Image sourcing and encoding, citation verification, slot allocation. |
+| `tools/` | Image sourcing and encoding, citation verification, slot allocation, Search Console data, keyword and indexing checks. |
 | `templates/`, `static/` | Page shells and the stylesheet, fonts, images. |
 | `public/` | Files copied to the site root verbatim (CNAME, verification files). |
 | `docs/` | Strategy notes: SEO, monetisation, editorial calendar. |

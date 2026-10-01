@@ -61,6 +61,28 @@ Proposals are candidates, not decisions — they still have to clear all five cr
 because the highest-volume queries in this niche are exactly the ones that would wreck the
 site's position.
 
+**Then check that people search for it.** Every new entry's `keyword` must be a phrase
+Google's autocomplete recognises:
+
+```bash
+python tools/keyword_demand.py "oracle of dodona" "dodona oracle lead tablets"
+```
+
+`YES` means people type it. `no` means almost nobody does, and the fix is nearly always a
+shorter, plainer phrase rather than a different topic: the suggestions it prints are where to
+look. The keyword is **one phrase a person would type**, usually two to four words. It is not a
+list of the post's subjects. `palladium rome vesta` is three topics; `palladium statue` is a
+search.
+
+This rule exists because it went wrong for two months without anyone noticing. The first 24
+posts targeted real phrases. Of the next 29, 23 targeted glued-together ones nobody types, and
+their titles followed: a post about the Library of Pergamon never said "Library of Pergamon".
+All were retitled on 2026-10-01 before they published.
+
+A topic with no searchable phrase at all can still go in if it is good, but **no more than one
+in four** of a top-up, and say which ones in your report. The site needs both: pieces people
+are looking for, and pieces only this site would write.
+
 **Every new topic must clear all five:**
 
 1. **A specific object, site, text, or event** — not a theme. "The Piacenza Liver" works.
@@ -109,8 +131,8 @@ version is:
 - Say "we don't know" plainly where that is the answer. It is usually the better story.
 
 **No em dashes.** Imran asked for this on 2026-08-13, after 461 of them piled up across the
-first 29 posts. Enforced by `check.py` for any post dated 2026-10-13 or later; earlier posts
-are grandfathered and must not be retro-edited.
+first 29 posts. Enforced by `check.py` for any post dated 2026-09-14 or later; the 16 posts
+published before that are grandfathered and must not be retro-edited.
 
 This is a rewrite instruction, not a find-and-replace one. Do **not** substitute a hyphen or
 an en dash: that looks worse and still fails the check. Recast the sentence instead. The em
@@ -151,6 +173,15 @@ Structural requirements, all enforced by `check.py`:
 - 4–6 sources, real ones
 - 2–4 hand-written internal links to existing posts
 - `related` listing 2–3 slugs
+- every word of `focus_keyword` appears in the `seo_title` or `description`
+
+**The search title is not the headline.** `title` is the headline on the page and the subject
+line of the email, and it can be as oblique as the house voice likes ("The Well That Answered
+in Oak"). `seo_title` is what Google shows, and it has one job: say the thing people search
+for, in their words, near the front ("Fortuna Primigenia at Praeneste: The Oracle of Lots").
+Set `focus_keyword` to the phrase `keyword_demand.py` confirmed for the queue entry, and build
+the `seo_title` around it. `check.py` enforces that the words are there; it cannot tell
+whether the phrase is one people type, which is why the queue step checks that first.
 
 ### 4. Add an image
 
@@ -283,6 +314,21 @@ and it is yours. If a proposal is wrong, tighten or remove the alias rather than
 ### 8. Report to Imran
 
 Short. Titles, dates, word counts, anything uncertain, and how many queue entries remain.
+
+**End with the indexing line.** Run this last and copy its final `INDEXING` line, plus any
+page listed under WRONG ADDRESS or NOT INDEXED, into the report:
+
+```bash
+python tools/check_indexing.py
+```
+
+It asks Google whether each live page is actually indexed at its real address. Nothing else in
+this repo does, and on 2026-10-01 ten of twenty-four posts were not: seven were indexed only at
+the newsletter's tracking-tagged address, for weeks, with every other check green. The loop
+cannot fix a page Google has not picked up (requesting indexing needs Imran, signed in to
+Search Console), so the job here is only to make sure he sees it. It exits cleanly if the
+credentials are missing; say so in the report if that happens, because it means nobody is
+watching.
 
 **Flag explicitly** if you cut a claim for lack of evidence, if a source was hard to
 confirm, or if two sources contradict each other. Those are the things worth a human
