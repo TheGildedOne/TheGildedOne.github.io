@@ -246,6 +246,16 @@ are perfectly real: Crossref indexes neither well. Confirm those by hand and add
 `VERIFIED_BY_HAND` in the script with a note on how you checked, rather than deleting a good
 citation to make the gate go quiet.
 
+**A real book that comes back NOT FOUND goes in `ISBN_FOR` first, not `VERIFIED_BY_HAND`.**
+The title search misses plenty of books Open Library holds (long subtitles, French titles,
+quotation marks in the title). Add the title and its ISBN to `ISBN_FOR` and re-run: the script
+looks the ISBN up itself and passes the citation only if the record that comes back carries
+that title. That is a check. A note in `VERIFIED_BY_HAND` is a claim, written by the same run
+that added the citation, and the oldest one in the file turned out to quote an ISBN that does
+not exist. Use `VERIFIED_BY_HAND` only when the ISBN lookup says Open Library has no record,
+or the work has no ISBN (a chapter, an old journal article). The script refuses to run if a
+note quotes an ISBN with a wrong check digit, or if a book sits in both lists.
+
 The script reports two kinds of failure and they mean opposite things:
 
 - **NOT FOUND** — Open Library answered and had nothing close. Treat as a possible

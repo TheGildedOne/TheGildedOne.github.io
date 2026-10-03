@@ -24,6 +24,7 @@ import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -63,11 +64,12 @@ ANCIENT = {
 # usual gaps. Each was confirmed elsewhere and the note records how, so a later
 # run does not "fix" the citation by deleting it. Only add an entry after
 # checking the work yourself.
+#
+# If the book has an ISBN that Open Library holds, it does not belong here: put
+# it in ISBN_FOR below and let the script check it. Any ISBN quoted in a note
+# here must at least have a valid check digit, and main() refuses to run if one
+# does not.
 VERIFIED_BY_HAND = {
-    "The Epidaurian Miracle Inscriptions: Text, Translation, and Commentary":
-        "Lynn R. LiDonnici, Scholars Press, Atlanta 1995, ISBN 0-7885-0130-8 "
-        "(Texts and Translations 36). Confirmed via Internet Archive and a 1997 "
-        "review in the Journal for the Study of the New Testament. Checked 2026-08-10.",
     "The Curse Tablets":
         "R. S. O. Tomlin, chapter 4 of B. Cunliffe (ed.), 'The Temple of Sulis "
         "Minerva at Bath, II: Finds from the Sacred Spring' (Oxford University "
@@ -86,34 +88,6 @@ VERIFIED_BY_HAND = {
         "scored 1.00 on one run and 0.33 on the next, because a three-word title "
         "is fragile against fuzzy search. Confirmed via Academia.edu and "
         "ResearchGate copies. Checked 2026-08-22.",
-    "Litterae Magicae: Studies in Honor of Roger S.O. Tomlin":
-        "Celia Sanchez-Natalias (ed.), Libros Portico, Zaragoza 2019, 262pp, "
-        "ISBN 978-84-7956-183-3 (Supplementa MHNH 2). A small Spanish academic "
-        "press, absent from Open Library. Confirmed via the Journal of Roman "
-        "Studies review, which gives publisher, year, page count, ISBN and price, "
-        "and via AbeBooks/Amazon listings on the same ISBN. Surfaced 2026-09-02, "
-        "when the classifier was fixed and started checking edited volumes.",
-    "Trophonios de Lébadée: Cultes et mythes d'une cité béotienne au miroir de la mentalité antique":
-        "Pierre Bonnechere, Brill, Leiden 2003, ISBN 90-04-13102-7 (Religions in "
-        "the Graeco-Roman World 150), 430pp. A French-language monograph from a "
-        "specialist series, which Open Library's fuzzy match scores at 0.34. "
-        "Confirmed via the BnF catalogue, AbeBooks on the same ISBN, and reviews "
-        "in Kernos and Dialogues d'histoire ancienne. Checked 2026-09-12.",
-    "Greco-Roman Associations: Texts, Translations, and Commentary I: Attica, Central Greece, Macedonia, Thrace":
-        "John S. Kloppenborg and Richard S. Ascough, De Gruyter, Berlin/New York "
-        "2011, ISBN 978-3-11-025345-0 (Beihefte zur Zeitschrift fuer die "
-        "neutestamentliche Wissenschaft 181). A reference-series volume absent "
-        "from Open Library entirely (0.00 match). Confirmed via De Gruyter's own "
-        "catalogue listing and a Bryn Mawr Classical Review notice of the series. "
-        "Checked 2026-09-12.",
-    "Magic in Apuleius' ‘Apologia’: Understanding the Charges and the "
-    "Forensic Strategies in Apuleius' Speech":
-        "Leonardo Costantini, De Gruyter, Berlin/Boston 2019, ISBN "
-        "978-3-11-061659-0. Confirmed via De Gruyter's own DOI page "
-        "(10.1515/9783110617528), the University of Bristol research portal entry "
-        "for the author, and a published review. Open Library scores it 0.41, "
-        "almost certainly because the title contains quotation marks. Surfaced "
-        "2026-09-02 with the classifier fix.",
     "Cursing Chariot Horses instead of Drivers in the Hippodromes of the Eastern Roman Empire":
         "Christopher Faraone, in C. Sanchez-Natalias (ed.), Litterae Magicae: "
         "Studies in Honor of Roger S.O. Tomlin (Zaragoza, 2019), 83-101. A "
@@ -130,39 +104,6 @@ VERIFIED_BY_HAND = {
         "journal, absent from Crossref and OpenAlex. Confirmed via its "
         "Semantic Scholar record and a WorldCat/BnF catalogue entry, both "
         "giving the same journal, volume and page range. Checked 2026-08-22.",
-    "Corpus Cultus Iovis Sabazii, Volume I: The Hands":
-        "Maarten J. Vermaseren, with Eduard Westra and Margreet B. de Boer, "
-        "Brill, Leiden 1983, ISBN 90-04-06951-8 (Etudes preliminaires aux "
-        "religions orientales dans l'Empire romain 100.1). No page or "
-        "chapter number is cited from this volume, only the book as a whole, "
-        "as the catalogue of the ~80 surviving Sabazios hands. Absent from "
-        "Open Library (0.00 match). Confirmed via the AbeBooks/Amazon listing "
-        "on the same ISBN and the Internet Archive holding of the physical "
-        "book. Checked 2026-09-19 (the run wrote 2026-11-19, its post date, by mistake). Re-audited 2026-09-21: both ISBNs resolve at archive.org (corpuscultusiovi0001-0003verm) and Open Library search, so the Open Library title matcher missed them rather than the books being absent.",
-    "Corpus Cultus Iovis Sabazii, Volume III: Conclusions":
-        "Eugene N. Lane, Brill, Leiden 1989, ISBN 90-04-08974-8 (Etudes "
-        "preliminaires aux religions orientales dans l'Empire romain 100.3), "
-        "ix + 68pp. No page number is cited from this volume, only the book "
-        "as a whole. Absent from Open Library (0.00 match). Confirmed via a "
-        "1990s review in the Classical Review (Cambridge Core) giving the "
-        "same publisher, year, page count and price, and the Amazon listing "
-        "on the same ISBN. Checked 2026-09-19 (the run wrote 2026-11-19, its post date, by mistake). Re-audited 2026-09-21: both ISBNs resolve at archive.org (corpuscultusiovi0001-0003verm) and Open Library search, so the Open Library title matcher missed them rather than the books being absent.",
-    "The Materiality of Magic":
-        "Dietrich Boschung and Jan N. Bremmer (eds.), Wilhelm Fink, Paderborn "
-        "2015, ISBN 978-3-7705-5725-7 (Morphomata 20). The matcher scored 0.65, "
-        "but Open Library does hold it: a search on that ISBN returns the title "
-        "with both editors and 2015. Also read directly: the open-access PDF at "
-        "kups.ub.uni-koeln.de/12119 has the imprint page and lists Blaensdorf's "
-        "chapter in the contents starting at p. 293. No page range is cited in "
-        "the post. Checked 2026-10-03.",
-    "The Getty Hexameters: Poetry, Magic, and Mystery in Ancient Selinous":
-        "Christopher A. Faraone and Dirk Obbink (eds.), Oxford University "
-        "Press 2013, ISBN 978-0-19-966410-8. The matcher scored 0.00 on the "
-        "full title, but Open Library does hold it under the short title 'The "
-        "Getty Hexameters' (Obbink, 2013): a search on that ISBN returns it. "
-        "Also confirmed by the publisher's page (academic.oup.com/book/11335) "
-        "and the review BMCR 2014.12.10. Cited as a whole volume, no pages. "
-        "Checked 2026-10-03.",
     "Ritual Hexameters in the Getty Museum: Preliminary Edition":
         "David R. Jordan and Roy D. Kotansky, Zeitschrift fuer Papyrologie und "
         "Epigraphik 178 (2011), 54-62. ZPE is not in Crossref or OpenAlex. Not "
@@ -179,6 +120,39 @@ VERIFIED_BY_HAND = {
         "L'Antiquite Classique 65 (1996) on Persee, which gives the count of "
         "124 texts used in the post. Cited as a whole volume, no pages. "
         "Checked 2026-10-03.",
+}
+
+# Books the title search misses but Open Library does hold. Give the ISBN and
+# this script looks it up itself, and passes the citation only if the record that
+# comes back carries the cited title.
+#
+# This exists to shrink VERIFIED_BY_HAND, which is the gate's blind spot: an
+# entry there is believed on the word of a note written by the same run that
+# added the citation, and one of those notes has already been wrong. By
+# 2026-10-03 eight of its sixteen entries were books Open Library held all
+# along. The title search had missed them (a long subtitle, a French title,
+# quotation marks in the title), each note said "confirmed by ISBN", and
+# nothing checked that it had been. Now something does.
+#
+# A book belongs here, not in VERIFIED_BY_HAND, whenever Open Library has a
+# record for its ISBN. VERIFIED_BY_HAND is for what no catalogue holds.
+ISBN_FOR = {
+    # The first entry VERIFIED_BY_HAND ever had, from 2026-08-10, and its note was
+    # wrong twice: it gave the ISBN as 0-7885-0130-8, which fails its own check
+    # digit, and said Open Library lacked the book, which it holds under this one.
+    # Nobody could have caught either by reading the note. Found 2026-10-03.
+    "The Epidaurian Miracle Inscriptions: Text, Translation, and Commentary": "0-7885-0104-6",
+    "Litterae Magicae: Studies in Honor of Roger S.O. Tomlin": "978-84-7956-183-3",
+    "Trophonios de Lébadée: Cultes et mythes d'une cité béotienne au miroir de la mentalité antique":
+        "90-04-13102-7",
+    "Greco-Roman Associations: Texts, Translations, and Commentary I: Attica, Central Greece, Macedonia, Thrace":
+        "978-3-11-025345-0",
+    "Magic in Apuleius' ‘Apologia’: Understanding the Charges and the "
+    "Forensic Strategies in Apuleius' Speech": "978-3-11-061659-0",
+    "Corpus Cultus Iovis Sabazii, Volume I: The Hands": "90-04-06951-8",
+    "Corpus Cultus Iovis Sabazii, Volume III: Conclusions": "90-04-08974-8",
+    "The Materiality of Magic": "978-3-7705-5725-7",
+    "The Getty Hexameters: Poetry, Magic, and Mystery in Ancient Selinous": "978-0-19-966410-8",
 }
 
 # Entries naming a physical object or document rather than a publication.
@@ -270,6 +244,67 @@ def query(params):
     return [], err
 
 
+# ---- books by ISBN ----------------------------------------------------------
+ISBN_API = "https://openlibrary.org/isbn/{}.json"
+
+
+def isbn_valid(isbn):
+    """True if the check digit is right. Catches a mistyped ISBN before it is
+    mistaken for a book the catalogue lacks."""
+    d = re.sub(r"[\s-]", "", isbn).upper()
+    if len(d) == 10 and re.fullmatch(r"\d{9}[\dX]", d):
+        return sum((10 - i) * (10 if c == "X" else int(c)) for i, c in enumerate(d)) % 11 == 0
+    if len(d) == 13 and d.isdigit():
+        return sum(int(c) * (3 if i % 2 else 1) for i, c in enumerate(d)) % 10 == 0
+    return False
+
+
+def _words(s):
+    """Lower-case words with accents and punctuation stripped, short ones dropped."""
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+    return [w for w in re.sub(r"[^a-z0-9]+", " ", s.lower()).split() if len(w) > 2]
+
+
+def isbn_match(title, isbn):
+    """(score, error, what the catalogue calls it) for one ISBN at Open Library.
+
+    A 404 is an answer, "no such record", and comes back as score 0 with no
+    error. Anything else that stops us asking is an error, and says nothing
+    about the book. Same distinction as everywhere else in this file."""
+    if not isbn_valid(isbn):
+        return 0.0, None, "the ISBN's check digit is wrong, so it was mistyped"
+    req = urllib.request.Request(ISBN_API.format(re.sub(r"[\s-]", "", isbn)),
+                                 headers={"User-Agent": UA})
+    record, err = None, None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                record, err = json.load(r), None
+                break
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return 0.0, None, "Open Library has no record of that ISBN"
+            err = str(e)
+        except Exception as e:
+            err = str(e)
+        if attempt < 2:
+            time.sleep(4 * (attempt + 1))
+    if record is None:
+        return 0.0, err, ""
+
+    found = (record.get("title") or "").strip()
+    full = f"{found}: {record.get('subtitle')}" if record.get("subtitle") else found
+    score = max(similarity(title, found), similarity(title, full))
+    # Catalogue titles are messy ("Corpus Cultus Lovis Sabazii"), so also count
+    # how many of the catalogue's words the cited title contains. Needs three
+    # words to count at all: a one-word catalogue title would match anything.
+    theirs, ours = _words(found), set(_words(title))
+    if len(theirs) >= 3:
+        score = max(score, sum(w in ours for w in theirs) / len(theirs))
+    return score, None, f"that ISBN is '{found}' at Open Library, not this title"
+
+
 # ---- journal articles -------------------------------------------------------
 # Books go to Open Library; that leaves journal articles unchecked, which is the
 # larger fabrication risk because a plausible-looking article title, journal and
@@ -343,7 +378,27 @@ def best_match(title, surname):
 def main():
     posts = build.load_posts()
     missing, unreachable = [], []
-    counts = {"book": 0, "ancient": 0, "journal": 0, "object": 0, "article": 0}
+    counts = {"book": 0, "ancient": 0, "journal": 0, "object": 0, "article": 0, "isbn": 0}
+
+    # A book in both lists would be waved through by the note and never looked
+    # up, which defeats the point of having given its ISBN.
+    both = sorted(set(ISBN_FOR) & set(VERIFIED_BY_HAND))
+    if both:
+        print("  In both ISBN_FOR and VERIFIED_BY_HAND; remove from VERIFIED_BY_HAND:")
+        for t in both:
+            print(f"    - {t}")
+        sys.exit(1)
+
+    # The notes are taken on trust, but an ISBN in one can still be checked for
+    # being a real ISBN at all. Needs no network.
+    bad = [(t, i) for t, note in VERIFIED_BY_HAND.items()
+           for i in re.findall(r"ISBN\s+([\dXx][\dXx -]{8,16}[\dXx])", note) if not isbn_valid(i)]
+    if bad:
+        print("  ISBN with a wrong check digit in a VERIFIED_BY_HAND note (mistyped,")
+        print("  or never looked up). Correct it before trusting the entry:")
+        for t, i in bad:
+            print(f"    - {i}  in the note for: {t}")
+        sys.exit(1)
 
     for p in posts:
         for entry in p.get("sources", []):
@@ -386,6 +441,20 @@ def main():
                 print(f"  hand  {title[:56]:58} verified offline")
                 continue
 
+            if title in ISBN_FOR:
+                counts["isbn"] += 1
+                score, err, why = isbn_match(title, ISBN_FOR[title])
+                time.sleep(0.6)
+                if score >= MATCH:
+                    print(f"  isbn  {title[:56]:58} ({score:.2f}) {ISBN_FOR[title]}")
+                elif err:
+                    print(f"  net   {title[:56]:58} unreachable")
+                    unreachable.append((p["slug"], title, err.split(":")[-1].strip()[:60]))
+                else:
+                    print(f"  ????  {title[:56]:58} ({score:.2f}) isbn")
+                    missing.append((p["slug"], title, f"ISBN {ISBN_FOR[title]}: {why}"))
+                continue
+
             score, err = best_match(title, surname)
             if score >= MATCH:
                 print(f"  ok    {title[:56]:58} ({score:.2f})")
@@ -399,8 +468,9 @@ def main():
                 print(f"  ????  {title[:56]:58} ({score:.2f})")
                 missing.append((p["slug"], title, f"best match {score:.2f}"))
 
-    print(f"\n  books checked: {counts['book']}   "
+    print(f"\n  books checked: {counts['book']} ({counts['isbn']} by ISBN)   "
           f"articles checked: {counts['article']}   "
+          f"taken on a note: {len(VERIFIED_BY_HAND)}   "
           f"skipped — ancient: {counts['ancient']}, journal w/o title: "
           f"{counts['journal'] - counts['article']}, "
           f"object: {counts['object']}")
