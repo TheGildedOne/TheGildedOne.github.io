@@ -147,6 +147,38 @@ VERIFIED_BY_HAND = {
         "1990s review in the Classical Review (Cambridge Core) giving the "
         "same publisher, year, page count and price, and the Amazon listing "
         "on the same ISBN. Checked 2026-09-19 (the run wrote 2026-11-19, its post date, by mistake). Re-audited 2026-09-21: both ISBNs resolve at archive.org (corpuscultusiovi0001-0003verm) and Open Library search, so the Open Library title matcher missed them rather than the books being absent.",
+    "The Materiality of Magic":
+        "Dietrich Boschung and Jan N. Bremmer (eds.), Wilhelm Fink, Paderborn "
+        "2015, ISBN 978-3-7705-5725-7 (Morphomata 20). The matcher scored 0.65, "
+        "but Open Library does hold it: a search on that ISBN returns the title "
+        "with both editors and 2015. Also read directly: the open-access PDF at "
+        "kups.ub.uni-koeln.de/12119 has the imprint page and lists Blaensdorf's "
+        "chapter in the contents starting at p. 293. No page range is cited in "
+        "the post. Checked 2026-10-03.",
+    "The Getty Hexameters: Poetry, Magic, and Mystery in Ancient Selinous":
+        "Christopher A. Faraone and Dirk Obbink (eds.), Oxford University "
+        "Press 2013, ISBN 978-0-19-966410-8. The matcher scored 0.00 on the "
+        "full title, but Open Library does hold it under the short title 'The "
+        "Getty Hexameters' (Obbink, 2013): a search on that ISBN returns it. "
+        "Also confirmed by the publisher's page (academic.oup.com/book/11335) "
+        "and the review BMCR 2014.12.10. Cited as a whole volume, no pages. "
+        "Checked 2026-10-03.",
+    "Ritual Hexameters in the Getty Museum: Preliminary Edition":
+        "David R. Jordan and Roy D. Kotansky, Zeitschrift fuer Papyrologie und "
+        "Epigraphik 178 (2011), 54-62. ZPE is not in Crossref or OpenAlex. Not "
+        "read directly. Volume and page range confirmed from three independent "
+        "citations that agree: the bibliography of Janko, ZPE 193 (2015) 1-10 "
+        "(read as PDF from the author's Michigan page), Battezzato, Cambridge "
+        "Classical Journal 68 (2022), and Kotansky's own Oxford Classical "
+        "Dictionary entry. Checked 2026-10-03.",
+    "Die Beichtinschriften Westkleinasiens":
+        "Georg Petzl, Epigraphica Anatolica 22, Rudolf Habelt, Bonn 1994, "
+        "ISBN 3-7749-2653-0. A whole journal volume issued as a monograph; "
+        "absent from Open Library (0.00, and no hit on the ISBN). Not read "
+        "directly. Confirmed via WorldCat (OCLC 31675143) and a review in "
+        "L'Antiquite Classique 65 (1996) on Persee, which gives the count of "
+        "124 texts used in the post. Cited as a whole volume, no pages. "
+        "Checked 2026-10-03.",
 }
 
 # Entries naming a physical object or document rather than a publication.

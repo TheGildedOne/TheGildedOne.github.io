@@ -234,6 +234,18 @@ PICKS = {
         "File:Papyrus Oxyrhynchus 4944.jpg",
         "A ragged fragment of pale brown papyrus covered in several columns of faded Greek handwriting.",
         "Not the Sortes itself: a third-century fragment of a Trojan War narrative from Oxyrhynchus. Several copies of the Sortes came out of the same rubbish mounds, written in the same century."),
+    "anna-perenna-fountain": (
+        "File:Finds from the fountain of Anna Perennea in the Museo Nazionale Romano 2014-12-05.jpg",
+        "A museum case holding small terracotta oil lamps, scattered bronze coins, two little jugs and dark objects standing in clear cylinders.",
+        "Lamps and coins from the cistern of Anna Perenna, now in the Museo Nazionale Romano. Most of the lamps were never lit."),
+    "getty-hexameters": (
+        "File:Sanctuary Selinunte930.jpg",
+        "Low ruined walls of pale stone blocks standing in dry grass and sand under a clear blue sky.",
+        "The sanctuary of Demeter Malophoros at Selinunte, where the tablet is thought to have been dug up. Nobody recorded it."),
+    "phrygian-confession-inscriptions": (
+        "File:Men BritMu020a.jpg",
+        "A marble relief of a young god in a pointed cap with a crescent behind his shoulders, holding a staff, one foot resting on a bull's head.",
+        "Not a confession stele: a Roman relief of Men, the moon god most of them name, late second century CE. British Museum."),
 }
 
 
