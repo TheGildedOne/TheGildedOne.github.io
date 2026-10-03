@@ -1,9 +1,9 @@
 {
-  "checked": "2026-10-01",
+  "checked": "2026-10-03",
   "counts": {
-    "indexed": 24,
-    "WRONG ADDRESS": 8,
-    "NOT INDEXED": 1,
+    "indexed": 27,
+    "WRONG ADDRESS": 7,
+    "NOT INDEXED": 0,
     "waiting": 2
   },
   "pages": {
@@ -22,9 +22,9 @@
       "google_shows": []
     },
     "https://veiledantiquity.com/archive/": {
-      "status": "WRONG ADDRESS",
-      "coverage": "Discovered - currently not indexed",
-      "last_crawl": "",
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-01",
       "google_shows": [
         "http://veiledantiquity.com/archive/"
       ]
@@ -193,14 +193,20 @@
     },
     "https://veiledantiquity.com/posts/liber-linteus/": {
       "status": "waiting",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/etruscan-language-lost/": {
       "status": "waiting",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/claudius-etruscan-history/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-03",
       "google_shows": []
     },
     "https://veiledantiquity.com/category/mystery-cults/": {
@@ -222,9 +228,9 @@
       "google_shows": []
     },
     "https://veiledantiquity.com/category/oracles-and-divination/": {
-      "status": "NOT INDEXED",
-      "coverage": "Discovered - currently not indexed",
-      "last_crawl": "",
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-01",
       "google_shows": []
     },
     "https://veiledantiquity.com/privacy/": {
