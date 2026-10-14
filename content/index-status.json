@@ -1,10 +1,10 @@
 {
-  "checked": "2026-10-03",
+  "checked": "2026-10-14",
   "counts": {
-    "indexed": 27,
+    "indexed": 33,
     "WRONG ADDRESS": 7,
-    "NOT INDEXED": 0,
-    "waiting": 2
+    "NOT INDEXED": 1,
+    "waiting": 0
   },
   "pages": {
     "https://veiledantiquity.com/": {
@@ -32,7 +32,7 @@
     "https://veiledantiquity.com/about/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-02",
+      "last_crawl": "2026-10-08",
       "google_shows": [
         "http://veiledantiquity.com/about/"
       ]
@@ -79,7 +79,7 @@
     },
     "https://veiledantiquity.com/posts/greek-magical-papyri/": {
       "status": "WRONG ADDRESS",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/greek-magical-papyri/?utm_source=veiled&utm_medium=email&utm_campaign=the-greek-magical-papyri-real-spellbooks-from"
@@ -110,13 +110,13 @@
     "https://veiledantiquity.com/posts/library-of-alexandria-what-was-lost/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-06",
+      "last_crawl": "2026-10-05",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/oracle-of-the-dead-ephyra/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-06",
+      "last_crawl": "2026-10-08",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/piacenza-liver-etruscan/": {
@@ -157,7 +157,7 @@
     },
     "https://veiledantiquity.com/posts/ancient-binding-spells-law/": {
       "status": "WRONG ADDRESS",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/ancient-binding-spells-law/?utm_source=veiled&utm_medium=email&utm_campaign=binding-spells-and-the-ancient-courtroom"
@@ -192,21 +192,53 @@
       ]
     },
     "https://veiledantiquity.com/posts/liber-linteus/": {
-      "status": "waiting",
+      "status": "NOT INDEXED",
       "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/etruscan-language-lost/": {
-      "status": "waiting",
-      "coverage": "Discovered - currently not indexed",
-      "last_crawl": "",
-      "google_shows": []
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-11",
+      "google_shows": [
+        "https://veiledantiquity.com/posts/etruscan-language-lost/?utm_source=veiled&utm_medium=email&utm_campaign=why-we-still-cannot-read-etruscan"
+      ]
     },
     "https://veiledantiquity.com/posts/claudius-etruscan-history/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
       "last_crawl": "2026-10-03",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/delphi-pythia/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-08",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/delphi-gases-hypothesis/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-08",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/dream-incubation-asclepius/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-11",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/etruscan-lightning-doctrine/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-12",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/numas-buried-books/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-14",
       "google_shows": []
     },
     "https://veiledantiquity.com/category/mystery-cults/": {
@@ -236,7 +268,7 @@
     "https://veiledantiquity.com/privacy/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-08-07",
+      "last_crawl": "2026-10-10",
       "google_shows": []
     },
     "https://veiledantiquity.com/disclosure/": {
@@ -250,7 +282,7 @@
     "https://veiledantiquity.com/contact/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-08-07",
+      "last_crawl": "2026-10-13",
       "google_shows": []
     }
   }

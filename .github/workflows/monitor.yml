@@ -34,3 +34,17 @@ jobs:
       # whose date has passed is not on the site, or if the site is unreachable.
       - name: Check every due post is live
         run: python tools/check_deployed.py
+
+  # Is the Saturday writing loop still producing? Separate job, so a fault in
+  # one check never hides the other. Needs full history to date the last post.
+  writing-loop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the writing loop added posts this week
+        run: python tools/check_loop.py
