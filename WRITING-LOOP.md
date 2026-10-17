@@ -23,6 +23,31 @@ tomorrow, skip that slot and write for the one after.
 
 ---
 
+## Commands: how not to stall
+
+**Nobody is at the machine to approve anything.** This run starts in the default permission
+mode, so any shell command that is not on the project allowlist stops it dead until Imran
+happens to look. That has happened in nearly every run: 4 hours on a compound `ls | sed | tr`
+on 2026-10-10 (the whole run was lost), 4.5 hours on `python <scratchpad script> && git diff`
+on 2026-10-17. Each stall looked like a success in the run history.
+
+- **Read and change files with the file tools, not the shell.** Read, Grep and Glob to look;
+  Edit and Write to change, including `content/queue.json` (edit the JSON directly rather
+  than writing a script to do it).
+- **Every part of a shell command must be on the list below.** A chain (`&&`, `;`, `|`) is
+  only as allowed as its least-allowed part, and one unlisted piece stalls the lot.
+- **Need some Python to inspect or transform data?** Use `python -c "..."`, which is allowed.
+  Do not write a script file and run it.
+- WebSearch and WebFetch are allowed for any site.
+
+Allowed shell commands: `git pull / status / diff / log / show / fetch / add / commit / push`,
+`python build.py`, `python check.py`, `python tools/<any script this file names>` (with or
+without arguments), `python -c "..."`, `ls`, `cat`, `head`, `tail`, `wc`, `grep`, `sort`,
+`uniq`, `cut`, `tr`, `awk`, `sed -n`, `echo`, `date`, `pwd`, `cd`, `curl -s`. Anything else:
+find a way to do it with these or with the file tools.
+
+---
+
 ## Procedure
 
 ### 1. Check the state
