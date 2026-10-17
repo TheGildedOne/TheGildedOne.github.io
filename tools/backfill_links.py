@@ -114,6 +114,9 @@ ALIASES = {
     "anna-perenna-fountain": ["Anna Perenna"],
     "getty-hexameters": ["Getty Hexameters", "Ephesia grammata", "Ephesian letters"],
     "phrygian-confession-inscriptions": ["confession inscriptions", "confession stelai"],
+    "apollonius-of-tyana": ["Apollonius of Tyana"],
+    "astrologers-expelled-rome": ["Thrasyllus", "Libo Drusus"],
+    "annales-maximi": ["annales maximi"],
 }
 
 # Phrases too generic to be a good anchor even when they match a post's keyword.
