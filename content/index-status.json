@@ -1,7 +1,7 @@
 {
-  "checked": "2026-10-14",
+  "checked": "2026-10-17",
   "counts": {
-    "indexed": 33,
+    "indexed": 34,
     "WRONG ADDRESS": 7,
     "NOT INDEXED": 1,
     "waiting": 0
@@ -79,7 +79,7 @@
     },
     "https://veiledantiquity.com/posts/greek-magical-papyri/": {
       "status": "WRONG ADDRESS",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/greek-magical-papyri/?utm_source=veiled&utm_medium=email&utm_campaign=the-greek-magical-papyri-real-spellbooks-from"
@@ -87,7 +87,7 @@
     },
     "https://veiledantiquity.com/posts/ancient-curse-tablets/": {
       "status": "WRONG ADDRESS",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to"
@@ -127,7 +127,7 @@
     },
     "https://veiledantiquity.com/posts/samothrace-great-gods/": {
       "status": "WRONG ADDRESS",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/samothrace-great-gods/?utm_source=veiled&utm_medium=email&utm_campaign=the-great-gods-of-samothrace-whose-names-we-dont"
@@ -157,7 +157,7 @@
     },
     "https://veiledantiquity.com/posts/ancient-binding-spells-law/": {
       "status": "WRONG ADDRESS",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/ancient-binding-spells-law/?utm_source=veiled&utm_medium=email&utm_campaign=binding-spells-and-the-ancient-courtroom"
@@ -239,6 +239,12 @@
       "status": "indexed",
       "coverage": "Submitted and indexed",
       "last_crawl": "2026-10-14",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/roman-augury-sacred-chickens/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-16",
       "google_shows": []
     },
     "https://veiledantiquity.com/category/mystery-cults/": {
