@@ -246,6 +246,18 @@ PICKS = {
         "File:Men BritMu020a.jpg",
         "A marble relief of a young god in a pointed cap with a crescent behind his shoulders, holding a staff, one foot resting on a bull's head.",
         "Not a confession stele: a Roman relief of Men, the moon god most of them name, late second century CE. British Museum."),
+    "apollonius-of-tyana": (
+        "File:Contorniate - Médaillon, Apollonius de Tyane, Rome ou ses alentours - btv1b113438827 (1 of 2).jpg",
+        "A worn bronze medallion showing the bust of a bearded man in a laurel wreath, with a Latin legend running round the rim.",
+        "A late Roman contorniate medallion naming Apollonius of Tyana, struck centuries after his death. Bibliothèque nationale de France."),
+    "astrologers-expelled-rome": (
+        "File:Auguste aureus Gallica 22161 revers.jpg",
+        "A gold coin showing a Capricorn, a creature with the front of a goat and the tail of a fish, between the words SIGNIS RECEPTIS.",
+        "Augustus' sign, Capricorn, on a gold coin struck at Pergamon around 19 BCE. Bibliothèque nationale de France."),
+    "annales-maximi": (
+        "File:Fasti Consularii (detail) - Sala della Lupa - Palazzo dei Conservatori - Musei Capitolini - Rome 2016 (2).jpg",
+        "A marble wall densely carved with columns of Latin names, some letters picked out in red.",
+        "Not the pontiffs' board: the Fasti Consulares, Rome's consuls listed year by year, carved under Augustus. Capitoline Museums, Rome."),
 }
 
 

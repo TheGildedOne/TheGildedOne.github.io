@@ -350,7 +350,7 @@
       "title": "Apollonius of Tyana: Sage or Sorcerer",
       "keyword": "apollonius of tyana philostratus",
       "category": "magic-and-ritual",
-      "status": "pending",
+      "status": "written",
       "angle": "A first-century wandering philosopher credited with cures, foreknowledge, talismans that kept plague and vermin out of cities, and an escape from Domitian's court by vanishing in mid-trial. Nearly all of it comes from one admiring biography written more than a century later for an empress. Later pagans set him against Christ; Christian writers filed him under magic. Links to apuleius-trial-magic and ancient-necromancy."
     },
     {
@@ -358,7 +358,7 @@
       "title": "The Astrologers Rome Kept Throwing Out",
       "keyword": "astrology in ancient rome",
       "category": "lost-and-suppressed",
-      "status": "pending",
+      "status": "written",
       "angle": "Rome expelled astrologers from the city at least a dozen times between 139 BCE and the third century CE, frequently under the same emperors who kept personal astrologers and quietly asked them when they would die. The 16 CE expulsion followed the show trial of Libo Drusus. Historians disagree on whether the bans were ever enforced or were largely for show. Links to books-augustus-burned and ancient-necromancy."
     },
     {
@@ -366,7 +366,7 @@
       "title": "The Yearly Record Rome Kept, Then Lost",
       "keyword": "annales maximi",
       "category": "lost-and-suppressed",
-      "status": "pending",
+      "status": "written",
       "angle": "Each year the pontifex maximus posted a whitened board listing grain prices, eclipses, prodigies and magistrates, and the whole run was supposedly collected into eighty books around 120 BCE and then lost. Cato sneered that it recorded how often corn was dear. Bruce Frier argued the eighty-book edition never existed in the form later writers describe. Links to books-augustus-burned and claudius-etruscan-history."
     },
     {
@@ -376,6 +376,102 @@
       "category": "lost-and-suppressed",
       "status": "pending",
       "angle": "Etruscan religion had an origin story of its own: a ploughman near Tarquinia turned up a furrow, a child with the face of an old man climbed out, dictated the rules for reading livers and lightning to the crowd that gathered, and died the same day. Cicero reports it with a straight face and then takes it apart. The myth sits awkwardly against the discipline's real, partly Near Eastern roots. Links to piacenza-liver-etruscan and numas-buried-books."
+    },
+    {
+      "slug": "derveni-papyrus",
+      "title": "The Book That Survived Its Own Funeral Pyre",
+      "keyword": "derveni papyrus",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "A carbonised roll found in 1962 on a tomb's pyre debris at Derveni near Thessaloniki, Europe's oldest surviving book, is a line-by-line allegorical commentary on an Orphic theogony in which Zeus swallows a phallus. Nobody agrees who wrote it (Euthyphron, Diagoras, Prodicus and Stesimbrotus all have champions) or why it was burned with the dead. Links to orphic-gold-tablets and ancient-mystery-cults-guide."
+    },
+    {
+      "slug": "oracle-of-siwa",
+      "title": "What the Priest Told Alexander at Siwa",
+      "keyword": "oracle of siwa",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "In 331 BCE Alexander crossed the Libyan desert to consult Ammon at Siwa and came out, by his own account, saying only that he had heard what he wished. Arrian, Diodorus, Plutarch and Curtius disagree about what was said, and Plutarch's story of a priest's Greek slip ('paidion' for 'pai Dios') is a pun nobody can confirm. Links to dodona-oracle-lead-tablets and didyma-oracle."
+    },
+    {
+      "slug": "sator-square",
+      "title": "The Word Square Scratched on a Pompeii Column",
+      "keyword": "sator square",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "SATOR AREPO TENET OPERA ROTAS was scratched into a column of Pompeii's Large Palaestra before 79 CE, and later turns up on Christian amulets from Egypt to Ethiopia. The 1926 PATERNOSTER anagram made it a Christian cryptogram, which the Pompeii find makes awkward; Fishwick, Moeller (a Mithraic reading) and Sheldon disagree, and AREPO still means nothing. Links to greek-magical-gems and greek-magical-papyri."
+    },
+    {
+      "slug": "nag-hammadi-library",
+      "title": "The Jar Buried Near Nag Hammadi",
+      "keyword": "nag hammadi library",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "Thirteen leather-bound codices dug up in Upper Egypt in 1945, the famous version of their discovery involving a blood feud and a mother burning pages for kindling. Mark Goodacre has shown how much of that story rests on one informant, and Lundhaug and Jenott argue the books were copied and read by Pachomian monks, not hidden by persecuted heretics. Links to library-of-alexandria-what-was-lost and books-augustus-burned."
+    },
+    {
+      "slug": "bona-dea-scandal",
+      "title": "The Man in the Bona Dea's House",
+      "keyword": "bona dea",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "In December 62 BCE Publius Clodius was caught disguised as a woman at the Bona Dea's night rite in Caesar's own house, a rite no man could witness. Cicero's letters give the scandal in real time; what the women actually did inside is preserved mainly as Juvenal's satire and Plutarch's guesswork. Links to villa-of-the-mysteries-frescoes and bacchanalia-186-bce."
+    },
+    {
+      "slug": "glycon-snake-oracle",
+      "title": "Glykon, the Snake God with a Human Face",
+      "keyword": "glycon snake",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Lucian says Alexander of Abonoteichus faked a talking snake god from a tame python and a linen mask and fleeced half of Asia Minor. Lucian hated him. But coins from Abonoteichus, a marble Glykon from Tomis and inscriptions as far as the Danube show the cult was real and lasted a century after its founder. Links to claros-oracle and dream-incubation-asclepius."
+    },
+    {
+      "slug": "vestal-virgins-buried-alive",
+      "title": "The Vestals Rome Buried Alive",
+      "keyword": "vestal virgins buried alive",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "A Vestal convicted of unchastity was walled into an underground chamber at the Colline Gate with a lamp, bread and water, so that no one had technically killed her. Pliny watched the case of Cornelia under Domitian and thought she was innocent. Scholars disagree whether these trials were about sex at all, or about crisis: they cluster after disasters like Cannae. Links to palladium-rome and sibylline-books-rome."
+    },
+    {
+      "slug": "thesmophoria",
+      "title": "The Thesmophoria and the Pit of Rotting Pigs",
+      "keyword": "thesmophoria",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Athenian women camped on the Pnyx for three days each autumn, men barred, and hauled up the decayed remains of piglets thrown into pits months earlier to mix into the seed corn. Almost all of that comes from one scholion on Lucian, of uncertain date. Aristophanes made a comedy of men trying to see inside. Links to eleusinian-mysteries-telesterion and eleusinian-kykeon-psychedelic."
+    },
+    {
+      "slug": "chaldean-oracles",
+      "title": "The Chaldean Oracles: Verses from the Gods",
+      "keyword": "chaldean oracles",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "A second-century collection of hexameter oracles, supposedly delivered by the gods to Julian the Chaldean and his son Julian the Theurgist, who also claimed to have made rain for Marcus Aurelius' army. The book survives only as fragments quoted by Neoplatonists who treated it as scripture. Lewy, Majercik and Johnston disagree on what theurgy actually involved. Links to claros-oracle and greek-magical-papyri."
+    },
+    {
+      "slug": "hippasus-pythagorean-secret",
+      "title": "Hippasus and the Secret the Pythagoreans Drowned",
+      "keyword": "hippasus",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "The story goes that Hippasus of Metapontum was drowned at sea, by the gods or by his brethren, for revealing the irrational numbers. The sources are late, contradict each other about which secret it was, and Burkert and Zhmud both doubt the irrationals were the issue at all. Links to numas-buried-books and orphic-gold-tablets."
+    },
+    {
+      "slug": "atargatis-syrian-goddess",
+      "title": "Atargatis and the Temple at Hierapolis",
+      "keyword": "atargatis",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Lucian's 'On the Syrian Goddess' describes Atargatis' temple at Hierapolis: sacred fish, a man who climbed a giant phallus twice a year and stayed up seven days, and young men who castrated themselves in the street during the festival. Whether Lucian wrote it, and whether its narrator is a parody of Herodotus, is still argued (Lightfoot 2003). Links to cult-of-cybele-taurobolium and cult-of-isis-rome."
+    },
+    {
+      "slug": "rex-nemorensis",
+      "title": "The King of the Wood at Nemi",
+      "keyword": "rex nemorensis",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "The priest of Diana at Nemi was a runaway slave who held office until another killed him, so he walked the grove armed. Frazer built The Golden Bough on that one custom; C. M. C. Green's study of the sanctuary and its votive deposits argues Frazer misread almost all of it. Links to sortes-praeneste and dream-incubation-asclepius."
     }
   ]
 }

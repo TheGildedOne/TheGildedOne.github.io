@@ -782,5 +782,47 @@
     "avif": "/static/img/phrygian-confession-inscriptions.avif",
     "avif_700": "/static/img/phrygian-confession-inscriptions-700.avif",
     "share": "/static/img/phrygian-confession-inscriptions-share.jpg"
+  },
+  "apollonius-of-tyana": {
+    "file": "/static/img/apollonius-of-tyana.jpg",
+    "alt": "A worn bronze medallion showing the bust of a bearded man in a laurel wreath, with a Latin legend running round the rim.",
+    "caption": "A late Roman contorniate medallion naming Apollonius of Tyana, struck centuries after his death. Bibliothèque nationale de France.",
+    "credit": "Apollonios de Tyane (0004? av. J.-C.-0097?). Émetteur prétendu\n\nRome (Latium ; atelier monétaire). Atelier monétaire présumé",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Contorniate_-_M%C3%A9daillon,_Apollonius_de_Tyane,_Rome_ou_ses_alentours_-_btv1b113438827_(1_of_2).jpg",
+    "width": 1400,
+    "height": 1400,
+    "card": "/static/img/apollonius-of-tyana-card.jpg",
+    "avif": "/static/img/apollonius-of-tyana.avif",
+    "avif_700": "/static/img/apollonius-of-tyana-700.avif",
+    "share": "/static/img/apollonius-of-tyana-share.jpg"
+  },
+  "astrologers-expelled-rome": {
+    "file": "/static/img/astrologers-expelled-rome.jpg",
+    "alt": "A gold coin showing a Capricorn, a creature with the front of a goat and the tail of a fish, between the words SIGNIS RECEPTIS.",
+    "caption": "Augustus' sign, Capricorn, on a gold coin struck at Pergamon around 19 BCE. Bibliothèque nationale de France.",
+    "credit": "Unknown authorUnknown author",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Auguste_aureus_Gallica_22161_revers.jpg",
+    "width": 1400,
+    "height": 1400,
+    "card": "/static/img/astrologers-expelled-rome-card.jpg",
+    "avif": "/static/img/astrologers-expelled-rome.avif",
+    "avif_700": "/static/img/astrologers-expelled-rome-700.avif",
+    "share": "/static/img/astrologers-expelled-rome-share.jpg"
+  },
+  "annales-maximi": {
+    "file": "/static/img/annales-maximi.jpg",
+    "alt": "A marble wall densely carved with columns of Latin names, some letters picked out in red.",
+    "caption": "Not the pontiffs' board: the Fasti Consulares, Rome's consuls listed year by year, carved under Augustus. Capitoline Museums, Rome.",
+    "credit": "José Luiz",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fasti_Consularii_(detail)_-_Sala_della_Lupa_-_Palazzo_dei_Conservatori_-_Musei_Capitolini_-_Rome_2016_(2).jpg",
+    "width": 1400,
+    "height": 933,
+    "card": "/static/img/annales-maximi-card.jpg",
+    "avif": "/static/img/annales-maximi.avif",
+    "avif_700": "/static/img/annales-maximi-700.avif",
+    "share": "/static/img/annales-maximi-share.jpg"
   }
 }

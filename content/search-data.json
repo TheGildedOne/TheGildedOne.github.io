@@ -1,14 +1,21 @@
 {
-  "pulled": "2026-10-14",
-  "start": "2026-07-14",
-  "end": "2026-10-12",
+  "pulled": "2026-10-17",
+  "start": "2026-07-17",
+  "end": "2026-10-15",
   "totals": {
-    "clicks": 19,
-    "impressions": 930,
-    "ctr": 0.0204,
-    "position": 19.1
+    "clicks": 21,
+    "impressions": 1010,
+    "ctr": 0.0208,
+    "position": 19.0
   },
   "queries": [
+    {
+      "query": "hispala faecenia",
+      "clicks": 1,
+      "impressions": 12,
+      "ctr": 0.0833,
+      "position": 9.3
+    },
     {
       "query": "an ear of grain in silence reaped",
       "clicks": 0,
@@ -89,14 +96,14 @@
     {
       "query": "claudius etruscan history",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 7.7
+      "position": 7
     },
     {
       "query": "claudius history of etruscans",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 8,
       "ctr": 0,
       "position": 9.4
     },
@@ -141,6 +148,13 @@
       "impressions": 1,
       "ctr": 0,
       "position": 64
+    },
+    {
+      "query": "delphi oracle",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 95
     },
     {
       "query": "delphic oracle",
@@ -213,6 +227,13 @@
       "position": 3
     },
     {
+      "query": "folket i claudius historiska verk",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 1
+    },
+    {
       "query": "greek cults",
       "clicks": 0,
       "impressions": 2,
@@ -227,11 +248,11 @@
       "position": 68
     },
     {
-      "query": "hispala faecenia",
+      "query": "greek mystery cults",
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 2,
       "ctr": 0,
-      "position": 9
+      "position": 69
     },
     {
       "query": "homeric hymn to demeter kykeon barley water pennyroyal",
@@ -381,11 +402,25 @@
       "position": 51
     },
     {
+      "query": "mystical cults",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 83
+    },
+    {
       "query": "necromanteion of ephyra",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 50
+    },
+    {
+      "query": "oracle at delphi",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 97
     },
     {
       "query": "oracle of the dead",
@@ -424,6 +459,20 @@
     },
     {
       "query": "pythia delphi oracle",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 89
+    },
+    {
+      "query": "pythia oracle",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 69
+    },
+    {
+      "query": "pythia oracle delphi",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
@@ -661,6 +710,13 @@
       "position": 83
     },
     {
+      "query": "who was the oracle at delphi",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 92
+    },
+    {
       "query": "yes",
       "clicks": 0,
       "impressions": 2,
@@ -668,14 +724,35 @@
       "position": 3.5
     },
     {
+      "query": "yes both",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
       "query": "حاول مجددا",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "query": "おしえて",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
     }
   ],
   "query_pages": [
+    {
+      "query": "hispala faecenia",
+      "page": "https://veiledantiquity.com/posts/bacchanalia-186-bce/?utm_source=veiled&utm_medium=email&utm_campaign=the-bacchanalia-affair-of-186-bce",
+      "clicks": 1,
+      "impressions": 12,
+      "position": 9.3
+    },
     {
       "query": "an ear of grain in silence reaped",
       "page": "https://veiledantiquity.com/posts/eleusinian-mysteries-telesterion/",
@@ -764,14 +841,14 @@
       "query": "claudius etruscan history",
       "page": "https://veiledantiquity.com/posts/claudius-etruscan-history/",
       "clicks": 0,
-      "impressions": 6,
-      "position": 7.7
+      "impressions": 8,
+      "position": 7
     },
     {
       "query": "claudius history of etruscans",
       "page": "https://veiledantiquity.com/posts/claudius-etruscan-history/",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 8,
       "position": 9.4
     },
     {
@@ -815,6 +892,13 @@
       "clicks": 0,
       "impressions": 1,
       "position": 64
+    },
+    {
+      "query": "delphi oracle",
+      "page": "https://veiledantiquity.com/posts/delphi-pythia/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 95
     },
     {
       "query": "delphic oracle",
@@ -887,6 +971,13 @@
       "position": 3
     },
     {
+      "query": "folket i claudius historiska verk",
+      "page": "https://veiledantiquity.com/posts/claudius-etruscan-history/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 1
+    },
+    {
       "query": "greek cults",
       "page": "https://veiledantiquity.com/posts/ancient-mystery-cults-guide/",
       "clicks": 0,
@@ -901,11 +992,11 @@
       "position": 68
     },
     {
-      "query": "hispala faecenia",
-      "page": "https://veiledantiquity.com/posts/bacchanalia-186-bce/?utm_source=veiled&utm_medium=email&utm_campaign=the-bacchanalia-affair-of-186-bce",
+      "query": "greek mystery cults",
+      "page": "https://veiledantiquity.com/posts/ancient-mystery-cults-guide/",
       "clicks": 0,
-      "impressions": 10,
-      "position": 9
+      "impressions": 2,
+      "position": 69
     },
     {
       "query": "homeric hymn to demeter kykeon barley water pennyroyal",
@@ -1055,11 +1146,25 @@
       "position": 51
     },
     {
+      "query": "mystical cults",
+      "page": "https://veiledantiquity.com/posts/ancient-mystery-cults-guide/",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 83
+    },
+    {
       "query": "necromanteion of ephyra",
       "page": "https://veiledantiquity.com/posts/oracle-of-the-dead-ephyra/",
       "clicks": 0,
       "impressions": 1,
       "position": 50
+    },
+    {
+      "query": "oracle at delphi",
+      "page": "https://veiledantiquity.com/posts/delphi-pythia/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 97
     },
     {
       "query": "oracle of the dead",
@@ -1105,6 +1210,20 @@
     },
     {
       "query": "pythia delphi oracle",
+      "page": "https://veiledantiquity.com/posts/delphi-pythia/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 89
+    },
+    {
+      "query": "pythia oracle",
+      "page": "https://veiledantiquity.com/posts/delphi-pythia/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 69
+    },
+    {
+      "query": "pythia oracle delphi",
       "page": "https://veiledantiquity.com/posts/delphi-pythia/",
       "clicks": 0,
       "impressions": 1,
@@ -1349,6 +1468,13 @@
       "position": 83
     },
     {
+      "query": "who was the oracle at delphi",
+      "page": "https://veiledantiquity.com/posts/delphi-pythia/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 92
+    },
+    {
       "query": "yes",
       "page": "https://veiledantiquity.com/posts/etruscan-language-lost/",
       "clicks": 0,
@@ -1363,11 +1489,25 @@
       "position": 2
     },
     {
+      "query": "yes both",
+      "page": "https://veiledantiquity.com/posts/etruscan-lightning-doctrine/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
       "query": "حاول مجددا",
       "page": "https://veiledantiquity.com/posts/orphic-gold-tablets/",
       "clicks": 0,
       "impressions": 1,
       "position": 9
+    },
+    {
+      "query": "おしえて",
+      "page": "https://veiledantiquity.com/posts/claudius-etruscan-history/",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 2
     }
   ]
 }
