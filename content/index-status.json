@@ -1,7 +1,7 @@
 {
-  "checked": "2026-10-17",
+  "checked": "2026-10-24",
   "counts": {
-    "indexed": 34,
+    "indexed": 37,
     "WRONG ADDRESS": 7,
     "NOT INDEXED": 1,
     "waiting": 0
@@ -10,7 +10,7 @@
     "https://veiledantiquity.com/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-28",
+      "last_crawl": "2026-10-23",
       "google_shows": [
         "http://veiledantiquity.com/"
       ]
@@ -18,7 +18,7 @@
     "https://veiledantiquity.com/start-here/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-24",
+      "last_crawl": "2026-10-22",
       "google_shows": []
     },
     "https://veiledantiquity.com/archive/": {
@@ -58,7 +58,7 @@
     "https://veiledantiquity.com/posts/orphic-gold-tablets/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-28",
+      "last_crawl": "2026-10-22",
       "google_shows": [
         "https://veiledantiquity.com/posts/orphic-gold-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=the-orphic-gold-tablets-cheat-sheets-for-the"
       ]
@@ -87,7 +87,7 @@
     },
     "https://veiledantiquity.com/posts/ancient-curse-tablets/": {
       "status": "WRONG ADDRESS",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/ancient-curse-tablets/?utm_source=veiled&utm_medium=email&utm_campaign=curse-tablets-sixteen-hundred-letters-written-to"
@@ -96,7 +96,7 @@
     "https://veiledantiquity.com/posts/sibylline-books-rome/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-08-27",
+      "last_crawl": "2026-10-24",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/damnatio-memoriae/": {
@@ -127,7 +127,7 @@
     },
     "https://veiledantiquity.com/posts/samothrace-great-gods/": {
       "status": "WRONG ADDRESS",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/samothrace-great-gods/?utm_source=veiled&utm_medium=email&utm_campaign=the-great-gods-of-samothrace-whose-names-we-dont"
@@ -157,7 +157,7 @@
     },
     "https://veiledantiquity.com/posts/ancient-binding-spells-law/": {
       "status": "WRONG ADDRESS",
-      "coverage": "Discovered - currently not indexed",
+      "coverage": "URL is unknown to Google",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/ancient-binding-spells-law/?utm_source=veiled&utm_medium=email&utm_campaign=binding-spells-and-the-ancient-courtroom"
@@ -186,7 +186,7 @@
     "https://veiledantiquity.com/posts/books-augustus-burned/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-29",
+      "last_crawl": "2026-10-22",
       "google_shows": [
         "https://veiledantiquity.com/posts/books-augustus-burned/?utm_source=veiled&utm_medium=email&utm_campaign=the-two-thousand-books-augustus-burned"
       ]
@@ -238,13 +238,31 @@
     "https://veiledantiquity.com/posts/numas-buried-books/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-10-14",
+      "last_crawl": "2026-10-20",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/roman-augury-sacred-chickens/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
       "last_crawl": "2026-10-16",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/cult-of-cybele-taurobolium/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-20",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/andania-mysteries-inscription/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-21",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/cabeirion-thebes/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-24",
       "google_shows": []
     },
     "https://veiledantiquity.com/category/mystery-cults/": {
@@ -280,7 +298,7 @@
     "https://veiledantiquity.com/disclosure/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-24",
+      "last_crawl": "2026-10-23",
       "google_shows": [
         "http://veiledantiquity.com/disclosure/"
       ]
