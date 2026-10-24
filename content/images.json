@@ -824,5 +824,47 @@
     "avif": "/static/img/annales-maximi.avif",
     "avif_700": "/static/img/annales-maximi-700.avif",
     "share": "/static/img/annales-maximi-share.jpg"
+  },
+  "tages-etruscan-revelation": {
+    "file": "/static/img/tages-etruscan-revelation.jpg",
+    "alt": "A line drawing of the engraved back of an Etruscan bronze mirror: a group of standing figures, one young man bending to examine a liver in his hand while a bearded man leaning on a staff looks on, with the heads of horses along the top.",
+    "caption": "A drawing of the Tuscania mirror, third century BCE. The young diviner is labelled Pava Tarchies, the older man Avl Tarchunus. Neither is labelled Tages. National Archaeological Museum, Florence.",
+    "credit": "Unknown authorUnknown author",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Bronze_Mirror_from_Tuscania.jpg",
+    "width": 1400,
+    "height": 1633,
+    "card": "/static/img/tages-etruscan-revelation-card.jpg",
+    "avif": "/static/img/tages-etruscan-revelation.avif",
+    "avif_700": "/static/img/tages-etruscan-revelation-700.avif",
+    "share": "/static/img/tages-etruscan-revelation-share.jpg"
+  },
+  "derveni-papyrus": {
+    "file": "/static/img/derveni-papyrus.jpg",
+    "alt": "Blackened fragments of a carbonised papyrus roll mounted in rows under glass, faint Greek letters visible on some of them.",
+    "caption": "Fragments of the Derveni Papyrus in the Archaeological Museum of Thessaloniki. The fire that preserved them burned away the bottom of every column.",
+    "credit": "Gts-tg",
+    "licence": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Derveni_Papyrus_-_Fragments_on_display_in_the_Archaelogical_Museum_of_Thessaloniki.jpg",
+    "width": 1400,
+    "height": 1027,
+    "card": "/static/img/derveni-papyrus-card.jpg",
+    "avif": "/static/img/derveni-papyrus.avif",
+    "avif_700": "/static/img/derveni-papyrus-700.avif",
+    "share": "/static/img/derveni-papyrus-share.jpg"
+  },
+  "oracle-of-siwa": {
+    "file": "/static/img/oracle-of-siwa.jpg",
+    "alt": "Crumbling walls of rubble stone and mud on the hill of Aghurmi in the Siwa Oasis, with palm groves and a salt lake beyond under a clear sky.",
+    "caption": "Ruins at the temple of the oracle of Amun, on the rock of Aghurmi, Siwa. Alexander went in alone.",
+    "credit": "Vyacheslav Argenberg",
+    "licence": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Siwa_Oasis,_Temple_of_the_Oracle_of_Amun,_Egypt.jpg",
+    "width": 1400,
+    "height": 933,
+    "card": "/static/img/oracle-of-siwa-card.jpg",
+    "avif": "/static/img/oracle-of-siwa.avif",
+    "avif_700": "/static/img/oracle-of-siwa-700.avif",
+    "share": "/static/img/oracle-of-siwa-share.jpg"
   }
 }

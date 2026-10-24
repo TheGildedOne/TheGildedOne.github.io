@@ -258,6 +258,18 @@ PICKS = {
         "File:Fasti Consularii (detail) - Sala della Lupa - Palazzo dei Conservatori - Musei Capitolini - Rome 2016 (2).jpg",
         "A marble wall densely carved with columns of Latin names, some letters picked out in red.",
         "Not the pontiffs' board: the Fasti Consulares, Rome's consuls listed year by year, carved under Augustus. Capitoline Museums, Rome."),
+    "tages-etruscan-revelation": (
+        "File:Bronze Mirror from Tuscania.jpg",
+        "A line drawing of the engraved back of an Etruscan bronze mirror: a group of standing figures, one young man bending to examine a liver in his hand while a bearded man leaning on a staff looks on, with the heads of horses along the top.",
+        "A drawing of the Tuscania mirror, third century BCE. The young diviner is labelled Pava Tarchies, the older man Avl Tarchunus. Neither is labelled Tages. National Archaeological Museum, Florence."),
+    "derveni-papyrus": (
+        "File:Derveni Papyrus - Fragments on display in the Archaelogical Museum of Thessaloniki.jpg",
+        "Blackened fragments of a carbonised papyrus roll mounted in rows under glass, faint Greek letters visible on some of them.",
+        "Fragments of the Derveni Papyrus in the Archaeological Museum of Thessaloniki. The fire that preserved them burned away the bottom of every column."),
+    "oracle-of-siwa": (
+        "File:Siwa Oasis, Temple of the Oracle of Amun, Egypt.jpg",
+        "Crumbling walls of rubble stone and mud on the hill of Aghurmi in the Siwa Oasis, with palm groves and a salt lake beyond under a clear sky.",
+        "Ruins at the temple of the oracle of Amun, on the rock of Aghurmi, Siwa. Alexander went in alone."),
 }
 
 
