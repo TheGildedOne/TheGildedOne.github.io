@@ -6,6 +6,11 @@
 <title>{{page_title}}</title>
 <meta name="description" content="{{description}}">
 <link rel="canonical" href="{{canonical}}">
+<!-- Old newsletter emails in Buttondown's public archive link here with utm_ tags,
+     and Google indexed those addresses despite the canonical. GitHub Pages cannot
+     redirect on a query string, so do it here: Google treats a JS redirect as a
+     stronger signal than the canonical alone. -->
+<script>if(/[?&]utm_/.test(location.search))location.replace(document.querySelector('link[rel=canonical]').href+location.hash)</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#0b0a0d">
 <meta name="color-scheme" content="dark">
