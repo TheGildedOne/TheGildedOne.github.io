@@ -866,5 +866,47 @@
     "avif": "/static/img/oracle-of-siwa.avif",
     "avif_700": "/static/img/oracle-of-siwa-700.avif",
     "share": "/static/img/oracle-of-siwa-share.jpg"
+  },
+  "sator-square": {
+    "file": "/static/img/sator-square.jpg",
+    "alt": "Five rows of capital letters scratched into red-painted wall plaster, reading ROTAS, OPERA, TENET, AREPO, SATOR, with a crack running across them.",
+    "caption": "The word square scratched into Roman wall plaster at Cirencester, found in 1868. It begins with ROTAS, like the examples from Pompeii.",
+    "credit": "Throwawayhack (talk)",
+    "licence": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rotas_square_from_Cirencester.jpg",
+    "width": 1318,
+    "height": 1314,
+    "card": "/static/img/sator-square-card.jpg",
+    "avif": "/static/img/sator-square.avif",
+    "avif_700": "/static/img/sator-square-700.avif",
+    "share": "/static/img/sator-square-share.jpg"
+  },
+  "nag-hammadi-library": {
+    "file": "/static/img/nag-hammadi-library.jpg",
+    "alt": "A single page of papyrus covered in neat Coptic letters, with a decorated line and a title in larger script in the middle of the page.",
+    "caption": "A page of Nag Hammadi Codex II: the end of the Apocryphon of John, then the title and opening of the Gospel of Thomas.",
+    "credit": "Unknown authorUnknown author",
+    "licence": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Nag_Hammadi_Codex_II.jpg",
+    "width": 1400,
+    "height": 2459,
+    "card": "/static/img/nag-hammadi-library-card.jpg",
+    "avif": "/static/img/nag-hammadi-library.avif",
+    "avif_700": "/static/img/nag-hammadi-library-700.avif",
+    "share": "/static/img/nag-hammadi-library-share.jpg"
+  },
+  "bona-dea-scandal": {
+    "file": "/static/img/bona-dea-scandal.jpg",
+    "alt": "A small worn statuette of a seated, veiled woman holding a horn of plenty on one arm and a coiled snake in her other hand.",
+    "caption": "A statuette of the Bona Dea with her horn of plenty and snake, first or second century CE. Museo Barracco, Rome.",
+    "credit": "Sailko",
+    "licence": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Statuetta_di_bona_dea,_I-II_secolo.jpg",
+    "width": 1356,
+    "height": 2544,
+    "card": "/static/img/bona-dea-scandal-card.jpg",
+    "avif": "/static/img/bona-dea-scandal.avif",
+    "avif_700": "/static/img/bona-dea-scandal-700.avif",
+    "share": "/static/img/bona-dea-scandal-share.jpg"
   }
 }

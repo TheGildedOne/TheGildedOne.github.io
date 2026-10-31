@@ -270,6 +270,18 @@ PICKS = {
         "File:Siwa Oasis, Temple of the Oracle of Amun, Egypt.jpg",
         "Crumbling walls of rubble stone and mud on the hill of Aghurmi in the Siwa Oasis, with palm groves and a salt lake beyond under a clear sky.",
         "Ruins at the temple of the oracle of Amun, on the rock of Aghurmi, Siwa. Alexander went in alone."),
+    "sator-square": (
+        "File:Rotas square from Cirencester.jpg",
+        "Five rows of capital letters scratched into red-painted wall plaster, reading ROTAS, OPERA, TENET, AREPO, SATOR, with a crack running across them.",
+        "The word square scratched into Roman wall plaster at Cirencester, found in 1868. It begins with ROTAS, like the examples from Pompeii."),
+    "nag-hammadi-library": (
+        "File:Nag Hammadi Codex II.jpg",
+        "A single page of papyrus covered in neat Coptic letters, with a decorated line and a title in larger script in the middle of the page.",
+        "A page of Nag Hammadi Codex II: the end of the Apocryphon of John, then the title and opening of the Gospel of Thomas."),
+    "bona-dea-scandal": (
+        "File:Statuetta di bona dea, I-II secolo.jpg",
+        "A small worn statuette of a seated, veiled woman holding a horn of plenty on one arm and a coiled snake in her other hand.",
+        "A statuette of the Bona Dea with her horn of plenty and snake, first or second century CE. Museo Barracco, Rome."),
 }
 
 
