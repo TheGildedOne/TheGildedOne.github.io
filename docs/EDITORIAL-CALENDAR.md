@@ -7,7 +7,7 @@ schedule — the parts a JSON file can't hold.
 To see what's coming up and when:
 
 ```bash
-cd D:\veiled-antiquity && python tools/next_slots.py 6
+cd D:\Projects\veiled-antiquity && python tools/next_slots.py 6
 ```
 
 ---

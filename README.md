@@ -15,7 +15,8 @@ itself; the sections below are for when you want to change something.
 | **Publishing** | Mon / Wed / Fri, 09:05 UTC | GitHub Actions — rebuilds and deploys; posts appear on their own date |
 | **Writing** | Saturdays, 10:00 local | A scheduled Claude task following `WRITING-LOOP.md` |
 | **Indexing** | every deploy | Sitemap + IndexNow ping to Bing for pages that changed |
-| **Watching** | daily, and each Saturday | `monitor.yml` checks due posts are live; `tools/check_indexing.py` asks Google whether each page is indexed |
+| **Watching** | daily, and each Saturday | `monitor.yml` checks due posts are live |
+| **Search data** | Saturdays, 06:00 UTC | The private repo [veiled-antiquity-data](https://github.com/TheGildedOne/veiled-antiquity-data) pulls Search Console, checks indexing, and writes the report the loop reads with `python tools/seo_data.py report` |
 
 Nothing here needs a person. Posts are committed with **future dates** and `build.py --live`
 holds them back until due, so there are always several days between a post being written and
@@ -38,8 +39,12 @@ anyone reading it.
 | `docs/` | Strategy notes: SEO, monetisation, editorial calendar. |
 | `WRITING-LOOP.md` | The procedure the Saturday writer follows. Kept at root — the scheduled task points at this path. |
 
-`dist/` and `wordpress-import.xml` are build output and aren't committed. Both regenerate
-with `python build.py`.
+`dist/` is build output and isn't committed: `python build.py` makes it and
+`python build.py --clean` removes it. `--wordpress` also writes `wordpress-import.xml`.
+
+Search Console data and the weekly SEO report are deliberately not in this repo, which is
+public. They live in the private
+[veiled-antiquity-data](https://github.com/TheGildedOne/veiled-antiquity-data) repo.
 
 ---
 
@@ -48,7 +53,7 @@ with `python build.py`.
 **Edit a post** — open its file in `content/posts/`, edit, then:
 
 ```bash
-cd D:\veiled-antiquity && python build.py && python check.py && git add -A && git commit -m "..." && git push
+cd D:\Projects\veiled-antiquity && python build.py && python check.py && git add -A && git commit -m "..." && git push
 ```
 
 The push deploys it. `check.py` must pass — it catches dead links, missing alt text and
@@ -57,7 +62,7 @@ over-long meta descriptions before they ship.
 **Preview a future date** — see the site as it will look partway through the schedule:
 
 ```bash
-cd D:\veiled-antiquity && python build.py --live --now=2026-09-20
+cd D:\Projects\veiled-antiquity && python build.py --live --now=2026-09-20
 ```
 
 Links to not-yet-published posts flatten to plain text automatically, so nothing 404s.

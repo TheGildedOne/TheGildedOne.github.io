@@ -32,9 +32,10 @@ What the statuses mean:
                   nothing. Request indexing the same way.
   waiting         Not indexed, but published in the last two weeks. Normal.
 
-Uses the same service-account key as gsc_pull.py, and like it prints what is
-missing and exits 0 when the key is absent. Results go to
-content/index-status.json so the next run can say what changed.
+Uses the same service-account key and data folder as gsc_pull.py, and like it
+prints what is missing and exits 0 when the key is absent. Results go to
+index-status.json in that folder so the next run can say what changed. It runs
+weekly on GitHub in the private data repo, alongside gsc_pull.py.
 """
 
 import json
@@ -49,7 +50,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import gsc_pull  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
-STORE = ROOT / "content" / "index-status.json"
+STORE = gsc_pull.DATA_DIR / "index-status.json"
 SITEMAP = "https://veiledantiquity.com/sitemap.xml"
 INSPECT = "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
 
@@ -145,6 +146,7 @@ def main():
                             or ([google_canonical] if google_canonical not in ("", url) else []),
         }
 
+    STORE.parent.mkdir(parents=True, exist_ok=True)
     STORE.write_text(json.dumps({"checked": date.today().isoformat(), "counts": counts,
                                  "pages": pages}, indent=2), encoding="utf-8")
 
@@ -176,7 +178,6 @@ def main():
     if faults:
         print("  To fix one: Search Console -> paste the address in the top search bar ->")
         print("  Request indexing. About ten a day are allowed.")
-    print(f"  written to {STORE.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

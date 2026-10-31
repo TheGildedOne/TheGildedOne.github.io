@@ -5,8 +5,10 @@ Veiled Antiquity - static site builder.
 Reads content/posts/*.html (each with a JSON metadata header) and emits:
   dist/                  a complete, deployable static site
   wordpress-import.xml   a WXR file importable into any WordPress install
+                         (only with --wordpress)
 
 Standard library only. Run:  python build.py
+Remove the output again:      python build.py --clean
 """
 
 import json
@@ -1193,9 +1195,21 @@ def build_wxr(posts: list):
 # ----------------------------------------------------------------------- main
 
 def main():
+    # --clean deletes the build output and stops. GitHub builds its own copy to
+    # publish, so the local one is only needed while check.py runs; the writing
+    # loop ends with this so 40-odd MB is not left sitting on the machine.
+    if "--clean" in sys.argv:
+        shutil.rmtree(DIST, ignore_errors=True)
+        (ROOT / "wordpress-import.xml").unlink(missing_ok=True)
+        print("Removed dist/ and wordpress-import.xml.")
+        return
+
     # --live builds only posts whose date has arrived; this is what the scheduled
     # workflow uses. Without it everything is built, which is what you want locally.
     live_mode = "--live" in sys.argv
+    # --wordpress also writes wordpress-import.xml. Off by default: nothing reads
+    # it, and it is only for a move to WordPress that has not happened.
+    wordpress = "--wordpress" in sys.argv
     # --now=YYYY-MM-DD pretends it is that date, so you can preview what the site
     # will look like partway through the schedule.
     now = datetime.now()
@@ -1213,10 +1227,12 @@ def main():
     print(f"Last-modified dates from {MODIFIED_SOURCE}.")
 
     build_site(posts)
-    build_wxr(all_posts)  # WordPress schedules its own; give it everything
+    if wordpress:
+        build_wxr(all_posts)  # WordPress schedules its own; give it everything
 
     print(f"\n  dist/                  {sum(1 for _ in DIST.rglob('*') if _.is_file())} files")
-    print(f"  wordpress-import.xml   {(ROOT / 'wordpress-import.xml').stat().st_size:,} bytes")
+    if wordpress:
+        print(f"  wordpress-import.xml   {(ROOT / 'wordpress-import.xml').stat().st_size:,} bytes")
 
     print("\nSchedule:")
     for p in all_posts:

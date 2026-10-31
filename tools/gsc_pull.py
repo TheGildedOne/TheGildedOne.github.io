@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Pull Search Console query data and bank it locally.
+"""Pull Search Console query data and bank it.
 
 This is the plumbing half of the feedback loop: it fetches what people actually
-searched to reach the site and appends it to content/search-data.json. The
-interpretation half lives in gsc_topics.py.
+searched to reach the site and writes it to search-data.json. The
+interpretation half lives in gsc_topics.py and seo_review.py.
+
+Since 2026-10-31 this runs weekly on GitHub, in the private repo
+TheGildedOne/veiled-antiquity-data, not on Imran's machine. That repo's workflow
+sets VA_DATA_DIR to its own checkout and GSC_KEY_FILE to the key it holds as a
+secret, so the data and the credential never touch this public repo or the PC.
+With VA_DATA_DIR set, each run also keeps a dated copy in snapshots/, which is
+what lets seo_review.py measure whether a change to a page helped.
 
 It is written to be harmless before there is anything to fetch. With no
 credentials, or with an empty account, it prints what is missing and exits 0 —
@@ -16,17 +23,28 @@ Run:  python tools/gsc_pull.py
 """
 
 import json
+import os
 import sys
 import urllib.parse
 from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-STORE = ROOT / "content" / "search-data.json"
 
-# Path to the service-account key. Kept under secrets/, which is gitignored —
-# this file is a credential and must never reach the repository.
-KEY_FILE = ROOT / "secrets" / "gsc-service-account.json"
+# Where the data lives. The weekly job points this at the private data repo; the
+# fallback is the old in-repo location, which nothing writes to any more.
+DATA_DIR = Path(os.environ.get("VA_DATA_DIR") or ROOT / "content")
+STORE = DATA_DIR / "search-data.json"
+SNAPSHOTS = DATA_DIR / "snapshots" if os.environ.get("VA_DATA_DIR") else None
+
+# Path to the service-account key. On GitHub it is written from a repo secret to
+# a temp file; the fallback is secrets/, which is gitignored. Either way this file
+# is a credential and must never reach a repository.
+KEY_FILE = Path(os.environ.get("GSC_KEY_FILE") or ROOT / "secrets" / "gsc-service-account.json")
+
+# The window used to judge a change to one page: short enough that a change shows
+# up a month later, long enough to smooth out a single odd week.
+RECENT_DAYS = 28
 
 # Domain properties are addressed as sc-domain:<domain>. A URL-prefix property
 # would instead be the full URL, e.g. "https://veiledantiquity.com/".
@@ -108,11 +126,20 @@ def main():
     queries = fetch(creds, start, end, ["query"])
     pages = fetch(creds, start, end, ["query", "page"])
 
+    # Page-level rows are complete in a way the query rows are not (see above):
+    # every impression lands on some page even when its query is withheld. These
+    # are what seo_review.py ranks and measures pages by.
+    recent_start = end - timedelta(days=RECENT_DAYS)
+    page_totals = fetch(creds, start, end, ["page"])
+    recent_totals = fetch(creds, recent_start, end, [])
+    recent_pages = fetch(creds, recent_start, end, ["page"])
+
     if not queries:
         print(f"  Connected, but no data yet for {start} to {end}.")
         print("  Search Console has nothing to report until pages are indexed and")
         print("  receiving impressions. Re-run in a few weeks.")
         # Still write the file so downstream tools have a valid shape to read.
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
         STORE.write_text(json.dumps(
             {"pulled": date.today().isoformat(), "start": start.isoformat(),
              "end": end.isoformat(), "queries": [], "query_pages": []},
@@ -145,8 +172,23 @@ def main():
              "position": round(r.get("position", 0), 1)}
             for r in pages
         ],
+        "pages": page_rows(page_totals),
+        "recent": {
+            "start": recent_start.isoformat(),
+            "end": end.isoformat(),
+            "totals": {
+                "clicks": (recent_totals[0] if recent_totals else {}).get("clicks", 0),
+                "impressions": (recent_totals[0] if recent_totals else {}).get("impressions", 0),
+            },
+            "pages": page_rows(recent_pages),
+        },
     }
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     STORE.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    if SNAPSHOTS:
+        SNAPSHOTS.mkdir(exist_ok=True)
+        (SNAPSHOTS / f"{data['pulled']}.json").write_text(
+            json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
     shown_i = sum(q["impressions"] for q in data["queries"])
     shown_c = sum(q["clicks"] for q in data["queries"])
@@ -162,7 +204,14 @@ def main():
         print("  The rest are queries Google withholds as too rare to name. That is")
         print("  normal for a small site; judge the site by SITE TOTAL, and use the")
         print("  named queries only to see which topics are landing.")
-    print(f"  written to {STORE.relative_to(ROOT)}")
+    rc, ri = data["recent"]["totals"]["clicks"], data["recent"]["totals"]["impressions"]
+    print(f"  LAST {RECENT_DAYS} DAYS {rc:,} clicks, {ri:,} impressions")
+
+
+def page_rows(rows):
+    return [{"page": r["keys"][0], "clicks": r.get("clicks", 0),
+             "impressions": r.get("impressions", 0),
+             "position": round(r.get("position", 0), 1)} for r in rows]
 
 
 if __name__ == "__main__":

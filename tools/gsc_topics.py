@@ -24,16 +24,26 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-STORE = ROOT / "content" / "search-data.json"
 QUEUE = ROOT / "content" / "queue.json"
 
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "tools"))
 import build  # noqa: E402
+import gsc_pull  # noqa: E402
+
+STORE = gsc_pull.STORE
 
 # --- tunables -------------------------------------------------------------
 # Defaults set blind, before any real data existed. Revisit once there are a
 # few months of history — these numbers are guesses, the logic around them is not.
-MIN_IMPRESSIONS = 30        # below this, a query is noise
+#
+# The impressions bar scales with the site. It was a flat 30 until 2026-10-31,
+# when not one of the 105 queries on record reached it, so this tool proposed
+# nothing and topics were being chosen on autocomplete alone. It is now the top
+# fifth of the site's own queries, never below a floor that keeps one-off
+# searches out, so it says something now and grows stricter as traffic grows.
+MIN_FLOOR = 5
+TOP_SHARE = 0.2
 STRIKING_LOW, STRIKING_HIGH = 4.0, 20.0
 COVERED_OVERLAP = 0.6       # token overlap at which a post already covers a query
 TOP_N = 15
@@ -61,9 +71,19 @@ def blocked(query):
     return any(term in q for term in BLOCKED_TERMS)
 
 
+def noise(query):
+    """A short single word ("yes", "both") is a stray search, not a subject.
+
+    These turned up in the October 2026 data near the top of page one, which made
+    them score as striking-distance topics.
+    """
+    words = query.split()
+    return len(words) == 1 and len(words[0]) < 5
+
+
 def main():
     if not STORE.exists():
-        print("  No content/search-data.json — run tools/gsc_pull.py first.")
+        print(f"  No {STORE} - run tools/gsc_pull.py first.")
         return
 
     data = json.loads(STORE.read_text(encoding="utf-8"))
@@ -87,10 +107,13 @@ def main():
     for row in data.get("query_pages", []):
         landing.setdefault(row["query"], row["page"])
 
+    ranked = sorted((q["impressions"] for q in queries), reverse=True)
+    bar = max(MIN_FLOOR, ranked[min(int(len(ranked) * TOP_SHARE), len(ranked) - 1)])
+
     proposals = []
     for q in queries:
         text, imp, pos = q["query"], q["impressions"], q["position"]
-        if imp < MIN_IMPRESSIONS or blocked(text):
+        if imp < bar or blocked(text) or noise(text):
             continue
 
         qt = tokens(text)
@@ -130,7 +153,7 @@ def main():
 
     if not proposals:
         print(f"  {len(queries)} queries in the window, none above the bar")
-        print(f"  (min {MIN_IMPRESSIONS} impressions, not already covered, not blocked).")
+        print(f"  (min {bar} impressions, not already covered, not blocked).")
         return
 
     print(f"  {len(proposals)} topic opportunities from {len(queries)} queries "

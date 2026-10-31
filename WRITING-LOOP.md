@@ -6,6 +6,14 @@ human in the room, so it is explicit about the things that are easy to get wrong
 **Runs:** weekly, Saturday 10:00 local.
 **Writes:** the next three queue entries, dated for the following week.
 **Ships:** on the scheduled date, unless Imran says otherwise in the meantime.
+**Works in:** `D:\Projects\veiled-antiquity`, a git repo whose remote is
+https://github.com/TheGildedOne/TheGildedOne.github.io. Imran has authorised pushing
+directly to `main` without asking.
+**Touches:** posts and the files this procedure names. Never the site's design, schedule or
+structure.
+
+This file is the whole procedure. The scheduled task's prompt only points here, so when the
+two seem to disagree, this file wins.
 
 ---
 
@@ -25,9 +33,10 @@ tomorrow, skip that slot and write for the one after.
 
 ## Commands: how not to stall
 
-**Nobody is at the machine to approve anything.** This run starts in the default permission
-mode, so any shell command that is not on the project allowlist stops it dead until Imran
-happens to look. That has happened in nearly every run: 4 hours on a compound `ls | sed | tr`
+**Nobody is at the machine to approve anything.** Any shell command that needs approval stops
+the run dead until Imran happens to look. The project settings now ask for auto mode, but
+do not count on that: keep to the list below as if every unlisted command will stall. That
+happened in nearly every run before the list existed: 4 hours on a compound `ls | sed | tr`
 on 2026-10-10 (the whole run was lost), 4.5 hours on `python <scratchpad script> && git diff`
 on 2026-10-17. Each stall looked like a success in the run history.
 
@@ -53,11 +62,27 @@ find a way to do it with these or with the file tools.
 ### 1. Check the state
 
 ```bash
-cd D:\veiled-antiquity && python tools/next_slots.py 3
+cd D:\Projects\veiled-antiquity && git pull
+python tools/next_slots.py 3
 ```
 
 Gives you what to write, the slots to write into, and the exact `date` value for the first.
 If the queue is empty, stop and tell Imran — do not invent topics to fill a schedule.
+
+### 1a. Read this week's SEO report
+
+```bash
+python tools/seo_data.py report
+```
+
+Search Console data, the indexing check and the log of page changes live in the private repo
+`TheGildedOne/veiled-antiquity-data`, not here: this repo is public, and Imran wants nothing
+piling up on his machine. A GitHub job refreshes them every Saturday at 06:00 UTC and writes
+this report; the command prints it without saving anything. Its sections feed steps 1b
+(topic ideas), 7c (pages to improve, and how earlier changes went) and 8 (indexing).
+
+Check the date on its first line. If it is not today, or a section says the key is missing,
+the weekly job failed: carry on with the writing, and say so at the top of your report.
 
 ### 1b. Top up the queue if it is running low
 
@@ -69,15 +94,10 @@ This is the one step that keeps the site self-sustaining, and it is also the eas
 wreck it. A weak topic is worse than a gap: it publishes, it ranks for nothing, and it dilutes
 what the site is about.
 
-**First, ask the data what to write.** Before inventing topics, run:
-
-```bash
-python tools/gsc_pull.py       # refresh Search Console data
-python tools/gsc_topics.py     # what the archive is already ranking for
-```
-
-Both exit cleanly and say so if there are no credentials or no data yet, so this is safe to
-run at any point. When there *is* data, an `ORPHAN` result is the best topic signal available:
+**First, ask the data what to write.** Before inventing topics, read the **NEW TOPIC IDEAS**
+section of this week's report (step 1a). It is `gsc_topics.py`'s output, run on GitHub that
+morning against fresh Search Console data. When there is data, an `ORPHAN` result is the best
+topic signal available:
 a query the site already earns impressions for through a page that is not about it. That is
 demand you have measured rather than guessed.
 
@@ -145,8 +165,13 @@ For each post, establish before drafting:
 
 ### 3. Write it
 
-Follow the house voice. It is documented in memory as `imran-writing-voice`, and the short
-version is:
+Each post is `content/posts/NN-slug.html`, numbered after the last one. Read two or three
+existing posts first and match their structure exactly: a JSON metadata header between
+`<!--META` and `META-->`, then the HTML body.
+
+Follow the house voice. Imran rejected an early batch for missing it. This list is the
+reference (a fuller note used to live in Claude's memory and did not survive the October
+2026 move to a new folder):
 
 - **Open with a scene, an object or a person.** Never a thesis statement.
 - **No methodology asides.** Do not explain to the reader how carefully you are working.
@@ -281,6 +306,10 @@ not exist. Use `VERIFIED_BY_HAND` only when the ISBN lookup says Open Library ha
 or the work has no ISBN (a chapter, an old journal article). The script refuses to run if a
 note quotes an ISBN with a wrong check digit, or if a book sits in both lists.
 
+**If you do add a `VERIFIED_BY_HAND` entry, check the page numbers too.** Nothing verifies
+them. On 2026-08-23 a run added a real Faraone chapter with the wrong page range and a note
+claiming the author's CV confirmed that range. It did not.
+
 The script reports two kinds of failure and they mean opposite things:
 
 - **NOT FOUND** — Open Library answered and had nothing close. Treat as a possible
@@ -315,6 +344,10 @@ Flip each written entry in `content/queue.json` from `"pending"` to `"written"`.
 git add -A && git commit -m "Add posts for w/c <date>" && git push
 ```
 
+If `git push` fails because GitHub is not signed in, do not retry or change credentials.
+Leave the commits in place locally and tell Imran to run `gh auth login` and
+`gh auth setup-git`, then push.
+
 ### 7b. Backfill internal links across the archive
 
 Links are hand-written at write time, so a post can only ever link to what existed when it
@@ -346,28 +379,72 @@ in an anchor and refuses to save if the tag-stripped text changed by so much as 
 but it can still link a phrase to a post that is a poor fit for it. That is a judgement call
 and it is yours. If a proposal is wrong, tighten or remove the alias rather than accepting it.
 
-### 8. Report to Imran
+### 7c. Improve one existing page
 
-Short. Titles, dates, word counts, anything uncertain, and how many queue entries remain.
+A new post takes months to rank. A page already sitting at position 8 can reach page one in
+weeks, so each run also spends a little effort on one page that is nearly there.
 
-**End with the indexing line.** Run this last and copy its final `INDEXING` line, plus any
-page listed under WRONG ADDRESS or NOT INDEXED, into the report:
+Take the top page under **PAGES TO IMPROVE** in the report. It ranks published posts by how
+close they are to page one and how often Google shows them, lists what people typed to find
+each, and skips any page changed in the last six weeks so two changes never blur into one
+measurement. If the list is empty, skip this step and say so.
+
+Make that page answer the phrase people are typing, within these limits:
+
+- **`seo_title` and `description`**: rebuild them around that phrase, as step 3 describes.
+  This is usually the whole fix, and always is for a page marked "seen near the top but
+  nobody clicks".
+- **At most one FAQ entry** added or reworded so it asks the query in the searcher's words.
+- **At most one short paragraph**, and only if the post genuinely does not answer what people
+  are searching for. Every rule in step 3 applies (voice, single-source rule, no em dashes),
+  and it adds no claim you have not verified.
+- **Never** the `title`, slug, date, sources, or anything else.
 
 ```bash
-python tools/check_indexing.py
+python build.py && python check.py
+python tools/seo_data.py log <slug> "<what changed, and the phrase it targets>"
+git add -A && git commit -m "Tune search snippet for <slug>" && git push
 ```
 
-It asks Google whether each live page is actually indexed at its real address. Nothing else in
-this repo does, and on 2026-10-01 ten of twenty-four posts were not: seven were indexed only at
-the newsletter's tracking-tagged address, for weeks, with every other check green. The loop
-cannot fix a page Google has not picked up (requesting indexing needs Imran, signed in to
-Search Console), so the job here is only to make sure he sees it. It exits cleanly if the
-credentials are missing; say so in the report if that happens, because it means nobody is
-watching.
+Its own commit, for the same reason as 7b: it changes a live page with no buffer. **Log every
+change**: an unlogged one can never be judged, and it muddles the measurement of the next.
+
+**Then read RESULTS OF EARLIER CHANGES.** It compares each logged page's month before the
+change with a month starting a month after it, and gives a verdict. Put each new verdict in
+your report. When three or more results point the same way (putting the phrase first in the
+`seo_title` keeps helping, say, or new FAQ entries never do), propose it to Imran as a rule for
+this file. Do not edit this file yourself: a rule drawn from small numbers deserves a human
+look before it binds every future run.
+
+### 8. Report to Imran
+
+Short. Titles, dates, word counts, anything uncertain, how many queue entries remain, any
+links the backfill added, the page you improved in 7c and what you changed, and any new
+verdicts on earlier changes.
+
+**End with the indexing line.** Copy the `INDEXING` line from the report's INDEXING section,
+plus any page it lists under WRONG ADDRESS or NOT INDEXED.
+
+That check asks Google whether each live page is actually indexed at its real address.
+Nothing else does, and on 2026-10-01 ten of twenty-four posts were not: seven were indexed
+only at the newsletter's tracking-tagged address, for weeks, with every other check green.
+The loop cannot fix a page Google has not picked up (requesting indexing needs Imran, signed
+in to Search Console), so the job here is only to make sure he sees it. If the section says
+the credentials are missing, say so, because it means nobody is watching.
 
 **Flag explicitly** if you cut a claim for lack of evidence, if a source was hard to
 confirm, or if two sources contradict each other. Those are the things worth a human
 glance, and burying them in a tidy summary is how the safety model quietly stops working.
+
+### 9. Clean up
+
+```bash
+python build.py --clean
+```
+
+Last of all. It removes the built site (`dist/`, 40-odd MB), which only check.py needed.
+GitHub builds its own copy to publish, so nothing is lost. Imran wants as little as possible
+kept on his machine: never leave scratch files, copies or downloads behind either.
 
 ---
 
@@ -380,7 +457,7 @@ and the site kept publishing from its backlog, so nothing surfaced for a week.
 
 Two things follow.
 
-**The task's working folder must be `D:\veiled-antiquity`.** It is the repo the
+**The task's working folder must be `D:\Projects\veiled-antiquity`.** It is the repo the
 loop actually works in, so it cannot go stale while there is any work to do. If the
 task chat shows *"Working folder no longer exists"*, or the run history shows
 **Skipped**, that is this failure.
@@ -388,7 +465,7 @@ task chat shows *"Working folder no longer exists"*, or the run history shows
 **How to actually fix it (corrected 2026-08-22).** The folder picker did not work:
 clicking it opened forked conversations and left the folder unchanged. The fix that
 *did* work was to delete the task and recreate it **from a session already running in
-`D:\veiled-antiquity`**, because a new task inherits the working folder of whatever
+`D:\Projects\veiled-antiquity`**, because a new task inherits the working folder of whatever
 session creates it. That inheritance is the whole mechanism, so it cuts both ways:
 recreating from a session in the wrong folder just reproduces the bug while looking
 like a repair. Check the session's `pwd` before recreating.

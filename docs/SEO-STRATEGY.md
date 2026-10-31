@@ -45,8 +45,8 @@ and its public archive at buttondown.com/veiled carries the same tagged links. G
 seven posts through that archive first, indexed the tagged address, and never fetched the
 real one, despite the canonical tag, the sitemap and every internal link pointing at it. The
 posts still earned impressions, under the tagged address, which is why the totals looked
-normal. `tools/check_indexing.py` now asks Google about every page and reports this; the
-Saturday loop ends its report with that line. The cure has two halves, both Imran's:
+normal. `tools/check_indexing.py` now asks Google about every page each Saturday (on GitHub,
+in the private data repo) and the loop ends its report with that line. The cure has two halves, both Imran's:
 switch off UTM tracking at buttondown.com/settings/tracking, and request indexing of each
 clean address in Search Console.
 
@@ -203,10 +203,11 @@ authority. Google queues the page and returns. It resolves as the archive grows.
 The figure worth watching instead is **how many sitemap pages Google has indexed at their
 real address**. Do not count by hand, and do not trust the Sitemaps report: on 2026-08-15 this
 section said "11 of 11", and by 1 October ten posts were indexed at the wrong address or not
-at all while every report still looked healthy. Ask Google page by page:
+at all while every report still looked healthy. Google is asked page by page every Saturday;
+read the INDEXING section of the weekly report:
 
 ```bash
-python tools/check_indexing.py
+python tools/seo_data.py report
 ```
 
 Reasons that *are* worth opening the report for, because each means something is actually
