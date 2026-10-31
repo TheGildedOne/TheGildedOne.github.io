@@ -1,0 +1,168 @@
+VEILED ANTIQUITY: WHAT RUNS ITSELF
+==================================
+
+A plain-English list of everything the site and the Saturday writing loop do on their
+own, and the few things that still need you. Kept up to date whenever any of it changes.
+For the detailed procedure the writer follows, see WRITING-LOOP.md.
+
+Last updated: 31 October 2026
+
+
+THE WEEK AT A GLANCE
+--------------------
+
+  Every day     09:05 and 15:05 UTC   The site rebuilds; any post whose date has come goes
+                                      live and subscribers are emailed
+  Every day     18:05 UTC             A check that every due post is actually on the site,
+                                      and that the writing loop is still producing
+  Saturday      06:00 UTC             Search Console data and indexing are refreshed on
+                                      GitHub and a weekly SEO report is written
+  Saturday      10:00 (your time)     The writing loop runs on your PC: three new posts,
+                                      link backfill, one existing page improved, report
+
+  Posts publish Monday, Wednesday and Friday. They are written weeks ahead with future
+  dates, so there is always a long gap between a post being written and anyone reading it.
+  That gap is the safety net: you can read, change or delete anything before it goes out.
+
+
+1. THE SATURDAY WRITING LOOP
+----------------------------
+
+A scheduled Claude task on your PC, following WRITING-LOOP.md. Each run:
+
+  - Reads the weekly SEO report from the private data repo (nothing is saved locally).
+  - Tops up the topic queue when fewer than six topics are left, using topics the search
+    data suggests and checking each phrase is something people actually type into Google.
+    Every new topic must be a specific object, site, text or event, with real scholarly
+    sources, a fit with the four categories, links to existing posts, and a genuine open
+    question. Nothing speculative ("lost civilisations", "ancient aliens") ever.
+  - Researches each of the next three topics on the web before writing. Never from memory.
+  - Writes three posts of about 1,000 words in the house voice, with sources, FAQs, search
+    title and description, and 2 to 4 links to existing posts.
+  - Finds a public-domain or Creative Commons image of the actual ancient object or site,
+    and makes the resized, modern-format and social-share versions of it.
+  - Checks every cited book and journal article really exists (Open Library, Crossref,
+    OpenAlex). A post with an unconfirmed source is not committed.
+  - Builds the site and runs every check (see section 6). Both must pass.
+  - Commits and pushes the posts, dated for the following weeks.
+  - Backfills internal links: older posts get linked to the new ones where an exact
+    phrase already appears in their text. Separate commit, so it can be undone alone.
+  - Improves one existing page that is close to Google's first page: rewrites its search
+    title and description around what people actually typed to find it, and at most one
+    FAQ or short paragraph. Logs the change so the report can say a month later whether
+    it helped. Separate commit.
+  - Reports to you: titles, dates, word counts, anything uncertain or cut for lack of
+    evidence, the page it improved, results of earlier changes, and Google indexing.
+  - Deletes the built site from your PC (about 40 MB) so nothing piles up.
+
+It stops and tells you rather than guessing when: the queue is empty, a source cannot be
+verified, a topic rests on one contested paper, or anything touches money or the design.
+
+
+2. PUBLISHING (GITHUB, AUTOMATIC)
+---------------------------------
+
+  - Rebuilds and deploys the site twice a day. The second run is a backup in case GitHub
+    drops the first; it never publishes anything twice.
+  - Also deploys straight away whenever anything is pushed.
+  - Tells Bing (and so Copilot and other AI search) about new and changed pages at once
+    through IndexNow, instead of waiting to be crawled.
+  - Emails newsletter subscribers through Buttondown's free API when a post goes live,
+    and never sends the same post twice.
+
+
+3. WEEKLY SEO JOB (GITHUB, PRIVATE REPO)
+----------------------------------------
+
+Runs in the private repo TheGildedOne/veiled-antiquity-data, so your search data is not
+public (the site repo is) and none of it is stored on your PC. Every Saturday it:
+
+  - Pulls 90 days of Search Console data, plus the last 28 days page by page.
+  - Keeps a dated weekly snapshot, which is what lets changes be measured over time.
+  - Asks Google, page by page, whether each page is indexed at its real address.
+  - Suggests new topics from searches the site already gets impressions for.
+  - Ranks existing pages that are close to page one, with the phrases people typed.
+  - Judges each logged page change: helped, hurt, no clear change, or too little traffic.
+  - Writes all of that to report.txt for the writing loop to read.
+
+If it fails, including if the Search Console key stops working, GitHub emails you.
+
+
+4. ALARMS (GITHUB, AUTOMATIC)
+-----------------------------
+
+Each of these turns a GitHub run red, and GitHub emails you:
+
+  - A post whose date has passed is not actually on the live site.
+  - The writing loop has not added a post for more than eight days.
+  - Fewer than 35 days of scheduled posts are left.
+  - The weekly SEO job failed or has no Search Console key.
+
+These run on GitHub's machines on purpose, so they still work if your PC is off or the
+loop's scheduled task breaks.
+
+
+5. BUILT INTO EVERY PAGE
+------------------------
+
+  - Search basics: titles and descriptions sized for Google, structured data, a sitemap
+    with honest last-changed dates, RSS feed, and canonical addresses.
+  - Old newsletter links with tracking tags are sent on to the clean address, so Google
+    stops indexing the tagged version.
+  - Fast pages: self-hosted fonts, AVIF images sized for phones, social share cards.
+  - Related posts, previous and next, category pages, archive, and a hand-picked
+    Start Here page.
+  - Newsletter signup block (Buttondown).
+  - Google Analytics, which asks UK and EEA visitors for consent first.
+  - Image credits rendered automatically, as the Creative Commons licences require.
+  - Ready but switched off: Amazon affiliate links on cited books, and AdSense. Both are
+    in the MONETISATION block at the top of build.py and do nothing until filled in.
+
+
+6. QUALITY GATES
+----------------
+
+Nothing is pushed unless these pass:
+
+  - check.py: links, images (at least 1200px wide, AVIF, share card), alt text, search
+    title and description lengths, structured data, headings, 2 to 4 internal links per
+    post, the focus phrase present in the search title or description, and no em dashes.
+  - verify_sources.py: every modern book and journal article cited must be found in a
+    real catalogue, or checked by ISBN.
+
+
+7. WHAT STILL NEEDS YOU
+-----------------------
+
+  - Reading the Saturday report, especially anything it flags as uncertain.
+  - Requesting indexing in Search Console for pages the report lists as WRONG ADDRESS or
+    NOT INDEXED. The loop can spot these but only you, signed in, can fix them.
+  - Approving any rule the loop proposes after three page changes point the same way.
+  - Anything to do with money, design, or the publishing schedule.
+  - Answering a GitHub alarm email.
+
+
+8. WHERE THINGS LIVE
+--------------------
+
+  On your PC (D:\Projects\veiled-antiquity), the site's source:
+    content/posts/        the posts
+    content/queue.json    what gets written next
+    WRITING-LOOP.md       the full procedure the Saturday writer follows
+    FEATURES.txt          this file
+
+  On GitHub:
+    TheGildedOne/TheGildedOne.github.io   the site (public), publishing and alarms
+    TheGildedOne/veiled-antiquity-data    search data, weekly report, change log (private)
+
+  The writing loop's schedule and prompt live in the Claude app's scheduled tasks
+  ("Veiled antiquity writing loop"). The prompt only points at WRITING-LOOP.md.
+
+
+CHANGE LOG
+----------
+
+  31 Oct 2026  Search data and indexing moved to a private GitHub repo with a weekly job.
+               Loop now improves one existing page each week and measures the result.
+               Topic suggestions scale with traffic. Built site deleted after each run.
+               WRITING-LOOP.md became the single source of the procedure.

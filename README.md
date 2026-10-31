@@ -38,6 +38,7 @@ anyone reading it.
 | `public/` | Files copied to the site root verbatim (CNAME, verification files). |
 | `docs/` | Strategy notes: SEO, monetisation, editorial calendar. |
 | `WRITING-LOOP.md` | The procedure the Saturday writer follows. Kept at root — the scheduled task points at this path. |
+| `FEATURES.txt` | Plain-English list of everything that runs itself and what still needs a person. Update it whenever the automation changes. |
 
 `dist/` is build output and isn't committed: `python build.py` makes it and
 `python build.py --clean` removes it. `--wordpress` also writes `wordpress-import.xml`.
