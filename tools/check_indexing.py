@@ -41,6 +41,7 @@ weekly on GitHub in the private data repo, alongside gsc_pull.py.
 import json
 import re
 import sys
+import time
 import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
@@ -57,6 +58,9 @@ INSPECT = "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
 # Google routinely takes days to pick up a new page. Younger than this and
 # unindexed is a page still in the queue, not a fault.
 GRACE_DAYS = 14
+
+# Tries per page when Google answers with a server error or a rate limit.
+RETRIES = 4
 
 
 def publish_dates() -> dict:
@@ -115,8 +119,14 @@ def main():
 
     pages, counts = {}, {"indexed": 0, "WRONG ADDRESS": 0, "NOT INDEXED": 0, "waiting": 0}
     for url in urls:
-        r = requests.post(INSPECT, headers=headers, timeout=60,
-                          json={"inspectionUrl": url, "siteUrl": gsc_pull.SITE_URL})
+        # Google's own errors are usually momentary: on 2026-10-31 one page got an
+        # HTTP 500 and, with no retry, the whole week's check was thrown away.
+        for attempt in range(RETRIES):
+            r = requests.post(INSPECT, headers=headers, timeout=60,
+                              json={"inspectionUrl": url, "siteUrl": gsc_pull.SITE_URL})
+            if r.status_code not in (429, 500, 502, 503, 504):
+                break
+            time.sleep(10 * (attempt + 1))
         if r.status_code != 200:
             # Do not guess. A partial answer written to disk would read as "the
             # rest are fine" on the next run.
