@@ -1,16 +1,16 @@
 {
-  "checked": "2026-10-24",
+  "checked": "2026-10-31",
   "counts": {
-    "indexed": 37,
+    "indexed": 38,
     "WRONG ADDRESS": 7,
     "NOT INDEXED": 1,
-    "waiting": 0
+    "waiting": 2
   },
   "pages": {
     "https://veiledantiquity.com/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-10-23",
+      "last_crawl": "2026-10-27",
       "google_shows": [
         "http://veiledantiquity.com/"
       ]
@@ -40,7 +40,7 @@
     "https://veiledantiquity.com/posts/ancient-mystery-cults-guide/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-09-27",
+      "last_crawl": "2026-10-26",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/eleusinian-mysteries-telesterion/": {
@@ -157,7 +157,7 @@
     },
     "https://veiledantiquity.com/posts/ancient-binding-spells-law/": {
       "status": "WRONG ADDRESS",
-      "coverage": "URL is unknown to Google",
+      "coverage": "Discovered - currently not indexed",
       "last_crawl": "",
       "google_shows": [
         "https://veiledantiquity.com/posts/ancient-binding-spells-law/?utm_source=veiled&utm_medium=email&utm_campaign=binding-spells-and-the-ancient-courtroom"
@@ -208,7 +208,7 @@
     "https://veiledantiquity.com/posts/claudius-etruscan-history/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-10-03",
+      "last_crawl": "2026-10-27",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/delphi-pythia/": {
@@ -256,13 +256,31 @@
     "https://veiledantiquity.com/posts/andania-mysteries-inscription/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
-      "last_crawl": "2026-10-21",
+      "last_crawl": "2026-10-24",
       "google_shows": []
     },
     "https://veiledantiquity.com/posts/cabeirion-thebes/": {
       "status": "indexed",
       "coverage": "Submitted and indexed",
       "last_crawl": "2026-10-24",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/sack-of-eleusis-396/": {
+      "status": "indexed",
+      "coverage": "Submitted and indexed",
+      "last_crawl": "2026-10-27",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/apuleius-trial-magic/": {
+      "status": "waiting",
+      "coverage": "URL is unknown to Google",
+      "last_crawl": "",
+      "google_shows": []
+    },
+    "https://veiledantiquity.com/posts/chariot-race-curse-tablets/": {
+      "status": "waiting",
+      "coverage": "URL is unknown to Google",
+      "last_crawl": "",
       "google_shows": []
     },
     "https://veiledantiquity.com/category/mystery-cults/": {
