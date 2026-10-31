@@ -120,6 +120,9 @@ ALIASES = {
     "tages-etruscan-revelation": ["Tages"],
     "derveni-papyrus": ["Derveni Papyrus"],
     "oracle-of-siwa": ["Siwa"],
+    "sator-square": ["Sator square"],
+    "nag-hammadi-library": ["Nag Hammadi"],
+    "bona-dea-scandal": ["Bona Dea"],
 }
 
 # Phrases too generic to be a good anchor even when they match a post's keyword.
