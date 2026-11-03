@@ -68,9 +68,7 @@ def main():
 
     # The tags turned out not to be in the email text: Buttondown adds them when it
     # renders the archive, from the tracking setting each email was sent with. So
-    # count them on the public archive page itself, and try re-saving the email
-    # unchanged to see whether Buttondown redraws it with tracking now off.
-    test_one = "--test-one" in sys.argv
+    # count them on the public archive page itself.
     tagged = []
     for e in emails:
         page = requests.get(e["absolute_url"], timeout=30).text
@@ -80,19 +78,23 @@ def main():
             print(f"  {n:>2} tagged links on the archive page: {e.get('subject', '')[:60]}")
     print(f"  {len(tagged)} archive pages carry tagged links")
 
-    for e in tagged[:1] if test_one else tagged if apply else []:
-        r = session.patch(f"{API}/{e['id']}", json={"body": e["body"]}, timeout=30)
+    print(f"  archival_mode values in use: {sorted({str(e.get('archival_mode')) for e in emails})}")
+
+    # Re-saving did not redraw the links (tested 2026-11-02), so --apply takes the
+    # tagged emails out of the public archive instead. Subscribers are unaffected,
+    # and setting archival_mode back to its old value restores them.
+    for e in tagged if apply else []:
+        r = session.patch(f"{API}/{e['id']}", json={"archival_mode": "disabled"}, timeout=30)
         if r.status_code != 200:
-            print(f"     FAILED ({r.status_code}): {r.text[:200]}")
+            print(f"     FAILED ({r.status_code}): {r.text[:300]}")
             continue
-        time.sleep(5)
         after = session.get(f"{API}/{e['id']}", timeout=30).json()
-        page = requests.get(e["absolute_url"], timeout=30,
-                            headers={"Cache-Control": "no-cache"}).text
-        left = len(re.findall(r"veiledantiquity\.com[^\s\"'<>]*utm_", page))
+        page = requests.get(e["absolute_url"], timeout=30)
         same = after.get("body") == e["body"] and after.get("status") == e["status"]
-        print(f"     re-saved {e.get('subject', '')[:50]}: text unchanged {same}, "
-              f"tagged links now {left}")
+        print(f"     hidden {e['id']} (was {e.get('archival_mode')}): "
+              f"now {after.get('archival_mode')}, page HTTP {page.status_code}, "
+              f"text unchanged {same}: {e.get('subject', '')[:50]}")
+        time.sleep(1)
 
 
 if __name__ == "__main__":

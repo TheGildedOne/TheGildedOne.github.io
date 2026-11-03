@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "report (read-only), test-one, or apply"
+        description: "report (read-only), or apply (hide tagged emails from the archive)"
         type: choice
-        options: [report, test-one, apply]
+        options: [report, apply]
         default: report
 
 permissions:
