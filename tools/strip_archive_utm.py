@@ -66,31 +66,33 @@ def main():
             if any(w in k.lower() for w in ("utm", "track", "analytic", "link")):
                 print(f"    {k} = {v!r}")
 
-    in_body = 0
+    # The tags turned out not to be in the email text: Buttondown adds them when it
+    # renders the archive, from the tracking setting each email was sent with. So
+    # count them on the public archive page itself, and try re-saving the email
+    # unchanged to see whether Buttondown redraws it with tracking now off.
+    test_one = "--test-one" in sys.argv
+    tagged = []
     for e in emails:
-        body = e.get("body") or ""
-        n = len(re.findall(r"veiledantiquity\.com[^\s\"'<>]*utm_", body))
-        if not n:
-            continue
-        in_body += 1
-        print(f"  {n:>2} tagged links in the body: {e.get('subject', '')[:60]}")
-        if not apply:
-            continue
+        page = requests.get(e["absolute_url"], timeout=30).text
+        n = len(re.findall(r"veiledantiquity\.com[^\s\"'<>]*utm_", page))
+        if n:
+            tagged.append(e)
+            print(f"  {n:>2} tagged links on the archive page: {e.get('subject', '')[:60]}")
+    print(f"  {len(tagged)} archive pages carry tagged links")
 
-        new = clean(body)
-        r = session.patch(f"{API}/{e['id']}", json={"body": new}, timeout=30)
+    for e in tagged[:1] if test_one else tagged if apply else []:
+        r = session.patch(f"{API}/{e['id']}", json={"body": e["body"]}, timeout=30)
         if r.status_code != 200:
             print(f"     FAILED ({r.status_code}): {r.text[:200]}")
             continue
-        after = session.get(f"{API}/{e['id']}", timeout=30).json().get("body") or ""
-        ok = "utm_" not in after and clean(body) == after
-        print(f"     {'fixed' if ok else 'CHECK BY HAND'}")
-        time.sleep(1)
-
-    print(f"  {in_body} emails have tagged links written into their body")
-    if not in_body:
-        print("  The tags are not in the email text, so Buttondown adds them when it shows")
-        print("  the archive. Editing the emails will not remove them.")
+        time.sleep(5)
+        after = session.get(f"{API}/{e['id']}", timeout=30).json()
+        page = requests.get(e["absolute_url"], timeout=30,
+                            headers={"Cache-Control": "no-cache"}).text
+        left = len(re.findall(r"veiledantiquity\.com[^\s\"'<>]*utm_", page))
+        same = after.get("body") == e["body"] and after.get("status") == e["status"]
+        print(f"     re-saved {e.get('subject', '')[:50]}: text unchanged {same}, "
+              f"tagged links now {left}")
 
 
 if __name__ == "__main__":

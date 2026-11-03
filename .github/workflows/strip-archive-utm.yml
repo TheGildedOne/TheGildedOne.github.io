@@ -6,10 +6,11 @@ name: Strip archive utm tags (one-off)
 on:
   workflow_dispatch:
     inputs:
-      apply:
-        description: "Change the emails (otherwise read-only)"
-        type: boolean
-        default: false
+      mode:
+        description: "report (read-only), test-one, or apply"
+        type: choice
+        options: [report, test-one, apply]
+        default: report
 
 permissions:
   contents: read
@@ -26,4 +27,4 @@ jobs:
       - name: Strip utm tags from archived emails
         env:
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
-        run: python tools/strip_archive_utm.py ${{ inputs.apply && '--apply' || '' }}
+        run: python tools/strip_archive_utm.py ${{ inputs.mode != 'report' && format('--{0}', inputs.mode) || '' }}
