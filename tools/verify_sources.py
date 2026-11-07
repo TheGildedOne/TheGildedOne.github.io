@@ -153,6 +153,10 @@ ISBN_FOR = {
     "Corpus Cultus Iovis Sabazii, Volume III: Conclusions": "90-04-08974-8",
     "The Materiality of Magic": "978-3-7705-5725-7",
     "The Getty Hexameters: Poetry, Magic, and Mystery in Ancient Selinous": "978-0-19-966410-8",
+    # Bonfante and Bonfante, revised edition (Manchester University Press, 2002).
+    # Passed the title search until 2026-11-07, then scored 0.00 on two runs in a row;
+    # Open Library files it as plain "The Etruscan language". Added 2026-11-07.
+    "The Etruscan Language: An Introduction": "0-7190-5540-7",
 }
 
 # Entries naming a physical object or document rather than a publication.

@@ -908,5 +908,47 @@
     "avif": "/static/img/bona-dea-scandal.avif",
     "avif_700": "/static/img/bona-dea-scandal-700.avif",
     "share": "/static/img/bona-dea-scandal-share.jpg"
+  },
+  "glycon-snake-oracle": {
+    "file": "/static/img/glycon-snake-oracle.jpg",
+    "alt": "A white marble statue of a scaly snake coiled in knotted loops on a round base, its neck rising to a head with an animal's muzzle, long flowing hair and a human-looking ear.",
+    "caption": "The Glykon from Tomis, second century CE, one of twenty-four sculptures found buried together in Constanța in 1962. National History and Archaeology Museum, Constanța.",
+    "credit": "Ángel M. Felicísimo from Mérida, España",
+    "licence": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Glycon_(51644816839).jpg",
+    "width": 1400,
+    "height": 2112,
+    "card": "/static/img/glycon-snake-oracle-card.jpg",
+    "avif": "/static/img/glycon-snake-oracle.avif",
+    "avif_700": "/static/img/glycon-snake-oracle-700.avif",
+    "share": "/static/img/glycon-snake-oracle-share.jpg"
+  },
+  "vestal-virgins-buried-alive": {
+    "file": "/static/img/vestal-virgins-buried-alive.jpg",
+    "alt": "A white marble statue of a woman in long draped robes, her head covered by a veil over a headband, her right forearm and left hand broken away.",
+    "caption": "A senior Vestal, carved in the Severan period and found in the House of the Vestal Virgins in the Roman Forum. The honorific statues there show the women at the height of their standing.",
+    "credit": "Jamie Heath",
+    "licence": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_a_Vestal_Virgin_(49351096302).jpg",
+    "width": 1400,
+    "height": 2489,
+    "card": "/static/img/vestal-virgins-buried-alive-card.jpg",
+    "avif": "/static/img/vestal-virgins-buried-alive.avif",
+    "avif_700": "/static/img/vestal-virgins-buried-alive-700.avif",
+    "share": "/static/img/vestal-virgins-buried-alive-share.jpg"
+  },
+  "thesmophoria": {
+    "file": "/static/img/thesmophoria.jpg",
+    "alt": "A small terracotta figurine of a standing woman in a long pleated dress and mantle, her hair piled high, holding a piglet against her chest.",
+    "caption": "A woman carrying a piglet for Demeter, a terracotta from Tanagra in Boeotia, about 400&ndash;350 BCE. Not Athenian, but figures like her turn up wherever Demeter was worshipped. Louvre.",
+    "credit": "Unknown",
+    "licence": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piglet_carrier_Louvre_CA86.jpg",
+    "width": 1400,
+    "height": 3335,
+    "card": "/static/img/thesmophoria-card.jpg",
+    "avif": "/static/img/thesmophoria.avif",
+    "avif_700": "/static/img/thesmophoria-700.avif",
+    "share": "/static/img/thesmophoria-share.jpg"
   }
 }

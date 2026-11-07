@@ -282,6 +282,18 @@ PICKS = {
         "File:Statuetta di bona dea, I-II secolo.jpg",
         "A small worn statuette of a seated, veiled woman holding a horn of plenty on one arm and a coiled snake in her other hand.",
         "A statuette of the Bona Dea with her horn of plenty and snake, first or second century CE. Museo Barracco, Rome."),
+    "glycon-snake-oracle": (
+        "File:Glycon (51644816839).jpg",
+        "A white marble statue of a scaly snake coiled in knotted loops on a round base, its neck rising to a head with an animal's muzzle, long flowing hair and a human-looking ear.",
+        "The Glykon from Tomis, second century CE, one of twenty-four sculptures found buried together in Constanța in 1962. National History and Archaeology Museum, Constanța."),
+    "vestal-virgins-buried-alive": (
+        "File:Statue of a Vestal Virgin (49351096302).jpg",
+        "A white marble statue of a woman in long draped robes, her head covered by a veil over a headband, her right forearm and left hand broken away.",
+        "A senior Vestal, carved in the Severan period and found in the House of the Vestal Virgins in the Roman Forum. The honorific statues there show the women at the height of their standing."),
+    "thesmophoria": (
+        "File:Piglet carrier Louvre CA86.jpg",
+        "A small terracotta figurine of a standing woman in a long pleated dress and mantle, her hair piled high, holding a piglet against her chest.",
+        "A woman carrying a piglet for Demeter, a terracotta from Tanagra in Boeotia, about 400&ndash;350 BCE. Not Athenian, but figures like her turn up wherever Demeter was worshipped. Louvre."),
 }
 
 
