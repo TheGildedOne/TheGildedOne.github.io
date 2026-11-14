@@ -446,7 +446,7 @@
       "title": "The Chaldean Oracles: Verses from the Gods",
       "keyword": "chaldean oracles",
       "category": "oracles-and-divination",
-      "status": "pending",
+      "status": "written",
       "angle": "A second-century collection of hexameter oracles, supposedly delivered by the gods to Julian the Chaldean and his son Julian the Theurgist, who also claimed to have made rain for Marcus Aurelius' army. The book survives only as fragments quoted by Neoplatonists who treated it as scripture. Lewy, Majercik and Johnston disagree on what theurgy actually involved. Links to claros-oracle and greek-magical-papyri."
     },
     {
@@ -454,7 +454,7 @@
       "title": "Hippasus and the Secret the Pythagoreans Drowned",
       "keyword": "hippasus",
       "category": "lost-and-suppressed",
-      "status": "pending",
+      "status": "written",
       "angle": "The story goes that Hippasus of Metapontum was drowned at sea, by the gods or by his brethren, for revealing the irrational numbers. The sources are late, contradict each other about which secret it was, and Burkert and Zhmud both doubt the irrationals were the issue at all. Links to numas-buried-books and orphic-gold-tablets."
     },
     {
@@ -462,7 +462,7 @@
       "title": "Atargatis and the Temple at Hierapolis",
       "keyword": "atargatis",
       "category": "mystery-cults",
-      "status": "pending",
+      "status": "written",
       "angle": "Lucian's 'On the Syrian Goddess' describes Atargatis' temple at Hierapolis: sacred fish, a man who climbed a giant phallus twice a year and stayed up seven days, and young men who castrated themselves in the street during the festival. Whether Lucian wrote it, and whether its narrator is a parody of Herodotus, is still argued (Lightfoot 2003). Links to cult-of-cybele-taurobolium and cult-of-isis-rome."
     },
     {
@@ -472,6 +472,102 @@
       "category": "magic-and-ritual",
       "status": "pending",
       "angle": "The priest of Diana at Nemi was a runaway slave who held office until another killed him, so he walked the grove armed. Frazer built The Golden Bough on that one custom; C. M. C. Green's study of the sanctuary and its votive deposits argues Frazer misread almost all of it. Links to sortes-praeneste and dream-incubation-asclepius."
+    },
+    {
+      "slug": "lapis-niger",
+      "title": "The Black Stone in the Forum",
+      "keyword": "lapis niger",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "A patch of black marble paving in the Roman Forum covered a shrine that Romans already half-remembered as Romulus' tomb, and beneath it the oldest Latin inscription in Rome, a curse on whoever disturbs the place, mentioning a 'king'. Festus and Dionysius disagree on whose grave it was; Coarelli and Cornell disagree on what the shrine was. The Romans buried it on purpose. Links to annales-maximi and numas-buried-books."
+    },
+    {
+      "slug": "sibylline-oracles",
+      "title": "The Sibyl Who Wasn't Rome's",
+      "keyword": "sibylline oracles",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Twelve books of Greek hexameter prophecy in the Sibyl's voice, written by Jewish and then Christian authors over several centuries and quoted by Lactantius and Augustine as pagan witness to Christ. Dating and authorship of almost every book is contested (Collins 1983, Buitenwerf 2003, Lightfoot 2007). Not the lost Roman books, which is the point. Links to sibylline-books-rome and cumaean-sibyl-cave."
+    },
+    {
+      "slug": "jupiter-dolichenus",
+      "title": "The Soldiers' God from Doliche",
+      "keyword": "jupiter dolichenus",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "A Syrian storm god standing on a bull, carried by the Roman army from a hilltop in Commagene to Hadrian's Wall and the Aventine, then gone almost overnight in the mid-third century, probably after Shapur I sacked Doliche. No ancient writer describes the cult; it is known only from inscriptions and the German excavations at Dülük Baba Tepesi. Whether it was a mystery cult at all is argued (Speidel 1978, Collar 2013). Links to mithraism-seven-grades and sabazios-hands."
+    },
+    {
+      "slug": "pharmakos-scapegoat",
+      "title": "The Man Driven Out of the City",
+      "keyword": "pharmakos",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "At the Thargelia, Ionian cities chose an ugly or worthless man, fed him, beat him with fig branches and drove him out to carry the city's pollution with him. Hipponax's fragments are the earliest evidence; the late lexicographers and Tzetzes say he was burned or thrown from a cliff. Bremmer (1983) and Hughes (1991) doubt anyone was killed. Links to thesmophoria and vestal-virgins-buried-alive."
+    },
+    {
+      "slug": "herculaneum-scrolls",
+      "title": "The Library Vesuvius Kept",
+      "keyword": "herculaneum scrolls",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "The only library to survive from the classical world was found in 1752 as lumps of charcoal in a villa at Herculaneum, mostly the Epicurean Philodemus; generations of attempts to unroll them destroyed many, and since 2023 X-ray tomography has begun reading closed ones. The open question is whether the unexcavated lower floors hold a Latin library. Sider (2005) and Gigante on Philodemus; the Vesuvius Challenge results. Links to library-of-alexandria-what-was-lost and library-pergamon."
+    },
+    {
+      "slug": "artemidorus-dream-book",
+      "title": "The Dream Interpreter of Daldis",
+      "keyword": "artemidorus",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "Artemidorus' second-century Oneirocritica is the only ancient dream-interpretation manual to survive whole, built from dreams he collected in markets across the Greek world, and it is frank about sex, money and slavery in a way almost no other ancient text is. Foucault read it as evidence for ancient sexual ethics; Price (1986), Harris-McCoy (2012) and Thonemann (2020) dispute what it can tell us. Links to dream-incubation-asclepius and sortes-astrampsychi."
+    },
+    {
+      "slug": "secret-gospel-of-mark",
+      "title": "The Letter in the Back of a Book at Mar Saba",
+      "keyword": "secret gospel of mark",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "In 1958 Morton Smith photographed a letter of Clement of Alexandria copied into the endpapers of a printed book at the monastery of Mar Saba, quoting a 'more spiritual' gospel of Mark kept secret for initiates. The manuscript was later removed and is now lost; only photographs survive. Forgery or genuine is still unresolved (Smith 1973, Carlson 2005, Brown 2005, Jeffery 2007). Links to nag-hammadi-library and eleusinian-mysteries-telesterion."
+    },
+    {
+      "slug": "carmen-arvale",
+      "title": "The Hymn the Priests Couldn't Understand",
+      "keyword": "carmen arvale",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "The minutes of the Arval Brethren, carved in stone at their grove outside Rome, record that in 218 CE the priests danced behind closed doors and sang a hymn reading from booklets, because its Latin was so old they could no longer understand it. Scholars still argue what 'enos Lases iuvate' and the rest mean, and how old the hymn really is (Scheid 1990, Beard, North and Price 1998). Links to annales-maximi and roman-augury-sacred-chickens."
+    },
+    {
+      "slug": "mount-lykaion-zeus",
+      "title": "The Altar on Mount Lykaion",
+      "keyword": "mount lykaion",
+      "category": "mystery-cults",
+      "status": "pending",
+      "angle": "Plato and Pausanias both hint that the secret sacrifice to Zeus on Mount Lykaion in Arcadia involved human flesh and turned whoever ate it into a wolf; Pausanias refuses to describe it. The ash altar excavated since 2004 has produced animal bones, and in 2016 a teenage burial that was reported worldwide as a human sacrifice. Hughes (1991) and Burkert (Homo Necans) read the literary evidence very differently. Links to lykosoura-despoina and vestal-virgins-buried-alive."
+    },
+    {
+      "slug": "corpus-hermeticum",
+      "title": "Hermes Thrice-Great and the Dating That Broke Him",
+      "keyword": "corpus hermeticum",
+      "category": "magic-and-ritual",
+      "status": "pending",
+      "angle": "Renaissance readers took the Greek treatises attributed to Hermes Trismegistus as the wisdom of an Egyptian older than Moses, until Isaac Casaubon showed in 1614 that they were written in the Roman period. The swing back since Fowden (1986) is that their Egyptian roots are real after all; Copenhaver (1992) and Bull (2018) weigh how far. Nag Hammadi Codex VI added Hermetic texts no one knew. Links to nag-hammadi-library and greek-magical-papyri."
+    },
+    {
+      "slug": "serapeum-alexandria",
+      "title": "The Day They Took an Axe to Serapis",
+      "keyword": "serapeum of alexandria",
+      "category": "lost-and-suppressed",
+      "status": "pending",
+      "angle": "In 391 a Christian crowd under Bishop Theophilus stormed the Serapeum and a soldier struck the colossal statue of Serapis, whose fall was supposed to end the world. Rufinus and Eunapius tell it from opposite sides; whether any books were still there is the question tied to the Library of Alexandria myth. McKenzie, Gibson and Reyes (JRS 2004) reconstructed the site from excavation. Links to library-of-alexandria-what-was-lost and sack-of-eleusis-396."
+    },
+    {
+      "slug": "sortes-vergilianae",
+      "title": "Opening Virgil to Find Your Fate",
+      "keyword": "sortes vergilianae",
+      "category": "oracles-and-divination",
+      "status": "pending",
+      "angle": "The Historia Augusta says Hadrian learned he would be emperor by opening Virgil at random, and the practice ran on into Charles I's reign. But the Historia Augusta is the most unreliable source in Latin, and Syme showed much of it is invented; the solid evidence for book-divination comes from Christian sortes and gospel lot books (Klingshirn 2002, Luijendijk and Klingshirn 2019). Links to sortes-praeneste and sortes-astrampsychi."
     }
   ]
 }

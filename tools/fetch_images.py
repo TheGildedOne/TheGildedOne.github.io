@@ -294,6 +294,18 @@ PICKS = {
         "File:Piglet carrier Louvre CA86.jpg",
         "A small terracotta figurine of a standing woman in a long pleated dress and mantle, her hair piled high, holding a piglet against her chest.",
         "A woman carrying a piglet for Demeter, a terracotta from Tanagra in Boeotia, about 400&ndash;350 BCE. Not Athenian, but figures like her turn up wherever Demeter was worshipped. Louvre."),
+    "chaldean-oracles": (
+        "File:Column of Marcus Aurelius - detail2.jpg",
+        "A weathered marble relief spiralling round a column: a huge bearded figure with outspread arms and wings, water streaming down from him in vertical lines over Roman soldiers and fallen enemies below.",
+        "The rain miracle on the Column of Marcus Aurelius in Rome, about 180&ndash;193 CE. The Suda credits the storm to Julian the Theurgist. Cassius Dio credits an Egyptian magician."),
+    "hippasus-pythagorean-secret": (
+        "File:Tavole Palatine (Metaponto).jpg",
+        "Two rows of weathered Doric columns standing in a grassy field under a blue sky, the remains of a Greek temple with no roof or upper structure left.",
+        "The Tavole Palatine, the temple of Hera outside Metapontum, sixth century BCE. It was already standing in the city Aristotle names as Hippasus' home."),
+    "atargatis-syrian-goddess": (
+        "File:Relief of Atargatis and Hadad from Dura-Europos.tif",
+        "A small worn limestone relief of two figures side by side, a seated goddess flanked by lions and a bearded god with a bull beside him, a tall standard rising between them.",
+        "Atargatis between her lions and Hadad with his bull, the standard between them, from the temple of Atargatis at Dura-Europos, second or third century CE. Yale University Art Gallery."),
 }
 
 
