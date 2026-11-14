@@ -126,6 +126,9 @@ ALIASES = {
     "glycon-snake-oracle": ["Glykon", "Glycon"],
     "vestal-virgins-buried-alive": ["Vestal Virgins"],
     "thesmophoria": ["Thesmophoria"],
+    "chaldean-oracles": ["Chaldean Oracles", "Chaldaean Oracles"],
+    "hippasus-pythagorean-secret": ["Hippasus"],
+    "atargatis-syrian-goddess": ["Atargatis", "Syrian Goddess"],
 }
 
 # Phrases too generic to be a good anchor even when they match a post's keyword.
