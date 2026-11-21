@@ -110,6 +110,7 @@ START_HERE = [
         ("library-of-alexandria-what-was-lost", "Nobody burned the Library of Alexandria."),
         ("oracle-of-the-dead-ephyra", "The famous Oracle of the Dead is probably a farmhouse."),
         ("delphi-pythia", "The Pythia worked nine days a year, to a published fee scale."),
+        ("rex-nemorensis", "The Golden Bough grew from a single late footnote."),
     ], "These stories survive because they&rsquo;re better than the evidence."),
     ("Objects that outlived their meaning", "", [
         ("mithras-tauroctony-decoded", "A picture in four hundred temples that nobody can read."),

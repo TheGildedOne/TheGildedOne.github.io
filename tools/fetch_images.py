@@ -306,6 +306,18 @@ PICKS = {
         "File:Relief of Atargatis and Hadad from Dura-Europos.tif",
         "A small worn limestone relief of two figures side by side, a seated goddess flanked by lions and a bearded god with a bull beside him, a tall standard rising between them.",
         "Atargatis between her lions and Hadad with his bull, the standard between them, from the temple of Atargatis at Dura-Europos, second or third century CE. Yale University Art Gallery."),
+    "rex-nemorensis": (
+        "File:P. Accoleius Lariscolus Cr486-1.jpg",
+        "Both sides of a worn silver Roman coin: on the left a woman's head in profile, on the right three standing female figures side by side, joined by a beam across their shoulders, with trees rising behind them.",
+        "A denarius of P. Accoleius Lariscolus, 43 BCE. The reverse shows the triple cult statue of Diana of Nemi standing in her grove; the head on the front may be Diana or Acca Larentia."),
+    "lapis-niger": (
+        "File:20160425 100 Roma - Foro Romano - Lapis Niger - View from Palatino (26454006170).jpg",
+        "A view down the length of the Roman Forum from the Palatine Hill: ruined column bases on grass and paving, three tall columns in the foreground, and in the distance a triumphal arch with a low white canopy beside it.",
+        "The Roman Forum from the Palatine. The low white canopy beside the Arch of Septimius Severus, at the far end, shelters the black paving of the Lapis Niger in the Comitium."),
+    "sibylline-oracles": (
+        "File:04 2022 Roma (Arco di Trionfo di Tito- Bassorilievi) FO228685 bis Photo by Paolo Villa.jpg",
+        "A weathered marble relief inside a Roman arch: a procession of men in wreaths carrying a large seven-branched lampstand and other objects on poles, beneath a coffered vault.",
+        "Spoils from the Temple in Jerusalem, including the menorah, carried in Titus' triumph of 71 CE. Relief on the Arch of Titus in Rome, built after 81 CE."),
 }
 
 
